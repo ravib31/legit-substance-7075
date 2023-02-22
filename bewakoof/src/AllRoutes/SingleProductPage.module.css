@@ -65,8 +65,9 @@
 .allimages>img{
     border: 1px solid;
     width: 100px;
-    height: 147px;
+    height: 117px;
     cursor: pointer;
+    
     
 }
 .overSize{
@@ -116,9 +117,36 @@ hr{
     color: rgb(25, 205, 205);
     font: 900;
 }
+
+.allsizes{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+    
+}
+.allsizeNot{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px; 
+}
+.allimages>Button{
+    background-color: black;
+
+}
+
+.sizeDetails{
+    /* border: 1px solid; */
+    font-size: 15px;
+    width: 80%;
+    margin-bottom: 40px;
+}
+.sizeDetails>span{
+    font-weight: 600;
+}
 .button{
     display: flex;
     gap: 30px;
+    margin-bottom: 30px;
 }
 .button>Button:first-child{
     border: 1px solid red;
@@ -131,4 +159,5 @@ hr{
     border: 1px solid grey;
     width: 35%;
 }
+
 

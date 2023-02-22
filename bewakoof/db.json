@@ -1,0 +1,474 @@
+{
+   "men-product" :[
+    {
+      "id": 1,
+      "image": "https://images.bewakoof.com/t640/men-s-black-the-panda-way-oversize-fit-full-sleeve-t-shirt-580633-1676876417-1.jpg",
+      "title": "Men's Black The Panda Way Graphic Printed Oversized T-shirt",
+      "discounted-Price": 699,
+      "actual-Price": "₹1499",
+      "loyalty-Price": "₹639",
+      "fit": "OVERSIZED FIT",
+      "rating": 4.6
+    },
+    {
+      "id": 2,
+      "image": "https://images.bewakoof.com/t640/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971303-1.jpg",
+      "title": "Men's Purple Justice League Society Graphic Printed Oversized T-shirt",
+      "discounted-Price": 499,
+      "actual-Price": "₹1499",
+      "loyalty-Price": "₹459",
+      "fit": "OVERSIZED FIT",
+      "rating": 4.6
+    },
+    {
+      "id": 3,
+      "image": "https://images.bewakoof.com/t640/men-s-maroon-chainsaw-man-graphic-printed-oversized-t-shirt-581386-1677044901-1.jpg",
+      "title": "Men's Maroon Chainsaw Man Graphic Printed Oversized T-shirt",
+      "discounted-Price": 499,
+      "actual-Price": "₹1499",
+      "loyalty-Price": "₹459",
+      "fit": "OVERSIZED FIT",
+      "rating": 4.5
+    },
+    {
+      "id": 4,
+      "image": "https://images.bewakoof.com/t640/men-s-black-chainsaw-man-graphic-printed-oversized-t-shirt-580774-1677064596-1.jpg",
+      "title": "Men's Black Chainsaw Man Graphic Printed Oversized T-shirt",
+      "discounted-Price": 699,
+      "actual-Price": "₹1499",
+      "loyalty-Price": "₹639",
+      "fit": "OVERSIZED FIT",
+      "rating": 4.3
+    },
+    {
+      "id": 5,
+      "image": "https://images.bewakoof.com/t640/men-s-black-chainsaw-man-graphic-printed-t-shirt-581232-1676898338-1.jpg",
+      "title": "Men's Black Chainsaw Man Graphic Printed T-shirt",
+      "discounted-Price": 399,
+      "actual-Price": "₹1499",
+      "loyalty-Price": "₹369",
+      "fit": "DESIGN OF THE WEEK",
+      "rating": 4.3
+    },
+    {
+      "id": 6,
+      "image": "https://images.bewakoof.com/t640/men-s-blue-justice-league-society-sleeve-t-shirt-580630-1676869549-1.jpg",
+      "title": "Men's Blue Justice League Society Graphic Printed Oversized T-shirt",
+      "discounted-Price": 699,
+      "actual-Price": "₹1499",
+      "loyalty-Price": "₹639",
+      "fit": "OVERSIZED FIT",
+      "rating": 4.6
+    },
+    {
+      "id": 7,
+      "image": "https://images.bewakoof.com/t640/men-s-brown-justice-league-society-sleeve-t-shirt-580619-1676869337-1.jpg",
+      "title": "Men's Brown Justice League Society Graphic Printed Oversized T-shirt",
+      "discounted-Price": 699,
+      "actual-Price": "₹1499",
+      "loyalty-Price": "₹639",
+      "fit": "OVERSIZED FIT",
+      "rating": 4.4
+    },
+    {
+      "id": 8,
+      "image": "https://images.bewakoof.com/t640/men-s-grey-old-school-t-shirt-580993-1676885189-1.jpg",
+      "title": "Men's Grey Old School Graphic Printed T-shirt",
+      "discounted-Price": 399,
+      "actual-Price": "₹1499",
+      "loyalty-Price": "₹369",
+      "fit": "DESIGN OF THE WEEK",
+      "rating": 4.5
+    },
+    {
+      "id": 9,
+      "image": "https://images.bewakoof.com/t640/men-s-blue-the-panda-way-oversized-t-shirt-580637-1676876264-1.jpg",
+      "title": "Men's Blue The Panda Way Graphic Printed Oversized T-shirt",
+      "discounted-Price": 499,
+      "actual-Price": "₹1499",
+      "loyalty-Price": "₹459",
+      "fit": "OVERSIZED FIT",
+      "rating": 4.4
+    },
+    {
+      "id": 10,
+      "image": "https://images.bewakoof.com/t640/men-s-red-old-school-graphic-printed-oversized-plus-size-t-shirt-581272-1676971229-1.jpg",
+      "title": "Men's Red Old School Graphic Printed Oversized Plus Size T-shirt",
+      "discounted-Price": 599,
+      "actual-Price": "₹1399",
+      "loyalty-Price": "₹549",
+      "fit": "PLUS SIZE",
+      "rating": 4.5
+    },
+    {
+      "id": 11,
+      "image": "https://images.bewakoof.com/t640/men-s-blue-chainsaw-man-graphic-printed-oversized-plus-size-t-shirt-581271-1676971266-1.jpg",
+      "title": "Men's Blue Chainsaw Man Graphic Printed Oversized Plus Size T-shirt",
+      "discounted-Price": 599,
+      "actual-Price": "₹1399",
+      "loyalty-Price": "₹549",
+      "fit": "PLUS SIZE",
+      "rating": 4.6
+    },
+    {
+      "id": 12,
+      "image": "https://images.bewakoof.com/t640/men-s-blue-old-school-oversize-fit-full-sleeve-t-shirt-580991-1676885267-1.jpg",
+      "title": "Men's Blue Old School Graphic Printed Oversized T-shirt",
+      "discounted-Price": 699,
+      "actual-Price": "₹1499",
+      "loyalty-Price": "₹639",
+      "fit": "OVERSIZED FIT",
+      "rating": 4.7
+    },
+    {
+      "id": 13,
+      "image": "https://images.bewakoof.com/t640/men-s-blue-chainsaw-man-sleeve-t-shirt-580629-1676869422-1.jpg",
+      "title": "Men's Blue Chainsaw Man Graphic Printed Oversized T-shirt",
+      "discounted-Price": 699,
+      "actual-Price": "₹1499",
+      "loyalty-Price": "₹639",
+      "fit": "OVERSIZED FIT",
+      "rating": 4.6
+    },
+    {
+      "id": 14,
+      "image": "https://images.bewakoof.com/t640/men-s-grey-old-school-full-sleeve-t-shirt-580631-1676869591-1.jpg",
+      "title": "Men's Grey Old School Graphic Printed T-shirt",
+      "discounted-Price": 449,
+      "actual-Price": "₹1499",
+      "loyalty-Price": "₹419",
+      "fit": "DESIGN OF THE WEEK",
+      "rating": 3.8
+    },
+    {
+      "id": 15,
+      "image": "https://images.bewakoof.com/t640/gohan-half-sleeve-t-shirt-512884-1655993277-1.jpg",
+      "title": "Men's Black Gohan Graphic Printed T-shirt",
+      "discounted-Price": 449,
+      "actual-Price": "₹999",
+      "loyalty-Price": "₹409",
+      "fit": "",
+      "rating": 3.9
+    },
+    {
+      "id": 16,
+      "image": "https://images.bewakoof.com/t640/cream-men-s-half-sleeves-shirt-348535-1655834980-1.jpg",
+      "title": "Men's Cream Shirt",
+      "discounted-Price": 529,
+      "actual-Price": "₹1699",
+      "loyalty-Price": "₹489",
+      "fit": "",
+      "rating": 4.3
+    },
+    {
+      "id": 17,
+      "image": "https://images.bewakoof.com/t640/aop-mandarin-collar-full-sleeve-shirt-364799-1656142394-1.jpg",
+      "title": "AOP Mandarin Collar Full Sleeve Shirt",
+      "discounted-Price": 389,
+      "actual-Price": "₹1599",
+      "loyalty-Price": "₹359",
+      "fit": "PLUS SIZE",
+      "rating": 4.5
+    },
+    {
+      "id": 18,
+      "image": "https://images.bewakoof.com/t640/men-s-orange-tape-shirt-317831-1675057118-1.jpg",
+      "title": "Men's Orange Tape Shirt",
+      "discounted-Price": 551,
+      "actual-Price": "₹1499",
+      "loyalty-Price": "₹509",
+      "fit": "",
+      "rating": 4.4
+    },
+    {
+      "id": 19,
+      "image": "https://images.bewakoof.com/t640/men-s-grey-roman-printed-slim-fit-shirt-567667-1672985364-1.jpg",
+      "title": "Men's Grey Roman Printed Slim Fit Shirt",
+      "discounted-Price": 1099,
+      "actual-Price": "₹2598",
+      "loyalty-Price": "₹1039",
+      "fit": "SLIM FIT",
+      "rating": 4.6
+    },
+    {
+      "id": 20,
+      "image": "https://images.bewakoof.com/t640/men-s-linen-color-block-half-sleeves-shirt-362763-1656176753-1.jpg",
+      "title": "Men's Blue Color Block Shirt",
+      "discounted-Price": 743,
+      "actual-Price": "₹1599",
+      "loyalty-Price": "₹679",
+      "fit": "RELAXED FIT",
+      "rating": 4.6
+    },
+    {
+      "id": 21,
+      "image": "https://images.bewakoof.com/t640/act-smart-men-s-black-slim-fit-shirt-580337-1676293605-1.jpg",
+      "title": "Men's Black Slim Fit Shirt",
+      "discounted-Price": 699,
+      "actual-Price": "₹1999",
+      "loyalty-Price": "₹659",
+      "fit": "SLIM FIT",
+      "rating": 4.5
+    },
+    {
+      "id": 22,
+      "image": "https://images.bewakoof.com/t640/men-s-grey-striped-slim-fit-shirt-567468-1672748690-1.jpg",
+      "title": "Men's Grey Striped Slim Fit Shirt",
+      "discounted-Price": 699,
+      "actual-Price": "₹1999",
+      "loyalty-Price": "₹659",
+      "fit": "SLIM FIT",
+      "rating": 4.3
+    },
+    {
+      "id": 23,
+      "image": "https://images.bewakoof.com/t640/men-s-blue-checked-oversized-plus-size-shirt-577515-1675170659-1.jpg",
+      "title": "Men's Blue Checked Plus Size Shirt",
+      "discounted-Price": 1099,
+      "actual-Price": "₹2199",
+      "loyalty-Price": "₹1039",
+      "fit": "PLUS SIZE",
+      "rating": 4.3
+    },
+    {
+      "id": 24,
+      "image": "https://images.bewakoof.com/t640/snitch-men-s-blue-zap-geometric-printed-slim-fit-shirt-571329-1674474397-1.jpg",
+      "title": "Men's Blue Zap Geometric Printed Slim Fit Shirt",
+      "discounted-Price": 999,
+      "actual-Price": "₹1998",
+      "loyalty-Price": "₹949",
+      "fit": "SLIM FIT",
+      "rating": 4.6
+    },
+    {
+      "id": 25,
+      "image": "https://images.bewakoof.com/t640/snitch-men-s-black-sequence-tuxe-embellished-slim-fit-shirt-571317-1674473654-1.jpg",
+      "title": "Men's Black Sequence Tuxedo Embellished Slim Fit Shirt",
+      "discounted-Price": 1199,
+      "actual-Price": "₹2998",
+      "loyalty-Price": "₹1139",
+      "fit": "SLIM FIT",
+      "rating": 4.4
+    },
+    {
+      "id": 26,
+      "image": "https://images.bewakoof.com/t640/manaca-men-s-blue-shirt-580545-1676463826-1.jpg",
+      "title": "Men's Blue Shirt",
+      "discounted-Price": 899,
+      "actual-Price": "₹1899",
+      "loyalty-Price": "₹849",
+      "fit": "",
+      "rating": 4.5
+    },
+    {
+      "id": 27,
+      "image": "https://images.bewakoof.com/t640/light-grey-zipper-jogger-321136-1655751312-1.jpg",
+      "title": "Men's Grey Joggers",
+      "discounted-Price": 749,
+      "actual-Price": "₹1299",
+      "loyalty-Price": "₹689",
+      "fit": "",
+      "rating": 4.4
+    },
+    {
+      "id": 28,
+      "image": "https://images.bewakoof.com/t640/black-solid-joggers-aw-21-364890-1656188913-1.jpg",
+      "title": "Men's Black Joggers",
+      "discounted-Price": 897,
+      "actual-Price": "₹1899",
+      "loyalty-Price": "₹829",
+      "fit": "",
+      "rating": 4.5
+    },
+    {
+      "id": 29,
+      "image": "https://images.bewakoof.com/t640/men-s-black-oversized-jogger-516604-1669351564-1.jpg",
+      "title": "Men's Black Oversized Jogger",
+      "discounted-Price": 1341,
+      "actual-Price": "₹2299",
+      "loyalty-Price": "₹1229",
+      "fit": "OVERSIZED FIT",
+      "rating": 4.6
+    },
+    {
+      "id": 30,
+      "image": "https://images.bewakoof.com/t640/jet-black-casual-jogger-pant-293063-1660652156-1.jpg",
+      "title": "Men's Black Casual Joggers",
+      "discounted-Price": 899,
+      "actual-Price": "₹999",
+      "loyalty-Price": "₹819",
+      "fit": "",
+      "rating": 4.7
+    },
+    {
+      "id": 31,
+      "image": "https://images.bewakoof.com/t640/mens-solid-joggers-516482-1663668170-1.jpg",
+      "title": "Men's Purple Joggers",
+      "discounted-Price": 866,
+      "actual-Price": "₹2149",
+      "loyalty-Price": "₹799",
+      "fit": "",
+      "rating": 4.6
+    },
+    {
+      "id": 32,
+      "image": "https://images.bewakoof.com/t640/charcoal-grey-jogger-pants-with-zipper-321137-1656184057-1.jpg",
+      "title": "Men's Charcoal Grey Joggers",
+      "discounted-Price": 899,
+      "actual-Price": "₹1299",
+      "loyalty-Price": "₹829",
+      "fit": "",
+      "rating": 3.8
+    },
+    {
+      "id": 33,
+      "image": "https://images.bewakoof.com/t640/men-s-blue-joggers-451622-1660651715-1.jpg",
+      "title": "Men's Teal Blue Joggers",
+      "discounted-Price": 897,
+      "actual-Price": "₹1599",
+      "loyalty-Price": "₹829",
+      "fit": "",
+      "rating": 3.9
+    },
+    {
+      "id": 34,
+      "image": "https://images.bewakoof.com/t640/navy-blue-zipper-jogger-321139-1655747796-1.jpg",
+      "title": "Men's Blue Joggers",
+      "discounted-Price": 899,
+      "actual-Price": "₹1299",
+      "loyalty-Price": "₹829",
+      "fit": "",
+      "rating": 4.3
+    },
+    {
+      "id": 35,
+      "image": "https://images.bewakoof.com/t640/men-s-rose-pink-solid-oversized-fit-cargo-jogger-552879-1672295701-1.jpg",
+      "title": "Men's Pink Oversized Cargo Joggers",
+      "discounted-Price": 986,
+      "actual-Price": "₹2199",
+      "loyalty-Price": "₹909",
+      "fit": "",
+      "rating": 4.5
+    },
+    {
+      "id": 36,
+      "image": "https://images.bewakoof.com/t640/navy-blue-casual-jogger-pant-293071-1655748181-1.jpg",
+      "title": "Men's Blue Casual Joggers",
+      "discounted-Price": 899,
+      "actual-Price": "₹999",
+      "loyalty-Price": "₹819",
+      "fit": "",
+      "rating": 4.4
+    },
+    {
+      "id": 37,
+      "image": "https://images.bewakoof.com/t640/men-s-aop-side-panel-binding-joggger-516606-1667398428-1.jpg",
+      "title": "Men's Black AOP Side Panel Oversized Binding Joggger",
+      "discounted-Price": 863,
+      "actual-Price": "₹2449",
+      "loyalty-Price": "₹799",
+      "fit": "OVERSIZED FIT",
+      "rating": 4.6
+    },
+    {
+      "id": 38,
+      "image": "https://images.bewakoof.com/t640/jet-black-plus-size-casual-jogger-pants-324701-1655751335-1.jpg",
+      "title": "Men's Black Plus Size Casual Joggers",
+      "discounted-Price": 799,
+      "actual-Price": "₹1299",
+      "loyalty-Price": "₹739",
+      "fit": "PLUS SIZE",
+      "rating": 4.6
+    },
+    {
+      "id": 39,
+      "image": "https://images.bewakoof.com/t640/men-s-black-logo-b-boy-printed-oversize-fit-joggers-554330-1670480234-1.jpg",
+      "title": "Men's Black Logo B-Boy Typography Oversized Joggers",
+      "discounted-Price": 855,
+      "actual-Price": "₹2449",
+      "loyalty-Price": "₹799",
+      "fit": "OVERSIZED FIT",
+      "rating": 4.5
+    },
+    {
+      "id": 40,
+      "image": "https://images.bewakoof.com/t640/jet-black-casual-jogger-pants-with-zipper-321141-1655750994-1.jpg",
+      "title": "Men's Black Zipper Casual Joggers",
+      "discounted-Price": 1247,
+      "actual-Price": "₹1299",
+      "loyalty-Price": "₹1129",
+      "fit": "",
+      "rating": 4.3
+    },
+    {
+      "id": 41,
+      "image": "https://images.bewakoof.com/t640/men-s-sky-blue-cotton-jogger-pants-330846-1664197182-1.jpg",
+      "title": "Men's Sky Blue Joggers",
+      "discounted-Price": 719,
+      "actual-Price": "₹1699",
+      "loyalty-Price": "₹659",
+      "fit": "",
+      "rating": 4.3
+    },
+    {
+      "id": 42,
+      "image": "https://images.bewakoof.com/t640/dark-grey-casual-jogger-pant-293066-1660652872-1.jpg",
+      "title": "Men's Grey Casual Joggers",
+      "discounted-Price": 749,
+      "actual-Price": "₹999",
+      "loyalty-Price": "₹689",
+      "fit": "",
+      "rating": 4.6
+    },
+    {
+      "id": 43,
+      "image": "https://images.bewakoof.com/t640/feel-good-lilac-solid-joggers-454663-1655751717-1.jpg",
+      "title": "Men's Purple Feel Good Joggers",
+      "discounted-Price": 850,
+      "actual-Price": "₹1599",
+      "loyalty-Price": "₹779",
+      "fit": "",
+      "rating": 4.3
+    },
+    {
+      "id": 44,
+      "image": "https://images.bewakoof.com/t640/navy-blue-plus-size-casual-jogger-pants-324702-1655752010-1.jpg",
+      "title": "Men's Blue Plus Size Casual Joggers",
+      "discounted-Price": 1020,
+      "actual-Price": "₹1299",
+      "loyalty-Price": "₹939",
+      "fit": "PLUS SIZE",
+      "rating": 4.4
+    },
+    {
+      "id": 45,
+      "image": "https://images.bewakoof.com/t640/men-s-purple-joggers-451591-1656156783-1.jpg",
+      "title": "Men's Purple Joggers",
+      "discounted-Price": 680,
+      "actual-Price": "₹1599",
+      "loyalty-Price": "₹629",
+      "fit": "",
+      "rating": 4.3
+    },
+    {
+      "id": 46,
+      "image": "https://images.bewakoof.com/t640/men-s-green-camouflage-printed-training-joggers-455133-1664197575-1.jpg",
+      "title": "Men's Green Camouflage Printed Training Joggers",
+      "discounted-Price": 868,
+      "actual-Price": "₹2099",
+      "loyalty-Price": "₹799",
+      "fit": "",
+      "rating": 4.1
+    },
+    {
+      "id": 47,
+      "image": "https://images.bewakoof.com/t640/moss-green-casual-jogger-pant-293068-1656193408-1.jpg",
+      "title": "Men's Charcoal Grey Casual Joggers",
+      "discounted-Price": 899,
+      "actual-Price": "₹999",
+      "loyalty-Price": "₹819",
+      "fit": "",
+      "rating": 4.4
+    }
+   ]
+}

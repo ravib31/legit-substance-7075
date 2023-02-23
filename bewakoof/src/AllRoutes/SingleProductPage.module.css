@@ -7,6 +7,12 @@
     margin-right: 15%;
     
 }
+.productPage_left{
+    border: 1px solid red;
+    width: 50%;
+    display: flex;
+    gap: 20px;
+}
 .mainImage{
      border: 1px solid red;
      width: 500px;
@@ -17,6 +23,7 @@
 .product_page_right{
     /* border: 1px solid black; */
     text-align: left;
+    width: 50%;
 }
 .companyTag{
     font-weight: bold;
@@ -161,3 +168,117 @@ hr{
 }
 
 
+
+/* ////////////////////////////////////////////////////////////////////////     */
+@media screen  and (min-width:765px) and(max-width: 1080px){
+    .product_page_container{
+       border: 4px solid black;
+        
+        
+    }
+    .productPage_left{
+        border: 1px solid red;
+        width: 50%;
+        display: flex;
+        gap: 20px;
+    }
+    .mainImage{
+         border: 1px solid red;
+         width: 500px;
+         height: 600px;
+         cursor: pointer;
+    }
+    
+    .product_page_right{
+        /* border: 1px solid black; */
+        text-align: left;
+        width: 50%;
+    }
+}
+
+/* /////////////////////////////////////////////////////////////////// */
+@media screen and (max-width: 420px) and (min-width:300px)  {
+    .product_page_container{
+       
+        display: block;
+        margin: 0px;
+        
+        
+    }
+
+    
+.productPage_left{
+    border: 1px solid black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+}
+.mainImage{
+     border: 1px solid red;
+     width: 100%;
+     height: 600px;
+     cursor: pointer;
+}
+
+.product_page_right{
+    /* border: 1px solid black; */
+    text-align: left;
+    width: 100%;
+}
+.companyTag{
+    font-weight: bold;
+   color:rgb(120, 112, 112);
+   font-size: 19px;
+   
+}
+.rating{
+    border: 1px solid grey;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    background-color:white
+}
+
+
+.priceDetails{
+    /* border: 1px solid; */
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    margin-top: 10px;
+   /* line-height: 12px; */
+}
+.priceDetails>b{
+    font-size: 22px;
+}
+.priceDetails>b+span{
+    font-size: 13px;
+    text-decoration:line-through;
+    color:rgb(120, 112, 112);
+}
+.priceDetails+p{
+  
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+.priceDetails>span:last-child{
+    color: rgb(29, 205, 29);
+}
+.allimages{
+    display: flex;
+    flex-direction: row;
+    border: 3px solid;
+    /* flex-direction: column; */
+    gap: 3px;
+}
+.allimages>img{
+    border: 1px solid;
+    width: 80px;
+    height: 117px;
+    cursor: pointer;
+    
+    
+}
+
+  }

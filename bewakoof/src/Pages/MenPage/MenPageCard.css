@@ -1,0 +1,14 @@
+.product-box{
+    width: 400px;
+    height:500px;
+    border: 2px solid teal;
+    display: flex;
+    flex-direction: column;
+}
+.product-image{
+    height: 60%;
+
+}
+.product-image img{
+     height: 100%;
+}

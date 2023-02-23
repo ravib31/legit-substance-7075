@@ -50,7 +50,8 @@ const SingleProductPage = () => {
     <>
       <div className={styles.product_page_container}>
         {/* sidebar different-diffrent images */}
-        <div className={styles.allimages}>
+       <div className={styles.productPage_left}>
+       <div className={styles.allimages}>
           {productImages.map((el, i) => {
             return (
               <img
@@ -65,6 +66,7 @@ const SingleProductPage = () => {
         <div>
           <img className={styles.mainImage} src={mainImage} alt="" />
         </div>
+       </div>
         {/* product description */}
         <div className={styles.product_page_right}>
           <h3 className={styles.companyTag}>Bewakoof@</h3>

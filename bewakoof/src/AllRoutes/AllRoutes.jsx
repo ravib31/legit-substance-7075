@@ -1,12 +1,13 @@
 import React from "react";
 import SingleProductPage from "./SingleProductPage";
+
+import {Home} from "../Pages/HomePage/Home";
 import {Routes, Route} from "react-router-dom";
-import { Home } from "../Pages/HomePage/Home";
+
 import MenPage from "../Pages/MenPage/MenPage";
 import WomenPage from "../Pages/WomenPage/WomenPage";
 import { CartPage } from "../Pages/CartPage/CartPage";
 import CheckoutPage from "../Pages/CheckoutPage/CheckoutPage";
-
  export const AllRoutes=()=>{
 
 return(
@@ -17,7 +18,7 @@ return(
         <Route path="/men" element={<MenPage />} />
         <Route path="/women" element={<WomenPage />} />
         <Route path="/cart" element={<CartPage />} />
-        {/* <Route path="/checkout" element={<CheckoutPage />} /> */}
+        <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/men/:id" element={<SingleProductPage />} />
         <Route path="*" element={<h1>Error 404 </h1>} />
     </Routes>

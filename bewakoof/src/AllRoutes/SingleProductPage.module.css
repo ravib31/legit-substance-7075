@@ -1,0 +1,19 @@
+.product_page_container{
+    display: flex;
+    gap: 30px;
+    /* justify-content: center; */
+    border: 1px solid;
+    margin-left: 15%;
+    margin-right: 20%;
+    
+}
+.product_page_container>div>img{
+     border: 1px solid red;
+     width: 500px;
+     height: 600px;
+}
+
+.product_page_right{
+    border: 1px solid black;
+    text-align: left;
+}

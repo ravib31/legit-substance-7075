@@ -1,12 +1,14 @@
 import React from "react";
 import SingleProductPage from "./SingleProductPage";
+import {Navbar} from "../Components/Navbar";
+import {Home} from "../Pages/HomePage/Home";
 
  export const AllRoutes=()=>{
 
 return(
     <>
-    <div style={{border:"1px solid black",height:"60px",backgroundColor:"white"}}>Dummy Navbar</div>
-    
+    <Navbar/>
+    <Home/>
     <SingleProductPage/>
     </>
 

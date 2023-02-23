@@ -470,5 +470,460 @@
       "fit": "",
       "rating": 4.4
     }
-   ]
+   ],
+   "women-products":
+    [
+      {
+        "id": 1,
+        "image": "https://images.bewakoof.com/t640/women-s-green-the-panda-way-graphic-printed-oversized-t-shirt-581312-1676986824-1.jpg",
+        "fit": "OVERSIZED FIT",
+        "title": "Women's Green The Panda Way Graphic Printed Oversized T-shirt",
+        "discounted-Price": 449,
+        "actual-Price": "₹1499",
+        "loyalty-Price": "₹419",
+        "rating": null,
+        "category": "T-shirt"
+      },
+      {
+        "id": 2,
+        "image": "https://images.bewakoof.com/t640/women-s-blue-stardust-soul-oversized-t-shirt-580622-1676894495-1.jpg",
+        "fit": "OVERSIZED FIT",
+        "title": "Women's Blue Stardust Soul Graphic Printed Oversized T-shirt",
+        "discounted-Price": 449,
+        "actual-Price": "₹1499",
+        "loyalty-Price": "₹419",
+        "rating": null,
+        "category": "T-shirt"
+      },
+      {
+        "id": 3,
+        "image": "https://images.bewakoof.com/t640/women-s-blue-the-panda-way-graphic-printed-boyfriend-t-shirt-581311-1676987621-1.jpg",
+        "fit": "BOYFRIEND FIT",
+        "title": "Women's Blue The Panda Way Graphic Printed Boyfriend T-shirt",
+        "discounted-Price": 399,
+        "actual-Price": "₹999",
+        "loyalty-Price": "₹369",
+        "rating": null,
+        "category": "T-shirt"
+      },
+      {
+        "id": 4,
+        "image": "https://images.bewakoof.com/t640/women-s-brown-harry-s-house-graphic-printed-oversized-t-shirt-565911-1672383768-1.jpg",
+        "fit": "OVERSIZED FIT",
+        "title": "Women's Brown Harry's House Graphic Printed Oversized T-shirt",
+        "discounted-Price": 599,
+        "actual-Price": "₹1499",
+        "loyalty-Price": "₹559",
+        "rating": 4.4,
+        "category": "T-shirt"
+      },
+      {
+        "id": 5,
+        "image": "https://images.bewakoof.com/t640/women-s-yellow-friends-doodle-graphic-printed-oversized-t-shirt-581316-1676988161-1.jpg",
+        "fit": "OVERSIZED FIT",
+        "title": "Women's Yellow Friends Doodle Graphic Printed Oversized T-shirt",
+        "discounted-Price": 449,
+        "actual-Price": "₹1499",
+        "loyalty-Price": "₹419",
+        "rating": null,
+        "category": "T-shirt"
+      },
+      {
+        "id": 6,
+        "image": "https://images.bewakoof.com/t640/women-s-brown-friends-doodle-2-0-boyfriend-t-shirt-580627-1676876342-1.jpg",
+        "fit": "BOYFRIEND FIT",
+        "title": "Women's Brown Friends Doodle Graphic Printed Boyfriend T-shirt",
+        "discounted-Price": 449,
+        "actual-Price": "₹999",
+        "loyalty-Price": "₹409",
+        "rating": null,
+        "category": "T-shirt"
+      },
+      {
+        "id": 7,
+        "image": "https://images.bewakoof.com/t640/women-s-green-friends-doodle-2-0-oversized-t-shirt-580635-1676876532-1.jpg",
+        "fit": "OVERSIZED FIT",
+        "title": "Women's Green Friends Doodle Graphic Printed Oversized T-shirt",
+        "discounted-Price": 449,
+        "actual-Price": "₹1499",
+        "loyalty-Price": "₹419",
+        "rating": null,
+        "category": "T-shirt"
+      },
+      {
+        "id": 8,
+        "image": "https://images.bewakoof.com/t640/women-s-pink-friends-doodle-graphic-printed-boyfriend-t-shirt-581315-1677065136-1.jpg",
+        "fit": "BOYFRIEND FIT",
+        "title": "Women's Pink Friends Doodle Graphic Printed Boyfriend T-shirt",
+        "discounted-Price": 399,
+        "actual-Price": "₹999",
+        "loyalty-Price": "₹369",
+        "rating": null,
+        "category": "T-shirt"
+      },
+      {
+        "id": 9,
+        "image": "https://images.bewakoof.com/t640/i-didn-t-do-it-boyfriend-t-shirt-539988-1662475090-1.jpg",
+        "fit": "BOYFRIEND FIT",
+        "title": "Women's Blue I Didn't Do It Graphic Printed Boyfriend T-shirt",
+        "discounted-Price": 399,
+        "actual-Price": "₹999",
+        "loyalty-Price": "₹369",
+        "rating": 4.4,
+        "category": "T-shirt"
+      },
+      {
+        "id": 10,
+        "image": "https://images.bewakoof.com/t640/women-bts-doodle-printed-t-shirt-566425-1676547984-1.jpg",
+        "fit": "OVERSIZED FIT",
+        "title": "Women's Black BTS Doodle Graphic Printed Oversized T-shirt",
+        "discounted-Price": 599,
+        "actual-Price": "₹1299",
+        "loyalty-Price": "₹549",
+        "rating": 4.6,
+        "category": "T-shirt"
+      },
+      {
+        "id": 11,
+        "image": "https://images.bewakoof.com/t640/women-blah-printed-t-shirt-567478-1674557213-1.jpg",
+        "fit": "OVERSIZED FIT",
+        "title": "Women's Green BLAH Printed Oversized T-shirt",
+        "discounted-Price": 799,
+        "actual-Price": "₹1399",
+        "loyalty-Price": "₹739",
+        "rating": 4.7,
+        "category": "T-shirt"
+      },
+      {
+        "id": 12,
+        "image": "https://images.bewakoof.com/t640/women-bts-my-universe-printed-t-shirt-555339-1669274079-1.jpg",
+        "fit": "PUFF PRINT",
+        "title": "Women's Pink BTS Tour Graphic Printed Oversized T-shirt",
+        "discounted-Price": 599,
+        "actual-Price": "₹1199",
+        "loyalty-Price": "₹549",
+        "rating": 4.7,
+        "category": "T-shirt"
+      },
+      {
+        "id": 13,
+        "image": "https://images.bewakoof.com/t640/women-s-black-lovely-billie-graphic-printed-oversized-t-shirt-574028-1674562934-1.jpg",
+        "fit": "BOYFRIEND FIT",
+        "title": "Women's Blue BTS My Universe Graphic Printed Boyfriend T-shirt",
+        "discounted-Price": 679,
+        "actual-Price": "₹899",
+        "loyalty-Price": "₹619",
+        "rating": 4.5,
+        "category": "T-shirt"
+      },
+      {
+        "id": 14,
+        "image": "https://images.bewakoof.com/t640/women-s-aop-short-top-507974-1670255745-1.jpg",
+        "fit": "OVERSIZED FIT",
+        "title": "Women's Black Lovely Billie Graphic Printed Oversized T-shirt",
+        "discounted-Price": 599,
+        "actual-Price": "₹1499",
+        "loyalty-Price": "₹559",
+        "rating": 4.4,
+        "category": "T-shirt"
+      },
+      {
+        "id": 15,
+        "image": "https://images.bewakoof.com/t640/all-over-printed-pyjama-436618-1670255783-1.jpg",
+        "fit": "",
+        "title": "Women's Pink All Over Printed Pyjama",
+        "discounted-Price": 741,
+        "actual-Price": "₹999",
+        "loyalty-Price": "₹679",
+        "rating": 4.6,
+        "category": "Pyjama"
+      },
+      {
+        "id": 16,
+        "image": "https://images.bewakoof.com/t640/nebula-blue-plain-pyjama-276396-1661352942-1.jpg",
+        "fit": "",
+        "title": "Nebula Blue Plain Pyjama",
+        "discounted-Price": 346,
+        "actual-Price": "₹799",
+        "loyalty-Price": "₹319",
+        "rating": 4.4,
+        "category": "Pyjama"
+      },
+      {
+        "id": 17,
+        "image": "https://images.bewakoof.com/t640/powder-pink-elasticated-solid-women-pyjama-476651-1659522777-1.jpg",
+        "fit": "",
+        "title": "Women's Powder Pink Pyjama",
+        "discounted-Price": 386,
+        "actual-Price": "₹1099",
+        "loyalty-Price": "₹359",
+        "rating": 4.3,
+        "category": "Pyjama"
+      },
+      {
+        "id": 18,
+        "image": "https://images.bewakoof.com/t640/women-s-rayon-aop-pyjamas-502088-1663664876-1.jpg",
+        "fit": "",
+        "title": "Women's White All Over Printed Pyjamas",
+        "discounted-Price": 444,
+        "actual-Price": "₹1299",
+        "loyalty-Price": "₹409",
+        "rating": null,
+        "category": "Pyjama"
+      },
+      {
+        "id": 19,
+        "image": "https://images.bewakoof.com/t640/women-s-rayon-aop-pyjamas-502083-1661347328-1.jpg",
+        "fit": "",
+        "title": "Women's Black AOP Carrot Fit Rayon Pyjamas",
+        "discounted-Price": 793,
+        "actual-Price": "₹1299",
+        "loyalty-Price": "₹729",
+        "rating": 4.4,
+        "category": "Pyjama"
+      },
+      {
+        "id": 20,
+        "image": "https://images.bewakoof.com/t640/jet-black-new-pyjama-309673-1664287012-1.jpg",
+        "fit": "",
+        "title": "Jet Black New Pyjama",
+        "discounted-Price": 498,
+        "actual-Price": "₹1599",
+        "loyalty-Price": "₹459",
+        "rating": null,
+        "category": "Pyjama"
+      },
+      {
+        "id": 21,
+        "image": "https://images.bewakoof.com/t640/women-s-rayon-aop-pyjamas-502094-1661347233-1.jpg",
+        "fit": "",
+        "title": "Women's Blue All Over Floral Printed Straight Fit Rayon Pyjamas",
+        "discounted-Price": 436,
+        "actual-Price": "₹1299",
+        "loyalty-Price": "₹409",
+        "rating": 4.6,
+        "category": "Pyjama"
+      },
+      {
+        "id": 22,
+        "image": "https://images.bewakoof.com/t640/women-s-alpha-green-pyjamas-283619-1664286891-1.jpg",
+        "fit": "",
+        "title": "Women's Alpha Green Pyjamas",
+        "discounted-Price": 502,
+        "actual-Price": "₹799",
+        "loyalty-Price": "₹459",
+        "rating": 4.4,
+        "category": "Pyjama"
+      },
+      {
+        "id": 23,
+        "image": "https://images.bewakoof.com/t640/women-s-rayon-stripe-pyjamas-502081-1660311393-1.jpg",
+        "fit": "",
+        "title": "Women's White Striped Straight Fit Rayon Pyjamas",
+        "discounted-Price": 499,
+        "actual-Price": "₹1299",
+        "loyalty-Price": "₹459",
+        "rating": 4.5,
+        "category": "Pyjama"
+      },
+      {
+        "id": 24,
+        "image": "https://images.bewakoof.com/t640/women-s-rayon-aop-pyjamas-502090-1661347424-1.jpg",
+        "fit": "",
+        "title": "Women's Blue Polka Printed Carrot Fit Rayon Pyjamas",
+        "discounted-Price": 436,
+        "actual-Price": "₹1299",
+        "loyalty-Price": "₹409",
+        "rating": 4.4,
+        "category": "Pyjama"
+      },
+      {
+        "id": 25,
+        "image": "https://images.bewakoof.com/t640/women-s-rayon-aop-pyjamas-502093-1661347137-1.jpg",
+        "fit": "",
+        "title": "Women's Blue All Over Floral Printed Straight Fit Rayon Pyjamas",
+        "discounted-Price": 449,
+        "actual-Price": "₹1299",
+        "loyalty-Price": "₹419",
+        "rating": 4.4,
+        "category": "Pyjama"
+      },
+      {
+        "id": 26,
+        "image": "https://images.bewakoof.com/t640/women-s-travel-doodle-aop-pyjama-516596-1663664924-1.jpg",
+        "fit": "",
+        "title": "Women's Blue All Over Travel Doodle Printed Pyjama",
+        "discounted-Price": 509,
+        "actual-Price": "₹1499",
+        "loyalty-Price": "₹469",
+        "rating": 4.6,
+        "category": "Pyjama"
+      },
+      {
+        "id": 27,
+        "image": "https://images.bewakoof.com/t640/women-s-all-over-printed-kurti-dress-318294-1663920986-1.jpg",
+        "fit": "",
+        "title": "Women's White All Over Printed Kurti Dress",
+        "discounted-Price": 465,
+        "actual-Price": "?1399",
+        "loyalty-Price": "?429",
+        "rating": 4.6,
+        "category": "Kurta"
+      },
+      {
+        "id": 28,
+        "image": "https://images.bewakoof.com/t640/women-s-printed-kurti-dress-403809-1656141522-1.jpg",
+        "fit": "",
+        "title": "Women's Printed Kurti Dress",
+        "discounted-Price": 411,
+        "actual-Price": "?2249",
+        "loyalty-Price": "?379",
+        "rating": 4.6,
+        "category": "Kurta"
+      },
+      {
+        "id": 29,
+        "image": "https://images.bewakoof.com/t640/womens-mid-solid-kurta-318123-1663921315-1.jpg",
+        "fit": "",
+        "title": "Women's Yellow Mid Kurta",
+        "discounted-Price": 355,
+        "actual-Price": "?1299",
+        "loyalty-Price": "?329",
+        "rating": 4.7,
+        "category": "Kurta"
+      },
+      {
+        "id": 30,
+        "image": "https://images.bewakoof.com/t640/women-s-just-shut-up-printed-black-kurta-318350-1663921336-1.jpg",
+        "fit": "",
+        "title": "Women's Black All Over Just Shut Up Printed Long Kurta",
+        "discounted-Price": 319,
+        "actual-Price": "?1399",
+        "loyalty-Price": "?299",
+        "rating": 4.4,
+        "category": "Kurta"
+      },
+      {
+        "id": 31,
+        "image": "https://images.bewakoof.com/t640/women-s-printed-long-kurta-318374-1663920912-1.jpg",
+        "fit": "",
+        "title": "Women's Beige All Over Printed Long Kurta",
+        "discounted-Price": 428,
+        "actual-Price": "?1399",
+        "loyalty-Price": "?399",
+        "rating": 4.6,
+        "category": "Kurta"
+      },
+      {
+        "id": 32,
+        "image": "https://images.bewakoof.com/t640/women-s-chill-out-printed-white-kurta-318377-1663920934-1.jpg",
+        "fit": "",
+        "title": "Women's White All Over Chill Out Printed Long Kurta",
+        "discounted-Price": 355,
+        "actual-Price": "?1399",
+        "loyalty-Price": "?329",
+        "rating": 4.3,
+        "category": "Kurta"
+      },
+      {
+        "id": 33,
+        "image": "https://images.bewakoof.com/t640/women-s-green-all-over-printed-kurta-318121-1663921357-1.jpg",
+        "fit": "",
+        "title": "Women's Green All Over Printed Kurta",
+        "discounted-Price": 420,
+        "actual-Price": "?1399",
+        "loyalty-Price": "?389",
+        "rating": 4.4,
+        "category": "Kurta"
+      },
+      {
+        "id": 34,
+        "image": "https://images.bewakoof.com/t640/women-s-sleevelesss-ethnic-kurti-403804-1663921044-1.jpg",
+        "fit": "",
+        "title": "Women's Pink Sleevelesss Ethnic Kurti",
+        "discounted-Price": 643,
+        "actual-Price": "?2399",
+        "loyalty-Price": "?599",
+        "rating": 4.6,
+        "category": "Kurta"
+      },
+      {
+        "id": 35,
+        "image": "https://images.bewakoof.com/t640/women-s-sleevelesss-ethnic-kurti-403805-1656182466-1.jpg",
+        "fit": "",
+        "title": "Women's Green Sleeveless Ethnic Kurti",
+        "discounted-Price": 573,
+        "actual-Price": "?2399",
+        "loyalty-Price": "?529",
+        "rating": 4.7,
+        "category": "Kurta"
+      },
+      {
+        "id": 36,
+        "image": "https://images.bewakoof.com/t640/women-s-printed-short-kurta-364686-1656140136-1.jpg",
+        "fit": "",
+        "title": "Women's Printed Short Kurta",
+        "discounted-Price": 420,
+        "actual-Price": "?1549",
+        "loyalty-Price": "?389",
+        "rating": 4.6,
+        "category": "Kurta"
+      },
+      {
+        "id": 37,
+        "image": "https://images.bewakoof.com/t640/women-s-printed-short-kurta-364684-1656151141-1.jpg",
+        "fit": "",
+        "title": "Women's Brown Printed Short Kurta",
+        "discounted-Price": 394,
+        "actual-Price": "?1549",
+        "loyalty-Price": "?369",
+        "rating": 4.7,
+        "category": "Kurta"
+      },
+      {
+        "id": 38,
+        "image": "https://images.bewakoof.com/t640/women-s-printed-long-kurta-318369-1663921086-1.jpg",
+        "fit": "",
+        "title": "Women's Black All Over Printed Long Kurta",
+        "discounted-Price": 465,
+        "actual-Price": "?1399",
+        "loyalty-Price": "?429",
+        "rating": 4.7,
+        "category": "Kurta"
+      },
+      {
+        "id": 39,
+        "image": "https://images.bewakoof.com/t640/women-s-solid-long-kurta-318371-1663921066-1.jpg",
+        "fit": "",
+        "title": "Women's Blue Long Kurta",
+        "discounted-Price": 420,
+        "actual-Price": "?1399",
+        "loyalty-Price": "?389",
+        "rating": 4.5,
+        "category": "Kurta"
+      },
+      {
+        "id": 40,
+        "image": "https://images.bewakoof.com/t640/women-s-solid-long-kurta-318348-1663921294-1.jpg",
+        "fit": "",
+        "title": "Women's Mustard Long Kurta",
+        "discounted-Price": 420,
+        "actual-Price": "?1399",
+        "loyalty-Price": "?389",
+        "rating": 4.6,
+        "category": "Kurta"
+      },
+      {
+        "id": 41,
+        "image": "https://images.bewakoof.com/t640/women-s-solid-long-kurta-318333-1663921204-1.jpg",
+        "fit": "",
+        "title": "Women's White Long Kurta",
+        "discounted-Price": 438,
+        "actual-Price": "?1399",
+        "loyalty-Price": "?409",
+        "rating": 4.6,
+        "category": "Kurta"
+      }
+     ]
+   
 }

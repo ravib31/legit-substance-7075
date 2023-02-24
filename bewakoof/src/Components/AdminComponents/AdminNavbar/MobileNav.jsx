@@ -56,7 +56,7 @@ const MobileNav = ({ onOpen }) => {
         justifyContent={"center"}
       >
         <Image
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlr4ZxBMXg0EyDACXUmTAkddbEqub6A0eE8Q&usqp=CAU"
+          src="https://www.linkpicture.com/q/WhatsApp-Image-2023-02-21-at-22.06.33.jpg"
           width={"100%"}
           height={"4rem"}
         />
@@ -77,7 +77,7 @@ const MobileNav = ({ onOpen }) => {
               _focus={{ boxShadow: "none" }}
             >
               <HStack>
-                <Avatar size={"sm"} src={"https://avatars.githubusercontent.com/u/107940317?v=4"} />
+                <Avatar size={"sm"} src={"https://avatars.githubusercontent.com/u/107496019?v=4"} />
                 <VStack
                   display={{ base: "none", md: "flex" }}
                   alignItems="flex-start"
@@ -87,7 +87,7 @@ const MobileNav = ({ onOpen }) => {
                   <Text fontSize="sm">
                     {/* {data.first_name || admin[0].first_name}{" "}
                     {data.last_name || admin[0].last_name} */}
-                    Anju Tewatia
+                    Ravi bhashkar
                   </Text>
                   <Text fontSize="xs" color="gray.600">
                     Admin

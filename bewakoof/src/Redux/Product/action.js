@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_MEN_PRODUCT_ERROR, GET_MEN_PRODUCT_REQUEST, GET_MEN_PRODUCT_SUCCESS } from "./actionType"
+import {  GET_MEN_PRODUCT_ERROR, GET_MEN_PRODUCT_REQUEST, GET_MEN_PRODUCT_SUCCESS } from "./actionType"
 
 export const getMenProductRequest = () => {
     return {type:GET_MEN_PRODUCT_REQUEST};
@@ -14,7 +14,7 @@ export const getMenProductError = () => {
 }
 
 
-export const getProduct = (dispatch) => {
+export const getProduct =()=> (dispatch) => {
     dispatch(getMenProductRequest());
     axios.get(`http://localhost:5000/menproduct`)
     .then((res) => {
@@ -23,5 +23,16 @@ export const getProduct = (dispatch) => {
     })
     .catch((err) => {
         dispatch(getMenProductError())
+    })
+}
+
+export const delProduct =(id)=> (dispatch) => {
+    axios.delete(`http://localhost:5000/menproduct/${id}`)
+    .then((res) => {
+        console.log(res)
+        dispatch(getProduct())
+    })
+    .catch((err) => {
+        console.log(err)
     })
 }

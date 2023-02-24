@@ -10,6 +10,9 @@ import { CartPage } from "../Pages/CartPage/CartPage";
 import CheckoutPage from "../Pages/CheckoutPage/CheckoutPage";
 import AdminDshboardPage from "../Pages/AdminPage/AdminDshboardPage";
 import Navbar from "../Components/AdminComponents/AdminNavbar/Navbar";
+import AdminShowProduct from "../Pages/AdminPage/AdminShowProduct";
+import AdminUpdate from "../Components/AdminComponents/AdminProduct/AdminUpdate";
+// import AdminLogin from "../Pages/AdminPage/AdminLogin";
  export const AllRoutes=()=>{
 
 return(
@@ -22,10 +25,22 @@ return(
         <Route path="/cart" element={<CartPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/men/:id" element={<SingleProductPage />} />
+        {/* <Route path="/admin/login" element={<AdminLogin />} /> */}
         <Route path="/admin" element={
             <>
             <Navbar/>
         <AdminDshboardPage />
+        </>
+        } />
+         <Route path="/admin/product" element={
+            <>
+            <Navbar/>
+        <AdminShowProduct />
+        </>
+        } />
+         <Route path="/admin/update/:id" element={
+            <>
+        <AdminUpdate />
         </>
         } />
         <Route path="*" element={<h1>Error 404 </h1>} />

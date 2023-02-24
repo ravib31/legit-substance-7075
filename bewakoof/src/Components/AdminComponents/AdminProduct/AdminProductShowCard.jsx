@@ -4,25 +4,15 @@ import { BsThreeDotsVertical, BsPencilFill } from "react-icons/bs";
 import { MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { delProduct } from "../../../Redux/Product/action";
 
-export const ADMIN_DELETE_PRODUCT = "admin/product/delete";
 
-const mainUrl = "https://gold-gifted-ladybug.cyclic.app";
-
-export const adminDeleteProduct = (id) => async (dispatch) => {
-  try {
-    let res = await axios.delete(`${mainUrl}/product/${id}`);
-    dispatch({ type: ADMIN_DELETE_PRODUCT, payload: res.data });
-    dispatch(adminShowProducts(page));
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-const AdminProductShowCard = ({ id, img, title, price, stocks, page }) => {
-  const { deletemsg } = useSelector((store) => store.adminShowProduct);
+const AdminProductShowCard = ({ id, img, title, price }) => {
+  // const { deletemsg } = useSelector((store) => store.adminShowProduct);
   const toast = useToast();
   const dispatch = useDispatch();
+
+  
   return (
     <Tr
       textAlign={"center"}
@@ -35,7 +25,8 @@ const AdminProductShowCard = ({ id, img, title, price, stocks, page }) => {
       </Td>
       <Td>{title}</Td>
       <Td>{price}</Td>
-      <Td>{stocks}</Td>
+      {/* <Td>{discount-price}</Td> */}
+      {/* <Td>{stocks}</Td>
       {stocks < 2 ? (
         <Td>
           <Flex alignItems={"center"} gap={"5px"}>
@@ -61,7 +52,7 @@ const AdminProductShowCard = ({ id, img, title, price, stocks, page }) => {
             </Text>
           </Flex>
         </Td>
-      )}
+      )} */}
       <Td>
         <Link to={`/admin/update/${id}`}>{<BsPencilFill />}</Link>
       </Td>
@@ -70,7 +61,7 @@ const AdminProductShowCard = ({ id, img, title, price, stocks, page }) => {
         cursor={"pointer"}
         onClick={() =>
           dispatch(
-            adminDeleteProduct(id),
+            delProduct(id),
             toast({
               title: "Product Delete Success",
               status: "success",

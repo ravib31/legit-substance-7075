@@ -1,0 +1,63 @@
+.cartpage_container{
+    display: flex;
+    border: 1px solid red;
+    width: 75%;
+    gap: 20px;
+    margin: auto;
+}
+.cartPageRightSide{
+    border: 1px solid black;
+    width: 40%;
+    text-align: left;
+    padding: 10px;
+}
+.allcartproducts{
+    width: 60%;
+    border: 1px solid black;
+
+}
+.cashbackDetails{
+    border: 1px solid gray;
+    padding: 2%;
+}
+.coupon{
+    border: 1px solid wheat;
+    padding: 1%;
+    color: green;
+}
+.allPriceDetails{
+ border: 1px solid wheat;
+ padding: 2%;
+}
+.summary{
+    border: 1px solid gray;
+    padding: 1%;
+    background-color: rgb(245, 230, 230);
+    font-size: 14px;
+    font-weight: 600;
+
+}
+.totolMrp{
+    display: flex;
+    justify-content: space-between;
+}
+.shipingCharges{
+    display: flex;
+    justify-content: space-between;}
+.bagDiscount{
+    display: flex;
+    justify-content: space-between;
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+}
+
+.img{
+    display: flex;
+    justify-content: space-around;
+}
+.img>img{
+    width: 50px;
+}
+

@@ -1,929 +1,1368 @@
 {
-   "menproduct" :[
+  "products": [
     {
       "id": 1,
-      "image": "https://images.bewakoof.com/t640/men-s-black-the-panda-way-oversize-fit-full-sleeve-t-shirt-580633-1676876417-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t1080/men-s-blue-the-panda-way-oversized-t-shirt-580637-1676876264-1.jpg",
+        "https://images.bewakoof.com/t1080/men-s-blue-the-panda-way-oversized-t-shirt-580637-1676876269-2.jpg",
+        "https://images.bewakoof.com/t1080/men-s-blue-the-panda-way-oversized-t-shirt-580637-1676876279-4.jpg",
+        "https://images.bewakoof.com/t1080/men-s-blue-the-panda-way-oversized-t-shirt-580637-1676876290-6.jpg",
+        "https://images.bewakoof.com/t1080/men-s-blue-the-panda-way-oversized-t-shirt-580637-1676876264-1.jpg"
+      ],
       "title": "Men's Black The Panda Way Graphic Printed Oversized T-shirt",
       "discountedPrice": 699,
       "actualPrice": "₹1499",
       "loyaltyPrice": "₹639",
       "fit": "OVERSIZED FIT",
-      "rating": 4.6
+      "rating": 4.6,
+      "category": "T-shirt"
     },
     {
       "id": 2,
-      "image": "https://images.bewakoof.com/t640/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971303-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971303-1.jpg",
+        "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971309-2.jpg",
+        "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971314-3.jpg",
+        "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971319-4.jpg",
+        "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971324-5.jpg"
+      ],
       "title": "Men's Purple Justice League Society Graphic Printed Oversized T-shirt",
       "discountedPrice": 499,
       "actualPrice": "₹1499",
       "loyaltyPrice": "₹459",
       "fit": "OVERSIZED FIT",
-      "rating": 4.6
+      "rating": 4.6,
+      "category": "T-shirt"
     },
     {
       "id": 3,
-      "image": "https://images.bewakoof.com/t640/men-s-maroon-chainsaw-man-graphic-printed-oversized-t-shirt-581386-1677044901-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t1080/gohan-half-sleeve-t-shirt-512884-1655993277-1.jpg",
+        "https://images.bewakoof.com/t1080/gohan-half-sleeve-t-shirt-512884-1655993282-2.jpg",
+        "https://images.bewakoof.com/t1080/gohan-half-sleeve-t-shirt-512884-1655993287-3.jpg",
+        "https://images.bewakoof.com/t1080/gohan-half-sleeve-t-shirt-512884-1655993293-4.jpg",
+        "https://images.bewakoof.com/t1080/gohan-half-sleeve-t-shirt-512884-1655993298-5.jpg"
+      ],
       "title": "Men's Maroon Chainsaw Man Graphic Printed Oversized T-shirt",
       "discountedPrice": 499,
       "actualPrice": "₹1499",
       "loyaltyPrice": "₹459",
       "fit": "OVERSIZED FIT",
-      "rating": 4.5
+      "rating": 4.5,
+      "category": "T-shirt"
     },
     {
       "id": 4,
-      "image": "https://images.bewakoof.com/t640/men-s-black-chainsaw-man-graphic-printed-oversized-t-shirt-580774-1677064596-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t1080/men-s-black-the-panda-way-oversize-fit-full-sleeve-t-shirt-580633-1676876417-1.jpg",
+        "https://images.bewakoof.com/t1080/men-s-black-the-panda-way-oversize-fit-full-sleeve-t-shirt-580633-1676876422-2.jpg",
+        "https://images.bewakoof.com/t1080/men-s-black-the-panda-way-oversize-fit-full-sleeve-t-shirt-580633-1676876427-3.jpg",
+        "https://images.bewakoof.com/t1080/men-s-black-the-panda-way-oversize-fit-full-sleeve-t-shirt-580633-1676876432-4.jpg",
+        "https://images.bewakoof.com/t1080/men-s-black-the-panda-way-oversize-fit-full-sleeve-t-shirt-580633-1676876438-5.jpg"
+      ],
       "title": "Men's Black Chainsaw Man Graphic Printed Oversized T-shirt",
       "discountedPrice": 699,
       "actualPrice": "₹1499",
       "loyaltyPrice": "₹639",
       "fit": "OVERSIZED FIT",
-      "rating": 4.3
+      "rating": 4.3,
+      "category": "T-shirt"
     },
     {
       "id": 5,
-      "image": "https://images.bewakoof.com/t640/men-s-black-chainsaw-man-graphic-printed-t-shirt-581232-1676898338-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t1080/men-s-black-fly-me-to-the-moon-graphic-printed-oversized-t-shirt-505572-1667492228-1.jpg",
+        "https://images.bewakoof.com/t1080/men-s-black-fly-me-to-the-moon-graphic-printed-oversized-t-shirt-505572-1667492233-2.jpg",
+        "https://images.bewakoof.com/t1080/men-s-black-fly-me-to-the-moon-graphic-printed-oversized-t-shirt-505572-1667492238-3.jpg",
+        "https://images.bewakoof.com/t1080/men-s-black-fly-me-to-the-moon-graphic-printed-oversized-t-shirt-505572-1667492244-4.jpg",
+        "https://images.bewakoof.com/t1080/men-s-black-fly-me-to-the-moon-graphic-printed-oversized-t-shirt-505572-1667492254-6.jpg"
+      ],
       "title": "Men's Black Chainsaw Man Graphic Printed T-shirt",
       "discountedPrice": 399,
       "actualPrice": "₹1499",
       "loyaltyPrice": "₹369",
       "fit": "DESIGN OF THE WEEK",
-      "rating": 4.3
+      "rating": 4.3,
+      "category": "T-shirt"
     },
     {
       "id": 6,
-      "image": "https://images.bewakoof.com/t640/men-s-blue-justice-league-society-sleeve-t-shirt-580630-1676869549-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t1080/men-s-black-save-our-home-t-shirt-276160-1655747776-1.jpg",
+        "https://images.bewakoof.com/t1080/men-s-black-save-our-home-t-shirt-276160-1655747782-2.jpg",
+        "https://images.bewakoof.com/t1080/men-s-black-save-our-home-t-shirt-276160-1655747787-3.jpg",
+        "https://images.bewakoof.com/t1080/men-s-black-save-our-home-t-shirt-276160-1655747792-4.jpg",
+        "https://images.bewakoof.com/t1080/men-s-black-save-our-home-t-shirt-276160-1655747798-5.jpg"
+      ],
       "title": "Men's Blue Justice League Society Graphic Printed Oversized T-shirt",
       "discountedPrice": 699,
       "actualPrice": "₹1499",
       "loyaltyPrice": "₹639",
       "fit": "OVERSIZED FIT",
-      "rating": 4.6
+      "rating": 4.6,
+      "category": "T-shirt"
     },
     {
       "id": 7,
-      "image": "https://images.bewakoof.com/t640/men-s-brown-justice-league-society-sleeve-t-shirt-580619-1676869337-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t1080/lost-mountains-half-sleeve-t-shirt-272010-1655748131-1.jpg",
+        "https://images.bewakoof.com/t1080/lost-mountains-half-sleeve-t-shirt-272010-1655748137-2.jpg",
+        "https://images.bewakoof.com/t1080/lost-mountains-half-sleeve-t-shirt-272010-1655748142-3.jpg",
+        "https://images.bewakoof.com/t1080/lost-mountains-half-sleeve-t-shirt-272010-1655748147-4.jpg",
+        "https://images.bewakoof.com/t1080/lost-mountains-half-sleeve-t-shirt-272010-1655748137-2.jpg"
+      ],
       "title": "Men's Brown Justice League Society Graphic Printed Oversized T-shirt",
       "discountedPrice": 699,
       "actualPrice": "₹1499",
       "loyaltyPrice": "₹639",
       "fit": "OVERSIZED FIT",
-      "rating": 4.4
+      "rating": 4.4,
+      "category": "T-shirt"
     },
     {
       "id": 8,
-      "image": "https://images.bewakoof.com/t640/men-s-grey-old-school-t-shirt-580993-1676885189-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t1080/men-s-blue-peace-not-war-graphic-printed-oversized-t-shirt-479634-1667556897-1.jpg",
+        "https://images.bewakoof.com/t1080/men-s-blue-peace-not-war-graphic-printed-oversized-t-shirt-479634-1667556903-2.jpg",
+        "https://images.bewakoof.com/t1080/men-s-blue-peace-not-war-graphic-printed-oversized-t-shirt-479634-1667556909-3.jpg",
+        "https://images.bewakoof.com/t1080/men-s-blue-peace-not-war-graphic-printed-oversized-t-shirt-479634-1667556914-4.jpg",
+        "https://images.bewakoof.com/t1080/men-s-blue-peace-not-war-graphic-printed-oversized-t-shirt-479634-1667556919-5.jpg"
+      ],
       "title": "Men's Grey Old School Graphic Printed T-shirt",
       "discountedPrice": 399,
       "actualPrice": "₹1499",
       "loyaltyPrice": "₹369",
       "fit": "DESIGN OF THE WEEK",
-      "rating": 4.5
+      "rating": 4.5,
+      "category": "T-shirt"
     },
     {
       "id": 9,
-      "image": "https://images.bewakoof.com/t640/men-s-blue-the-panda-way-oversized-t-shirt-580637-1676876264-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t1080/bright-white-snorkel-bluemen-aop-t-shirt-464954-1656045505-1.jpg",
+        "https://images.bewakoof.com/t1080/bright-white-snorkel-bluemen-aop-t-shirt-464954-1656045511-2.jpg",
+        "https://images.bewakoof.com/t1080/bright-white-snorkel-bluemen-aop-t-shirt-464954-1656045516-3.jpg",
+        "https://images.bewakoof.com/t1080/bright-white-snorkel-bluemen-aop-t-shirt-464954-1656045521-4.jpg",
+        "https://images.bewakoof.com/t1080/bright-white-snorkel-bluemen-aop-t-shirt-464954-1656045527-5.jpg"
+      ],
       "title": "Men's Blue The Panda Way Graphic Printed Oversized T-shirt",
       "discountedPrice": 499,
       "actualPrice": "₹1499",
       "loyaltyPrice": "₹459",
       "fit": "OVERSIZED FIT",
-      "rating": 4.4
+      "rating": 4.4,
+      "category": "T-shirt"
     },
     {
       "id": 10,
-      "image": "https://images.bewakoof.com/t640/men-s-red-old-school-graphic-printed-oversized-plus-size-t-shirt-581272-1676971229-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/white-half-sleeve-t-shirt-105-1666332512-1.jpg"
+      ],
       "title": "Men's Red Old School Graphic Printed Oversized Plus Size T-shirt",
       "discountedPrice": 599,
       "actualPrice": "₹1399",
       "loyaltyPrice": "₹549",
       "fit": "PLUS SIZE",
-      "rating": 4.5
+      "rating": 4.5,
+      "category": "T-shirt"
     },
     {
       "id": 11,
-      "image": "https://images.bewakoof.com/t640/men-s-blue-chainsaw-man-graphic-printed-oversized-plus-size-t-shirt-581271-1676971266-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/men-s-blue-chainsaw-man-graphic-printed-oversized-plus-size-t-shirt-581271-1676971266-1.jpg"
+      ],
       "title": "Men's Blue Chainsaw Man Graphic Printed Oversized Plus Size T-shirt",
       "discountedPrice": 599,
       "actualPrice": "₹1399",
       "loyaltyPrice": "₹549",
       "fit": "PLUS SIZE",
-      "rating": 4.6
+      "rating": 4.6,
+      "category": "T-shirt"
     },
     {
       "id": 12,
-      "image": "https://images.bewakoof.com/t640/men-s-blue-old-school-oversize-fit-full-sleeve-t-shirt-580991-1676885267-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/men-s-blue-old-school-oversize-fit-full-sleeve-t-shirt-580991-1676885267-1.jpg"
+      ],
       "title": "Men's Blue Old School Graphic Printed Oversized T-shirt",
       "discountedPrice": 699,
       "actualPrice": "₹1499",
       "loyaltyPrice": "₹639",
       "fit": "OVERSIZED FIT",
-      "rating": 4.7
+      "rating": 4.7,
+      "category": "T-shirt"
     },
     {
       "id": 13,
-      "image": "https://images.bewakoof.com/t640/men-s-blue-chainsaw-man-sleeve-t-shirt-580629-1676869422-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/men-s-blue-chainsaw-man-sleeve-t-shirt-580629-1676869422-1.jpg"
+      ],
       "title": "Men's Blue Chainsaw Man Graphic Printed Oversized T-shirt",
       "discountedPrice": 699,
       "actualPrice": "₹1499",
       "loyaltyPrice": "₹639",
       "fit": "OVERSIZED FIT",
-      "rating": 4.6
+      "rating": 4.6,
+      "category": "T-shirt"
     },
     {
       "id": 14,
-      "image": "https://images.bewakoof.com/t640/men-s-grey-old-school-full-sleeve-t-shirt-580631-1676869591-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/men-s-grey-old-school-full-sleeve-t-shirt-580631-1676869591-1.jpg"
+      ],
       "title": "Men's Grey Old School Graphic Printed T-shirt",
       "discountedPrice": 449,
       "actualPrice": "₹1499",
       "loyaltyPrice": "₹419",
       "fit": "DESIGN OF THE WEEK",
-      "rating": 3.8
+      "rating": 3.8,
+      "category": "T-shirt"
     },
     {
       "id": 15,
-      "image": "https://images.bewakoof.com/t640/gohan-half-sleeve-t-shirt-512884-1655993277-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/gohan-half-sleeve-t-shirt-512884-1655993277-1.jpg"
+      ],
       "title": "Men's Black Gohan Graphic Printed T-shirt",
       "discountedPrice": 449,
       "actualPrice": "₹999",
       "loyaltyPrice": "₹409",
-      "fit": "",
-      "rating": 3.9
+      "fit": "Loose Fit",
+      "rating": 3.9,
+      "category": "T-shirt"
     },
     {
       "id": 16,
-      "image": "https://images.bewakoof.com/t640/cream-men-s-half-sleeves-shirt-348535-1655834980-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/cream-men-s-half-sleeves-shirt-348535-1655834980-1.jpg"
+      ],
       "title": "Men's Cream Shirt",
       "discountedPrice": 529,
       "actualPrice": "₹1699",
       "loyaltyPrice": "₹489",
-      "fit": "",
-      "rating": 4.3
+      "fit": "Loose Fit",
+      "rating": 4.3,
+      "category": "Shirt"
     },
     {
       "id": 17,
-      "image": "https://images.bewakoof.com/t640/aop-mandarin-collar-full-sleeve-shirt-364799-1656142394-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/aop-mandarin-collar-full-sleeve-shirt-364799-1656142394-1.jpg"
+      ],
       "title": "AOP Mandarin Collar Full Sleeve Shirt",
       "discountedPrice": 389,
       "actualPrice": "₹1599",
       "loyaltyPrice": "₹359",
       "fit": "PLUS SIZE",
-      "rating": 4.5
+      "rating": 4.5,
+      "category": "Shirt"
     },
     {
       "id": 18,
-      "image": "https://images.bewakoof.com/t640/men-s-orange-tape-shirt-317831-1675057118-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/men-s-orange-tape-shirt-317831-1675057118-1.jpg"
+      ],
       "title": "Men's Orange Tape Shirt",
       "discountedPrice": 551,
       "actualPrice": "₹1499",
       "loyaltyPrice": "₹509",
-      "fit": "",
-      "rating": 4.4
+      "fit": "Loose Fit",
+      "rating": 4.4,
+      "category": "Shirt"
     },
     {
       "id": 19,
+      "type": "men",
       "image": "https://images.bewakoof.com/t640/men-s-grey-roman-printed-slim-fit-shirt-567667-1672985364-1.jpg",
       "title": "Men's Grey Roman Printed Slim Fit Shirt",
       "discountedPrice": 1099,
       "actualPrice": "₹2598",
       "loyaltyPrice": "₹1039",
       "fit": "SLIM FIT",
-      "rating": 4.6
+      "rating": 4.6,
+      "category": "Shirt"
     },
     {
       "id": 20,
-      "image": "https://images.bewakoof.com/t640/men-s-linen-color-block-half-sleeves-shirt-362763-1656176753-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/men-s-linen-color-block-half-sleeves-shirt-362763-1656176753-1.jpg"
+      ],
       "title": "Men's Blue Color Block Shirt",
       "discountedPrice": 743,
       "actualPrice": "₹1599",
       "loyaltyPrice": "₹679",
       "fit": "RELAXED FIT",
-      "rating": 4.6
+      "rating": 4.6,
+      "category": "Shirt"
     },
     {
       "id": 21,
-      "image": "https://images.bewakoof.com/t640/act-smart-men-s-black-slim-fit-shirt-580337-1676293605-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/act-smart-men-s-black-slim-fit-shirt-580337-1676293605-1.jpg"
+      ],
       "title": "Men's Black Slim Fit Shirt",
       "discountedPrice": 699,
       "actualPrice": "₹1999",
       "loyaltyPrice": "₹659",
       "fit": "SLIM FIT",
-      "rating": 4.5
+      "rating": 4.5,
+      "category": "Shirt"
     },
     {
       "id": 22,
-      "image": "https://images.bewakoof.com/t640/men-s-grey-striped-slim-fit-shirt-567468-1672748690-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/men-s-grey-striped-slim-fit-shirt-567468-1672748690-1.jpg"
+      ],
       "title": "Men's Grey Striped Slim Fit Shirt",
       "discountedPrice": 699,
       "actualPrice": "₹1999",
       "loyaltyPrice": "₹659",
       "fit": "SLIM FIT",
-      "rating": 4.3
+      "rating": 4.3,
+      "category": "Shirt"
     },
     {
       "id": 23,
-      "image": "https://images.bewakoof.com/t640/men-s-blue-checked-oversized-plus-size-shirt-577515-1675170659-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/men-s-blue-checked-oversized-plus-size-shirt-577515-1675170659-1.jpg"
+      ],
       "title": "Men's Blue Checked Plus Size Shirt",
       "discountedPrice": 1099,
       "actualPrice": "₹2199",
       "loyaltyPrice": "₹1039",
       "fit": "PLUS SIZE",
-      "rating": 4.3
+      "rating": 4.3,
+      "category": "Shirt"
     },
     {
       "id": 24,
-      "image": "https://images.bewakoof.com/t640/snitch-men-s-blue-zap-geometric-printed-slim-fit-shirt-571329-1674474397-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/snitch-men-s-blue-zap-geometric-printed-slim-fit-shirt-571329-1674474397-1.jpg"
+      ],
       "title": "Men's Blue Zap Geometric Printed Slim Fit Shirt",
       "discountedPrice": 999,
       "actualPrice": "₹1998",
       "loyaltyPrice": "₹949",
       "fit": "SLIM FIT",
-      "rating": 4.6
+      "rating": 4.6,
+      "category": "Shirt"
     },
     {
       "id": 25,
+      "type": "men",
       "image": "https://images.bewakoof.com/t640/snitch-men-s-black-sequence-tuxe-embellished-slim-fit-shirt-571317-1674473654-1.jpg",
       "title": "Men's Black Sequence Tuxedo Embellished Slim Fit Shirt",
       "discountedPrice": 1199,
       "actualPrice": "₹2998",
       "loyaltyPrice": "₹1139",
       "fit": "SLIM FIT",
-      "rating": 4.4
+      "rating": 4.4,
+      "category": "Shirt"
     },
     {
       "id": 26,
-      "image": "https://images.bewakoof.com/t640/manaca-men-s-blue-shirt-580545-1676463826-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/manaca-men-s-blue-shirt-580545-1676463826-1.jpg"
+      ],
       "title": "Men's Blue Shirt",
       "discountedPrice": 899,
       "actualPrice": "₹1899",
       "loyaltyPrice": "₹849",
       "fit": "",
-      "rating": 4.5
+      "rating": 4.5,
+      "category": "Shirt"
     },
     {
       "id": 27,
-      "image": "https://images.bewakoof.com/t640/light-grey-zipper-jogger-321136-1655751312-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/light-grey-zipper-jogger-321136-1655751312-1.jpg"
+      ],
       "title": "Men's Grey Joggers",
       "discountedPrice": 749,
       "actualPrice": "₹1299",
       "loyaltyPrice": "₹689",
       "fit": "",
-      "rating": 4.4
+      "rating": 4.4,
+      "category": "Joggers"
     },
     {
       "id": 28,
-      "image": "https://images.bewakoof.com/t640/black-solid-joggers-aw-21-364890-1656188913-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/black-solid-joggers-aw-21-364890-1656188913-1.jpg"
+      ],
       "title": "Men's Black Joggers",
       "discountedPrice": 897,
       "actualPrice": "₹1899",
       "loyaltyPrice": "₹829",
       "fit": "",
-      "rating": 4.5
+      "rating": 4.5,
+      "category": "Joggers"
     },
     {
       "id": 29,
-      "image": "https://images.bewakoof.com/t640/men-s-black-oversized-jogger-516604-1669351564-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/men-s-black-oversized-jogger-516604-1669351564-1.jpg"
+      ],
       "title": "Men's Black Oversized Jogger",
       "discountedPrice": 1341,
       "actualPrice": "₹2299",
       "loyaltyPrice": "₹1229",
       "fit": "OVERSIZED FIT",
-      "rating": 4.6
+      "rating": 4.6,
+      "category": "Joggers"
     },
     {
       "id": 30,
-      "image": "https://images.bewakoof.com/t640/jet-black-casual-jogger-pant-293063-1660652156-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/jet-black-casual-jogger-pant-293063-1660652156-1.jpg"
+      ],
       "title": "Men's Black Casual Joggers",
       "discountedPrice": 899,
       "actualPrice": "₹999",
       "loyaltyPrice": "₹819",
       "fit": "",
-      "rating": 4.7
+      "rating": 4.7,
+      "category": "Joggers"
     },
     {
       "id": 31,
-      "image": "https://images.bewakoof.com/t640/mens-solid-joggers-516482-1663668170-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/mens-solid-joggers-516482-1663668170-1.jpg"
+      ],
       "title": "Men's Purple Joggers",
       "discountedPrice": 866,
       "actualPrice": "₹2149",
       "loyaltyPrice": "₹799",
       "fit": "",
-      "rating": 4.6
+      "rating": 4.6,
+      "category": "Joggers"
     },
     {
       "id": 32,
-      "image": "https://images.bewakoof.com/t640/charcoal-grey-jogger-pants-with-zipper-321137-1656184057-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/charcoal-grey-jogger-pants-with-zipper-321137-1656184057-1.jpg"
+      ],
       "title": "Men's Charcoal Grey Joggers",
       "discountedPrice": 899,
       "actualPrice": "₹1299",
       "loyaltyPrice": "₹829",
       "fit": "",
-      "rating": 3.8
+      "rating": 3.8,
+      "category": "Joggers"
     },
     {
       "id": 33,
-      "image": "https://images.bewakoof.com/t640/men-s-blue-joggers-451622-1660651715-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/men-s-blue-joggers-451622-1660651715-1.jpg"
+      ],
       "title": "Men's Teal Blue Joggers",
       "discountedPrice": 897,
       "actualPrice": "₹1599",
       "loyaltyPrice": "₹829",
       "fit": "",
-      "rating": 3.9
+      "rating": 3.9,
+      "category": "Joggers"
     },
     {
       "id": 34,
-      "image": "https://images.bewakoof.com/t640/navy-blue-zipper-jogger-321139-1655747796-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/navy-blue-zipper-jogger-321139-1655747796-1.jpg"
+      ],
       "title": "Men's Blue Joggers",
       "discountedPrice": 899,
       "actualPrice": "₹1299",
       "loyaltyPrice": "₹829",
       "fit": "",
-      "rating": 4.3
+      "rating": 4.3,
+      "category": "Joggers"
     },
     {
       "id": 35,
-      "image": "https://images.bewakoof.com/t640/men-s-rose-pink-solid-oversized-fit-cargo-jogger-552879-1672295701-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/men-s-rose-pink-solid-oversized-fit-cargo-jogger-552879-1672295701-1.jpg"
+      ],
       "title": "Men's Pink Oversized Cargo Joggers",
       "discountedPrice": 986,
       "actualPrice": "₹2199",
       "loyaltyPrice": "₹909",
       "fit": "",
-      "rating": 4.5
+      "rating": 4.5,
+      "category": "Joggers"
     },
     {
       "id": 36,
-      "image": "https://images.bewakoof.com/t640/navy-blue-casual-jogger-pant-293071-1655748181-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/navy-blue-casual-jogger-pant-293071-1655748181-1.jpg"
+      ],
       "title": "Men's Blue Casual Joggers",
       "discountedPrice": 899,
       "actualPrice": "₹999",
       "loyaltyPrice": "₹819",
       "fit": "",
-      "rating": 4.4
+      "rating": 4.4,
+      "category": "Joggers"
     },
     {
       "id": 37,
-      "image": "https://images.bewakoof.com/t640/men-s-aop-side-panel-binding-joggger-516606-1667398428-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/men-s-aop-side-panel-binding-joggger-516606-1667398428-1.jpg"
+      ],
       "title": "Men's Black AOP Side Panel Oversized Binding Joggger",
       "discountedPrice": 863,
       "actualPrice": "₹2449",
       "loyaltyPrice": "₹799",
       "fit": "OVERSIZED FIT",
-      "rating": 4.6
+      "rating": 4.6,
+      "category": "Joggers"
     },
     {
       "id": 38,
-      "image": "https://images.bewakoof.com/t640/jet-black-plus-size-casual-jogger-pants-324701-1655751335-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/jet-black-plus-size-casual-jogger-pants-324701-1655751335-1.jpg"
+      ],
       "title": "Men's Black Plus Size Casual Joggers",
       "discountedPrice": 799,
       "actualPrice": "₹1299",
       "loyaltyPrice": "₹739",
       "fit": "PLUS SIZE",
-      "rating": 4.6
+      "rating": 4.6,
+      "category": "Joggers"
     },
     {
       "id": 39,
-      "image": "https://images.bewakoof.com/t640/men-s-black-logo-b-boy-printed-oversize-fit-joggers-554330-1670480234-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/men-s-black-logo-b-boy-printed-oversize-fit-joggers-554330-1670480234-1.jpg"
+      ],
       "title": "Men's Black Logo B-Boy Typography Oversized Joggers",
       "discountedPrice": 855,
       "actualPrice": "₹2449",
       "loyaltyPrice": "₹799",
       "fit": "OVERSIZED FIT",
-      "rating": 4.5
+      "rating": 4.5,
+      "category": "Joggers"
     },
     {
       "id": 40,
-      "image": "https://images.bewakoof.com/t640/jet-black-casual-jogger-pants-with-zipper-321141-1655750994-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/jet-black-casual-jogger-pants-with-zipper-321141-1655750994-1.jpg"
+      ],
       "title": "Men's Black Zipper Casual Joggers",
       "discountedPrice": 1247,
       "actualPrice": "₹1299",
       "loyaltyPrice": "₹1129",
-      "fit": "",
-      "rating": 4.3
+      "fit": "REGULAR FIT",
+      "rating": 4.3,
+      "category": "Joggers"
     },
     {
       "id": 41,
-      "image": "https://images.bewakoof.com/t640/men-s-sky-blue-cotton-jogger-pants-330846-1664197182-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/men-s-sky-blue-cotton-jogger-pants-330846-1664197182-1.jpg"
+      ],
       "title": "Men's Sky Blue Joggers",
       "discountedPrice": 719,
       "actualPrice": "₹1699",
       "loyaltyPrice": "₹659",
       "fit": "",
-      "rating": 4.3
+      "rating": 4.3,
+      "category": "Joggers"
     },
     {
       "id": 42,
-      "image": "https://images.bewakoof.com/t640/dark-grey-casual-jogger-pant-293066-1660652872-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/dark-grey-casual-jogger-pant-293066-1660652872-1.jpg"
+      ],
       "title": "Men's Grey Casual Joggers",
       "discountedPrice": 749,
       "actualPrice": "₹999",
       "loyaltyPrice": "₹689",
       "fit": "",
-      "rating": 4.6
+      "rating": 4.6,
+      "category": "Joggers"
     },
     {
       "id": 43,
-      "image": "https://images.bewakoof.com/t640/feel-good-lilac-solid-joggers-454663-1655751717-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/feel-good-lilac-solid-joggers-454663-1655751717-1.jpg"
+      ],
       "title": "Men's Purple Feel Good Joggers",
       "discountedPrice": 850,
       "actualPrice": "₹1599",
       "loyaltyPrice": "₹779",
       "fit": "",
-      "rating": 4.3
+      "rating": 4.3,
+      "category": "Joggers"
     },
     {
       "id": 44,
-      "image": "https://images.bewakoof.com/t640/navy-blue-plus-size-casual-jogger-pants-324702-1655752010-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/navy-blue-plus-size-casual-jogger-pants-324702-1655752010-1.jpg"
+      ],
       "title": "Men's Blue Plus Size Casual Joggers",
       "discountedPrice": 1020,
       "actualPrice": "₹1299",
       "loyaltyPrice": "₹939",
       "fit": "PLUS SIZE",
-      "rating": 4.4
+      "rating": 4.4,
+      "category": "Joggers"
     },
     {
       "id": 45,
-      "image": "https://images.bewakoof.com/t640/men-s-purple-joggers-451591-1656156783-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/men-s-purple-joggers-451591-1656156783-1.jpg"
+      ],
       "title": "Men's Purple Joggers",
       "discountedPrice": 680,
       "actualPrice": "₹1599",
       "loyaltyPrice": "₹629",
-      "fit": "",
-      "rating": 4.3
+      "fit": "LOOSE FIT",
+      "rating": 4.3,
+      "category": "Joggers"
     },
     {
       "id": 46,
-      "image": "https://images.bewakoof.com/t640/men-s-green-camouflage-printed-training-joggers-455133-1664197575-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/men-s-green-camouflage-printed-training-joggers-455133-1664197575-1.jpg"
+      ],
       "title": "Men's Green Camouflage Printed Training Joggers",
       "discountedPrice": 868,
       "actualPrice": "₹2099",
       "loyaltyPrice": "₹799",
       "fit": "",
-      "rating": 4.1
+      "rating": 4.1,
+      "category": "Joggers"
     },
     {
       "id": 47,
-      "image": "https://images.bewakoof.com/t640/moss-green-casual-jogger-pant-293068-1656193408-1.jpg",
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t640/moss-green-casual-jogger-pant-293068-1656193408-1.jpg"
+      ],
       "title": "Men's Charcoal Grey Casual Joggers",
       "discountedPrice": 899,
       "actualPrice": "₹999",
       "loyaltyPrice": "₹819",
       "fit": "",
-      "rating": 4.4
+      "rating": 4.4,
+      "category": "Joggers"
+    },
+    {
+      "id": 48,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t1080/women-s-blue-the-panda-way-graphic-printed-oversized-t-shirt-581478-1677219388-1.jpg",
+        "https://images.bewakoof.com/t1080/women-s-blue-the-panda-way-graphic-printed-oversized-t-shirt-581478-1677219394-2.jpg",
+        "https://images.bewakoof.com/t1080/women-s-blue-the-panda-way-graphic-printed-oversized-t-shirt-581478-1677219399-3.jpg",
+        "https://images.bewakoof.com/t1080/women-s-blue-the-panda-way-graphic-printed-oversized-t-shirt-581478-1677219404-4.jpg",
+        "https://images.bewakoof.com/t1080/women-s-blue-the-panda-way-graphic-printed-oversized-t-shirt-581478-1677219410-5.jpg"
+      ],
+      "fit": "OVERSIZED FIT",
+      "title": "Women's Green The Panda Way Graphic Printed Oversized T-shirt",
+      "discountedPrice": 449,
+      "actualPrice": "₹1499",
+      "loyaltyPrice": "₹419",
+      "rating": null,
+      "category": "T-shirt"
+    },
+    {
+      "id": 49,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t1080/women-s-blue-stardust-soul-graphic-printed-oversized-t-shirt-580622-1677157903-1.jpg",
+        "https://images.bewakoof.com/t1080/women-s-blue-stardust-soul-graphic-printed-oversized-t-shirt-580622-1677157908-2.jpg",
+        "https://images.bewakoof.com/t1080/women-s-blue-stardust-soul-graphic-printed-oversized-t-shirt-580622-1677222450-3.jpg",
+        "https://images.bewakoof.com/t1080/women-s-blue-stardust-soul-graphic-printed-oversized-t-shirt-580622-1677157919-4.jpg",
+        "https://images.bewakoof.com/t1080/women-s-blue-stardust-soul-graphic-printed-oversized-t-shirt-580622-1677157924-5.jpg"
+      ],
+      "fit": "OVERSIZED FIT",
+      "title": "Women's Blue Stardust Soul Graphic Printed Oversized T-shirt",
+      "discountedPrice": 449,
+      "actualPrice": "₹1499",
+      "loyaltyPrice": "₹419",
+      "rating": null,
+      "category": "T-shirt"
+    },
+    {
+      "id": 50,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t1080/women-s-green-the-panda-way-graphic-printed-oversized-t-shirt-581312-1676986824-1.jpg",
+        "https://images.bewakoof.com/t1080/women-s-green-the-panda-way-graphic-printed-oversized-t-shirt-581312-1676986829-2.jpg",
+        "https://images.bewakoof.com/t1080/women-s-green-the-panda-way-graphic-printed-oversized-t-shirt-581312-1676986834-3.jpg",
+        "https://images.bewakoof.com/t1080/women-s-green-the-panda-way-graphic-printed-oversized-t-shirt-581312-1676986840-4.jpg",
+        "https://images.bewakoof.com/t1080/women-s-green-the-panda-way-graphic-printed-oversized-t-shirt-581312-1676986845-5.jpg"
+      ],
+      "fit": "BOYFRIEND FIT",
+      "title": "Women's Blue The Panda Way Graphic Printed Boyfriend T-shirt",
+      "discountedPrice": 399,
+      "actualPrice": "₹999",
+      "loyaltyPrice": "₹369",
+      "rating": null,
+      "category": "T-shirt"
+    },
+    {
+      "id": 51,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t1080/women-s-brown-harry-s-house-graphic-printed-oversized-t-shirt-565911-1672383768-1.jpg",
+        "https://images.bewakoof.com/t1080/women-s-brown-harry-s-house-graphic-printed-oversized-t-shirt-565911-1672383774-2.jpg",
+        "https://images.bewakoof.com/t1080/women-s-brown-harry-s-house-graphic-printed-oversized-t-shirt-565911-1672383779-3.jpg",
+        "https://images.bewakoof.com/t1080/women-s-brown-harry-s-house-graphic-printed-oversized-t-shirt-565911-1672383784-4.jpg",
+        "https://images.bewakoof.com/t1080/women-s-brown-harry-s-house-graphic-printed-oversized-t-shirt-565911-1672383790-5.jpg"
+      ],
+      "fit": "OVERSIZED FIT",
+      "title": "Women's Brown Harry's House Graphic Printed Oversized T-shirt",
+      "discountedPrice": 599,
+      "actualPrice": "₹1499",
+      "loyaltyPrice": "₹559",
+      "rating": 4.4,
+      "category": "T-shirt"
+    },
+    {
+      "id": 52,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t1080/whatever-cat-boyfriend-t-shirt-388114-1655748484-1.jpg",
+        "https://images.bewakoof.com/t1080/whatever-cat-boyfriend-t-shirt-388114-1655748490-2.jpg",
+        "https://images.bewakoof.com/t1080/whatever-cat-boyfriend-t-shirt-388114-1655748495-3.jpg",
+        "https://images.bewakoof.com/t1080/whatever-cat-boyfriend-t-shirt-388114-1655748500-4.jpg",
+        "https://images.bewakoof.com/t1080/whatever-cat-boyfriend-t-shirt-388114-1655748505-5.jpg"
+      ],
+      "fit": "OVERSIZED FIT",
+      "title": "Women's Yellow Friends Doodle Graphic Printed Oversized T-shirt",
+      "discountedPrice": 449,
+      "actualPrice": "₹1499",
+      "loyaltyPrice": "₹419",
+      "rating": null,
+      "category": "T-shirt"
+    },
+    {
+      "id": 53,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t1080/cats-coffee-and-books-half-sleeve-t-shirt-384431-1655748506-1.jpg",
+        "https://images.bewakoof.com/t1080/cats-coffee-and-books-half-sleeve-t-shirt-384431-1655748511-2.jpg",
+        "https://images.bewakoof.com/t1080/cats-coffee-and-books-half-sleeve-t-shirt-384431-1655748516-3.jpg",
+        "https://images.bewakoof.com/t1080/cats-coffee-and-books-half-sleeve-t-shirt-384431-1655748522-4.jpg",
+        "https://images.bewakoof.com/t1080/cats-coffee-and-books-half-sleeve-t-shirt-384431-1655748527-5.jpg"
+      ],
+      "fit": "BOYFRIEND FIT",
+      "title": "Women's Brown Friends Doodle Graphic Printed Boyfriend T-shirt",
+      "discountedPrice": 449,
+      "actualPrice": "₹999",
+      "loyaltyPrice": "₹409",
+      "rating": null,
+      "category": "T-shirt"
+    },
+    {
+      "id": 54,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-black-lovely-billie-graphic-printed-oversized-t-shirt-574028-1674562934-1.jpg"
+      ],
+      "fit": "OVERSIZED FIT",
+      "title": "Women's Green Friends Doodle Graphic Printed Oversized T-shirt",
+      "discountedPrice": 449,
+      "actualPrice": "₹1499",
+      "loyaltyPrice": "₹419",
+      "rating": null,
+      "category": "T-shirt"
+    },
+    {
+      "id": 55,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-pink-friends-doodle-graphic-printed-boyfriend-t-shirt-581315-1677065136-1.jpg"
+      ],
+      "fit": "BOYFRIEND FIT",
+      "title": "Women's Pink Friends Doodle Graphic Printed Boyfriend T-shirt",
+      "discountedPrice": 399,
+      "actualPrice": "₹999",
+      "loyaltyPrice": "₹369",
+      "rating": null,
+      "category": "T-shirt"
+    },
+    {
+      "id": 56,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/i-didn-t-do-it-boyfriend-t-shirt-539988-1662475090-1.jpg"
+      ],
+      "fit": "BOYFRIEND FIT",
+      "title": "Women's Blue I Didn't Do It Graphic Printed Boyfriend T-shirt",
+      "discountedPrice": 399,
+      "actualPrice": "₹999",
+      "loyaltyPrice": "₹369",
+      "rating": 4.4,
+      "category": "T-shirt"
+    },
+    {
+      "id": 57,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-bts-doodle-printed-t-shirt-566425-1676547984-1.jpg"
+      ],
+      "fit": "OVERSIZED FIT",
+      "title": "Women's Black BTS Doodle Graphic Printed Oversized T-shirt",
+      "discountedPrice": 599,
+      "actualPrice": "₹1299",
+      "loyaltyPrice": "₹549",
+      "rating": 4.6,
+      "category": "T-shirt"
+    },
+    {
+      "id": 58,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-blah-printed-t-shirt-567478-1674557213-1.jpg"
+      ],
+      "fit": "OVERSIZED FIT",
+      "title": "Women's Green BLAH Printed Oversized T-shirt",
+      "discountedPrice": 799,
+      "actualPrice": "₹1399",
+      "loyaltyPrice": "₹739",
+      "rating": 4.7,
+      "category": "T-shirt"
+    },
+    {
+      "id": 59,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-bts-my-universe-printed-t-shirt-555339-1669274079-1.jpg"
+      ],
+      "fit": "PUFF PRINT",
+      "title": "Women's Pink BTS Tour Graphic Printed Oversized T-shirt",
+      "discountedPrice": 599,
+      "actualPrice": "₹1199",
+      "loyaltyPrice": "₹549",
+      "rating": 4.7,
+      "category": "T-shirt"
+    },
+    {
+      "id": 60,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-black-lovely-billie-graphic-printed-oversized-t-shirt-574028-1674562934-1.jpg"
+      ],
+      "fit": "BOYFRIEND FIT",
+      "title": "Women's Blue BTS My Universe Graphic Printed Boyfriend T-shirt",
+      "discountedPrice": 679,
+      "actualPrice": "₹899",
+      "loyaltyPrice": "₹619",
+      "rating": 4.5,
+      "category": "T-shirt"
+    },
+    {
+      "id": 61,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-aop-short-top-507974-1670255745-1.jpg"
+      ],
+      "fit": "OVERSIZED FIT",
+      "title": "Women's Black Lovely Billie Graphic Printed Oversized T-shirt",
+      "discountedPrice": 599,
+      "actualPrice": "₹1499",
+      "loyaltyPrice": "₹559",
+      "rating": 4.4,
+      "category": "T-shirt"
+    },
+    {
+      "id": 62,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/all-over-printed-pyjama-436618-1670255783-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Pink All Over Printed Pyjama",
+      "discountedPrice": 741,
+      "actualPrice": "₹999",
+      "loyaltyPrice": "₹679",
+      "rating": 4.6,
+      "category": "Pyjama"
+    },
+    {
+      "id": 63,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/nebula-blue-plain-pyjama-276396-1661352942-1.jpg"
+      ],
+      "fit": "",
+      "title": "Nebula Blue Plain Pyjama",
+      "discountedPrice": 346,
+      "actualPrice": "₹799",
+      "loyaltyPrice": "₹319",
+      "rating": 4.4,
+      "category": "Pyjama"
+    },
+    {
+      "id": 64,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/powder-pink-elasticated-solid-women-pyjama-476651-1659522777-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Powder Pink Pyjama",
+      "discountedPrice": 386,
+      "actualPrice": "₹1099",
+      "loyaltyPrice": "₹359",
+      "rating": 4.3,
+      "category": "Pyjama"
+    },
+    {
+      "id": 65,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-rayon-aop-pyjamas-502088-1663664876-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's White All Over Printed Pyjamas",
+      "discountedPrice": 444,
+      "actualPrice": "₹1299",
+      "loyaltyPrice": "₹409",
+      "rating": null,
+      "category": "Pyjama"
+    },
+    {
+      "id": 66,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-rayon-aop-pyjamas-502083-1661347328-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Black AOP Carrot Fit Rayon Pyjamas",
+      "discountedPrice": 793,
+      "actualPrice": "₹1299",
+      "loyaltyPrice": "₹729",
+      "rating": 4.4,
+      "category": "Pyjama"
+    },
+    {
+      "id": 67,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/jet-black-new-pyjama-309673-1664287012-1.jpg"
+      ],
+      "fit": "",
+      "title": "Jet Black New Pyjama",
+      "discountedPrice": 498,
+      "actualPrice": "₹1599",
+      "loyaltyPrice": "₹459",
+      "rating": null,
+      "category": "Pyjama"
+    },
+    {
+      "id": 68,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t1080/women-s-olive-solid-puffer-jackets-498997-1664195924-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Olive Relaxed Fit Puffer Jacket",
+      "discountedPrice": 1274,
+      "actualPrice": "₹3499",
+      "loyaltyPrice": "₹1179",
+      "rating": 4.6,
+      "category": "Pyjama"
+    },
+    {
+      "id": 69,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t1080/dusty-pink-plus-size-fashion-jacket-362790-1656147930-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Pink Plus Size Jacket",
+      "discountedPrice": 1049,
+      "actualPrice": "₹3399",
+      "loyaltyPrice": "₹979",
+      "rating": 4.4,
+      "category": "Jacket"
+    },
+    {
+      "id": 70,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t1080/cedar-green-varsity-bomber-jacket-295767-1656152393-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Green & White Color Block Varsity Bomber",
+      "discountedPrice": 736,
+      "actualPrice": "₹1599",
+      "loyaltyPrice": "₹679",
+      "rating": 4.6,
+      "category": "Jacket"
+    },
+    {
+      "id": 72,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t1080/women-s-lime-green-color-block-windcheater-aw-22-491996-1665468194-4.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Lime Green Color Block Windcheater Jacket",
+      "discountedPrice": 733,
+      "actualPrice": "₹2699",
+      "loyaltyPrice": "₹679",
+      "rating": 4.4,
+      "category": "jacket"
+    },
+    {
+      "id": 73,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t1080/women-s-deep-teal-solid-bomber-jacket-498991-1664287377-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Blue Bomber Jacket",
+      "discountedPrice": 1049,
+      "actualPrice": "₹3499",
+      "loyaltyPrice": "₹950",
+      "rating": 4.4,
+      "category": "Jacket"
+    },
+    {
+      "id": 74,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-travel-doodle-aop-pyjama-516596-1663664924-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Blue All Over Travel Doodle Printed Pyjama",
+      "discountedPrice": 509,
+      "actualPrice": "₹1499",
+      "loyaltyPrice": "₹469",
+      "rating": 4.6,
+      "category": "Pyjama"
+    },
+    {
+      "id": 75,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-all-over-printed-kurti-dress-318294-1663920986-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's White All Over Printed Kurti Dress",
+      "discountedPrice": 465,
+      "actualPrice": "₹1399",
+      "loyaltyPrice": "₹429",
+      "rating": 4.6,
+      "category": "Kurta"
+    },
+    {
+      "id": 76,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-printed-kurti-dress-403809-1656141522-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Printed Kurti Dress",
+      "discountedPrice": 411,
+      "actualPrice": "₹2249",
+      "loyaltyPrice": "₹379",
+      "rating": 4.6,
+      "category": "Kurta"
+    },
+    {
+      "id": 77,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/womens-mid-solid-kurta-318123-1663921315-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Yellow Mid Kurta",
+      "discountedPrice": 355,
+      "actualPrice": "₹1299",
+      "loyaltyPrice": "₹329",
+      "rating": 4.7,
+      "category": "Kurta"
+    },
+    {
+      "id": 78,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-just-shut-up-printed-black-kurta-318350-1663921336-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Black All Over Just Shut Up Printed Long Kurta",
+      "discountedPrice": 319,
+      "actualPrice": "₹1399",
+      "loyaltyPrice": "₹299",
+      "rating": 4.4,
+      "category": "Kurta"
+    },
+    {
+      "id": 79,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-printed-long-kurta-318374-1663920912-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Beige All Over Printed Long Kurta",
+      "discountedPrice": 428,
+      "actualPrice": "₹1399",
+      "loyaltyPrice": "₹399",
+      "rating": 4.6,
+      "category": "Kurta"
+    },
+    {
+      "id": 80,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-chill-out-printed-white-kurta-318377-1663920934-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's White All Over Chill Out Printed Long Kurta",
+      "discountedPrice": 355,
+      "actualPrice": "₹1399",
+      "loyaltyPrice": "₹329",
+      "rating": 4.3,
+      "category": "Kurta"
+    },
+    {
+      "id": 81,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-green-all-over-printed-kurta-318121-1663921357-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Green All Over Printed Kurta",
+      "discountedPrice": 420,
+      "actualPrice": "₹1399",
+      "loyaltyPrice": "₹389",
+      "rating": 4.4,
+      "category": "Kurta"
+    },
+    {
+      "id": 82,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-sleevelesss-ethnic-kurti-403804-1663921044-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Pink Sleevelesss Ethnic Kurti",
+      "discountedPrice": 643,
+      "actualPrice": "₹2399",
+      "loyaltyPrice": "₹599",
+      "rating": 4.6,
+      "category": "Kurta"
+    },
+    {
+      "id": 83,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-sleevelesss-ethnic-kurti-403805-1656182466-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Green Sleeveless Ethnic Kurti",
+      "discountedPrice": 573,
+      "actualPrice": "₹2399",
+      "loyaltyPrice": "₹529",
+      "rating": 4.7,
+      "category": "Kurta"
+    },
+    {
+      "id": 84,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-printed-short-kurta-364686-1656140136-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Printed Short Kurta",
+      "discountedPrice": 420,
+      "actualPrice": "₹1549",
+      "loyaltyPrice": "₹389",
+      "rating": 4.6,
+      "category": "Kurta"
+    },
+    {
+      "id": 85,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-printed-short-kurta-364684-1656151141-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Brown Printed Short Kurta",
+      "discountedPrice": 394,
+      "actualPrice": "₹1549",
+      "loyaltyPrice": "₹369",
+      "rating": 4.7,
+      "category": "Kurta"
+    },
+    {
+      "id": 86,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-printed-long-kurta-318369-1663921086-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Black All Over Printed Long Kurta",
+      "discountedPrice": 465,
+      "actualPrice": "₹1399",
+      "loyaltyPrice": "₹429",
+      "rating": 4.7,
+      "category": "Kurta"
+    },
+    {
+      "id": 87,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/women-s-solid-long-kurta-318371-1663921066-1.jpg"
+      ],
+      "fit": "",
+      "title": "Women's Blue Long Kurta",
+      "discountedPrice": 420,
+      "actualPrice": "₹1399",
+      "loyaltyPrice": "₹389",
+      "rating": 4.5,
+      "category": "Kurta"
+    },
+    {
+      "id": 88,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/freakins-women-blue-solid-skinny-fit-jeggings-451919-1655917823-1.jpg"
+      ],
+      "fit": "Skinny Fit",
+      "title": "Women Blue Solid Skinny Fit Jeggings",
+      "discountedPrice": 499,
+      "actualPrice": "1999",
+      "loyaltyPrice": "469",
+      "rating": 4.6,
+      "category": "jeggings"
+    },
+    {
+      "id": 89,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/freakins-women-blue-solid-skinny-fit-jeggings-450573-1655917488-1.jpg"
+      ],
+      "fit": "Skinny Fit",
+      "title": "Women blue solid skinny fit jeggings",
+      "discountedPrice": 599,
+      "actualPrice": 1999,
+      "loyaltyPrice": 569,
+      "rating": 4.6,
+      "category": "jeggings"
     }
-   ],
-   "women-products":
-    [
-      {
-        "id": 1,
-        "image": "https://images.bewakoof.com/t640/women-s-green-the-panda-way-graphic-printed-oversized-t-shirt-581312-1676986824-1.jpg",
-        "fit": "OVERSIZED FIT",
-        "title": "Women's Green The Panda Way Graphic Printed Oversized T-shirt",
-        "discountedPrice": 449,
-        "actualPrice": "₹1499",
-        "loyaltyPrice": "₹419",
-        "rating": null,
-        "category": "T-shirt"
-      },
-      {
+  ],
+  "cart": [
+    {
+      "id": 89,
+      "type": "women",
+      "image": [
+        "https://images.bewakoof.com/t640/freakins-women-blue-solid-skinny-fit-jeggings-450573-1655917488-1.jpg"
+      ],
+      "fit": "Skinny Fit",
+      "title": "Women blue solid skinny fit jeggings",
+      "discountedPrice": 599,
+      "actualPrice": 1999,
+      "loyaltyPrice": 569,
+      "rating": 4.6,
+      "category": "jeggings"
+    },
+    {
+      "obj": {
         "id": 2,
-        "image": "https://images.bewakoof.com/t640/women-s-blue-stardust-soul-oversized-t-shirt-580622-1676894495-1.jpg",
-        "fit": "OVERSIZED FIT",
-        "title": "Women's Blue Stardust Soul Graphic Printed Oversized T-shirt",
-        "discountedPrice": 449,
-        "actualPrice": "₹1499",
-        "loyaltyPrice": "₹419",
-        "rating": null,
-        "category": "T-shirt"
-      },
-      {
-        "id": 3,
-        "image": "https://images.bewakoof.com/t640/women-s-blue-the-panda-way-graphic-printed-boyfriend-t-shirt-581311-1676987621-1.jpg",
-        "fit": "BOYFRIEND FIT",
-        "title": "Women's Blue The Panda Way Graphic Printed Boyfriend T-shirt",
-        "discountedPrice": 399,
-        "actualPrice": "₹999",
-        "loyaltyPrice": "₹369",
-        "rating": null,
-        "category": "T-shirt"
-      },
-      {
-        "id": 4,
-        "image": "https://images.bewakoof.com/t640/women-s-brown-harry-s-house-graphic-printed-oversized-t-shirt-565911-1672383768-1.jpg",
-        "fit": "OVERSIZED FIT",
-        "title": "Women's Brown Harry's House Graphic Printed Oversized T-shirt",
-        "discountedPrice": 599,
-        "actualPrice": "₹1499",
-        "loyaltyPrice": "₹559",
-        "rating": 4.4,
-        "category": "T-shirt"
-      },
-      {
-        "id": 5,
-        "image": "https://images.bewakoof.com/t640/women-s-yellow-friends-doodle-graphic-printed-oversized-t-shirt-581316-1676988161-1.jpg",
-        "fit": "OVERSIZED FIT",
-        "title": "Women's Yellow Friends Doodle Graphic Printed Oversized T-shirt",
-        "discountedPrice": 449,
-        "actualPrice": "₹1499",
-        "loyaltyPrice": "₹419",
-        "rating": null,
-        "category": "T-shirt"
-      },
-      {
-        "id": 6,
-        "image": "https://images.bewakoof.com/t640/women-s-brown-friends-doodle-2-0-boyfriend-t-shirt-580627-1676876342-1.jpg",
-        "fit": "BOYFRIEND FIT",
-        "title": "Women's Brown Friends Doodle Graphic Printed Boyfriend T-shirt",
-        "discountedPrice": 449,
-        "actualPrice": "₹999",
-        "loyaltyPrice": "₹409",
-        "rating": null,
-        "category": "T-shirt"
-      },
-      {
-        "id": 7,
-        "image": "https://images.bewakoof.com/t640/women-s-green-friends-doodle-2-0-oversized-t-shirt-580635-1676876532-1.jpg",
-        "fit": "OVERSIZED FIT",
-        "title": "Women's Green Friends Doodle Graphic Printed Oversized T-shirt",
-        "discountedPrice": 449,
-        "actualPrice": "₹1499",
-        "loyaltyPrice": "₹419",
-        "rating": null,
-        "category": "T-shirt"
-      },
-      {
-        "id": 8,
-        "image": "https://images.bewakoof.com/t640/women-s-pink-friends-doodle-graphic-printed-boyfriend-t-shirt-581315-1677065136-1.jpg",
-        "fit": "BOYFRIEND FIT",
-        "title": "Women's Pink Friends Doodle Graphic Printed Boyfriend T-shirt",
-        "discountedPrice": 399,
-        "actualPrice": "₹999",
-        "loyaltyPrice": "₹369",
-        "rating": null,
-        "category": "T-shirt"
-      },
-      {
-        "id": 9,
-        "image": "https://images.bewakoof.com/t640/i-didn-t-do-it-boyfriend-t-shirt-539988-1662475090-1.jpg",
-        "fit": "BOYFRIEND FIT",
-        "title": "Women's Blue I Didn't Do It Graphic Printed Boyfriend T-shirt",
-        "discountedPrice": 399,
-        "actualPrice": "₹999",
-        "loyaltyPrice": "₹369",
-        "rating": 4.4,
-        "category": "T-shirt"
-      },
-      {
-        "id": 10,
-        "image": "https://images.bewakoof.com/t640/women-bts-doodle-printed-t-shirt-566425-1676547984-1.jpg",
-        "fit": "OVERSIZED FIT",
-        "title": "Women's Black BTS Doodle Graphic Printed Oversized T-shirt",
-        "discountedPrice": 599,
-        "actualPrice": "₹1299",
-        "loyaltyPrice": "₹549",
-        "rating": 4.6,
-        "category": "T-shirt"
-      },
-      {
-        "id": 11,
-        "image": "https://images.bewakoof.com/t640/women-blah-printed-t-shirt-567478-1674557213-1.jpg",
-        "fit": "OVERSIZED FIT",
-        "title": "Women's Green BLAH Printed Oversized T-shirt",
-        "discountedPrice": 799,
-        "actualPrice": "₹1399",
-        "loyaltyPrice": "₹739",
-        "rating": 4.7,
-        "category": "T-shirt"
-      },
-      {
-        "id": 12,
-        "image": "https://images.bewakoof.com/t640/women-bts-my-universe-printed-t-shirt-555339-1669274079-1.jpg",
-        "fit": "PUFF PRINT",
-        "title": "Women's Pink BTS Tour Graphic Printed Oversized T-shirt",
-        "discountedPrice": 599,
-        "actualPrice": "₹1199",
-        "loyaltyPrice": "₹549",
-        "rating": 4.7,
-        "category": "T-shirt"
-      },
-      {
-        "id": 13,
-        "image": "https://images.bewakoof.com/t640/women-s-black-lovely-billie-graphic-printed-oversized-t-shirt-574028-1674562934-1.jpg",
-        "fit": "BOYFRIEND FIT",
-        "title": "Women's Blue BTS My Universe Graphic Printed Boyfriend T-shirt",
-        "discountedPrice": 679,
-        "actualPrice": "₹899",
-        "loyaltyPrice": "₹619",
-        "rating": 4.5,
-        "category": "T-shirt"
-      },
-      {
-        "id": 14,
-        "image": "https://images.bewakoof.com/t640/women-s-aop-short-top-507974-1670255745-1.jpg",
-        "fit": "OVERSIZED FIT",
-        "title": "Women's Black Lovely Billie Graphic Printed Oversized T-shirt",
-        "discountedPrice": 599,
-        "actualPrice": "₹1499",
-        "loyaltyPrice": "₹559",
-        "rating": 4.4,
-        "category": "T-shirt"
-      },
-      {
-        "id": 15,
-        "image": "https://images.bewakoof.com/t640/all-over-printed-pyjama-436618-1670255783-1.jpg",
-        "fit": "",
-        "title": "Women's Pink All Over Printed Pyjama",
-        "discountedPrice": 741,
-        "actualPrice": "₹999",
-        "loyaltyPrice": "₹679",
-        "rating": 4.6,
-        "category": "Pyjama"
-      },
-      {
-        "id": 16,
-        "image": "https://images.bewakoof.com/t640/nebula-blue-plain-pyjama-276396-1661352942-1.jpg",
-        "fit": "",
-        "title": "Nebula Blue Plain Pyjama",
-        "discountedPrice": 346,
-        "actualPrice": "₹799",
-        "loyaltyPrice": "₹319",
-        "rating": 4.4,
-        "category": "Pyjama"
-      },
-      {
-        "id": 17,
-        "image": "https://images.bewakoof.com/t640/powder-pink-elasticated-solid-women-pyjama-476651-1659522777-1.jpg",
-        "fit": "",
-        "title": "Women's Powder Pink Pyjama",
-        "discountedPrice": 386,
-        "actualPrice": "₹1099",
-        "loyaltyPrice": "₹359",
-        "rating": 4.3,
-        "category": "Pyjama"
-      },
-      {
-        "id": 18,
-        "image": "https://images.bewakoof.com/t640/women-s-rayon-aop-pyjamas-502088-1663664876-1.jpg",
-        "fit": "",
-        "title": "Women's White All Over Printed Pyjamas",
-        "discountedPrice": 444,
-        "actualPrice": "₹1299",
-        "loyaltyPrice": "₹409",
-        "rating": null,
-        "category": "Pyjama"
-      },
-      {
-        "id": 19,
-        "image": "https://images.bewakoof.com/t640/women-s-rayon-aop-pyjamas-502083-1661347328-1.jpg",
-        "fit": "",
-        "title": "Women's Black AOP Carrot Fit Rayon Pyjamas",
-        "discountedPrice": 793,
-        "actualPrice": "₹1299",
-        "loyaltyPrice": "₹729",
-        "rating": 4.4,
-        "category": "Pyjama"
-      },
-      {
-        "id": 20,
-        "image": "https://images.bewakoof.com/t640/jet-black-new-pyjama-309673-1664287012-1.jpg",
-        "fit": "",
-        "title": "Jet Black New Pyjama",
-        "discountedPrice": 498,
-        "actualPrice": "₹1599",
-        "loyaltyPrice": "₹459",
-        "rating": null,
-        "category": "Pyjama"
-      },
-      {
-        "id": 21,
-        "image": "https://images.bewakoof.com/t640/women-s-rayon-aop-pyjamas-502094-1661347233-1.jpg",
-        "fit": "",
-        "title": "Women's Blue All Over Floral Printed Straight Fit Rayon Pyjamas",
-        "discountedPrice": 436,
-        "actualPrice": "₹1299",
-        "loyaltyPrice": "₹409",
-        "rating": 4.6,
-        "category": "Pyjama"
-      },
-      {
-        "id": 22,
-        "image": "https://images.bewakoof.com/t640/women-s-alpha-green-pyjamas-283619-1664286891-1.jpg",
-        "fit": "",
-        "title": "Women's Alpha Green Pyjamas",
-        "discountedPrice": 502,
-        "actualPrice": "₹799",
-        "loyaltyPrice": "₹459",
-        "rating": 4.4,
-        "category": "Pyjama"
-      },
-      {
-        "id": 23,
-        "image": "https://images.bewakoof.com/t640/women-s-rayon-stripe-pyjamas-502081-1660311393-1.jpg",
-        "fit": "",
-        "title": "Women's White Striped Straight Fit Rayon Pyjamas",
+        "type": "men",
+        "image": [
+          "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971303-1.jpg",
+          "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971309-2.jpg",
+          "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971314-3.jpg",
+          "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971319-4.jpg",
+          "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971324-5.jpg"
+        ],
+        "title": "Men's Purple Justice League Society Graphic Printed Oversized T-shirt",
         "discountedPrice": 499,
-        "actualPrice": "₹1299",
-        "loyaltyPrice": "₹459",
-        "rating": 4.5,
-        "category": "Pyjama"
-      },
-      {
-        "id": 24,
-        "image": "https://images.bewakoof.com/t640/women-s-rayon-aop-pyjamas-502090-1661347424-1.jpg",
-        "fit": "",
-        "title": "Women's Blue Polka Printed Carrot Fit Rayon Pyjamas",
-        "discountedPrice": 436,
-        "actualPrice": "₹1299",
-        "loyaltyPrice": "₹409",
-        "rating": 4.4,
-        "category": "Pyjama"
-      },
-      {
-        "id": 25,
-        "image": "https://images.bewakoof.com/t640/women-s-rayon-aop-pyjamas-502093-1661347137-1.jpg",
-        "fit": "",
-        "title": "Women's Blue All Over Floral Printed Straight Fit Rayon Pyjamas",
-        "discountedPrice": 449,
-        "actualPrice": "₹1299",
-        "loyaltyPrice": "₹419",
-        "rating": 4.4,
-        "category": "Pyjama"
-      },
-      {
-        "id": 26,
-        "image": "https://images.bewakoof.com/t640/women-s-travel-doodle-aop-pyjama-516596-1663664924-1.jpg",
-        "fit": "",
-        "title": "Women's Blue All Over Travel Doodle Printed Pyjama",
-        "discountedPrice": 509,
         "actualPrice": "₹1499",
-        "loyaltyPrice": "₹469",
+        "loyaltyPrice": "₹459",
+        "fit": "OVERSIZED FIT",
         "rating": 4.6,
-        "category": "Pyjama"
+        "category": "T-shirt"
       },
-      {
-        "id": 27,
-        "image": "https://images.bewakoof.com/t640/women-s-all-over-printed-kurti-dress-318294-1663920986-1.jpg",
-        "fit": "",
-        "title": "Women's White All Over Printed Kurti Dress",
-        "discountedPrice": 465,
-        "actualPrice": "?1399",
-        "loyaltyPrice": "?429",
+      "id": 90
+    },
+    {
+      "obj": {
+        "id": 2,
+        "type": "men",
+        "image": [
+          "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971303-1.jpg",
+          "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971309-2.jpg",
+          "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971314-3.jpg",
+          "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971319-4.jpg",
+          "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971324-5.jpg"
+        ],
+        "title": "Men's Purple Justice League Society Graphic Printed Oversized T-shirt",
+        "discountedPrice": 499,
+        "actualPrice": "₹1499",
+        "loyaltyPrice": "₹459",
+        "fit": "OVERSIZED FIT",
         "rating": 4.6,
-        "category": "Kurta"
+        "category": "T-shirt"
       },
-      {
-        "id": 28,
-        "image": "https://images.bewakoof.com/t640/women-s-printed-kurti-dress-403809-1656141522-1.jpg",
-        "fit": "",
-        "title": "Women's Printed Kurti Dress",
-        "discountedPrice": 411,
-        "actualPrice": "?2249",
-        "loyaltyPrice": "?379",
-        "rating": 4.6,
-        "category": "Kurta"
-      },
-      {
-        "id": 29,
-        "image": "https://images.bewakoof.com/t640/womens-mid-solid-kurta-318123-1663921315-1.jpg",
-        "fit": "",
-        "title": "Women's Yellow Mid Kurta",
-        "discountedPrice": 355,
-        "actualPrice": "?1299",
-        "loyaltyPrice": "?329",
-        "rating": 4.7,
-        "category": "Kurta"
-      },
-      {
-        "id": 30,
-        "image": "https://images.bewakoof.com/t640/women-s-just-shut-up-printed-black-kurta-318350-1663921336-1.jpg",
-        "fit": "",
-        "title": "Women's Black All Over Just Shut Up Printed Long Kurta",
-        "discountedPrice": 319,
-        "actualPrice": "?1399",
-        "loyaltyPrice": "?299",
-        "rating": 4.4,
-        "category": "Kurta"
-      },
-      {
-        "id": 31,
-        "image": "https://images.bewakoof.com/t640/women-s-printed-long-kurta-318374-1663920912-1.jpg",
-        "fit": "",
-        "title": "Women's Beige All Over Printed Long Kurta",
-        "discountedPrice": 428,
-        "actualPrice": "?1399",
-        "loyaltyPrice": "?399",
-        "rating": 4.6,
-        "category": "Kurta"
-      },
-      {
-        "id": 32,
-        "image": "https://images.bewakoof.com/t640/women-s-chill-out-printed-white-kurta-318377-1663920934-1.jpg",
-        "fit": "",
-        "title": "Women's White All Over Chill Out Printed Long Kurta",
-        "discountedPrice": 355,
-        "actualPrice": "?1399",
-        "loyaltyPrice": "?329",
-        "rating": 4.3,
-        "category": "Kurta"
-      },
-      {
-        "id": 33,
-        "image": "https://images.bewakoof.com/t640/women-s-green-all-over-printed-kurta-318121-1663921357-1.jpg",
-        "fit": "",
-        "title": "Women's Green All Over Printed Kurta",
-        "discountedPrice": 420,
-        "actualPrice": "?1399",
-        "loyaltyPrice": "?389",
-        "rating": 4.4,
-        "category": "Kurta"
-      },
-      {
-        "id": 34,
-        "image": "https://images.bewakoof.com/t640/women-s-sleevelesss-ethnic-kurti-403804-1663921044-1.jpg",
-        "fit": "",
-        "title": "Women's Pink Sleevelesss Ethnic Kurti",
-        "discountedPrice": 643,
-        "actualPrice": "?2399",
-        "loyaltyPrice": "?599",
-        "rating": 4.6,
-        "category": "Kurta"
-      },
-      {
-        "id": 35,
-        "image": "https://images.bewakoof.com/t640/women-s-sleevelesss-ethnic-kurti-403805-1656182466-1.jpg",
-        "fit": "",
-        "title": "Women's Green Sleeveless Ethnic Kurti",
-        "discountedPrice": 573,
-        "actualPrice": "?2399",
-        "loyaltyPrice": "?529",
-        "rating": 4.7,
-        "category": "Kurta"
-      },
-      {
-        "id": 36,
-        "image": "https://images.bewakoof.com/t640/women-s-printed-short-kurta-364686-1656140136-1.jpg",
-        "fit": "",
-        "title": "Women's Printed Short Kurta",
-        "discountedPrice": 420,
-        "actualPrice": "?1549",
-        "loyaltyPrice": "?389",
-        "rating": 4.6,
-        "category": "Kurta"
-      },
-      {
-        "id": 37,
-        "image": "https://images.bewakoof.com/t640/women-s-printed-short-kurta-364684-1656151141-1.jpg",
-        "fit": "",
-        "title": "Women's Brown Printed Short Kurta",
-        "discountedPrice": 394,
-        "actualPrice": "?1549",
-        "loyaltyPrice": "?369",
-        "rating": 4.7,
-        "category": "Kurta"
-      },
-      {
-        "id": 38,
-        "image": "https://images.bewakoof.com/t640/women-s-printed-long-kurta-318369-1663921086-1.jpg",
-        "fit": "",
-        "title": "Women's Black All Over Printed Long Kurta",
-        "discountedPrice": 465,
-        "actualPrice": "?1399",
-        "loyaltyPrice": "?429",
-        "rating": 4.7,
-        "category": "Kurta"
-      },
-      {
-        "id": 39,
-        "image": "https://images.bewakoof.com/t640/women-s-solid-long-kurta-318371-1663921066-1.jpg",
-        "fit": "",
-        "title": "Women's Blue Long Kurta",
-        "discountedPrice": 420,
-        "actualPrice": "?1399",
-        "loyaltyPrice": "?389",
-        "rating": 4.5,
-        "category": "Kurta"
-      },
-      {
-        "id": 40,
-        "image": "https://images.bewakoof.com/t640/women-s-solid-long-kurta-318348-1663921294-1.jpg",
-        "fit": "",
-        "title": "Women's Mustard Long Kurta",
-        "discountedPrice": 420,
-        "actualPrice": "?1399",
-        "loyaltyPrice": "?389",
-        "rating": 4.6,
-        "category": "Kurta"
-      },
-      {
-        "id": 41,
-        "image": "https://images.bewakoof.com/t640/women-s-solid-long-kurta-318333-1663921204-1.jpg",
-        "fit": "",
-        "title": "Women's White Long Kurta",
-        "discountedPrice": 438,
-        "actualPrice": "?1399",
-        "loyaltyPrice": "?409",
-        "rating": 4.6,
-        "category": "Kurta"
-      }
-     ]
-   
+      "id": 91
+    },
+    {
+      "id": 2,
+      "type": "men",
+      "image": [
+        "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971303-1.jpg",
+        "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971309-2.jpg",
+        "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971314-3.jpg",
+        "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971319-4.jpg",
+        "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971324-5.jpg"
+      ],
+      "title": "Men's Purple Justice League Society Graphic Printed Oversized T-shirt",
+      "discountedPrice": 499,
+      "actualPrice": "₹1499",
+      "loyaltyPrice": "₹459",
+      "fit": "OVERSIZED FIT",
+      "rating": 4.6,
+      "category": "T-shirt"
+    }
+  ]
 }

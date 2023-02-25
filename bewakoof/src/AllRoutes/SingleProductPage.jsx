@@ -1,23 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./SingleProductPage.module.css";
 import { AiFillStar } from "react-icons/ai";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { CiHeart } from "react-icons/ci";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Button } from "@chakra-ui/button";
 
 import Size from "../Components/Pages/SingleProductPage/Size";
 import Description from "../Components/Pages/SingleProductPage/Description";
 import { Input } from "@chakra-ui/input";
+import { useDispatch } from "react-redux";
+import { getSingleProduct, postCartProduct } from "../Redux/Cart/action";
 const SingleProductPage = () => {
-  const [productImages, setPorductImages] = useState([
-    "https://images.bewakoof.com/t1080/men-s-black-solid-oversize-jogger-with-zipper-561660-1676899163-1.jpg",
-    "https://images.bewakoof.com/t1080/men-s-black-solid-oversize-jogger-with-zipper-561660-1676899168-2.jpg",
-    "https://images.bewakoof.com/t1080/men-s-black-solid-oversize-jogger-with-zipper-561660-1676899183-5.jpg",
+  const [productImages, setPorductImages] = useState([]);
 
-    "https://images.bewakoof.com/t1080/men-s-black-solid-oversize-jogger-with-zipper-561660-1676899178-4.jpg",
-    "https://images.bewakoof.com/t1080/men-s-black-solid-oversize-jogger-with-zipper-561660-1676899183-5.jpg",
-  ]);
+  const [mainImage, setMainImage] = useState();
+  const [actualPrice,setActualPrice]=useState()
+  const [title,setTitle]=useState()
+  const [rating,setRating]=useState()
+  const [fit,setFit]=useState()
+  const [discountPrice,seDiscountPrice]=useState();
+  const [chestsize, setchestSize] = useState();
+  const [fronlength, setFronLength] = useState();
+  const [sleevelength, setSleevelength] = useState();
+  const [sizeClick, setClickSize] = useState(false);
 
   const [allsizes, setAllsizes] = useState([
     { size: "S", chest: "43.0", frontLength: "27.25", SleevLength: "24.0" },
@@ -28,13 +34,26 @@ const SingleProductPage = () => {
     { size: "3XL", chest: "53.0", frontLength: "31.0", SleevLength: "25.20" },
   ]);
 
-  const intialState = productImages[0];
+  const dispatch=useDispatch()
 
-  const [mainImage, setMainImage] = useState(intialState);
-  const [chestsize, setchestSize] = useState();
-  const [fronlength, setFronLength] = useState();
-  const [sleevelength, setSleevelength] = useState();
-  const [sizeClick, setClickSize] = useState(false);
+  const params=useParams();
+  const {id}=params;
+  //console.log(id);
+
+  useEffect(()=>{
+    dispatch(getSingleProduct(id)).then((res)=>{
+      //console.log(res.data);
+      setPorductImages(res.data.image)
+      setMainImage(res.data.image[0])
+      setTitle(res.data.title)
+      setFit(res.data.fit)
+      setRating(res.data.rating)
+       setActualPrice(res.data.actualPrice)
+       seDiscountPrice(res.data.discountedPrice)
+    })
+  },[])
+
+
 
   const handleClick = (el, i) => {
     setMainImage(el);
@@ -45,6 +64,17 @@ const SingleProductPage = () => {
     setSleevelength(el.SleevLength);
     setClickSize(true);
   };
+  
+
+  const handleAddToCart=()=>{
+    dispatch(getSingleProduct(id)).then((res)=>{
+      console.log(res.data);
+      dispatch(postCartProduct(res.data))
+    })
+    
+  }
+
+
 
   return (
     <>
@@ -71,22 +101,22 @@ const SingleProductPage = () => {
         <div className={styles.product_page_right}>
           <h3 className={styles.companyTag}>Bewakoof@</h3>
           <p className={styles.title}>
-            Men's Blue The Panda Way Graphic Printed Oversized T-shirt
+           {title}
           </p>
           <p className={styles.rating}>
-            4.5{" "}
+            {rating}{" "}
             <span>
               <AiFillStar color="yellow" />
             </span>
           </p>
           <div className={styles.priceDetails}>
-            <b> ₹400</b>
-            <span> ₹999</span>
+            <b> {actualPrice}</b>
+            <span> ₹{discountPrice}</span>
             <span>55% OFF</span>
           </div>
           <p>inclusive of all taxes</p>
           <div className={styles.overSize}>
-            <p>OVERSIZED FIT</p>
+            <p>{fit}</p>
             <p>DESIGN OF THE WEEK</p>
           </div>
           <hr />
@@ -124,7 +154,7 @@ const SingleProductPage = () => {
             )}
           </div>
           <div className={styles.button}>
-            <Button>
+            <Button onClick={handleAddToCart}>
               <span style={{ marginRight: "10px" }}>
                 <HiOutlineShoppingBag size={"20px"} />
               </span>

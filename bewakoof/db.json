@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "menproduct":[
+=======
   "menproduct": [
+>>>>>>> main
     {
       "id": 1,
       "image": "https://images.bewakoof.com/t640/men-s-black-the-panda-way-oversize-fit-full-sleeve-t-shirt-580633-1676876417-1.jpg",
@@ -470,7 +474,11 @@
       "fit": "",
       "rating": 4.4
     }
+<<<<<<< HEAD
+   ],
+=======
   ],
+>>>>>>> main
   "women-products": [
     {
       "id": 1,
@@ -923,6 +931,8 @@
       "rating": 4.6,
       "category": "Kurta"
     }
+<<<<<<< HEAD
+=======
   ],
   "cart": [
     {
@@ -949,5 +959,6 @@
       "Quantity": 1,
       "id": 2
     }
+>>>>>>> main
   ]
 }

@@ -14,6 +14,7 @@ export const getMenProductError = () => {
 }
 
 
+
 export const getProduct =(param) => (dispatch) => {
     dispatch(getMenProductRequest());
     axios.get(`https://wicked-tick-overshirt.cyclic.app/products?type=men`, param)
@@ -26,6 +27,16 @@ export const getProduct =(param) => (dispatch) => {
     })
 }
 
+export const delProduct =(id)=> (dispatch) => {
+    axios.delete(`http://localhost:5000/menproduct/${id}`)
+    .then((res) => {
+        console.log(res)
+        dispatch(getProduct())
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+}
 
 
                  // WOMEN PRODUCT

@@ -9,6 +9,9 @@ import { Button } from "@chakra-ui/button";
 import Size from "../Components/Pages/SingleProductPage/Size";
 import Description from "../Components/Pages/SingleProductPage/Description";
 import { Input } from "@chakra-ui/input";
+import { useSelector,useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import { getSingleProduct, postCartProduct } from "../Redux/Cart/action";
 const SingleProductPage = () => {
   const [productImages, setPorductImages] = useState([
     "https://images.bewakoof.com/t1080/men-s-black-solid-oversize-jogger-with-zipper-561660-1676899163-1.jpg",
@@ -28,6 +31,17 @@ const SingleProductPage = () => {
     { size: "3XL", chest: "53.0", frontLength: "31.0", SleevLength: "25.20" },
   ]);
 
+  const {id}=useParams();
+  const dispatch=useDispatch();
+ 
+ const handleAddToBag=()=>{
+  dispatch(getSingleProduct(id)).then((res)=>{
+    console.log(res.data);
+      dispatch(postCartProduct(res.data))
+  })
+ }
+
+  
   const intialState = productImages[0];
 
   const [mainImage, setMainImage] = useState(intialState);
@@ -124,7 +138,7 @@ const SingleProductPage = () => {
             )}
           </div>
           <div className={styles.button}>
-            <Button>
+            <Button onClick={handleAddToBag}>
               <span style={{ marginRight: "10px" }}>
                 <HiOutlineShoppingBag size={"20px"} />
               </span>

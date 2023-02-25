@@ -1,9 +1,8 @@
 import React from "react";
 import SingleProductPage from "./SingleProductPage";
-
-// import {Home} from "../Pages/HomePage/Home";
+import {Navbar} from "../Components/Navbar";
+import {Home} from "../Pages/HomePage/Home";
 import {Routes, Route} from "react-router-dom";
-
 import MenPage from "../Pages/MenPage/MenPage";
 import WomenPage from "../Pages/WomenPage/WomenPage";
 import  CartPage  from "../Pages/CartPage/CartPage";
@@ -16,7 +15,7 @@ return(
     <>
     {/* <div style={{border:"1px solid black",height:"60px",backgroundColor:"white"}}>Dummy Navbar</div> */}
     <Routes>
-        <Route path="/" element={<>Home</>} />
+        <Route path="/" element={<Home/>} />
         <Route path="/men" element={<MenPage />} />
         <Route path="/women" element={<WomenPage />} />
         <Route path="/cart" element={<CartPage />} />

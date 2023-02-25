@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.product-div{
+    width:80%;
+    height: auto;
+    display:flex;
+    
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 30px;
+    border: 2px solid black;
+
+}
+.product-list{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.sidebar{
+    width: 18%;
+}

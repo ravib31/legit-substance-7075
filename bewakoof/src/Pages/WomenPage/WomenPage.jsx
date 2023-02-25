@@ -31,17 +31,23 @@ let obj = {
 
 
   return (
-    <div className='product-div'>
-      <div className='sidebar' >
+    <div className='women-section'>
+    <div className='women-Clothing'>
+      <h1>WoMen Clothing</h1>
+    </div>
+    <div>
+    <div className='women product-div'>
+      <div className='women sidebar' >
    <WomenSidebar />
       </div>
-      <div className='product-list'>
+      <div className='women product-list'>
 
     {womenproduct.length > 0 && womenproduct.map((el) => {
       return <WomenPageCard key={el.id} womenproduct={el} />
     })}
     </div>
-
+    </div>
+    </div>
     </div>
   )
 }

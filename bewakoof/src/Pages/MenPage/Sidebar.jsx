@@ -60,7 +60,10 @@ const Sidebar = () => {
 
   return (
     <Box>
-     <Text textAlign="left">Filter</Text>
+     <Text textAlign="left" marginBottom="10px" marginLeft="20px"
+      fontFamily="montserrat-semibold, sans-serif"
+      color="rgb(183, 178, 178)" letterSpacing="1px"  fontWeight={500}
+     >Filter</Text>
       <Accordion allowToggle>
         <AccordionItem>
           <h2>

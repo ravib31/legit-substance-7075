@@ -5,7 +5,7 @@ import {Home} from "../Pages/HomePage/Home";
 import {Routes, Route} from "react-router-dom";
 import MenPage from "../Pages/MenPage/MenPage";
 import WomenPage from "../Pages/WomenPage/WomenPage";
-import { CartPage } from "../Pages/CartPage/CartPage";
+import  CartPage  from "../Pages/CartPage/CartPage";
 import CheckoutPage from "../Pages/CheckoutPage/CheckoutPage";
 import AdminDshboardPage from "../Pages/AdminPage/AdminDshboardPage";
 import Navbar from "../Components/AdminComponents/AdminNavbar/Navbar";

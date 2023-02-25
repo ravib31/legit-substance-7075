@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Link} from "react-router-dom";
+import { BsBag , BsHeart} from 'react-icons/bs';
 import './Navbar.css';
 
-
 export const Navbar = () => {
-  return (
+   return (
    <>
      <div id="nav1" >
         <Link to='/' id="toplink" >Offer</Link>
@@ -15,7 +15,7 @@ export const Navbar = () => {
 
     <div id="cont">
       <div >
-        <Link to="/HomePage">
+        <Link to="/">
           <img id="logo"
             src="https://images.bewakoof.com/web/ic-desktop-pride-bwkf-logo.svg"
             alt="Company_Logo"
@@ -42,33 +42,33 @@ export const Navbar = () => {
         <div>
           <Link to="/login" id="ca">Login</Link>
         </div>
-        <div>
-          <Link to="/wishlist">
-            <i class="fa fa-heart-o" aria-hidden="true" id="icon"></i>
-          </Link>
+        <div id="icon">
+        <Link to="/wishlist">
+         <BsHeart/>
+        </Link>
         </div>
-         <div id="cart-icon">
-          <Link to="/">
-            <i class="fa fa-shopping-bag" aria-hidden="true" id="icon"></i> 
+        <div id="cart-icon">
+          <Link to="/cart">
+          <BsBag/> 
           </Link>
         </div>
       </div>
+   </div>
+   <hr/>
+       <div id="mainProducts">
+        <div id="category1">
+          <Link to="/" id="ca1">MEN</Link>
+        </div>
+        <div id="category1">
+          <Link to="/" id="ca1">WOMEN</Link>
+        </div>
+        <div id="category1">
+          <Link to="/" id="ca1">ACCESSORIES</Link>
+        </div>
+    </div>
+   
       
-    </div>
     
-    <div id="mainProducts">
-        <div id="category1">
-          <Link to="/" id="ca1">Men</Link>
-        </div>
-        <div id="category1">
-          <Link to="/" id="ca1">Women</Link>
-        </div>
-        <div id="category1">
-          <Link to="/" id="ca1">Accessories</Link>
-        </div>
-    </div>
     </>
   )
 }
-
-// https://images.bewakoof.com/web/ic-desktop-pride-bwkf-logo.svg

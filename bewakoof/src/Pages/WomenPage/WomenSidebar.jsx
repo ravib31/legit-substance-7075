@@ -5,11 +5,10 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-  Box,
-  Text,
+  Box
 } from "@chakra-ui/react";
 import { useSearchParams } from "react-router-dom";
-const Sidebar = () => {
+const WomenSidebar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialState = searchParams.getAll("category");
   const initialOrder = searchParams.get("order");
@@ -60,10 +59,6 @@ const Sidebar = () => {
 
   return (
     <Box>
-     <Text textAlign="left" marginBottom="10px" marginLeft="20px"
-      fontFamily="montserrat-semibold, sans-serif"
-      color="rgb(183, 178, 178)" letterSpacing="1px"  fontWeight={500}
-     >Filter</Text>
       <Accordion allowToggle>
         <AccordionItem>
           <h2>
@@ -92,31 +87,31 @@ const Sidebar = () => {
             <Box display="flex" gap="5px">
               <input
                 type="checkbox"
-                value="Shirt"
+                value="jeggings"
                 onChange={handleChange}
-                checked={category.includes("Shirt")}
+                checked={category.includes("jeggings")}
               />
-              <label>Shirt</label>
+              <label>Jeggings</label>
               <br />
             </Box>
             <Box display="flex" gap="5px">
               <input
                 type="checkbox"
-                value="Joggers"
+                value="Pyjama"
                 onChange={handleChange}
-                checked={category.includes("Joggers")}
+                checked={category.includes("Pyjama")}
               />
-              <label>Joggers</label>
+              <label>Pyjama</label>
               <br />
             </Box>
             <Box display="flex" gap="5px">
               <input
                 type="checkbox"
-                value="Hoodies"
+                value="Kurta"
                 onChange={handleChange}
-                checked={category.includes("Hoodies")}
+                checked={category.includes("Kurta")}
               />
-              <label>Hoodies</label>
+              <label>Kurta</label>
               <br />
             </Box>
             <Box display="flex" gap="5px">
@@ -237,4 +232,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default WomenSidebar;

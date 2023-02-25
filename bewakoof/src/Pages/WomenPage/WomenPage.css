@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.women-product-div{
+    width:1145px;
+    height: auto;
+    display:flex;  
+    justify-content: space-between;
+    margin: auto;
+   position: relative;
+}
+.women-Clothing{
+    width: 80%;
+    margin: auto;
+    margin-left: 20px; 
+    text-align: left;
+
+}
+.women-product-list{
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+     
+   
+}
+.women-sidebar{
+    width: 23%;
+}
+@media (max-width: 940px){
+    .women-product-div{
+        width: 95%;
+        margin: auto;
+    }
+    .women-sidebar{
+       display: none;
+    }
+    .women-product-list{
+        width: 100%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}

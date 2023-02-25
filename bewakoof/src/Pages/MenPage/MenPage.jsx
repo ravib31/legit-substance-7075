@@ -29,6 +29,11 @@ let obj = {
   },[location.search]);
 
   return (
+    <div className='mne-section'>
+      <div className='men-Clothing'>
+        <h1>Men Clothing</h1>
+      </div>
+      <div>
     <div className='product-div'>
       <div className='sidebar' >
    <Sidebar />
@@ -39,7 +44,8 @@ let obj = {
       return <MenPageCard key={el.id} menproduct={el} />
     })}
     </div>
-
+    </div>
+    </div>
     </div>
   )
 }

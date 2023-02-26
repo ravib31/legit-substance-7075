@@ -15,53 +15,50 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-const mainUrl = "https://gold-gifted-ladybug.cyclic.app";
-
-export const adminUpdateData = (id, data) => async (dispatch) => {
+const getSingleProduct=async(id)=>{
   try {
-    let res = await axios.patch(
-      `${mainUrl}/product/${id}`,
-      data
-    );
-    dispatch({ type: ADMIN_UPDATE_PRODUCT, payload: res.data });
+    let res=await axios.get(`https://wicked-tick-overshirt.cyclic.app/products/${id}`);
+    console.log(res)
+    return res.data
   } catch (error) {
-    console.log(error);
+    
   }
-};
+}
 
 const AdminUpdate = () => {
-  const { updatemsg } = useSelector((store) => store.adminShowProduct);
+  const {id}=useParams();
   const toast = useToast();
-  const dispatch = useDispatch();
-  const { id } = useParams();
-  const [product, setProduct] = useState({});
-  const getdata = async (id) => {
-    try {
-      const res = await axios(
-        `https://gold-gifted-ladybug.cyclic.app/product/${id}`
-      );
-      console.log(res)
-      setProduct(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  useEffect(() => {
-    getdata(id);
-  }, [id]);
+  const [product, setProduct] = useState({
+    "id": 77,
+    "type": "women",
+    "image": [
+      "https://images.bewakoof.com/t640/womens-mid-solid-kurta-318123-1663921315-1.jpg"
+    ],
+    "fit": "",
+    "title": "Women's Yellow Mid Kurta",
+    "discountedPrice": 355,
+    "actualPrice": 1299,
+    "loyaltyPrice": "₹329",
+    "rating": 4.7,
+    "category": "Kurta"
+  });
+  
+  const navigate=useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(adminUpdateData(id, product));
     toast({
-      title: updatemsg,
+      title: "Updated",
       status: "success",
-      duration: 9000,
+      duration: 2000,
       isClosable: true,
       position: "top",
     });
+    setTimeout(() => {
+      navigate("/admin/product")
+    }, 2000);
   };
 
   const hanldeChange = (e) => {
@@ -71,12 +68,16 @@ const AdminUpdate = () => {
       [name]: value,
     });
   };
+
+  useEffect(()=>{
+    getSingleProduct(id).then((res)=>setProduct(res))
+  },[])
   return (
     <div>
       <Heading textAlign={"center"} pt={"20px"}>
         Update Product
       </Heading>
-      <Flex justify={"center"} width={"100%"} bg={"whiteAlpha.800"} mt={"15"}>
+      {<Flex justify={"center"} width={"100%"} bg={"whiteAlpha.800"} mt={"15"}>
         <form
           style={{
             boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
@@ -107,13 +108,13 @@ const AdminUpdate = () => {
             </Box>
             <Box width={{ base: "100%", sm: "100%" }}>
               <FormControl>
-                <FormLabel>Product Price</FormLabel>
+                <FormLabel>Actual Price</FormLabel>
                 <Input
                   type="text"
-                  name="price"
-                  value={product.price}
+                  name="actualPrice"
+                  value={product.actualPrice}
                   onChange={hanldeChange}
-                  placeholder={"Product Price"}
+                  placeholder={"Actual Price"}
                 />
               </FormControl>
             </Box>
@@ -125,25 +126,21 @@ const AdminUpdate = () => {
           >
             <Box width={{ base: "100%", sm: "100%" }}>
               <FormControl>
-                <FormLabel>First Image</FormLabel>
+                <FormLabel>Image</FormLabel>
                 <Input
                   type="text"
-                  name="img1"
-                  value={product.image1}
+                  name="image"
+                  value={product.image[0]}
                   onChange={hanldeChange}
                   placeholder={"Image URL"}
                 />
-              </FormControl>
-            </Box>
-            <Box width={{ base: "100%", sm: "100%" }}>
-              <FormControl>
-                <FormLabel>Second Image</FormLabel>
+                <FormLabel>Type</FormLabel>
                 <Input
                   type="text"
-                  name="img2"
-                  value={product.image2}
+                  name="type"
+                  value={product.type}
                   onChange={hanldeChange}
-                  placeholder={"Image URL"}
+                  placeholder={"Type"}
                 />
               </FormControl>
             </Box>
@@ -155,73 +152,21 @@ const AdminUpdate = () => {
           >
             <Box width={{ base: "100%", sm: "100%" }}>
               <FormControl>
-                <FormLabel>Main-Category</FormLabel>
-                <Select
-                  placeholder="Select option"
+                <FormLabel>Discouted Price</FormLabel>
+                <Input
+                  type="text"
+                  name="discountedPrice"
+                  value={product.discountedPrice}
                   onChange={hanldeChange}
-                  name="maincategory"
-                  value={product.maincategory}
-                >
-                  <option value="new arrivals">new arrivals</option>
-                  <option value="sale">sale</option>
-                </Select>
-              </FormControl>
-            </Box>
-            <Box width={{ base: "100%", sm: "100%" }}>
-              <FormControl>
-                <FormLabel>Sub-Category</FormLabel>
-                <Select
-                  onChange={hanldeChange}
+                  placeholder={"Discounted Price"}
+                />
+                <FormLabel>Category</FormLabel>
+                <Input
+                  type="text"
                   name="category"
                   value={product.category}
-                >
-                  {product.maincategory === "new arrivals" && (
-                    <option value="bag">bag</option>
-                  )}
-                  {product.maincategory === "new arrivals" && (
-                    <option value="desks">desks</option>
-                  )}
-                  {product.maincategory === "sale" && (
-                    <option value="messengerbag">messengerbag</option>
-                  )}
-                  {product.maincategory === "sale" && (
-                    <option option value="wallet">
-                      wallet
-                    </option>
-                  )}
-                  {product.maincategory === "new arrivals" && (
-                    <option value="watch">watch</option>
-                  )}
-                </Select>
-              </FormControl>
-            </Box>
-          </Stack>
-          <Stack
-            width={{ base: "100%", sm: "100%" }}
-            spacing={"10"}
-            direction={{ base: "column", sm: "row" }}
-          >
-            <Box width={{ base: "100%", sm: "100%" }}>
-              <FormControl>
-                <FormLabel>Price Strike</FormLabel>
-                <Input
-                  type="text"
-                  name="strike"
-                  value={product.strike}
                   onChange={hanldeChange}
-                  placeholder={"Discount "}
-                />
-              </FormControl>
-            </Box>
-            <Box width={{ base: "100%", sm: "100%" }}>
-              <FormControl>
-                <FormLabel>Add Stocks</FormLabel>
-                <Input
-                  type="text"
-                  name="stocks"
-                  value={product.stocks}
-                  onChange={hanldeChange}
-                  placeholder={"Stocks"}
+                  placeholder={"Category"}
                 />
               </FormControl>
             </Box>
@@ -247,7 +192,7 @@ const AdminUpdate = () => {
             </Button>
           </Stack>
         </form>
-      </Flex>
+      </Flex>}
     </div>
   );
 };

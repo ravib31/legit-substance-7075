@@ -3,22 +3,45 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .product-div{
-    width:80%;
+    width:1145px;
     height: auto;
-    display:flex;
-    
+    display:flex;  
     justify-content: space-between;
     margin: auto;
-    margin-top: 30px;
-    border: 2px solid black;
+   position: relative;
+}
+.men-Clothing{
+    width: 80%;
+    margin: auto;
+    margin-left: 20px; 
+    text-align: left;
 
 }
 .product-list{
-    width: 80%;
+    width: 75%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+     
+   
 }
 .sidebar{
-    width: 18%;
+    width: 23%;
+}
+@media (max-width: 940px){
+    .product-div{
+        width: 95%;
+        margin: auto;
+    }
+    .sidebar{
+       display: none;
+    }
+    .product-list{
+        width: 100%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
 }

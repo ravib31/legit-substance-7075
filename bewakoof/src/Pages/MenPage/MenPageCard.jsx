@@ -4,14 +4,16 @@ import "./MenPageCard.css";
 
 const MenPageCard = ({ menproduct }) => {
   return (
+    <>
+     <Link to={`/men/${menproduct.id}`} >
     <div className="product-box">
       <div className="product-image">
         <Link to={`/men/${menproduct.id}`} >
-        <img src={menproduct.image[0]} alt={menproduct.title} />
+        <img src={menproduct.image} alt={menproduct.title} />
         </Link>
       </div>
       <div className="product-info">
-        <h2 className="Product-brand">Bewakoof®</h2>
+        <h3 className="Product-brand">Bewakoof®</h3>
         <p className="product-title">{menproduct.title}</p>
         <div className="price-box">
           <p className="discounted-price"> ₹{menproduct.discountedPrice}</p>
@@ -24,6 +26,8 @@ const MenPageCard = ({ menproduct }) => {
         </div>
       </div>
     </div>
+    </Link>
+    </>
   );
 };
 

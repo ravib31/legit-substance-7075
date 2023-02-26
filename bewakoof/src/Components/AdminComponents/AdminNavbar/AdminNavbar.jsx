@@ -9,7 +9,7 @@ import React from "react";
 import MobileNav from "./MobileNav";
 import Sideba from "./Sideba";
 
-const Navbar = () => {
+const AdminNavbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <div>
@@ -32,4 +32,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default AdminNavbar;

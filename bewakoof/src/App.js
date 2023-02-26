@@ -1,13 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import { AllRoutes } from './AllRoutes/AllRoutes';
-import CartPage from './Pages/CartPage/CartPage';
+import { Navbar } from "./Components/Navbar";
 
 function App() {
   return (
     <div className="App">
-   <CartPage/>
-    {/* <AllRoutes/> */}
+      
+      {/* <Navbar /> */}
+      <AllRoutes />
     </div>
   );
 }

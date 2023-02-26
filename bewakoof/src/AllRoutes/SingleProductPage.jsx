@@ -10,16 +10,16 @@ import Size from "../Components/Pages/SingleProductPage/Size";
 import Description from "../Components/Pages/SingleProductPage/Description";
 import { Input } from "@chakra-ui/input";
 import { useDispatch } from "react-redux";
-import { getSingleProduct, postCartProduct } from "../Redux/Cart/action";
+// import { getSingleProduct, postCartProduct } from "../Redux/Cart/action";
 const SingleProductPage = () => {
   const [productImages, setPorductImages] = useState([]);
-
+  const dispatch = useDispatch();
   const [mainImage, setMainImage] = useState();
-  const [actualPrice,setActualPrice]=useState()
-  const [title,setTitle]=useState()
-  const [rating,setRating]=useState()
-  const [fit,setFit]=useState()
-  const [discountPrice,seDiscountPrice]=useState();
+  const [actualPrice, setActualPrice] = useState()
+  const [title, setTitle] = useState()
+  const [rating, setRating] = useState()
+  const [fit, setFit] = useState()
+  const [discountPrice, seDiscountPrice] = useState();
   const [chestsize, setchestSize] = useState();
   const [fronlength, setFronLength] = useState();
   const [sleevelength, setSleevelength] = useState();
@@ -34,25 +34,7 @@ const SingleProductPage = () => {
     { size: "3XL", chest: "53.0", frontLength: "31.0", SleevLength: "25.20" },
   ]);
 
-  const dispatch=useDispatch()
-
-  const params=useParams();
-  const {id}=params;
-  //console.log(id);
-
-  useEffect(()=>{
-    dispatch(getSingleProduct(id)).then((res)=>{
-      //console.log(res.data);
-      setPorductImages(res.data.image)
-      setMainImage(res.data.image[0])
-      setTitle(res.data.title)
-      setFit(res.data.fit)
-      setRating(res.data.rating)
-       setActualPrice(res.data.actualPrice)
-       seDiscountPrice(res.data.discountedPrice)
-    })
-  },[])
-
+  const intialState = productImages[0];
 
 
   const handleClick = (el, i) => {
@@ -64,44 +46,40 @@ const SingleProductPage = () => {
     setSleevelength(el.SleevLength);
     setClickSize(true);
   };
-  
-
-  const handleAddToCart=()=>{
-    dispatch(getSingleProduct(id)).then((res)=>{
-      console.log(res.data);
-      dispatch(postCartProduct(res.data))
-    })
-    
-  }
 
 
+  // const handleAddToCart=(id)=>{
+  //   dispatch(getSingleProduct(id)).then((res)=>{
+  //     console.log(res.data);
+  //     dispatch(postCartProduct(res.data))
+  //   })
 
   return (
     <>
       <div className={styles.product_page_container}>
         {/* sidebar different-diffrent images */}
-       <div className={styles.productPage_left}>
-       <div className={styles.allimages}>
-          {productImages.map((el, i) => {
-            return (
-              <img
-                key={i + 1}
-                src={el}
-                alt="img"
-                onClick={() => handleClick(el, i)}
-              />
-            );
-          })}
+        <div className={styles.productPage_left}>
+          <div className={styles.allimages}>
+            {productImages.map((el, i) => {
+              return (
+                <img
+                  key={i + 1}
+                  src={el}
+                  alt="img"
+                  onClick={() => handleClick(el, i)}
+                />
+              );
+            })}
+          </div>
+          <div>
+            <img className={styles.mainImage} src={mainImage} alt="" />
+          </div>
         </div>
-        <div>
-          <img className={styles.mainImage} src={mainImage} alt="" />
-        </div>
-       </div>
         {/* product description */}
         <div className={styles.product_page_right}>
           <h3 className={styles.companyTag}>Bewakoof@</h3>
           <p className={styles.title}>
-           {title}
+            {title}
           </p>
           <p className={styles.rating}>
             {rating}{" "}
@@ -154,7 +132,7 @@ const SingleProductPage = () => {
             )}
           </div>
           <div className={styles.button}>
-            <Button onClick={handleAddToCart}>
+            <Button>
               <span style={{ marginRight: "10px" }}>
                 <HiOutlineShoppingBag size={"20px"} />
               </span>
@@ -195,21 +173,21 @@ const SingleProductPage = () => {
           <hr />
           <div>
             <Description title="15 DAY RETURNS & EXCHANGE">
-            Easy returns upto 15 days of delivery. Exchange available on select pincodes
+              Easy returns upto 15 days of delivery. Exchange available on select pincodes
             </Description>
           </div>
           <hr />
           <div>
             <Description title="DELIVERY DETAILS">
-                <Input type="text" placeholder="Enter Pincode/Postal Code">
-                    
-                </Input>
+              <Input type="text" placeholder="Enter Pincode/Postal Code">
+
+              </Input>
             </Description>
           </div>
         </div>
       </div>
     </>
   );
-};
+}
 
 export default SingleProductPage;

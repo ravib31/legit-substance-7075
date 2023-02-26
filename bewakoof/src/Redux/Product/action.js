@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_MEN_PRODUCT_ERROR, GET_MEN_PRODUCT_REQUEST, GET_MEN_PRODUCT_SUCCESS, GET_WOMEN_PRODUCT_ERROR, GET_WOMEN_PRODUCT_REQUEST, GET_WOMEN_PRODUCT_SUCCESS } from "./actionType"
+import { GET_ALL_PRODUCT, GET_MEN_PRODUCT_ERROR, GET_MEN_PRODUCT_REQUEST, GET_MEN_PRODUCT_SUCCESS, GET_WOMEN_PRODUCT_ERROR, GET_WOMEN_PRODUCT_REQUEST, GET_WOMEN_PRODUCT_SUCCESS } from "./actionType"
 
 export const getMenProductRequest = () => {
     return {type:GET_MEN_PRODUCT_REQUEST};
@@ -14,6 +14,7 @@ export const getMenProductError = () => {
 }
 
 
+
 export const getProduct =(param) => (dispatch) => {
     dispatch(getMenProductRequest());
     axios.get(`https://wicked-tick-overshirt.cyclic.app/products?type=men`, param)
@@ -26,7 +27,27 @@ export const getProduct =(param) => (dispatch) => {
     })
 }
 
+export const getAllProduct=()=>(dispatch)=>{
+    axios.get(`https://wicked-tick-overshirt.cyclic.app/products`)
+    .then((res) => {
+        dispatch({type:GET_ALL_PRODUCT,payload:res.data})
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+}
 
+export const delProduct =(id)=> (dispatch) => {
+    axios.delete(`https://wicked-tick-overshirt.cyclic.app/products/${id}`)
+    .then((res) => {
+        console.log(res)
+        dispatch(getAllProduct());
+       ;
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+}
 
                  // WOMEN PRODUCT
 

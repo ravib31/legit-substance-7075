@@ -1,5 +1,4 @@
 import React from "react";
-import SingleProductPage from "./SingleProductPage";
 import {Navbar} from "../Components/Navbar";
 import {Home} from "../Pages/HomePage/Home";
 import {Routes, Route} from "react-router-dom";
@@ -14,6 +13,7 @@ import AdminDshboardPage from "../Pages/AdminPage/AdminDshboardPage";
 
 import AdminShowProduct from "../Pages/AdminPage/AdminShowProduct";
 import AdminUpdate from "../Components/AdminComponents/AdminProduct/AdminUpdate";
+import SingleProductPage from "../Pages/SingleProductPage/SingleProductPage";
 // import AdminLogin from "../Pages/AdminPage/AdminLogin";
  export const AllRoutes=()=>{
 

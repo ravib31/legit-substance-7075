@@ -2,45 +2,58 @@ import React, { useState } from 'react'
 import {Link} from "react-router-dom";
 import { BsBag , BsHeart} from 'react-icons/bs';
 import './Navbar.css';
+import {HiMenuAlt1} from "react-icons/hi";
 
 export const Navbar = () => {
    return (
    <>
-     <div id="nav1" >
-        <Link to='/' id="toplink" >Offer</Link>
-        <Link to='/' id="toplink">Fanbook</Link>
-        <Link to='/' id="toplink">Download App</Link>
-        <Link to='/' id="toplink">TriBe Membership</Link>
+   <div className='NavBox'>
+    <div className='Navbar-box'>
+      <div className='top-section'>
+     <div className="nav1" >
+        <Link to='/' id="toplink"><p>Offer</p></Link>
+        <Link to='/' id="toplink"><p>Fanbook</p></Link>
+        <Link to='/' id="toplink"><p>Download App</p></Link>
+        <Link to='/' id="toplink"><p>TriBe Membership</p></Link>
     </div>
-
-    <div id="cont">
+    </div>
+    <div className="cont">
+      <div className='logo-list' >
       <div >
+      <input type="checkbox" id='click' />
+      <label for="click" className='menu-btn'><HiMenuAlt1 /></label>
         <Link to="/">
           <img id="logo"
-            src="https://images.bewakoof.com/web/ic-desktop-pride-bwkf-logo.svg"
+            src="https://www.linkpicture.com/q/BeFour-2.png"
             alt="Company_Logo"
           />
         </Link>
       </div>
 
-      <div id="products">
-        <div class="category">
-          <Link to="/men" id="ca">MEN</Link>
+      <div className="products">
+        {/* <div className="category">
+          <Link to="/men" id="ca"><p> MEN</p></Link>
         </div>
         <div class="category">
-          <Link to="/women" id="ca">WOMEN</Link>
+          <Link to="/women" id="ca"><p>WOMEN</p> </Link>
         </div>
         <div class="category">
-          <Link to="/" id="ca">MOBILE COVERS</Link>
-        </div>
+          <Link to="/" id="ca"><p>MOBILE COVERS</p></Link>
+        </div> */}
+        <ul className='upper'>
+          <li><Link to="/men">MEN</Link></li>
+          <li><Link to="/women">WOMEN</Link></li>
+          <li><Link to="/">MOBILE COVERS</Link></li>
+        </ul>
       </div>
-
-      <div id="right-side">
-        <div>
+      </div>
+      <div className="right-side">
+        <div className='input-box'>
          <input placeholder="Search by product, category and collection" id="input"/>
         </div>
+        <div  className='icon-box'>
         <div>
-          <Link to="/login" id="ca">Login</Link>
+          <Link to="/login" id="ca"><p className='login' >Login</p></Link>
         </div>
         <div id="icon">
         <Link to="/wishlist">
@@ -49,13 +62,17 @@ export const Navbar = () => {
         </div>
         <div id="cart-icon">
           <Link to="/cart">
-          <BsBag/> 
+          <BsBag className='bag-icon'/> 
           </Link>
           
         </div>
+        <div className='country-flag' >
+          <img src="https://images.bewakoof.com/web/india-flag-round-1639566913.png" alt="Country-flag" />
+        </div>
+        </div>
       </div>
    </div>
-   <hr/>
+   {/* <hr/>
        <div id="mainProducts">
         <div id="category1">
           <Link to="/" id="ca1">MEN</Link>
@@ -66,10 +83,11 @@ export const Navbar = () => {
         <div id="category1">
           <Link to="/" id="ca1">ACCESSORIES</Link>
         </div>
-    </div>
+    </div> */}
    
-      
-    
+    </div>
+    </div>
     </>
   )
 }
+

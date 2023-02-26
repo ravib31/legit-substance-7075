@@ -6,17 +6,16 @@ import { RiWallet3Line } from "react-icons/ri";
 import { BsBank2 } from "react-icons/bs";
 import { HiOutlineCurrencyRupee } from "react-icons/hi";
 import { InputGroup, Input, Checkbox, Button } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 
 const CheckoutPage = () => {
-    const [totalPrice,setTotalPrice]=useState();
+    const data=useSelector((store)=>(store.cartReducer))
 
-    const handleQuantity=()=>{
-      
-    }
+    
 
   return (
     <div>
-      <p>Choose your payment method</p>
+      <p className={styles.heading} >Choose your payment method</p>
       <div className={styles.container}>
         <div className={styles.left_container}>
           <div>
@@ -71,14 +70,14 @@ const CheckoutPage = () => {
               Save card details for later
             </Checkbox>
             <p>This transaction you make is totally secure. We don't save your CVV number.</p>
-            <Button width={"100%"}>Pay</Button>
+            <Button width={"100%"}>₹{data.totalPrice}Pay</Button>
           </div>
         </div>
         <div className={styles.right_container}>
-            <p>PRICE SUMMARY</p>
+            <p className={styles.summary}>PRICE SUMMARY</p>
             <div className={styles.priceDetails}>
                 <p>Total MRP (Incl. of taxes) </p>
-                <p>2000Rs</p>
+                <p>₹{data.totalMrp}</p>
             </div>
             <div className={styles.priceDetails}>
                 <p>Shipping Charges</p>
@@ -86,12 +85,12 @@ const CheckoutPage = () => {
             </div>
             <div className={styles.priceDetails}>
                 <p>Discount on MRP </p>
-                <p>1000Rs</p>
+                <p>₹{data.totalMrp-data.totalPrice}</p>
             </div>
             <hr />
             <div className={styles.finalAmount}>
                 <p>Final amount</p>
-                <p>3000Rs</p>
+                <p>₹{data.totalPrice}</p>
             </div>
             <div className={styles.image}>
                 <img src="https://images.bewakoof.com/web/cart-badge-trust.svg" alt="" />

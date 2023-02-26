@@ -14,6 +14,8 @@ export const getCartProduct=()=>(dispatch)=>{
      })
 }
 
+
+
 export const postCartProduct=(obj)=>(dispatch)=>{
     // console.log(obj);
     dispatch({type:types.POST_CART_PRODUCT_REQUEST})

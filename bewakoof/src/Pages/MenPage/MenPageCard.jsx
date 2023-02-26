@@ -17,7 +17,7 @@ const MenPageCard = ({ menproduct }) => {
         <p className="product-title">{menproduct.title}</p>
         <div className="price-box">
           <p className="discounted-price"> ₹{menproduct.discountedPrice}</p>
-          <p className="regular-price">{menproduct.actualPrice}</p>
+          <p className="regular-price">₹{menproduct.actualPrice}</p>
         </div>
         <div className="tribe-sec">
           <p className="tribe-price">

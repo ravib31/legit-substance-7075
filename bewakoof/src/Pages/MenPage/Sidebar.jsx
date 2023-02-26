@@ -59,8 +59,9 @@ const Sidebar = () => {
   };
 
   return (
-    <Box>
-     <Text textAlign="left" marginBottom="10px" marginLeft="20px"
+    <Box  width="300px"
+    >
+     <Text textAlign="left" marginBottom="10px" marginLeft="10px"
       fontFamily="montserrat-semibold, sans-serif"
       color="rgb(183, 178, 178)" letterSpacing="1px"  fontWeight={500}
      >Filter</Text>

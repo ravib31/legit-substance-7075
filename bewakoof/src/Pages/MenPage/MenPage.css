@@ -5,33 +5,61 @@
 }
 
 .product-div{
-    width:1145px;
+    width:87%;
+    /* width:1205px; */
     height: auto;
-    display:flex;  
-    justify-content: space-between;
     margin: auto;
-   position: relative;
+    display:flex;  
+    justify-content: space-around;
+    position: relative;
+ 
 }
 .men-Clothing{
-    width: 80%;
+    width: 85%;
     margin: auto;
-    margin-left: 20px; 
     text-align: left;
+    margin-top: 50px;
+    margin-bottom: 60px;
 
+}
+.men-Clothing h1{
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+    text-decoration: underline #FBD836 5px;
 }
 .product-list{
     width: 75%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-     
-   
+    gap: 10px;
 }
 .sidebar{
-    width: 23%;
+    width: 29%;
+    margin-right: 20px;
 }
-@media (max-width: 940px){
+
+@media all and (min-width: 401px) and (max-width: 800px){
     .product-div{
-        width: 95%;
+        width: 100%;
+        margin: auto;
+    }
+    
+    .product-list{
+        width: 80%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .men-Clothing{
+        display: none;
+    }
+}
+
+@media all and (min-width: 100px) and (max-width: 400px){
+    .product-div{
+        width: 100%;
         margin: auto;
     }
     .sidebar{
@@ -43,5 +71,8 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
+    }
+    .men-Clothing{
+        display: none;
     }
 }

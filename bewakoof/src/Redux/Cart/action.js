@@ -1,11 +1,12 @@
 import axios from "axios";
 import * as types from './actionType'
 
-export const getCartProduct=(payload)=>(dispatch)=>{
+export const getCartProduct=()=>(dispatch)=>{
     dispatch({type:types.GET_CART_PRODUCT_REQUEST})
      axios.get(`http://localhost:5000/cart`)
 
      .then((res)=>{
+        console.log(res.data);
         dispatch({type:types.GET_CART_PRODUCT_SUCCESS,payload:res.data})
      }).catch((err)=>{
         dispatch({type:types.GET_CART_PRODUCT_ERROR})
@@ -14,8 +15,9 @@ export const getCartProduct=(payload)=>(dispatch)=>{
 }
 
 export const postCartProduct=(obj)=>(dispatch)=>{
+    // console.log(obj);
     dispatch({type:types.POST_CART_PRODUCT_REQUEST})
-     axios.post(`http://localhost:5000/cart`,{obj:obj,Quantity:1})
+     axios.post(`http://localhost:5000/cart`,obj)
      .then((res)=>{
        console.log(res);
      }).catch((err)=>{
@@ -26,13 +28,9 @@ export const postCartProduct=(obj)=>(dispatch)=>{
 
 
 export const getSingleProduct =(id)=> (dispatch) => {
-    dispatch({type:types.GET_PRODUCT_REQUEST})
-   return axios.get(`http://localhost:5000/menproduct/${id}`)
-    // .then((res) => {
-    //    dispatch({type:types.GET_PRODUCT_SUCCESS,payload:res.data})
-    //     console.log(res.data)
-    // })
-    // .catch((err) => {
-    //     dispatch({type:types.GET_PRODUCT_ERROR})
-    // })
+   return axios.get(`https://wicked-tick-overshirt.cyclic.app/products/${id}`)
+   
+    
+   
 }
+

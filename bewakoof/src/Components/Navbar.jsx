@@ -51,6 +51,7 @@ export const Navbar = () => {
           <Link to="/cart">
           <BsBag/> 
           </Link>
+          
         </div>
       </div>
    </div>

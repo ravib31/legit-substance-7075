@@ -1,0 +1,61 @@
+.container{
+    /* border: 1px solid; */
+    width: 80%;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+}
+.paymentMethod{
+    display: flex;
+    align-items: center;
+    border: 1px solid grey;
+    width: 100%;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+.left_container{
+    border: 1px solid gray;
+    width: 60%;
+    display: flex;
+}
+.inputTag{
+    text-align: left;
+    padding: 10px;
+}
+.inputTag>input{
+    border-width: 0cap;
+    width: 100%;
+    height: 70px;
+}
+.expiryDetails{
+    display: flex;
+    gap: 50px;
+}
+.Checkbox{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.priceDetails{
+    display: flex;
+    margin-left: 2%;
+    margin-right: 2%;
+    justify-content: space-between;
+}
+.right_container{
+    width: 40%;
+    border: 1px solid;
+}
+.finalAmount{
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+}
+.image{
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+}
+.image>img{
+    width: 50px;
+}

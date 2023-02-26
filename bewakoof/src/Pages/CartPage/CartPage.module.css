@@ -27,6 +27,7 @@
 }
 .allPriceDetails{
  border: 1px solid wheat;
+ padding: 2%;
 }
 .summary{
     border: 1px solid gray;
@@ -36,6 +37,21 @@
     font-weight: 600;
 
 }
+.totolMrp{
+    display: flex;
+    justify-content: space-between;
+}
+.shipingCharges{
+    display: flex;
+    justify-content: space-between;}
+.bagDiscount{
+    display: flex;
+    justify-content: space-between;
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+}
 
 .img{
     display: flex;
@@ -43,4 +59,60 @@
 }
 .img>img{
     width: 50px;
+}
+
+.emptyBag{
+/* border: 1px solid red; */
+margin: auto;
+}
+.emptyBag>p{
+    font-size: 22px;
+}
+.emptyBag>div>img{
+    width: 150px;
+    margin: auto;
+
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    .cartpage_container{
+        display: flex;
+        /* border: 10px solid red; */
+        width: 145%;
+       
+        
+       justify-content: space-around;
+    }
+    .allcartproducts{
+        width: 90%;
+        border: 1px solid black;
+    
+    }
+    .cartPageRightSide{
+        border: 1px solid black;
+        width: 90%;
+        text-align: left;
+        padding: 10px;
+    }
+}
+
+
+
+@media all and (min-width: 320px) and (max-width: 767px) {
+    .cartpage_container{
+        display: block;
+        border: 1px solid red;
+        width: 200%;
+        
+        
+    }
+    .cartPageRightSide{
+        border: 1px solid black;
+        width: 100%;
+        
+    }
+    .allcartproducts{
+        width: 100%;
+        border: 1px solid black;
+    
+    }
 }

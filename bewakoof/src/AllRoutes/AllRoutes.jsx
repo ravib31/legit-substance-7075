@@ -21,7 +21,7 @@ return(
         <Route path="/men" element={<MenPage />} />
         <Route path="/women" element={<WomenPage />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/checkout" element={<CheckoutPage/>} />
         <Route path="/men/:id" element={<SingleProductPage />} />
         {/* <Route path="/admin/login" element={<AdminLogin />} /> */}
         <Route path="/admin" element={

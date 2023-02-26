@@ -7,6 +7,7 @@ const initialState = {
 
 
 export const reducer = (state=initialState, {type,payload}) => {
+    console.log(payload);
     switch(type){
         case types.GET_CART_PRODUCT_REQUEST:
             return {...state, isLoading:true}

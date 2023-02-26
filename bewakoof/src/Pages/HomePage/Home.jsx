@@ -1,7 +1,7 @@
 import React from 'react';
-import  {Slider}  from "../Components/Slider";
-import styles from './Home.module.css';
 
+import styles from './Home.module.css';
+import { Slider } from '../../Components/Pages/Homepage/Slider';
 
 const images = [
   {
@@ -35,7 +35,7 @@ export const Home = () => {
   return (
   <div className={styles.container}>
       
-  <Slider />
+  <Slider/>
 
   <div className={styles.mid}>
 

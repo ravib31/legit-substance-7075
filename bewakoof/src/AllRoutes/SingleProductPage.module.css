@@ -2,19 +2,20 @@
     display: flex;
     gap: 25px;
     /* justify-content: center; */
-    border: 1px solid;
+    /* border: 1px solid; */
     margin-left: 12%;
     margin-right: 15%;
+    margin-bottom: 100px;
     
 }
 .productPage_left{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 50%;
     display: flex;
     gap: 20px;
 }
 .mainImage{
-     border: 1px solid red;
+     /* border: 1px solid red; */
      width: 500px;
      height: 600px;
      cursor: pointer;

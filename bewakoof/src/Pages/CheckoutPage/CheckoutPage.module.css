@@ -1,9 +1,23 @@
+.heading{
+    font-size: 16px;
+    /* border: 1px solid; */
+    font-weight: bold;
+    margin-left: 10%;
+    margin-bottom: 20px;
+}
+.summary{
+    padding: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
 .container{
     /* border: 1px solid; */
     width: 80%;
     margin: auto;
     display: flex;
     gap: 30px;
+    margin-bottom: 100px;
 }
 .paymentMethod{
     display: flex;

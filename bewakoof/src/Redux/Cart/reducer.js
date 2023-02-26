@@ -2,6 +2,8 @@ import * as types from './actionType'
 const initialState = {
     isLoading:false,
     isError:false,
+    totalPrice:0,
+    totalMrp:0,
     cart: []
 };
 
@@ -22,6 +24,10 @@ export const reducer = (state=initialState, {type,payload}) => {
                     return {...state,isLoading:false,cart:[...state.cart,payload]}
                     case types.POST_CART_PRODUCT_ERROR:
                         return {...state,isLoading:false,isError:true}
+                        case types.TOTALMRP:
+                            return {...state,totalMrp:payload}
+                            case types.TOTALPRICE:
+                                return {...state,totalPrice:payload}
         default:
             return state;
     }

@@ -131,4 +131,41 @@
   background-color: #989898;
   color: white;
 }
-
+.inputs{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+input[type=email],select,textarea{
+  width: 90%;
+  height: 50px;
+  margin: auto;
+  font-size: 15px;
+  border-bottom: 1px solid gray;
+}
+input[type=email]:focus{
+  outline: none;
+  border-bottom: 1px solid gray;
+}
+input[type=password],select,textarea{
+  width: 90%;
+  height: 50px;
+  margin: auto;
+  font-size: 15px;
+  border-bottom: 1px solid gray;
+}
+.loginButton{
+  width: 100%;
+  height: 50px;
+  background-color:#989898 ;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 1px;
+}

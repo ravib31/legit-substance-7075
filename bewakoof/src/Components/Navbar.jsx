@@ -72,18 +72,8 @@ export const Navbar = () => {
         </div>
       </div>
    </div>
-   {/* <hr/>
-       <div id="mainProducts">
-        <div id="category1">
-          <Link to="/" id="ca1">MEN</Link>
-        </div>
-        <div id="category1">
-          <Link to="/" id="ca1">WOMEN</Link>
-        </div>
-        <div id="category1">
-          <Link to="/" id="ca1">ACCESSORIES</Link>
-        </div>
-    </div> */}
+ 
+  
    
     </div>
     </div>

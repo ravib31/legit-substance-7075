@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import axios from "axios";
 export const ADMIN_ADD_PRODUCT = "admin/add/product";
 
 const mainUrl = "https://dailybackend.onrender.com";

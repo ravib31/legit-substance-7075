@@ -12,6 +12,7 @@
 .NavBox{
   width: 100%;
   height: auto;
+  border-bottom: 1px solid rgb(170, 163, 163);
 
 }
 

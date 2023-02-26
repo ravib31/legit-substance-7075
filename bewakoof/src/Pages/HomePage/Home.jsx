@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import  {Slider}  from ".Slider";
 import styles from './Home.module.css';
 import { Slider } from './Slider';
@@ -35,7 +36,20 @@ const images = [
 export const Home = () => {
   return (
   <div className={styles.container}>
-      
+      <div>
+       
+      <div className={styles.mainProducts}>
+        <div id="category1">
+          <Link to="/men" id="ca1">MEN</Link>
+        </div>
+        <div id="category1">
+          <Link to="/women" id="ca1">WOMEN</Link>
+        </div>
+        <div id="category1">
+          <Link to="/" id="ca1">ACCESSORIES</Link>
+        </div>
+    </div> 
+      </div>
   <Slider/>
 
   <div className={styles.mid}>
@@ -66,7 +80,7 @@ export const Home = () => {
       src="https://images.bewakoof.com/uploads/grid/app/thin-banner-299-1440x150-1655286102.gif"
     />
   </div>
-  <h2>POPULAR CATEGORIES</h2>
+  <h2 className={styles.popular}>POPULAR CATEGORIES</h2>
   <div className={styles.popular}>
     {images.map((e) => (          
         <div key={e.img}>
@@ -74,7 +88,7 @@ export const Home = () => {
         </div>
     ))}
   </div>
-  <h2>DISCOUNT PE DISCOUNT</h2>
+  <h2 className={styles.discount}>DISCOUNT PE DISCOUNT</h2>
   <div className={styles.popular}>
     <img src="https://images.bewakoof.com/uploads/grid/app/Mid-Size-Banner-buy2get1-banner-refreshment-1654174580.jpg"/>
     <img src="https://images.bewakoof.com/uploads/grid/app/Mid-Size-Banner-play-banner-refreshment-1654174646.jpg"/>

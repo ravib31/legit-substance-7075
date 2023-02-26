@@ -1,21 +1,23 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
-
+import {login} from "../../Redux/Auth/action";
+import { useDispatch } from "react-redux";
 export const Login = () => {
   const navigate = useNavigate();
-  const [num, setNum] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const location = useLocation();
+  const dispatch = useDispatch();
 
-  const handleOnChange = (e) => {
-    setNum(e.target.value);
+  const handleLogin= () => {
+    const userData = {email, password}
+    dispatch(login(userData)).then(() => {
+      navigate(location.state, {replace:true});
+    });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    localStorage.setItem("mobile", JSON.stringify(num));
-    console.log(num);
-    navigate("/Signup")
-  };
+
 
   return (
     <div>
@@ -24,7 +26,7 @@ export const Login = () => {
         <div>
           <img
             className={styles.box_img}
-            src="https://images.bewakoof.com/web/group-19-1617704502.png"/>
+            src="https://images.bewakoof.com/web/group-19-1617704502.png" alt="imae"/>
         </div>
         <div className={styles.right_box}>
 
@@ -32,24 +34,21 @@ export const Login = () => {
 
           <p>for Latest trends, exciting offers and everything Bewakoof!</p>
 
-          <form onSubmit={handleSubmit} className={styles.form}>
-            
-            <div className={styles.formdiv}>
-              <div className={styles.mob}>
-                <img style={{width: "30px", height: "30px"}}
-                 src="https://emojiguide.com/wp-content/uploads/platform/joypixels/43830.png" />
-                <p style={{marginTop: "1px", textAlign: "center"}}>+91</p>
-              </div>
-
-              <input className={styles.inp}
-                type="text"
-                placeholder="Enter Mobile Number"
-                onChange={handleOnChange}
-                
-              />
+            <div className={styles.inputs}>
+            <input type="email" 
+            placeholder="Email"  
+            value={email}
+            onChange = {(e) => setEmail(e.target.value)}
+            /> 
+            <input type="password" 
+            placeholder="Password" 
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            />
+            <button className={styles.loginButton} onClick={handleLogin}>LOGIN</button>
             </div>
-            <button className={styles.btn} type="submit">Continue</button>
-          </form>
+            
+      
         </div>
       </div>
     </div>

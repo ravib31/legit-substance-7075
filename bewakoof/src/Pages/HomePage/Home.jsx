@@ -1,6 +1,5 @@
 import React from 'react';
-// import  {Slider}  from "../Components/Slider";
-import { Slider } from '../../Components/Pages/Homepage/Slider';
+import  {Slider}  from "../Components/Slider";
 import styles from './Home.module.css';
 
 

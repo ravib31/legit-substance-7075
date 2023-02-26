@@ -1,6 +1,8 @@
 import React from "react";
 import SingleProductPage from "./SingleProductPage";
 import {Navbar} from "../Components/Navbar";
+import {Login} from "../Pages/LoginPage/Login";
+import {Signup} from "../Pages/LoginPage/Signup";
 import {Home} from "../Pages/HomePage/Home";
 import {Routes, Route} from "react-router-dom";
 import MenPage from "../Pages/MenPage/MenPage";
@@ -8,7 +10,7 @@ import WomenPage from "../Pages/WomenPage/WomenPage";
 import { CartPage } from "../Pages/CartPage/CartPage";
 import CheckoutPage from "../Pages/CheckoutPage/CheckoutPage";
 import AdminDshboardPage from "../Pages/AdminPage/AdminDshboardPage";
-import Navbar from "../Components/AdminComponents/AdminNavbar/Navbar";
+// import Navbar from "../Components/AdminComponents/AdminNavbar/Navbar";
  export const AllRoutes=()=>{
 
 return(
@@ -16,6 +18,8 @@ return(
     {/* <div style={{border:"1px solid black",height:"60px",backgroundColor:"white"}}>Dummy Navbar</div> */}
     <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/signup" element={<Signup />} /> 
         <Route path="/men" element={<MenPage />} />
         <Route path="/women" element={<WomenPage />} />
         <Route path="/cart" element={<CartPage />} />
@@ -23,7 +27,7 @@ return(
         <Route path="/men/:id" element={<SingleProductPage />} />
         <Route path="/admin" element={
             <>
-            <Navbar/>
+            {/* <Navbar/> */}
         <AdminDshboardPage />
         </>
         } />

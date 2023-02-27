@@ -16,22 +16,22 @@ Home Page-
 ![HomePage](https://www.linkpicture.com/q/Web-capture_27-2-2023_121822_delicate-mooncake-6ba932.netlify.app.jpeg)
 
 Login Page-
-![LoginPage](LoginPage.png)
+![LoginPage](https://www.linkpicture.com/q/Web-capture_27-2-2023_123525_delicate-mooncake-6ba932.netlify.app.jpeg)
 
 Men Product Page-
-![Men Page](MenPage.png)
+![Men Page](https://www.linkpicture.com/q/Web-capture_27-2-2023_123237_delicate-mooncake-6ba932.netlify.app.jpeg)
 
 Product Detail Page-
-![ProductDetail](DetailPage.png)
+![ProductDetail](https://www.linkpicture.com/q/Web-capture_27-2-2023_123622_delicate-mooncake-6ba932.netlify.app.jpeg)
 
 Cart Page- 
-![CartPage](CartPage.png)
+![CartPage](https://www.linkpicture.com/q/Web-capture_27-2-2023_123759_delicate-mooncake-6ba932.netlify.app.jpeg)
 
 Checkout Page-
-![ChechoutPage](CheckoutPage.png)
+![ChechoutPage](https://www.linkpicture.com/q/Web-capture_27-2-2023_123814_delicate-mooncake-6ba932.netlify.app.jpeg)
 
 Women Product-
-![WomenProduct](WomenPage.png)
+![WomenProduct](https://www.linkpicture.com/q/Web-capture_27-2-2023_12351_delicate-mooncake-6ba932.netlify.app.jpeg)
 
 ![befour](https://user-images.githubusercontent.com/107496019/221485831-c5cc974d-dd81-43c6-9b4f-6e7e3d1a8813.png)
 

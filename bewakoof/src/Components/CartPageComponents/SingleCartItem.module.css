@@ -1,5 +1,5 @@
 .cardItem_container{
-   border: 1px solid green;
+   /* border: 1px solid green; */
    width: 100%;
    justify-content: space-between;
    
@@ -36,7 +36,7 @@
     gap: 10px;
 }
 .selectTag>select{
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     border-radius: 5px;
 }
 .cartItem_image>img{
@@ -55,7 +55,7 @@
 .button>Button:first-child{
     width: 35%;
     background-color: white;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
 }
 .button>Button:last-child{
     width: 65%;

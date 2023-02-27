@@ -10,38 +10,40 @@ import {
   Stack,
   useToast,
 } from "@chakra-ui/react";
+import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
-export const ADMIN_ADD_PRODUCT = "admin/add/product";
+import { useNavigate } from "react-router-dom";
 
-const mainUrl = "https://dailybackend.onrender.com";
-
-export const addProduct = (product) => async (dispatch) => {
+const addProduct=async(data)=>{
   try {
-    let res = await axios.post(`${mainUrl}/products/add`, product);
-    dispatch({ type: ADMIN_ADD_PRODUCT, payload: res.data });
+    await axios.post("https://wicked-tick-overshirt.cyclic.app/products",data)
   } catch (error) {
-    console.log(error.msg);
+    console.log(error)
   }
-};
+}
 
 const AdminAddProduct = () => {
   const [product, setProduct] = useState({});
-  const { productData, msg } = useSelector((store) => store.adminAddProduct);
-  console.log(msg);
   const dispatch = useDispatch();
   const toast = useToast();
+  const navigate=useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addProduct(product));
+    console.log(product)
+    addProduct(product);
     toast({
-      title: msg,
+      title: "Product Added",
       status: "success",
-      duration: 9000,
+      duration: 2000,
       isClosable: true,
       position: "top",
     });
+    setTimeout(() => {
+      
+      navigate("/admin/product")
+    }, 1000);
   };
 
   const hanldeChange = (e) => {
@@ -51,7 +53,7 @@ const AdminAddProduct = () => {
       [name]: value,
     });
   };
-  console.log(productData);
+
   return (
     <div>
       <Heading textAlign={"center"} pt={"20px"}>
@@ -87,12 +89,12 @@ const AdminAddProduct = () => {
             </Box>
             <Box width={{ base: "100%", sm: "100%" }}>
               <FormControl isRequired>
-                <FormLabel>Product Price</FormLabel>
+                <FormLabel>Actual Price</FormLabel>
                 <Input
                   type="text"
-                  name="price"
+                  name="actualprice"
                   onChange={hanldeChange}
-                  placeholder={"Product Price"}
+                  placeholder={"Actual Price"}
                 />
               </FormControl>
             </Box>
@@ -104,10 +106,10 @@ const AdminAddProduct = () => {
           >
             <Box width={{ base: "100%", sm: "100%" }}>
               <FormControl isRequired>
-                <FormLabel>First Image</FormLabel>
+                <FormLabel>Image</FormLabel>
                 <Input
                   type="text"
-                  name="img1"
+                  name="image"
                   onChange={hanldeChange}
                   placeholder={"Image URL"}
                 />
@@ -115,55 +117,17 @@ const AdminAddProduct = () => {
             </Box>
             <Box width={{ base: "100%", sm: "100%" }}>
               <FormControl isRequired>
-                <FormLabel>Second Image</FormLabel>
-                <Input
-                  type="text"
-                  name="img2"
-                  onChange={hanldeChange}
-                  placeholder={"Image URL"}
-                />
-              </FormControl>
-            </Box>
-          </Stack>
-          <Stack
-            width={{ base: "100%", sm: "100%" }}
-            spacing={"10"}
-            direction={{ base: "column", sm: "row" }}
-          >
-            <Box width={{ base: "100%", sm: "100%" }}>
-              <FormControl isRequired>
-                <FormLabel>Main-Category</FormLabel>
+                <FormLabel>Category</FormLabel>
                 <Select
                   placeholder="Select option"
                   onChange={hanldeChange}
-                  name="maincategory"
+                  name="category"
                 >
-                  <option value="new arrivals">new arrivals</option>
-                  <option value="sale">sale</option>
-                </Select>
-              </FormControl>
-            </Box>
-            <Box width={{ base: "100%", sm: "100%" }}>
-              <FormControl isRequired>
-                <FormLabel>Sub-Category</FormLabel>
-                <Select onChange={hanldeChange} name="category" category>
-                  {product.maincategory === "new arrivals" && (
-                    <option value="bag">bag</option>
-                  )}
-                  {product.maincategory === "new arrivals" && (
-                    <option value="desks">desks</option>
-                  )}
-                  {product.maincategory === "sale" && (
-                    <option value="messengerbag">messengerbag</option>
-                  )}
-                  {product.maincategory === "sale" && (
-                    <option option value="wallet">
-                      wallet
-                    </option>
-                  )}
-                  {product.maincategory === "new arrivals" && (
-                    <option value="watch">watch</option>
-                  )}
+                  <option value="T-shirt">T-shirt</option>
+                  <option value="Joggers">Joggers</option>
+                  <option value="Pyjama">Pyjama</option>
+                  <option value="Jacket">Jacket</option>
+                  <option value="Kurta">Jacket</option>
                 </Select>
               </FormControl>
             </Box>
@@ -175,26 +139,36 @@ const AdminAddProduct = () => {
           >
             <Box width={{ base: "100%", sm: "100%" }}>
               <FormControl isRequired>
-                <FormLabel>Price Strike</FormLabel>
-                <Input
-                  type="text"
-                  name="strike"
+                <FormLabel>Type</FormLabel>
+                <Select
+                  placeholder="Select option"
                   onChange={hanldeChange}
-                  placeholder={"Discount "}
-                />
+                  name="type"
+                >
+                  <option value="men">Men</option>
+                  <option value="women">Women</option>
+                </Select>
               </FormControl>
             </Box>
+            
+          </Stack>
+          <Stack
+            width={{ base: "100%", sm: "100%" }}
+            spacing={"10"}
+            direction={{ base: "column", sm: "row" }}
+          >
             <Box width={{ base: "100%", sm: "100%" }}>
               <FormControl isRequired>
-                <FormLabel>Add Stocks</FormLabel>
+                <FormLabel>Discount Price</FormLabel>
                 <Input
                   type="text"
-                  name="stocks"
+                  name="discountedPrice"
                   onChange={hanldeChange}
-                  placeholder={"Stocks"}
+                  placeholder={"Discount price "}
                 />
               </FormControl>
             </Box>
+            
           </Stack>
           <Stack
             spacing={10}

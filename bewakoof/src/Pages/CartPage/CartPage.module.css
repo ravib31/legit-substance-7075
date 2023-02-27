@@ -13,14 +13,14 @@
     margin-bottom: 100px;
 }
 .cartPageRightSide{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 40%;
     text-align: left;
     padding: 10px;
 }
 .allcartproducts{
     width: 60%;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 
 }
 .cashbackDetails{

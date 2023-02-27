@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { delProduct } from "../../../Redux/Product/action";
 
 
-const AdminProductShowCard = ({ id, img, title, price }) => {
+const AdminProductShowCard = ({ id, img, title, price,stocks }) => {
   // const { deletemsg } = useSelector((store) => store.adminShowProduct);
   const toast = useToast();
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const AdminProductShowCard = ({ id, img, title, price }) => {
       <Td>{title}</Td>
       <Td>{price}</Td>
       {/* <Td>{discount-price}</Td> */}
-      {/* <Td>{stocks}</Td>
+      {/* <Td>{stocks}</Td> */}
       {stocks < 2 ? (
         <Td>
           <Flex alignItems={"center"} gap={"5px"}>
@@ -52,7 +52,7 @@ const AdminProductShowCard = ({ id, img, title, price }) => {
             </Text>
           </Flex>
         </Td>
-      )} */}
+      )}
       <Td>
         <Link to={`/admin/update/${id}`}>{<BsPencilFill />}</Link>
       </Td>
@@ -65,10 +65,13 @@ const AdminProductShowCard = ({ id, img, title, price }) => {
             toast({
               title: "Product Delete Success",
               status: "success",
-              duration: 9000,
+              duration: 2000,
               isClosable: true,
               position: "top",
-            })
+            }),
+             setTimeout(() => {
+              window.location.reload();
+          }, 1000)
           )
         }
       >

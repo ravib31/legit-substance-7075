@@ -3,7 +3,8 @@
 It is an E-commerce website where user can buy different varities of products mainly related to clothing like T-shirt, Shirts, Joggers, Jacket, Hoodies, Kurta, Jeggings and many more options. You can also buy mobile accesories like mobile back-covers. This website also has admin section where admin can add, delete and update the products data.
 This was a collabrative project completed in five days by 4 team members assigned by Masai School during its unit-5 curriculum.
 
-#Team Members:
+# Team Members:
+
  Shreshth Kumar,
  Ravi Bhashkar,
  Sunil Chaudhary and

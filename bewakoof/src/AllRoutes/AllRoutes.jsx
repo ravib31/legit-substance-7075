@@ -30,14 +30,38 @@ export const AllRoutes = () => {
                         <Footer />
                     </>
                 } />
-                <Route path="/men" element={<MenPage />} />
-                <Route path="/women" element={<WomenPage />} />
+                <Route path="/men" element={
+                    <>
+                    <Navbar/>
+                <MenPage />
+                <Footer/>
+                </>
+                } />
+                <Route path="/women" element={
+                     <>
+                     <Navbar/>
+                <WomenPage />
+                <Footer/>
+                </>} />
                 <Route path="/cart" element={<PrivateRoute>
+                    <>
+                     <Navbar/>
                     <CartPage />
+                    <Footer/>
+                </>
                 </PrivateRoute>} />
-                <Route path="/checkout" element={<CheckoutPage />} />
+                <Route path="/checkout" element={
+                     <>
+                     <Navbar/>
+                <CheckoutPage />
+                <Footer/>
+                </>} />
                 <Route path="/men/:id" element={<PrivateRoute>
+                    <>
+                     <Navbar/>
                     <SingleProductPage />
+                    <Footer/>
+                </>
                 </PrivateRoute>} />
                 <Route path="/login" element={<Login />} />
             </Routes>

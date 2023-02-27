@@ -36,7 +36,7 @@ const CheckoutPage = () => {
 
   if(paymentStatus===2){
       
-      return <img style={{width:"600px",height:"400px"}} src="https://thumbs.gfycat.com/AcclaimedPositiveGull-size_restricted.gif" alt="" />
+      return <img style={{width:"600px",height:"400px", margin:"auto"}} src="https://thumbs.gfycat.com/AcclaimedPositiveGull-size_restricted.gif" alt="" />
   }
   if(paymentStatus===5){
     return(
@@ -56,7 +56,7 @@ const CheckoutPage = () => {
   <AlertDescription maxWidth='sm'>
     Thank you for shoping from Befour
   </AlertDescription>
-  <Link to="/"><Button>Shoping More</Button></Link>
+  <Link to="/"><Button>Shop More</Button></Link>
 </Alert>
     )
   }else

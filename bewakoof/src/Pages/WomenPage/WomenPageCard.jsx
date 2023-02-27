@@ -7,7 +7,7 @@ const MenPageCard = ({ womenproduct }) => {
     <div className="product-box1">
       <div className="product-image1">
         <Link to={`/women/${womenproduct.id}`} >
-        <img src={womenproduct.image} alt={womenproduct.title} />
+        <img src={womenproduct.image[0]} alt={womenproduct.title} />
         </Link>
       </div>
       <div className="product-info1">

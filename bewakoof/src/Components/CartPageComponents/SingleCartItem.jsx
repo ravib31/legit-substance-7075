@@ -49,7 +49,7 @@ const SingleCartItem = ({id,title,actualPrice,discountedPrice,image,handleRemove
       </div>
       <p className={styles.stockLeft}>Hurry! Only 1 left!</p>
       <div className={styles.button}>
-        <Button  onClick={()=>{handleRemoveCartData(id)}}>Remvove</Button>
+        <Button  onClick={()=>{handleRemoveCartData(id)}}>Remove</Button>
         <Button>Move to Wishlist</Button>
       </div>
       

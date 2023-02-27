@@ -63,7 +63,12 @@ export const AllRoutes = () => {
                     <Footer/>
                 </>
                 </PrivateRoute>} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/login" element={
+                    <>
+                    <Navbar/>
+                <Login />
+                <Footer/>
+                </>} />
             </Routes>
             <Routes>
                 <Route path="/admin" element={

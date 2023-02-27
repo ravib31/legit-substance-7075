@@ -1,4 +1,9 @@
-# bewkoof.com-clone
-deploy link-https://delicate-mooncake-6ba932.netlify.app
-![Screenshot (26)](https://user-images.githubusercontent.com/107496019/221485388-ebb768f0-74e0-41d9-881f-5e8f52371c99.png)
-![Screenshot (27)](https://user-images.githubusercontent.com/107496019/221485416-39be28cc-2c2d-4e4d-be3c-7ae53a7371cd.png)
+Befour.com
+deploy link-https://delicate-mooncake-6ba932.netlify.app/
+
+Home Page-
+![befour](https://user-images.githubusercontent.com/107496019/221485831-c5cc974d-dd81-43c6-9b4f-6e7e3d1a8813.png)
+
+
+Admin Page-
+![admin](https://user-images.githubusercontent.com/107496019/221485853-f7733585-d5b2-45fd-8a8a-9fc9a5cdb371.png)

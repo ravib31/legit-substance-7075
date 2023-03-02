@@ -13,7 +13,7 @@ export const Login = () => {
   const handleLogin= () => {
     const userData = {email, password}
     dispatch(login(userData)).then(() => {
-      navigate("/", {replace:true});
+      navigate(location.state, {replace:true});
     });
   };
 

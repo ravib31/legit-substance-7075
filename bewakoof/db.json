@@ -1291,40 +1291,32 @@
   ],
   "cart": [
     {
-      "id": 2,
+      "id": 18,
       "type": "men",
       "image": [
-        "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971303-1.jpg",
-        "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971309-2.jpg",
-        "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971314-3.jpg",
-        "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971319-4.jpg",
-        "https://images.bewakoof.com/t1080/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971324-5.jpg"
+        "https://images.bewakoof.com/t640/men-s-orange-tape-shirt-317831-1675057118-1.jpg"
       ],
-      "title": "Men's Purple Justice League Society Graphic Printed Oversized T-shirt",
-      "discountedPrice": 499,
+      "title": "Men's Orange Tape Shirt",
+      "discountedPrice": 551,
       "actualPrice": 1499,
-      "loyaltyPrice": "₹459",
-      "fit": "OVERSIZED FIT",
-      "rating": 4.6,
-      "category": "T-shirt"
+      "loyaltyPrice": "₹509",
+      "fit": "Loose Fit",
+      "rating": 4.4,
+      "category": "Shirt"
     },
     {
-      "id": 7,
+      "id": 29,
       "type": "men",
       "image": [
-        "https://images.bewakoof.com/t1080/lost-mountains-half-sleeve-t-shirt-272010-1655748131-1.jpg",
-        "https://images.bewakoof.com/t1080/lost-mountains-half-sleeve-t-shirt-272010-1655748137-2.jpg",
-        "https://images.bewakoof.com/t1080/lost-mountains-half-sleeve-t-shirt-272010-1655748142-3.jpg",
-        "https://images.bewakoof.com/t1080/lost-mountains-half-sleeve-t-shirt-272010-1655748147-4.jpg",
-        "https://images.bewakoof.com/t1080/lost-mountains-half-sleeve-t-shirt-272010-1655748137-2.jpg"
+        "https://images.bewakoof.com/t640/men-s-black-oversized-jogger-516604-1669351564-1.jpg"
       ],
-      "title": "Men's Brown Justice League Society Graphic Printed Oversized T-shirt",
-      "discountedPrice": 699,
-      "actualPrice": 1499,
-      "loyaltyPrice": "₹639",
+      "title": "Men's Black Oversized Jogger",
+      "discountedPrice": 1341,
+      "actualPrice": 2299,
+      "loyaltyPrice": "₹1229",
       "fit": "OVERSIZED FIT",
-      "rating": 4.4,
-      "category": "T-shirt"
+      "rating": 4.6,
+      "category": "Joggers"
     }
   ]
 }

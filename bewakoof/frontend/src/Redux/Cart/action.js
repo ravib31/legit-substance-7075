@@ -4,7 +4,11 @@ import * as types from "./actionType";
 export const getCartProduct = () => (dispatch) => {
   dispatch({ type: types.GET_CART_PRODUCT_REQUEST });
   axios
-    .get(`http://localhost:8080/cart`)
+    .get(`http://localhost:8080/cart`,{
+      headers:{
+        "Authorization": localStorage.getItem("token") || null
+      }
+    })
 
     .then((res) => {
       console.log(res.data);
@@ -20,7 +24,11 @@ export const postCartProduct = (obj) => (dispatch) => {
   // console.log(obj);
   dispatch({ type: types.POST_CART_PRODUCT_REQUEST });
   axios
-    .post(`http://localhost:8080/cart`, obj)
+    .post(`http://localhost:8080/cart`, obj,{
+      headers:{
+        "Authorization":localStorage.getItem("token") || null
+      }
+    })
     .then((res) => {
       console.log(res);
     })

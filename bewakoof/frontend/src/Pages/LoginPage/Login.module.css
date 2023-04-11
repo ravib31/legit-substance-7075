@@ -7,7 +7,6 @@
 
 .box {
   display: flex;
-
 }
 
 .box_img {
@@ -49,11 +48,10 @@
 .main_head {
   font-size: 30px;
   font-weight: 700;
-  margin-bottom:30px;
+  margin-bottom: 30px;
 }
 
 .inp {
- 
   width: 250px;
   height: 93%;
 }
@@ -83,13 +81,12 @@
 .useCode {
   width: 21%;
   height: 400px;
- 
 }
 
 .signup {
   width: 31%;
   padding: 40px;
-  padding-top: 20px;
+  padding-top: 10px;
   background-color: white;
   text-align: left;
 }
@@ -98,7 +95,6 @@
   font-size: 25px;
   font-weight: bold;
   padding-left: 22px;
-  
 }
 
 .t2 {
@@ -111,27 +107,37 @@
 .signForm {
   display: flex;
   flex-direction: column;
-  height: 400px;
-  gap: 30px;
-  margin-top: 25px;
+  height: 300px;
+  gap: 20px;
+  margin-top: 20px;
   margin-left: 30px;
+  
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100px;
+  margin-top: 8px;
+  margin-left: 30px;
+  
 }
 
 .inp_box {
   border: 1px solid #828388;
   width: 100%;
-  height: 40px;
+  height: 30px;
   border-radius: 5px;
 }
 
 .sub {
   width: 100%;
-  height: 50px;
+  height: 40px;
   border-radius: 5px;
   background-color: #989898;
   color: white;
 }
-.inputs{
+.inputs {
   width: 100%;
   height: 200px;
   display: flex;
@@ -140,28 +146,32 @@
   justify-content: center;
   margin-top: 50px;
 }
-input[type=email],select,textarea{
+input[type="email"],
+select,
+textarea {
   width: 90%;
   height: 50px;
   margin: auto;
   font-size: 15px;
   border-bottom: 1px solid gray;
 }
-input[type=email]:focus{
+input[type="email"]:focus {
   outline: none;
   border-bottom: 1px solid gray;
 }
-input[type=password],select,textarea{
+input[type="password"],
+select,
+textarea {
   width: 90%;
   height: 50px;
   margin: auto;
   font-size: 15px;
   border-bottom: 1px solid gray;
 }
-.loginButton{
+.loginButton {
   width: 100%;
   height: 50px;
-  background-color:#989898 ;
+  background-color: #989898;
   border: none;
   border-radius: 5px;
   margin-top: 20px;

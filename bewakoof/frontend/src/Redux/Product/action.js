@@ -19,7 +19,7 @@ export const getProduct =() => (dispatch) => {
     dispatch(getMenProductRequest());
     axios.get(`http://localhost:8080/products?type=men`,{
         headers:{
-            "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVU0VSX0lEIjoiNjQzMWFkOGE1ZGNmMjE2OTNmMzNiMTE2IiwiaWF0IjoxNjgxMDI4OTg5fQ.r017Lil3xYjyEFwYRD-ZIAPASKsoDjj3XKkV_22YrR0"
+            "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVU0VSX0lEIjoiNjQzMWFkOGE1ZGNmMjE2OTNmMzNiMTE2IiwiaWF0IjoxNjgxMTMwMzU4fQ.3Ic5eTVd_ottS-itvAddx_Qe25-Phn4p3PKKtvaV4qc"
         }
     })
     .then((res) => {
@@ -44,7 +44,11 @@ export const getAllProduct=()=>(dispatch)=>{
 }
 
 export const delProduct =(id)=> (dispatch) => {
-    axios.delete(`https://lucky-getup-duck.cyclic.app/products/${id}`)
+    axios.delete(`http://localhost:8080/products/${id}`,{
+        headers:{
+            "Authorization":localStorage.getItem("token") || null
+          }
+    })
     .then((res) => {
         console.log(res)
         dispatch(getAllProduct());
@@ -74,7 +78,7 @@ export const getWomenProduct =() => (dispatch) => {
     dispatch(getWomenProductRequest());
     axios.get(`http://localhost:8080/products?type=women`,{
         headers:{
-            "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVU0VSX0lEIjoiNjQzMWFkOGE1ZGNmMjE2OTNmMzNiMTE2IiwiaWF0IjoxNjgxMDI4OTg5fQ.r017Lil3xYjyEFwYRD-ZIAPASKsoDjj3XKkV_22YrR0"
+            "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVU0VSX0lEIjoiNjQzMWFkOGE1ZGNmMjE2OTNmMzNiMTE2IiwiaWF0IjoxNjgxMTMwMzU4fQ.3Ic5eTVd_ottS-itvAddx_Qe25-Phn4p3PKKtvaV4qc"
         }
     })
     .then((res) => {

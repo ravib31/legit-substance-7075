@@ -4,6 +4,7 @@ import { reducer as menReducer } from "./Product/reducer";
 import { reducer as cartReducer } from "./Cart/reducer"
 import { Woreducer as womenReducer } from "./Product/reducer";
 import { reducer as authentication } from "./Auth/reducer";
+
 const rootReducer = combineReducers({
     menReducer,
     cartReducer,

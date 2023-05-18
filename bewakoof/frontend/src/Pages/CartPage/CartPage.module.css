@@ -1,0 +1,134 @@
+.totalItem{
+    margin-left: 13%;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.cartpage_container{
+    display: flex;
+    /* border: 1px solid red; */
+    width: 75%;
+    gap: 20px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+.cartPageRightSide{
+    /* border: 1px solid black; */
+    width: 40%;
+    text-align: left;
+    padding: 10px;
+}
+.allcartproducts{
+    width: 60%;
+    border: 1px solid black;
+
+}
+.cashbackDetails{
+    border: 1px solid gray;
+    padding: 2%;
+}
+.coupon{
+    border: 1px solid wheat;
+    padding: 1%;
+    color: green;
+}
+.allPriceDetails{
+ border: 1px solid wheat;
+ padding: 2%;
+}
+.summary{
+    border: 1px solid gray;
+    padding: 1%;
+    background-color: rgb(245, 230, 230);
+    font-size: 14px;
+    font-weight: 600;
+
+}
+.totolMrp{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.shipingCharges{
+    display: flex;
+    justify-content: space-between;}
+.bagDiscount{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.button{
+    width: 200px;
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.img{
+    display: flex;
+    justify-content: space-around;
+}
+.img>img{
+    width: 50px;
+}
+
+.emptyBag{
+/* border: 1px solid red; */
+text-align: center;
+margin: auto;
+margin-bottom: 100px;
+}
+.emptyBag>p{
+    font-size: 22px;
+}
+.emptyBag>div>img{
+    width: 150px;
+    margin: auto;
+
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    .cartpage_container{
+        display: flex;
+        /* border: 10px solid red; */
+        width: 100wh;
+       
+        
+       justify-content: space-around;
+    }
+    .allcartproducts{
+        width: 60%;
+        border: 1px solid black;
+    
+    }
+    .cartPageRightSide{
+        border: 1px solid black;
+        width: 40%;
+        text-align: left;
+        padding: 10px;
+    }
+}
+
+
+
+@media all and (min-width: 320px) and (max-width: 767px) {
+    .cartpage_container{
+        display: block;
+        border: 1px solid red;
+        width: 200%;
+        
+        
+    }
+    .cartPageRightSide{
+        border: 1px solid black;
+        width: 100%;
+        
+    }
+    .allcartproducts{
+        width: 100%;
+        border: 1px solid black;
+    
+    }
+}

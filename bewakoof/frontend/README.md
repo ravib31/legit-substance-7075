@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Bewakoof.com Clone (Befour.com)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It is an E-commerce website where user can buy different varities of products mainly related to clothing like T-shirt, Shirts, Joggers, Jacket, Hoodies, Kurta, Jeggings and many more options. You can also buy mobile accesories like mobile back-covers. This website also has admin section where admin can add, delete and update the products data.
+This was a collabrative project completed in five days by 4 team members assigned by Masai School during its unit-5 curriculum.
 
-## Available Scripts
+# Team Members:
 
-In the project directory, you can run:
+ Shreshth Kumar,
+ Ravi Bhashkar,
+ Sunil Chaudhary and
+ Taruna Sharma
 
-### `npm start`
+# Deploy link-
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://delicate-mooncake-6ba932.netlify.app/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+#Home Page-
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+![HomePage](https://www.linkpicture.com/q/Web-capture_27-2-2023_121822_delicate-mooncake-6ba932.netlify.app.jpeg)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Login Page-
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![LoginPage](https://www.linkpicture.com/q/Web-capture_27-2-2023_123525_delicate-mooncake-6ba932.netlify.app.jpeg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Men Product Page-
 
-### `npm run eject`
+![Men Page](https://www.linkpicture.com/q/Web-capture_27-2-2023_123237_delicate-mooncake-6ba932.netlify.app.jpeg)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Product Detail Page-
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![ProductDetail](https://www.linkpicture.com/q/Web-capture_27-2-2023_123622_delicate-mooncake-6ba932.netlify.app.jpeg)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Cart Page- 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![CartPage](https://www.linkpicture.com/q/Web-capture_27-2-2023_123759_delicate-mooncake-6ba932.netlify.app.jpeg)
 
-## Learn More
+# Checkout Page-
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![ChechoutPage](https://www.linkpicture.com/q/Web-capture_27-2-2023_123814_delicate-mooncake-6ba932.netlify.app.jpeg)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Women Product-
 
-### Code Splitting
+![WomenProduct](https://www.linkpicture.com/q/Web-capture_27-2-2023_12351_delicate-mooncake-6ba932.netlify.app.jpeg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![befour](https://user-images.githubusercontent.com/107496019/221485831-c5cc974d-dd81-43c6-9b4f-6e7e3d1a8813.png)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Admin Page-
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![admin](https://user-images.githubusercontent.com/107496019/221485853-f7733585-d5b2-45fd-8a8a-9fc9a5cdb371.png)

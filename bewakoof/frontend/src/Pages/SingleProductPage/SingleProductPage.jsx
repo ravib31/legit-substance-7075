@@ -47,7 +47,7 @@ const SingleProductPage = () => {
     dispatch(getSingleProduct(id)).then((res)=>{
       console.log(res.data);
       setPorductImages(res.data.image)
-      setMainImage(res.data.image[0])
+      setMainImage(res.data.images[0])
       setTitle(res.data.title)
       setFit(res.data.fit)
       setRating(res.data.rating)
@@ -77,7 +77,7 @@ const SingleProductPage = () => {
       console.log(res.data);
       dispatch(postCartProduct(res.data))
     })
-    
+     
   }
 
 

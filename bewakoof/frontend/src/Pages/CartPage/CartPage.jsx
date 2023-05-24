@@ -35,7 +35,11 @@ const CartPage = () => {
 
   const handleRemoveCartData=(id)=>{
  
-         axios.delete(` http://localhost:5000/cart/${id}`).then((res)=>{
+         axios.delete(` http://localhost:8080/cart/${id}`,{
+          headers:{
+            "Authorization":localStorage.getItem("token") || null
+          }
+         }).then((res)=>{
           dispatch(getSingleProduct(id)).then((res)=>{
             console.log(res);
             setToalMrp((prev)=>prev-res.data.actualPrice)
@@ -75,7 +79,7 @@ const CartPage = () => {
           {cartData && cartData.map((el)=>{
             
             return (
-              <SingleCartItem key={el.id} {...el} handleRemoveCartData={handleRemoveCartData}  />
+              <SingleCartItem key={el._id} {...el} handleRemoveCartData={handleRemoveCartData}  />
             )
           })}
         </div>

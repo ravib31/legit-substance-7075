@@ -6,7 +6,7 @@ import {HiMenuAlt1} from "react-icons/hi";
 import { CgProfile } from "react-icons/cg";
 
 export const Navbar = () => {
-  const username = localStorage.getItem("name") || null
+  const username = localStorage.getItem("username") || null
    return (
    <>
    <div className='NavBox'>
@@ -66,7 +66,7 @@ export const Navbar = () => {
           
         </div>
         <div>
-          <Link to="/login" id="ca"><p className='login' >{username ? username : <CgProfile />}</p></Link>
+          <Link to="/signup" id="ca"><p className='login' >{username ? <p onClick={()=>localStorage.clear()}>{username}</p> : <CgProfile />}</p></Link>
         </div>
         {/* <div className='country-flag' >
           <img src="https://images.bewakoof.com/web/india-flag-round-1639566913.png" alt="Country-flag" />

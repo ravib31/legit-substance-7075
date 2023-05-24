@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { removeCartData } from "../../Redux/Cart/action";
 import styles from "./SingleCartItem.module.css";
 
-const SingleCartItem = ({id,title,actualPrice,discountedPrice,image,handleRemoveCartData,handleQuantity}) => {
+const SingleCartItem = ({_id,title,actualPrice,discountedPrice,image,handleRemoveCartData,handleQuantity}) => {
 
   
   
@@ -49,7 +49,7 @@ const SingleCartItem = ({id,title,actualPrice,discountedPrice,image,handleRemove
       </div>
       <p className={styles.stockLeft}>Hurry! Only 1 left!</p>
       <div className={styles.button}>
-        <Button  onClick={()=>{handleRemoveCartData(id)}}>Remove</Button>
+        <Button  onClick={()=>{handleRemoveCartData(_id)}}>Remove</Button>
         <Button>Move to Wishlist</Button>
       </div>
       

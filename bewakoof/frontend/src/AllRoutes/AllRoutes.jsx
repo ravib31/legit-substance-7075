@@ -17,6 +17,7 @@ import SingleProductPage from "../Pages/SingleProductPage/SingleProductPage";
 import { Login } from "../Pages/LoginPage/Login";
 import { PrivateRoute } from "../Components/PrivateRoute";
 import Footer from "../Components/Footer";
+import { Signup } from "../Pages/LoginPage/Signup";
 
 export const AllRoutes = () => {
 
@@ -56,20 +57,24 @@ export const AllRoutes = () => {
                 <CheckoutPage />
                 <Footer/>
                 </>} />
-                <Route path="/men/:id" element={<PrivateRoute>
+                <Route path="/men/:id" element={
                     <>
                      <Navbar/>
+                     <PrivateRoute>
                     <SingleProductPage />
+                    </PrivateRoute>
                     <Footer/>
                 </>
-                </PrivateRoute>} />
-                <Route path="/women/:id" element={<PrivateRoute>
+                } />
+                <Route path="/women/:id" element={
                     <>
                      <Navbar/>
+                     <PrivateRoute>
                     <SingleProductPage />
+                    </PrivateRoute>
                     <Footer/>
                 </>
-                </PrivateRoute>} />
+                } />
                 <Route path="/login" element={
                     <>
                     <Navbar/>
@@ -98,6 +103,15 @@ export const AllRoutes = () => {
                 <Route path="/admin/addproduct" element={
                     <>
                         <AdminAddProduct />
+
+                    </>
+
+                } />
+                 <Route path="/signup" element={
+                    <>
+                         <Navbar/>
+                <Signup />
+                <Footer/>
 
                     </>
 

@@ -17,7 +17,7 @@ app.use(cors())
 
 
 app.use("/user", userRouter)
-app.use(auth)
+// app.use(auth)
 app.use("/products", productRouter)
 app.use("/cart", CartproductRouter)
 app.use("/order" , orderRouter)

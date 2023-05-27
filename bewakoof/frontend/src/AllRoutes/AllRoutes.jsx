@@ -17,7 +17,7 @@ import SingleProductPage from "../Pages/SingleProductPage/SingleProductPage";
 import { Login } from "../Pages/LoginPage/Login";
 import { PrivateRoute } from "../Components/PrivateRoute";
 import Footer from "../Components/Footer";
-import { Signup } from "../Pages/LoginPage/Signup";
+import  Signup  from "../Pages/SingupPage/Signup";
 
 export const AllRoutes = () => {
 

@@ -1,16 +1,21 @@
-.main{
+/* .main{
     display: flex;
     width: 80%;
     justify-content: center;
     gap: 20%;
-}
+} */
 
 .leftside{
+
 }
 
 .leftside>img{
     
-    height: 70vh;
+    height: 80vh;
+    width: 100%;
+}
+header{
+    text-align: center;
 }
 
 header>p:first-child{
@@ -20,15 +25,17 @@ header>p:first-child{
 }
 
 header>p:last-child{
-    font-size: 12px;
-    font-family: montserrat-bold,sans-serif;
-    font-weight:700;
+    font-size: 16px;
+   font-family: 'Courier New', Courier, monospace;
+    font-weight:600;
+    margin-bottom: 20px;
+    
 }
 
-form{
+/* form{
     display: flex;
     flex-direction: column;
     text-align: left;
     
-}
+} */
 

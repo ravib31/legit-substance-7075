@@ -17,7 +17,7 @@ const storage=multer.diskStorage({
 
 const upload=multer({storage:storage});
 
-userRouter.post("/register",upload.single("image"),registerFun );
+userRouter.post("/register",upload.single("avatar"),registerFun ); 
 userRouter.post("/login", loginFun);
 userRouter.get("/verifiy",verifiyMail)
 

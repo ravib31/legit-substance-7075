@@ -7,7 +7,7 @@ import { reducer as authentication } from "./Auth/reducer";
 
 const rootReducer = combineReducers({
     menReducer,
-    cartReducer,
+    // cartReducer,
     womenReducer,authentication 
 })
 

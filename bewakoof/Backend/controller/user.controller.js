@@ -6,7 +6,7 @@ require('dotenv').config();
 
 
 //for send mail
-const sendVerifyMail=(username,email,user_id)=>{
+const sendVerifyMail=(name,email,user_id)=>{
     try {
        const transporter= nodemailer.createTransport({
             host:'smtp.gmail.com',
@@ -34,7 +34,7 @@ const sendVerifyMail=(username,email,user_id)=>{
             from:'sunilchuadhary7789@gmail.com',
             to:email,
             subject:'For Verification mail',
-            html:`<p>Hii ${username},please click here to <a href="http://localhost:8080/user/verifiy/?id=${user_id}">Verify</a>your mail </p>`
+            html:`<p>Hii ${name},please click here to <a href="http://localhost:8080/user/verifiy/?id=${user_id}">Verify</a>your mail </p>`
         }
 
         transporter.sendMail(mailOptions,(err,info)=>{
@@ -62,24 +62,26 @@ const verifiyMail=async(req,res)=>{
 }
 
 const registerFun=async (req, res) => {
-    const { username, email, password, age, location,type, order } = req.body;
+    const { name, email, password, phone, age, location,type, order } = req.body;
   
-    const user = await UserModel.find({ email });
+    const user = await UserModel.findOne({ email });
   
-    if (user.length === 0) {
+    if (!user) {
       try {
         bcrypt.hash(password, 2, async (err, hash) => {
           let userDetail = new UserModel({
-            username,
+            name,
             email,
+            phone,
             password: hash,
             age,
             location, 
-            // image:req.file.filename  
+           avatar:req.file.filename  
           });
          userDetail= await userDetail.save();
          if(userDetail){
-            sendVerifyMail(username,email,userDetail._id);
+            
+            sendVerifyMail(name,email,userDetail._id);
 
           res.status(200).send({ msg: "User data submitted successfully ,Please verify your mail" });
          }else{
@@ -89,8 +91,10 @@ const registerFun=async (req, res) => {
       } catch (error) {
         res.status(400).send({ msg: error.message });
       }
-    } else {
-      res.status(400).send("User already exist, please login");
+    } else if(!user.isVerified){
+      res.status(200).send({"msg":"Please check your mail and verify"})
+    }else{
+      res.status(200).send({msg:"User already exist please login"}) 
     }
   }
 
@@ -125,9 +129,9 @@ const registerFun=async (req, res) => {
   }
 
 //   const AdminloginFun=async (req, res) => {
-//     const { username, password } = req.body;
+//     const { name, password } = req.body;
 //     try {
-//       const user = await UserModel.findOne({ username });
+//       const user = await UserModel.findOne({ name });
 //       if (user) {
 //         if (user.type === "ADMIN") {
 //           bcrypt.compare(password, user.password, async (err, result) => {

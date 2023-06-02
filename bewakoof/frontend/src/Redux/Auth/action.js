@@ -56,6 +56,7 @@ export const register = (userData) => async(dispatch)=> {
   dispatch(registerRequest())
   try {
     let res=await axios.post("http://localhost:8080/user/register",userData);
+    console.log(res);
     dispatch(registerSuccess(res.data.msg))
   } catch (error) {
     dispatch(registerFailure())

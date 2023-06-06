@@ -5,11 +5,9 @@
     gap: 20%;
 } */
 
+.leftside{
 
-  
-
-
-
+}
 
 .leftside>img{
     
@@ -22,7 +20,7 @@ header{
 
 header>p:first-child{
     font-size: 25px;
-    font-family: 'Alata', sans-serif;;
+    font-family: montserrat-bold,sans-serif;
     font-weight:700;
 }
 
@@ -34,9 +32,10 @@ header>p:last-child{
     
 }
 
-/* @media only screen and (max-width: 769px) {
-  .leftside{
-      display: none;
-  }
+/* form{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    
 } */
 

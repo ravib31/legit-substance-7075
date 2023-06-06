@@ -6,7 +6,7 @@ require('dotenv').config();
 
 
 //for send mail
-const sendVerifyMail=(username,email,user_id)=>{
+const sendVerifyMail=(name,email,user_id)=>{
     try {
        const transporter= nodemailer.createTransport({
             host:'smtp.gmail.com',
@@ -34,7 +34,7 @@ const sendVerifyMail=(username,email,user_id)=>{
             from:'sunilchuadhary7789@gmail.com',
             to:email,
             subject:'For Verification mail',
-            html:`<p>Hii ${username},please click here to <a href="http://localhost:8080/user/verifiy/?id=${user_id}">Verify</a>your mail </p>`
+            html:`<p>Hii ${name},please click here to <a href="http://localhost:8080/user/verifiy/?id=${user_id}">Verify</a>your mail </p>`
         }
 
         transporter.sendMail(mailOptions,(err,info)=>{
@@ -55,31 +55,36 @@ const verifiyMail=async(req,res)=>{
      try {
        const updatedInfo= await UserModel.updateOne({_id:req.query.id},{$set:{isVerified:true}});
        console.log(updatedInfo);
-       res.redirect("/login");
+       
+        res.redirect("http://localhost:3000/user/login");
+        // alert("Verify successfully")
+       
      } catch (error) {
         console.log(error);
      }
 }
 
 const registerFun=async (req, res) => {
-    const { username, email, password, age, location,type, order } = req.body;
+    const { name, email, password, phone, age, location,type, order } = req.body;
   
-    const user = await UserModel.find({ email });
+    const user = await UserModel.findOne({ email });
   
-    if (user.length === 0) {
+    if (!user) {
       try {
         bcrypt.hash(password, 2, async (err, hash) => {
           let userDetail = new UserModel({
-            username,
+            name,
             email,
+            phone,
             password: hash,
             age,
             location, 
-            // image:req.file.filename  
+           avatar:req.file.filename  
           });
          userDetail= await userDetail.save();
          if(userDetail){
-            sendVerifyMail(username,email,userDetail._id);
+            
+            sendVerifyMail(name,email,userDetail._id);
 
           res.status(200).send({ msg: "User data submitted successfully ,Please verify your mail" });
          }else{
@@ -89,45 +94,56 @@ const registerFun=async (req, res) => {
       } catch (error) {
         res.status(400).send({ msg: error.message });
       }
-    } else {
-      res.status(400).send("User already exist, please login");
+    } else if(!user.isVerified){
+      res.status(200).send({"msg":"Please check your mail and verify"})
+    }else{
+      res.status(200).send({msg:"User already exist please login"}) 
     }
   }
 
-  const loginFun=async (req, res) => {
-    const { email, password } = req.body;
-    try {
-      const user = await UserModel.findOne({ email });
-      // console.log("user", user)
-      if (user.isVerified) {
-        bcrypt.compare(password, user.password, async (err, result) => {
-          if (result) {
-            res.status(200).send({
-              msg: "Login Successful",
-              token: jwt.sign(
-                {
-                  USER_ID: user._id,
-                },
-                "bhashkar"
-              ),
-              user: user,
-            });
-          } else {
-            res.status(401).send("Wrong Password");
-          }
-        });
-      } else {
-        res.status(404).send("No User Found");
-      }
-    } catch (error) {
-      res.status(400).send({ msg: error.message });
+ const loginFun = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await UserModel.findOne({ email });
+
+    if (!user) {
+      return res.status(404).send({ msg: "User not found" });
     }
+
+    if (!user.isVerified) {
+      return res.status(401).send({ msg: "User is not verified" });
+    }
+
+    bcrypt.compare(password, user.password, (err, result) => {
+      if (err) {
+        return res.status(500).send({ msg: "Error occurred while comparing passwords" });
+      }
+
+      if (result) {
+        const token = jwt.sign({ USER_ID: user._id }, "bhashkar", {
+          expiresIn: "30d",
+        });
+        res.cookie("token", token, { maxAge: 30 * 24 * 60 * 60 * 1000 }); // Set the token as a cookie with a 30-day expiration
+        return res.status(200).send({
+          msg: "Login successful",
+          token: token,
+          user: user,
+        });
+      }
+
+      return res.status(401).send({ msg: "Incorrect password" });
+    });
+  } catch (error) {
+    res.status(400).send({ msg: error.message });
   }
+};
+
 
 //   const AdminloginFun=async (req, res) => {
-//     const { username, password } = req.body;
+//     const { name, password } = req.body;
 //     try {
-//       const user = await UserModel.findOne({ username });
+//       const user = await UserModel.findOne({ name });
 //       if (user) {
 //         if (user.type === "ADMIN") {
 //           bcrypt.compare(password, user.password, async (err, result) => {

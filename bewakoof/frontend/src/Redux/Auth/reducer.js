@@ -13,22 +13,24 @@ const initialState = {
   token: "",
   msg:"",
   isError: false,
+  user:{}
 };
 
 export const reducer = (state = initialState, { type, payload }) => {
+  console.log(payload);
   switch (type) {
     case LOGIN_REQUEST:
       return { ...state, isLoading: true };
     case LOGIN_SUCCESS:
-      return { ...state, isLoading: false, isAuth: true, token: payload };
+      return { ...state, isLoading: false, isError:false, isAuth: true, token: payload.token,msg:payload.msg ,user:payload.user };
     case LOGIN_FAILURE:
-      return { ...state, isLoading: false, isError: true };
+      return { ...state, isLoading: false, isError: true ,msg:payload};
     case REGISTER_REQUEST:
       return { ...state, isLoading: true };
     case REGISTER_SUCCESS:
-      return { ...state, isLoading: false, isAuth: true, msg: payload.msg };
+      return { ...state, isLoading: false, isAuth: true, msg: payload };
     case REGISTER_FAILURE:
-      return { ...state, isLoading: false, isError: true };
+      return { ...state, isLoading: false, isError: true, };
     default:
       return state;
   }

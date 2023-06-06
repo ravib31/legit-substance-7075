@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Signup.module.css";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import useCustomToast from "../../Layout/useCustomToast";
@@ -20,6 +20,7 @@ import {
   SimpleGrid,
   Stack,
   Text,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 
 import { FaUserTie } from "react-icons/fa";
@@ -28,11 +29,16 @@ import { BsTelephoneFill } from "react-icons/bs";
 import { RiLockPasswordFill } from "react-icons/ri";
 import SocialMedia from "./SocialMedia";
 import Toast from "../../Layout/useCustomToast";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const showToast = useCustomToast();
   const dispatch = useDispatch();
+  const store = useSelector((store) => store.authReducer);
+  const { isError, msg,isAuth,isLoading } = store;
+  const naviage=useNavigate();
+  console.log(store);
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -41,7 +47,7 @@ const Signup = () => {
   });
   const [avatar, setAvatar] = useState();
   const [avatarPreview, setAvatarPreview] = useState("preview.png");
-
+  const imageDisplay = useBreakpointValue({ base: "none", md: "block" });
   const { name, email, password, phone } = user;
 
   const handleSignupForm = (e) => {
@@ -75,6 +81,17 @@ const Signup = () => {
     dispatch(register(formData));
   };
 
+  const isFirstRender = useRef(true);
+  useEffect(()=>{
+    if(!isFirstRender.current){
+      if(msg==="User data submitted successfully ,Please verify your mail"){
+        showToast("Verify your mail","info",9000)
+      }
+    }else{
+      isFirstRender.current = false; 
+    }
+  },[msg])
+
   const handleDataChange = (e) => {
     if (e.target.name === "avatar") {
       const file = e.target.files[0];
@@ -99,14 +116,14 @@ const Signup = () => {
     <div>
       <SimpleGrid
         className={styles.main}
-        columns={[1, 2, 2]}
+        columns={[1, 1, 2, 2]}
         w={"80%"}
         margin={"auto"}
         gap={"10%"}
         mb={"100px"}
         mt={"10px"}
       >
-        <div className={styles.leftside}>
+        <div className={styles.leftside} style={{ display: imageDisplay }}>
           <img
             src="https://images.bewakoof.com/web/desktop-sign-up-banner--1623760676.png"
             alt="logo"
@@ -186,6 +203,7 @@ const Signup = () => {
               <Button
                 type="submit"
                 loadingText="Submitting"
+                isLoading={isLoading}
                 size="lg"
                 bg={"blue.400"}
                 color={"white"}

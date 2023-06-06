@@ -55,7 +55,10 @@ const verifiyMail=async(req,res)=>{
      try {
        const updatedInfo= await UserModel.updateOne({_id:req.query.id},{$set:{isVerified:true}});
        console.log(updatedInfo);
-       res.redirect("/login");
+       
+        res.redirect("http://localhost:3000/user/login");
+        // alert("Verify successfully")
+       
      } catch (error) {
         console.log(error);
      }
@@ -98,35 +101,44 @@ const registerFun=async (req, res) => {
     }
   }
 
-  const loginFun=async (req, res) => {
-    const { email, password } = req.body;
-    try {
-      const user = await UserModel.findOne({ email });
-      // console.log("user", user)
-      if (user.isVerified) {
-        bcrypt.compare(password, user.password, async (err, result) => {
-          if (result) {
-            res.status(200).send({
-              msg: "Login Successful",
-              token: jwt.sign(
-                {
-                  USER_ID: user._id,
-                },
-                "bhashkar"
-              ),
-              user: user,
-            });
-          } else {
-            res.status(401).send("Wrong Password");
-          }
-        });
-      } else {
-        res.status(404).send("No User Found");
-      }
-    } catch (error) {
-      res.status(400).send({ msg: error.message });
+ const loginFun = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await UserModel.findOne({ email });
+
+    if (!user) {
+      return res.status(404).send({ msg: "User not found" });
     }
+
+    if (!user.isVerified) {
+      return res.status(401).send({ msg: "User is not verified" });
+    }
+
+    bcrypt.compare(password, user.password, (err, result) => {
+      if (err) {
+        return res.status(500).send({ msg: "Error occurred while comparing passwords" });
+      }
+
+      if (result) {
+        const token = jwt.sign({ USER_ID: user._id }, "bhashkar", {
+          expiresIn: "30d",
+        });
+        res.cookie("token", token, { maxAge: 30 * 24 * 60 * 60 * 1000 }); // Set the token as a cookie with a 30-day expiration
+        return res.status(200).send({
+          msg: "Login successful",
+          token: token,
+          user: user,
+        });
+      }
+
+      return res.status(401).send({ msg: "Incorrect password" });
+    });
+  } catch (error) {
+    res.status(400).send({ msg: error.message });
   }
+};
+
 
 //   const AdminloginFun=async (req, res) => {
 //     const { name, password } = req.body;

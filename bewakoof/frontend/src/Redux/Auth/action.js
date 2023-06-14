@@ -60,7 +60,7 @@ export const login=(userData)=>(dispatch)=>{
     dispatch(loginSuccess(res.data))
   }).catch((error)=>{
     console.log(error);
-    dispatch(loginFailure(error.response.data.msg))
+    dispatch(loginFailure(error.response.data.msg)) 
     console.log(error.response.data.msg);
   })
 }

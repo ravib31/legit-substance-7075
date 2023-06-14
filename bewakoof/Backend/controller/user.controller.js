@@ -56,7 +56,7 @@ const verifiyMail=async(req,res)=>{
        const updatedInfo= await UserModel.updateOne({_id:req.query.id},{$set:{isVerified:true}});
        console.log(updatedInfo);
        
-        res.redirect("http://localhost:3000/user/login");
+        res.redirect("http://localhost:3000/user/login"); 
         // alert("Verify successfully")
        
      } catch (error) {

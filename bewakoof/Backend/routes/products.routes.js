@@ -3,49 +3,51 @@ const { ProductModel } = require("../models/Products.model");
 const productRouter = express.Router();
 const jwt = require("jsonwebtoken");
 
-productRouter.get("/", async (req, res) => {
-  const qSort = req.query;
-  console.log(qSort.sort);
 
-  let q;
-  if (qSort.sort === "asc") {
-    q = 1;
-  } else if (qSort.sort === "desc") {
-    q = -1;
-  }
 
+productRouter.get("/men", async (req, res) => {
+  const { category } = req.query;
   try {
-    if (req.query.price && req.query.rating) {
-      const data = await ProductModel.find({
-        $and: [{ $: req.query.price }, { $: req.query.rating }],
-      });
-      console.log(data);
-      res.send(data);
-    } else if (req.query.price) {
-      const data = await ProductModel.find({
-        price: { $gt: req.query.price },
-      }).sort({ price: q });
-      console.log(data);
-      res.send(data);
-    } else if (req.query.rating) {
-      const data = await ProductModel.find({
-        rating: { $gt: req.query.rating },
-      }).sort({ rating: q });
-      console.log(data);
-      res.send(data);
-    } else if (req.query.category) {
-      const data = await ProductModel.find({ category: req.query.category });
-      console.log(data);
-      res.send(data);
+    let menData;
+
+    if (category) {
+      try {
+        menData = await ProductModel.find({
+          type: "men",
+          category: category 
+        });
+        res.status(200).send({ menData });
+      } catch (error) {
+        res.status(500).send({ err: error.message });
+      }
     } else {
-      const data = await ProductModel.find();
-      console.log(data);
-      res.send(data);
+      menData = await ProductModel.find({ type: "men" });
+      res.status(200).send({ menData });
     }
-    // res.status(200).send({"msg" : "All data"})
-  } catch (error) {
-    res.status(400).send({ msg: error.message });
+  } catch (err) {
+    res.status(500).send({ err: err.message });
   }
+});
+
+
+productRouter.get("/women", async (req, res) => {
+
+  try{
+    if(category){
+      try {
+        const filterwomenData=await ProductModel.find({category});
+        res.status(200).send({filterwomenData})
+      } catch (error) {
+        res.status(500).send({"err":err.message})
+      }
+
+    }
+    const womenData= await ProductModel.find({type:"women"})
+    res.status(200).send({"menData":womenData})
+  }catch(err){
+    res.status(500).send({"err":err.message})
+  }
+  
 });
 
 productRouter.get("/sort", async (req, res) => {
@@ -150,3 +152,47 @@ productRouter.delete("delete/:prodID", async (req, res) => {
 });
 
 module.exports = { productRouter };
+
+
+// const qSort = req.query;
+//   console.log(qSort.sort);
+
+//   let q;
+//   if (qSort.sort === "asc") {
+//     q = 1;
+//   } else if (qSort.sort === "desc") {
+//     q = -1;
+//   }
+
+//   try {
+//     if (req.query.price && req.query.rating) {
+//       const data = await ProductModel.find({
+//         $and: [{ $: req.query.price }, { $: req.query.rating }],
+//       });
+//       console.log(data);
+//       res.send(data);
+//     } else if (req.query.price) {
+//       const data = await ProductModel.find({
+//         price: { $gt: req.query.price },
+//       }).sort({ price: q });
+//       console.log(data);
+//       res.send(data);
+//     } else if (req.query.rating) {
+//       const data = await ProductModel.find({
+//         rating: { $gt: req.query.rating },
+//       }).sort({ rating: q });
+//       console.log(data);
+//       res.send(data);
+//     } else if (req.query.category) {
+//       const data = await ProductModel.find({ category: req.query.category });
+//       console.log(data);
+//       res.send(data);
+//     } else {
+//       const data = await ProductModel.find();
+//       console.log(data);
+//       res.send(data);
+//     }
+//     // res.status(200).send({"msg" : "All data"})
+//   } catch (error) {
+//     res.status(400).send({ msg: error.message });
+//   }

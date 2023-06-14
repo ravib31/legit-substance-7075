@@ -15,21 +15,24 @@ export const getMenProductError = () => {
 
 
 
-export const getProduct =() => (dispatch) => {
+export const getMenProduct = (params) => (dispatch) => {
     dispatch(getMenProductRequest());
-    axios.get(`http://localhost:5000/products?type=men`,{
-        headers:{
-            "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVU0VSX0lEIjoiNjQzMWFkOGE1ZGNmMjE2OTNmMzNiMTE2IiwiaWF0IjoxNjgxMTMwMzU4fQ.3Ic5eTVd_ottS-itvAddx_Qe25-Phn4p3PKKtvaV4qc"
-        }
-    })
-    .then((res) => {
-        console.log(res)
-        dispatch(getMenProductSuccess(res.data));
-    })
-    .catch((err) => {
-        dispatch(getMenProductError())
-    })
-}
+    axios
+      .get("http://localhost:8080/products/men", {
+        params: {
+          category: params.category,
+          sort: params.sort,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        dispatch(getMenProductSuccess(res.data.menData));
+      })
+      .catch((err) => {
+        dispatch(getMenProductError());
+      });
+  };
+  
 
 
 export const getAllProduct=()=>(dispatch)=>{
@@ -88,7 +91,7 @@ export const getWomenProductError = () => {
 
 export const getWomenProduct =() => (dispatch) => {
     dispatch(getWomenProductRequest());
-    axios.get(`http://localhost:5000/products?type=women`,{
+    axios.get(`http://localhost:8080/products/women`,{
         headers:{
             "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVU0VSX0lEIjoiNjQzMWFkOGE1ZGNmMjE2OTNmMzNiMTE2IiwiaWF0IjoxNjgxMTMwMzU4fQ.3Ic5eTVd_ottS-itvAddx_Qe25-Phn4p3PKKtvaV4qc"
         }

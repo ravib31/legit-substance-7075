@@ -1,5 +1,4 @@
 import React from "react";
-import { Navbar } from "../Components/Navbar";
 import { Home } from "../Pages/HomePage/Home";
 import { Routes, Route } from "react-router-dom";
 import MenPage from "../Pages/MenPage/MenPage";
@@ -17,6 +16,7 @@ import  Login  from "../Pages/LoginPage/Login";
 import { PrivateRoute } from "../Components/PrivateRoute";
 import Footer from "../Components/Footer";
 import Signup from "../Pages/SingupPage/Signup";
+import Navbar from "../Components/Navbar";
 
 export const AllRoutes = () => {
   return (

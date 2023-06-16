@@ -104,4 +104,3 @@ export const getWomenProduct =() => (dispatch) => {
         dispatch(getWomenProductError())
     })
 }
-

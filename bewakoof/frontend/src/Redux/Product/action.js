@@ -97,7 +97,8 @@ export const getWomenProduct =() => (dispatch) => {
         // }
     })
     .then((res) => {
-        dispatch(getWomenProductSuccess(res.data));
+        console.log(res);
+        dispatch(getWomenProductSuccess(res.data.womenData));
         
     })
     .catch((err) => {

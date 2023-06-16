@@ -31,7 +31,7 @@ productRouter.get("/men", async (req, res) => {
 
 
 productRouter.get("/women", async (req, res) => {
-
+  const { category } = req.params
   try{
     if(category){
       try {
@@ -43,7 +43,7 @@ productRouter.get("/women", async (req, res) => {
 
     }
     const womenData= await ProductModel.find({type:"women"})
-    res.status(200).send({"menData":womenData})
+    res.status(200).send({"womenData":womenData})
   }catch(err){
     res.status(500).send({"err":err.message})
   }

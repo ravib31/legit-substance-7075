@@ -33,7 +33,7 @@ const onWishlistPage = () => {
  
     return (
     <>
-    <nav>
+    <nav >
     <div id="nav-top">
       <div id='top-sec'>
        <div id='top-1'>

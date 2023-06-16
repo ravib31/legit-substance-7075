@@ -36,7 +36,7 @@ export const getMenProduct = (params) => (dispatch) => {
 
 
 export const getAllProduct=()=>(dispatch)=>{
-    axios.get(`http://localhost:5000/products`)
+    axios.get(`http://localhost:8080/products`)
     .then((res) => {
         dispatch({type:types.GET_ALL_PRODUCT,payload:res.data})
     })
@@ -47,7 +47,7 @@ export const getAllProduct=()=>(dispatch)=>{
 
 export const getSingleProduct=(id)=>(dispatch)=>{
     dispatch({type:types.GET_SINGLE_PRODUCT_REQUEST})
-    axios.get(`http://localhost:5000/products/${id}`)
+    axios.get(`http://localhost:8080/products/${id}`)
     .then((res) => {
         dispatch({type:types.GET_ALL_PRODUCT,payload:res.data})
     })
@@ -92,9 +92,9 @@ export const getWomenProductError = () => {
 export const getWomenProduct =() => (dispatch) => {
     dispatch(getWomenProductRequest());
     axios.get(`http://localhost:8080/products/women`,{
-        headers:{
-            "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVU0VSX0lEIjoiNjQzMWFkOGE1ZGNmMjE2OTNmMzNiMTE2IiwiaWF0IjoxNjgxMTMwMzU4fQ.3Ic5eTVd_ottS-itvAddx_Qe25-Phn4p3PKKtvaV4qc"
-        }
+        // headers:{
+        //     "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVU0VSX0lEIjoiNjQzMWFkOGE1ZGNmMjE2OTNmMzNiMTE2IiwiaWF0IjoxNjgxMTMwMzU4fQ.3Ic5eTVd_ottS-itvAddx_Qe25-Phn4p3PKKtvaV4qc"
+        // }
     })
     .then((res) => {
         dispatch(getWomenProductSuccess(res.data));

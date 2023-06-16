@@ -17,7 +17,7 @@ const Navbar = () => {
   }
 
   const onLoginPage = () => {
-    navigate('/signup')
+    navigate('/user/login')
 }
 
 const onCartPage = () => {
@@ -93,7 +93,7 @@ const onWishlistPage = () => {
               <li><Link>WISHLIST</Link></li>
               <li><Link>CART</Link></li>
               <li><Link>PROFILE</Link></li>
-              <li><Link>LOGOUT</Link></li>
+              <li><Link>LOGIN</Link></li>
             </ul>
           </div>
           )}

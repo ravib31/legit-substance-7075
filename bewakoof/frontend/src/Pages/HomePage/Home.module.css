@@ -22,27 +22,51 @@
 }
 
 .mid {
+    width: 100%;
     margin-top: 20px;
-    width: 100px;
+}
+.mid img{
+    margin: auto;
+    width: 100%;
 }
 
 .small {
+    width: 100%;
+    height: auto;
     margin-top: 20px;
    display: flex;
    flex-direction: row;
-   gap:15px;
+   align-items: center;
    justify-content: center;
 }
-
-.small > img {
+.small>div{
+    width: 80%;
+    margin: auto;
+    display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   gap:15px;
+   flex-wrap: wrap;
+}
+.small>div > img {
     width: 120px;
     border-radius: 10px;
+}
+.sale{
+    width: 98%;
+    width: auto;
+}
+.sale img{
+    width: 100%;
+    margin: auto;
 }
 .discount{
     text-align: center;
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 1px;
+    margin-bottom: 30px;
 }
 .popular{
      text-align: center;
@@ -57,5 +81,50 @@
   gap: 10px;
   margin-top:20px;
 }
+.categories{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+     
+}
+.discount_offer{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 49% 49%;
+  gap: 10px;  
+}
+.discount_offer img{
+    margin: auto;
+    margin-left:8px;
+   width: 100%;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .categories{
+        flex-wrap: wrap;
+      }
+      .designs{
+        margin-bottom: 20px;
+      }
+}
 
-
+@media screen and (max-width: 768px){
+  .categories{
+    flex-wrap: wrap;
+  }
+  .discount_offer{
+    width: 98%;
+    margin: auto;
+    grid-template-columns: repeat(1,1fr);
+    margin-left:0px;
+    margin-bottom: 20px;
+  }
+  .designs{
+    margin-bottom: 20px;
+  }
+}

@@ -1,42 +1,9 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
+import "./Slider.css";
 
-const Wrapper = styled.div`
-  width: 100%;
-  margin: auto;
-  display: flex;
-  gap: 1px;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  margin-top:30px;
 
-  &::-webkit-scrollbar{
-      display: none;
-  }
-`;
 
-const Idiv = styled.div`
-  width: 500px;
-  height: 500px;
-  gap: 10px;
-  position: relative;
 
-  & > div {
-    width: 500px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // border: 1px solid #eaeaea;
-    gap: 10px;
-
-    & img {
-      max-width: 490px;
-      max-height: 500px;
-     
-    }
-  }
-`;
 
 
 export const Slider = () => {
@@ -57,19 +24,19 @@ export const Slider = () => {
     
     },
     {
-      img: "https://images.bewakoof.com/uploads/grid/app/1x1Banner-static-shoes-1651235308.gif",
-      
-    },
-    {
-      img: "https://images.bewakoof.com/uploads/grid/app/b1g1-1x1-m-1655216421.jpg",
-      
-    },
-    {
       img: "https://images.bewakoof.com/uploads/grid/app/Static-Banner-1-1-Oversized-Tshirt-Men-1654684413.jpg",
+      
+    },
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/1X1-STATIC-MAY-EasyBreezyOversizedTees-common-1686725700.jpg",
+      
+    },
+    {
+      img: "https://images.bewakoof.com/uploads/grid/app/1x1Banner-static-shoes-1651235308.gif",
       title: "Sindoor",
     },
     {
-      img: "https://images.bewakoof.com/uploads/grid/app/Static-Banner-1-1-Printed-Tshirts-Men-2-1654684414.jpg",
+      img: "https://images.bewakoof.com/uploads/grid/app/1X1-2023-WithUSP--lazy-summer-pyjamas-1686636596.jpg",
       
     },
     {
@@ -80,14 +47,14 @@ export const Slider = () => {
   ];
   
   return (
-    <Wrapper id="wrapper">
+    <div id="wrapper">
       {images.map((e) => (
-        <Idiv key={e.img}>
+        <div key={e.img} id="Idiv">
           <div >
-            <img src={e.img} alt="" />
+            <img src={e.img} alt="befour" />
           </div>
-        </Idiv>
+        </div>
       ))}
-    </Wrapper>
+    </div>
   );
 };

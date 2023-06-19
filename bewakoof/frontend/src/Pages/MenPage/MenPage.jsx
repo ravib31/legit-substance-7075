@@ -5,13 +5,14 @@ import { getMenProduct } from "../../Redux/Product/action";
 import "./MenPage.css";
 import MenPageCard from "./MenPageCard";
 import Sidebar from "./Sidebar";
+import Loader from "../../Layout/Loader";
 
 const MenPage = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
   const location = useLocation();
-  const menproduct = useSelector((store) => {
-    return store.menReducer.menproduct;
+  const {menproduct,isLoading} = useSelector((store) => {
+    return store.menReducer
   });
 
   let obj = {
@@ -27,6 +28,8 @@ const MenPage = () => {
     dispatch(getMenProduct(obj.params));
   }, [location.search, searchParams]);
 
+  
+
   return (
     <div className="mne-section">
       <div className="men-Clothing">
@@ -40,7 +43,7 @@ const MenPage = () => {
           <div className="product-list">
             {menproduct.length > 0 &&
               menproduct.map((el) => {
-                return <MenPageCard key={el.id} menproduct={el} />;
+                return isLoading?<Loader/>:<MenPageCard key={el.id} menproduct={el} />;
               })}
           </div>
         </div>

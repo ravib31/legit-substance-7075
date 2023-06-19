@@ -5,13 +5,14 @@ import {  getWomenProduct } from '../../Redux/Product/action';
 import "./WomenPage.css";
 import WomenPageCard from './WomenPageCard';
 import WomenSidebar from './WomenSidebar';
+import Loader from '../../Layout/Loader';
 
 const WomenPage = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
   const location = useLocation();
-  const womenproduct = useSelector((store) => {
-    return store.womenReducer.womenproduct;
+  const {womenproduct,isLoading} = useSelector((store) => {
+    return store.womenReducer
   });
 
 
@@ -43,7 +44,7 @@ let obj = {
       <div className='women product-list'>
 
     {womenproduct.length > 0 && womenproduct.map((el) => {
-      return <WomenPageCard key={el.id} womenproduct={el} />
+      return isLoading?<Loader/>:<WomenPageCard key={el.id} womenproduct={el} />
     })}
     </div>
     </div>

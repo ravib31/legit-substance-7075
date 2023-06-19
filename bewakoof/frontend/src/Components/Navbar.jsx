@@ -28,6 +28,10 @@ const onWishlistPage = () => {
   navigate('/wishlist')
 }
 
+const onHomePage=()=>{
+  navigate("/")
+}
+
 
  
  
@@ -55,7 +59,7 @@ const onWishlistPage = () => {
       <div id='nav-bottom'>
         <div id='nav-bottom-in'>
           <div id='nav-bottom-in-1'>
-            <div id='logo'>
+            <div id='logo' onClick={onHomePage}>
                 <img src="https://www.linkpicture.com/q/hrth.png" alt="befour.com" />
             </div>
           </div>

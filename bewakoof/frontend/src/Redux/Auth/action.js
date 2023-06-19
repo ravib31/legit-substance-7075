@@ -77,7 +77,7 @@ export const register = (userData) => async(dispatch)=> {
 export const loginWithGoogle = () => async(dispatch)=> {
   dispatch({type:types.GOOGLE_LOGIN_REQUEST})
   try {
-    let res=await axios.get("http://localhost:8080/auth/google/callback");
+    let res=await axios.get("http://localhost:8080/auth/google");
     console.log(res);
     dispatch({type:types.GOOGLE_LOGIN_SUCCESS,payload:res})
   } catch (error) {

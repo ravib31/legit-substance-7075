@@ -102,6 +102,7 @@ const registerFun=async (req, res) => {
   }
 
  const loginFun = async (req, res) => {
+  
   const { email, password } = req.body;
 
   try {

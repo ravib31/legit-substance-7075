@@ -9,20 +9,23 @@ import { Button } from "@chakra-ui/button";
 import Size from "./Size";
 import Description from "./Description";
 import { Input } from "@chakra-ui/input";
-import { useDispatch } from "react-redux";
-// import { getSingleProduct, postCartProduct } from "../Redux/Cart/action";
-import {getSingleProduct,postCartProduct} from "../../Redux/Cart/action"
+import { useDispatch,useSelector } from "react-redux";
+import { postCartProduct } from "../../Redux/Cart/action";
+import {getSingleProduct} from "../../Redux/Product/action"
 import { Alert } from "@chakra-ui/alert";
-import {TiTick} from "react-icons/ti"
-const SingleProductPage = () => {
-  const [productImages, setPorductImages] = useState([]);
+import { TiTick } from "react-icons/ti";
 
-  const [mainImage, setMainImage] = useState();
-  const [actualPrice,setActualPrice]=useState()
-  const [title,setTitle]=useState()
-  const [rating,setRating]=useState()
-  const [fit,setFit]=useState()
-  const [discountPrice,seDiscountPrice]=useState();
+const SingleProductPage = () => {
+
+  const dispatch = useDispatch();
+  const singleProductData=useSelector((store)=>store.SingleProductPageReducer.product)
+  const {title,rating,actualPrice,fit,discountPrice}=singleProductData
+
+  
+
+  const [mainImage, setMainImage] = useState(singleProductData.image[0]);
+  
+  
   const [chestsize, setchestSize] = useState();
   const [fronlength, setFronLength] = useState();
   const [sleevelength, setSleevelength] = useState();
@@ -37,26 +40,15 @@ const SingleProductPage = () => {
     { size: "3XL", chest: "53.0", frontLength: "31.0", SleevLength: "25.20" },
   ]);
 
-  const dispatch=useDispatch()
+ 
 
-  const params=useParams();
-  const {id}=params;
+  const params = useParams();
+  const { id } = params;
   console.log(id);
 
-  useEffect(()=>{
-    dispatch(getSingleProduct(id)).then((res)=>{
-      console.log(res.data);
-      setPorductImages(res.data.image)
-      setMainImage(res.data.images[0])
-      setTitle(res.data.title)
-      setFit(res.data.fit)
-      setRating(res.data.rating)
-       setActualPrice(res.data.actualPrice)
-       seDiscountPrice(res.data.discountedPrice)
-    })
-  },[])
-
-
+  useEffect(() => {
+    dispatch(getSingleProduct(id));
+  }, []);
 
   const handleClick = (el, i) => {
     setMainImage(el);
@@ -67,49 +59,43 @@ const SingleProductPage = () => {
     setSleevelength(el.SleevLength);
     setClickSize(true);
   };
-  
-  const [alertStatus,setalertStatus]=useState(false);
 
-  const handleAddToCart=()=>{
+  const [alertStatus, setalertStatus] = useState(false);
+
+  const handleAddToCart = () => {
     setalertStatus(true);
 
-    dispatch(getSingleProduct(id)).then((res)=>{
+    dispatch(getSingleProduct(id)).then((res) => {
       console.log(res.data);
-      dispatch(postCartProduct(res.data))
-    })
-     
-  }
-
-
+      dispatch(postCartProduct(res.data));
+    });
+  };
 
   return (
     <>
-    
       <div className={styles.product_page_container}>
         {/* sidebar different-diffrent images */}
-       <div className={styles.productPage_left}>
-       <div className={styles.allimages}>
-          {productImages.map((el, i) => {
-            return (
-              <img
-                key={i + 1}
-                src={el}
-                alt="img"
-                onClick={() => handleClick(el, i)}
-              />
-            );
-          })}
+        <div className={styles.productPage_left}>
+          <div className={styles.allimages}>
+            {singleProductData.image.map((el, i) => {
+              return (
+                <img
+                  key={i + 1}
+                  src={el}
+                  alt="img"
+                  onClick={() => handleClick(el, i)}
+                />
+              );
+            })}
+          </div>
+          <div>
+            <img className={styles.mainImage} src={mainImage} alt="Img" />
+          </div>
         </div>
-        <div>
-          <img className={styles.mainImage} src={mainImage} alt="" />
-        </div>
-       </div>
         {/* product description */}
         <div className={styles.product_page_right}>
           <h3 className={styles.companyTag}>Bewakoof@</h3>
-          <p className={styles.title}>
-           {title}
-          </p>
+          <p className={styles.title}>{title}</p>
           <p className={styles.rating}>
             {rating}{" "}
             <span>
@@ -117,9 +103,12 @@ const SingleProductPage = () => {
             </span>
           </p>
           <div className={styles.priceDetails}>
-            <b>  ₹{discountPrice}</b>
+            <b> ₹{discountPrice}</b>
             <span> ₹{actualPrice}</span>
-            <span>{Math.floor(100/actualPrice*(actualPrice-discountPrice))}% OFF</span>
+            <span>
+              {Math.floor((100 / actualPrice) * (actualPrice - discountPrice))}%
+              OFF
+            </span>
           </div>
           <p>inclusive of all taxes</p>
           <div className={styles.overSize}>
@@ -174,10 +163,12 @@ const SingleProductPage = () => {
               WISHLIST{" "}
             </Button>
           </div>
-          {alertStatus && <Alert status='success'>
-    <TiTick />
-    Added into the cart
-  </Alert>}
+          {alertStatus && (
+            <Alert status="success">
+              <TiTick />
+              Added into the cart
+            </Alert>
+          )}
           <hr />
           <div>
             <Description title={"SAVE EXTRA WITH 1 OFFER"}>
@@ -206,15 +197,17 @@ const SingleProductPage = () => {
           <hr />
           <div>
             <Description title="15 DAY RETURNS & EXCHANGE">
-            Easy returns upto 15 days of delivery. Exchange available on select pincodes
+              Easy returns upto 15 days of delivery. Exchange available on
+              select pincodes
             </Description>
           </div>
           <hr />
           <div>
             <Description title="DELIVERY DETAILS">
-                <Input type="text" placeholder="Enter Pincode/Postal Code">
-                    
-                </Input>
+              <Input
+                type="text"
+                placeholder="Enter Pincode/Postal Code"
+              ></Input>
             </Description>
           </div>
         </div>

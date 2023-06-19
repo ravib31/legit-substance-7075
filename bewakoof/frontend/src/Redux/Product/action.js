@@ -46,10 +46,12 @@ export const getAllProduct=()=>(dispatch)=>{
 }
 
 export const getSingleProduct=(id)=>(dispatch)=>{
+    console.log();
     dispatch({type:types.GET_SINGLE_PRODUCT_REQUEST})
     axios.get(`http://localhost:8080/products/${id}`)
     .then((res) => {
-        dispatch({type:types.GET_ALL_PRODUCT,payload:res.data})
+        console.log(res);
+        dispatch({type:types.GET_SINGLE_PRODUCT_SUCCESS,payload:res.data.singleData})
     })
     .catch((err) => {
         console.log(err)

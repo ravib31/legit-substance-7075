@@ -14,7 +14,7 @@ const Navbar = () => {
     }
     const onWomenPage = () => {
       navigate('/women')
-  }
+  } 
 
   const onLoginPage = () => {
     navigate('/user/login')

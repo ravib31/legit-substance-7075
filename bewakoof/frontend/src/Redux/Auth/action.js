@@ -1,36 +1,30 @@
 
 import axios from "axios";
-import { 
-    LOGIN_FAILURE, 
-    LOGIN_REQUEST, 
-    LOGIN_SUCCESS ,
-    REGISTER_FAILURE, 
-  REGISTER_REQUEST, 
-  REGISTER_SUCCESS 
-} from "./actionType"
+import * as types from './actionType';
+
 
 export const loginRequest = () => {
-    return {type:LOGIN_REQUEST}
+    return {type:types.LOGIN_REQUEST}
 };
 
 export const loginSuccess = (payload) => {
-    return {type:LOGIN_SUCCESS, payload}
+    return {type:types.LOGIN_SUCCESS, payload}
 };
 
 export const loginFailure = (payload) => {
-    return {type:LOGIN_FAILURE,payload}
+    return {type:types.LOGIN_FAILURE,payload}
 };
 
 export const registerRequest = () => {
-  return {type:REGISTER_REQUEST}
+  return {type:types.REGISTER_REQUEST}
 };
 
 export const registerSuccess = (payload) => {
-  return {type:REGISTER_SUCCESS, payload}
+  return {type:types.REGISTER_SUCCESS, payload}
 };
 
 export const registerFailure = () => {
-  return {type:REGISTER_FAILURE}
+  return {type:types.REGISTER_FAILURE}
 };
 
 
@@ -79,3 +73,18 @@ export const register = (userData) => async(dispatch)=> {
   }
 
 }
+
+export const loginWithGoogle = () => async(dispatch)=> {
+  dispatch({type:types.GOOGLE_LOGIN_REQUEST})
+  try {
+    let res=await axios.get("http://localhost:8080/auth/google");
+    console.log(res);
+    dispatch({type:types.GOOGLE_LOGIN_SUCCESS,payload:res})
+  } catch (error) {
+    console.log(error);
+    dispatch({type:types.GOOGLE_LOGIN_FAILURE,payload:error})
+    
+  }
+
+}
+

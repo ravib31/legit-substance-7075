@@ -8,7 +8,7 @@ const userSchema = mongoose.Schema(
     },
     phone:{
       type:String,
-      required:[true, "Please Enter Your Phone Number"],
+      // required:[true, "Please Enter Your Phone Number"],
       minLength: [10, "Password should have atleast 10 digits"],
     },
     email: {

@@ -2,6 +2,7 @@ const express = require("express");
 const { ProductModel } = require("../models/Products.model");
 const productRouter = express.Router();
 const jwt = require("jsonwebtoken");
+// const { getSingleProduct } = require("../../frontend/src/Redux/Product/action");
 
 
 
@@ -49,6 +50,22 @@ productRouter.get("/women", async (req, res) => {
   }
   
 });
+
+productRouter.get("/:id",async (req,res)=>{
+  const {id}=req.params;
+  console.log(id);
+  try {
+    const singleData= await ProductModel.findOne({_id:id});
+    
+    if(singleData){
+      res.status(200).send({singleData})
+    }
+  } catch (error) {
+    res.status(500).send({error:error.message})
+  }
+}) 
+  
+
 
 productRouter.get("/sort", async (req, res) => {
   const qSort = req.query;

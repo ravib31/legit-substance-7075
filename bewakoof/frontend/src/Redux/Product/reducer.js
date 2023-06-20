@@ -52,7 +52,7 @@ export const SingleProductPageReducer=(state=SingleProductInitilaState,{type,pay
     case types.GET_SINGLE_PRODUCT_REQUEST:
             return {...state,isLoading:true}
             case types.GET_SINGLE_PRODUCT_SUCCESS:
-                return {...state,isLoading:false,product:payload} 
+                return {...state,isLoading:false,product:{payload}} 
                 case types.GET_SINGLE_PRODUCT_ERROR:
                     return {...state,isError:true,isLoading:false}   
         default:

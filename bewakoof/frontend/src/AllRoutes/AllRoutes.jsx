@@ -11,12 +11,13 @@ import AdminAddProduct from "../Components/AdminComponents/AdminProduct/AdminAdd
 
 import AdminShowProduct from "../Pages/AdminPage/AdminShowProduct";
 import AdminUpdate from "../Components/AdminComponents/AdminProduct/AdminUpdate";
-import SingleProductPage from "../Pages/SingleProductPage/SingleProductPage";
+
 import  Login  from "../Pages/LoginPage/Login";
 import { PrivateRoute } from "../Components/PrivateRoute";
 import Footer from "../Components/Footer";
 import Signup from "../Pages/SingupPage/Signup";
 import Navbar from "../Components/Navbar";
+import SingleProductPage from "../Pages/SingleProductPage/SingleProductPage";
 
 export const AllRoutes = () => {
   return (

@@ -1,40 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./SingleProductPage.module.css";
 import { AiFillStar } from "react-icons/ai";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { CiHeart } from "react-icons/ci";
 import { Link, useParams } from "react-router-dom";
 import { Button } from "@chakra-ui/button";
-
 import Size from "./Size";
 import Description from "./Description";
 import { Input } from "@chakra-ui/input";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { postCartProduct } from "../../Redux/Cart/action";
-import {getSingleProduct} from "../../Redux/Product/action"
+import { getSingleProduct } from "../../Redux/Product/action";
 import { Alert } from "@chakra-ui/alert";
 import { TiTick } from "react-icons/ti";
+import axios from "axios";
 
 const SingleProductPage = () => {
-
   const dispatch = useDispatch();
   const params = useParams();
   const { id } = params;
 
-  useEffect(() => {
-    console.log(id);
-    dispatch(getSingleProduct(id));
+  // const getData=async()=>{
+  //   let res=await axios.get(`http://localhost:8080/products/${id}`);
+  //   console.log(res)
+  // }
 
+  console.log(id);
+  const singleProductData = useSelector(
+    (store) => store.SingleProductPageReducer.product
+  );
+  const { title, rating, actualPrice, fit, discountPrice, image } =
+    singleProductData;
+  // console.log("singleProductData:", singleProductData);
+
+  const [mainImage, setMainImage] = useState("");
+
+  React.useEffect(() => {
+    dispatch(getSingleProduct(id));
   }, [dispatch, id]);
 
-  const singleProductData=useSelector((store)=>store.SingleProductPageReducer.product)
-   console.log("singleProductData",singleProductData);
-  const {title,rating,actualPrice,fit,discountPrice}=singleProductData
-
-
-  const [mainImage, setMainImage] = useState(singleProductData.image[0]);
-  
-  
   const [chestsize, setchestSize] = useState();
   const [fronlength, setFronLength] = useState();
   const [sleevelength, setSleevelength] = useState();
@@ -48,12 +52,6 @@ const SingleProductPage = () => {
     { size: "2XL", chest: "51.0", frontLength: "30.25", SleevLength: "25.0" },
     { size: "3XL", chest: "53.0", frontLength: "31.0", SleevLength: "25.20" },
   ]);
-
- 
-
- 
-
- 
 
   const handleClick = (el, i) => {
     setMainImage(el);
@@ -82,19 +80,24 @@ const SingleProductPage = () => {
         {/* sidebar different-diffrent images */}
         <div className={styles.productPage_left}>
           <div className={styles.allimages}>
-            {singleProductData.image.map((el, i) => {
-              return (
-                <img
-                  key={i + 1}
-                  src={el}
-                  alt="img"
-                  onClick={() => handleClick(el, i)}
-                />
-              );
-            })}
+            {image?.map((el, i) => (
+              <img
+                key={i + 1}
+                src={el}
+                alt="img"
+                onClick={() => handleClick(el, i)}
+              />
+            ))}
           </div>
           <div>
-            <img className={styles.mainImage} src={mainImage} alt="Img" />
+            {image?.map((ele, i) => (
+              <img
+                key={i}
+                className={styles.mainImage}
+                src={i < 1 ? ele : ""}
+                alt="Img"
+              />
+            ))}
           </div>
         </div>
         {/* product description */}

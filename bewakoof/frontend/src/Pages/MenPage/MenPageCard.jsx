@@ -14,7 +14,7 @@ const MenPageCard = ({ menproduct }) => {
       
       </div>
       <div className="product-info">
-        <h3 className="Product-brand">Bewakoof®</h3>
+        <h3 className="Product-brand">Befour®</h3>
         <p className="product-title">{menproduct.title}</p>
         <div className="price-box">
           <p className="discounted-price"> ₹{menproduct.discountedPrice}</p>

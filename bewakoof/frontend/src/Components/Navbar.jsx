@@ -9,6 +9,10 @@ const Navbar = () => {
   const navigate = useNavigate();
     const { isOpen, onToggle, onClose } = useDisclosure();
     
+const toHome = () => {
+   navigate('/')
+}
+
     const onMenPage = () => {
         navigate('/men')
     }
@@ -56,7 +60,7 @@ const onWishlistPage = () => {
         <div id='nav-bottom-in'>
           <div id='nav-bottom-in-1'>
             <div id='logo'>
-                <img src="https://www.linkpicture.com/q/hrth.png" alt="befour.com" />
+                <img src="https://www.linkpicture.com/q/hrth.png" alt="befour.com" onClick={toHome} />
             </div>
           </div>
           <div id='nav-bottom-in-2'>

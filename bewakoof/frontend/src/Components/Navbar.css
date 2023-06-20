@@ -5,6 +5,7 @@ nav{
     top: 0;
     left: 0;
     z-index: 10000;
+
 }
 #nav-top {
   max-width: 100%;
@@ -250,11 +251,13 @@ nav{
 #logo{
     background-color:#FBD836; 
     width: 120px;
+    cursor: pointer;
 }
 #logo img{
     background-color: #FBD836;
     mix-blend-mode: multiply;
    object-fit: cover;
+   cursor: pointer;
 }
   #nav-bottom-in-2{
     display: none;

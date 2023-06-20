@@ -12,7 +12,7 @@ import AdminAddProduct from "../Components/AdminComponents/AdminProduct/AdminAdd
 import AdminShowProduct from "../Pages/AdminPage/AdminShowProduct";
 import AdminUpdate from "../Components/AdminComponents/AdminProduct/AdminUpdate";
 import SingleProductPage from "../Pages/SingleProductPage/SingleProductPage";
-import  Login  from "../Pages/LoginPage/Login";
+import Login from "../Pages/LoginPage/Login";
 import { PrivateRoute } from "../Components/PrivateRoute";
 import Footer from "../Components/Footer";
 import Signup from "../Pages/SingupPage/Signup";
@@ -21,7 +21,7 @@ import Navbar from "../Components/Navbar";
 export const AllRoutes = () => {
   return (
     <>
-    {/* user routes-----------------------------> */}
+      {/* user routes-----------------------------> */}
       <Routes>
         <Route
           path="/"
@@ -80,9 +80,9 @@ export const AllRoutes = () => {
           element={
             <>
               <Navbar />
-              <PrivateRoute>
+              {/* <PrivateRoute> */}
                 <SingleProductPage />
-              </PrivateRoute>
+              {/* </PrivateRoute> */}
               <Footer />
             </>
           }
@@ -109,13 +109,17 @@ export const AllRoutes = () => {
             </>
           }
         />
-        <Route path="/user/register" element={<>
+        <Route
+          path="/user/register"
+          element={
+            <>
               <Navbar />
               <Signup />
               <Footer />
-            </>}/>
+            </>
+          }
+        />
       </Routes>
-
 
       {/* admin routes ------------------------>*/}
       <Routes>

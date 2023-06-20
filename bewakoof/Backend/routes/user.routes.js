@@ -21,6 +21,8 @@ userRouter.post("/register",upload.single("avatar"),registerFun );
 userRouter.post("/login", loginFun);
 userRouter.get("/verifiy",verifiyMail)
 
+
+
 // userRouter.post("/Adminlogin", );
 
 // userRouter.get("/Adminuserget", );

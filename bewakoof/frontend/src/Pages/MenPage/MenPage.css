@@ -31,7 +31,7 @@
     text-decoration: underline #FBD836 5px;
 }
 .product-list{
-    width: 75%;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;

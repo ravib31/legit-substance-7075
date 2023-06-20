@@ -1,10 +1,10 @@
 import React from 'react'
 import "./Navbar.css";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import {AiOutlineMobile, AiOutlineHeart} from "react-icons/ai"
 import {BsSearch, BsBag} from "react-icons/bs"
 import {HiMenuAlt1} from "react-icons/hi";
-import { Link, useDisclosure } from "@chakra-ui/react";
+import {  useDisclosure } from "@chakra-ui/react";
 const Navbar = () => {
   const navigate = useNavigate();
     const { isOpen, onToggle, onClose } = useDisclosure();
@@ -21,7 +21,7 @@ const toHome = () => {
   } 
 
   const onLoginPage = () => {
-    navigate('/signup')
+    navigate('/user/login')
 }
 
 const onCartPage = () => {
@@ -30,6 +30,10 @@ const onCartPage = () => {
 
 const onWishlistPage = () => {
   navigate('/wishlist')
+}
+
+const onHomePage=()=>{
+  navigate("/")
 }
 
 
@@ -59,8 +63,8 @@ const onWishlistPage = () => {
       <div id='nav-bottom'>
         <div id='nav-bottom-in'>
           <div id='nav-bottom-in-1'>
-            <div id='logo'>
-                <img src="https://www.linkpicture.com/q/hrth.png" alt="befour.com" onClick={toHome} />
+            <div id='logo' onClick={onHomePage}>
+                <img src="https://www.linkpicture.com/q/hrth.png" alt="befour.com" />
             </div>
           </div>
           <div id='nav-bottom-in-2'>
@@ -92,12 +96,12 @@ const onWishlistPage = () => {
           isOpen && (
           <div id='sideMenu'>
             <ul id='sideList'>
-              <li><Link>MEN</Link></li>
-              <li><Link>WOMEN</Link></li>
-              <li><Link>WISHLIST</Link></li>
-              <li><Link>CART</Link></li>
-              <li><Link>PROFILE</Link></li>
-              <li><Link>LOGOUT</Link></li>
+              <li><Link to="/men">MEN</Link></li>
+              <li><Link to="/women">WOMEN</Link></li>
+              <li><Link to="/wishlist">WISHLIST</Link></li>
+              <li><Link to="/cart">CART</Link></li>
+              <li><Link to="/profile">PROFILE</Link></li>
+              <li><Link to="/user/login">LOGIN</Link></li>
             </ul>
           </div>
           )}

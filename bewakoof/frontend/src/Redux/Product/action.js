@@ -59,7 +59,7 @@ export const getSingleProduct = (id) => (dispatch) => {
     dispatch({ type: types.GET_SINGLE_PRODUCT_REQUEST });
     axios.get(`http://localhost:8080/products/${id}`)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         dispatch({
           type: types.GET_SINGLE_PRODUCT_SUCCESS,
           payload: res.data.singleData,

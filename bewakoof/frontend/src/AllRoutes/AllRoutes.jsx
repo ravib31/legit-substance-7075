@@ -8,11 +8,9 @@ import CheckoutPage from "../Pages/CheckoutPage/CheckoutPage";
 import AdminDshboardPage from "../Pages/AdminPage/AdminDshboardPage";
 import AdminNavbar from "../Components/AdminComponents/AdminNavbar/AdminNavbar";
 import AdminAddProduct from "../Components/AdminComponents/AdminProduct/AdminAddProduct";
-
 import AdminShowProduct from "../Pages/AdminPage/AdminShowProduct";
 import AdminUpdate from "../Components/AdminComponents/AdminProduct/AdminUpdate";
-
-import  Login  from "../Pages/LoginPage/Login";
+import Login from "../Pages/LoginPage/Login";
 import { PrivateRoute } from "../Components/PrivateRoute";
 import Footer from "../Components/Footer";
 import Signup from "../Pages/SingupPage/Signup";
@@ -22,7 +20,7 @@ import SingleProductPage from "../Pages/SingleProductPage/SingleProductPage";
 export const AllRoutes = () => {
   return (
     <>
-    {/* user routes-----------------------------> */}
+      {/* user routes-----------------------------> */}
       <Routes>
         <Route
           path="/"
@@ -82,7 +80,7 @@ export const AllRoutes = () => {
             <>
               <Navbar />
               {/* <PrivateRoute> */}
-                <SingleProductPage />
+             <SingleProductPage />
               {/* </PrivateRoute> */}
               <Footer />
             </>
@@ -110,13 +108,17 @@ export const AllRoutes = () => {
             </>
           }
         />
-        <Route path="/user/register" element={<>
+        <Route
+          path="/user/register"
+          element={
+            <>
               <Navbar />
               <Signup />
               <Footer />
-            </>}/>
+            </>
+          }
+        />
       </Routes>
-
 
       {/* admin routes ------------------------>*/}
       <Routes>

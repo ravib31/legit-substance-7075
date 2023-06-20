@@ -53,7 +53,6 @@ productRouter.get("/women", async (req, res) => {
 
 productRouter.get("/:id",async (req,res)=>{
   const {id}=req.params;
-  console.log(id);
   try {
     const singleData= await ProductModel.findOne({_id:id});
     

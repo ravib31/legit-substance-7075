@@ -9,6 +9,10 @@ const Navbar = () => {
   const navigate = useNavigate();
     const { isOpen, onToggle, onClose } = useDisclosure();
     
+const toHome = () => {
+   navigate('/')
+}
+
     const onMenPage = () => {
         navigate('/men')
     }

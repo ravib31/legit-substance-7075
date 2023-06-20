@@ -254,11 +254,13 @@ nav{
 #logo{
     background-color:#FBD836; 
     width: 120px;
+    cursor: pointer;
 }
 #logo img{
     background-color: #FBD836;
     mix-blend-mode: multiply;
    object-fit: cover;
+   cursor: pointer;
 }
   #nav-bottom-in-2{
     display: none;

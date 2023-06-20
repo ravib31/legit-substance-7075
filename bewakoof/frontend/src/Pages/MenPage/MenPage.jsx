@@ -32,7 +32,7 @@ const MenPage = () => {
   // }
 
   return (
-    <div className="mne-section">
+    <div className="men-section">
       <div className="men-Clothing">
         <h1>Men Clothing</h1>
       </div>

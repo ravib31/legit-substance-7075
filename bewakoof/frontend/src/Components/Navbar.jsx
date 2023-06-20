@@ -1,10 +1,10 @@
 import React from 'react'
 import "./Navbar.css";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import {AiOutlineMobile, AiOutlineHeart} from "react-icons/ai"
 import {BsSearch, BsBag} from "react-icons/bs"
 import {HiMenuAlt1} from "react-icons/hi";
-import { Link, useDisclosure } from "@chakra-ui/react";
+import {  useDisclosure } from "@chakra-ui/react";
 const Navbar = () => {
   const navigate = useNavigate();
     const { isOpen, onToggle, onClose } = useDisclosure();
@@ -92,12 +92,12 @@ const onHomePage=()=>{
           isOpen && (
           <div id='sideMenu'>
             <ul id='sideList'>
-              <li><Link>MEN</Link></li>
-              <li><Link>WOMEN</Link></li>
-              <li><Link>WISHLIST</Link></li>
-              <li><Link>CART</Link></li>
-              <li><Link>PROFILE</Link></li>
-              <li><Link>LOGIN</Link></li>
+              <li><Link to="/men">MEN</Link></li>
+              <li><Link to="/women">WOMEN</Link></li>
+              <li><Link to="/wishlist">WISHLIST</Link></li>
+              <li><Link to="/cart">CART</Link></li>
+              <li><Link to="/profile">PROFILE</Link></li>
+              <li><Link to="/user/login">LOGIN</Link></li>
             </ul>
           </div>
           )}

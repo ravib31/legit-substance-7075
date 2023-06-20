@@ -18,10 +18,19 @@ import { TiTick } from "react-icons/ti";
 const SingleProductPage = () => {
 
   const dispatch = useDispatch();
+  const params = useParams();
+  const { id } = params;
+
+  useEffect(() => {
+    console.log(id);
+    dispatch(getSingleProduct(id));
+
+  }, [dispatch, id]);
+
   const singleProductData=useSelector((store)=>store.SingleProductPageReducer.product)
+   console.log("singleProductData",singleProductData);
   const {title,rating,actualPrice,fit,discountPrice}=singleProductData
 
-  
 
   const [mainImage, setMainImage] = useState(singleProductData.image[0]);
   
@@ -42,13 +51,9 @@ const SingleProductPage = () => {
 
  
 
-  const params = useParams();
-  const { id } = params;
-  console.log(id);
+ 
 
-  useEffect(() => {
-    dispatch(getSingleProduct(id));
-  }, []);
+ 
 
   const handleClick = (el, i) => {
     setMainImage(el);

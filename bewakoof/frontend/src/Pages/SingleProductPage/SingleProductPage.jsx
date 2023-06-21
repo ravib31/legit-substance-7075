@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./SingleProductPage.module.css";
 import { AiFillStar } from "react-icons/ai";
 import { HiOutlineShoppingBag } from "react-icons/hi";
@@ -14,8 +14,11 @@ import { getSingleProduct } from "../../Redux/Product/action";
 import { Alert } from "@chakra-ui/alert";
 import { TiTick } from "react-icons/ti";
 import axios from "axios";
+import InitialLoader from "../../Layout/InitialLoader";
+import useCustomToast from "../../Layout/useCustomToast";
 
 const SingleProductPage = () => {
+  const showToast = useCustomToast();
   const dispatch = useDispatch();
   const params = useParams();
   const { id } = params;
@@ -26,14 +29,18 @@ const SingleProductPage = () => {
   // }
 
   console.log(id);
-  const singleProductData = useSelector(
-    (store) => store.SingleProductPageReducer.product
+  const { product, isLoading } = useSelector(
+    (store) => store.SingleProductPageReducer
   );
-  const { title, rating, actualPrice, fit, discountPrice, image } =
-    singleProductData;
+  const { title, rating, actualPrice, fit, discountPrice, image } = product;
   // console.log("singleProductData:", singleProductData);
+  const [mainImage, setMainImage] = useState(null);
 
-  const [mainImage, setMainImage] = useState("");
+  useEffect(() => {
+    if (image && image.length > 0) {
+      setMainImage(image[0]);
+    }
+  }, [image]);
 
   React.useEffect(() => {
     dispatch(getSingleProduct(id));
@@ -66,13 +73,10 @@ const SingleProductPage = () => {
   const [alertStatus, setalertStatus] = useState(false);
 
   const handleAddToCart = () => {
-    setalertStatus(true);
-
-    dispatch(getSingleProduct(id)).then((res) => {
-      console.log(res.data);
-      dispatch(postCartProduct(res.data));
-    });
+    showToast("Added to the cart", "success", 3000);
   };
+
+  console.log(isLoading);
 
   return (
     <>
@@ -90,14 +94,9 @@ const SingleProductPage = () => {
             ))}
           </div>
           <div>
-            {image?.map((ele, i) => (
-              <img
-                key={i}
-                className={styles.mainImage}
-                src={i < 1 ? ele : ""}
-                alt="Img"
-              />
-            ))}
+            {mainImage && (
+              <img className={styles.mainImage} src={mainImage} alt="Img" />
+            )}
           </div>
         </div>
         {/* product description */}
@@ -225,3 +224,12 @@ const SingleProductPage = () => {
 };
 
 export default SingleProductPage;
+
+//  {/* {image?.map((ele, i) => (
+//               <img
+//                 key={i}
+//                 className={styles.mainImage}
+//                 src={i < 1 ? ele : ""}
+//                 alt="Img"
+//               />
+//             ))} */}

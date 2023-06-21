@@ -173,16 +173,22 @@ hr{
 /* ////////////////////////////////////////////////////////////////////////     */
 @media screen  and (min-width:765px) and(max-width: 1080px){
     .product_page_container{
-       border: 4px solid black;
+       
+        display: block;
+        margin: 0px;
         
         
     }
-    .productPage_left{
-        border: 1px solid red;
-        width: 50%;
-        display: flex;
-        gap: 20px;
-    }
+
+    
+.productPage_left{
+    
+    border: 1px solid black;
+    width: 100%;
+    display: block;
+    justify-content: center;
+    flex-direction: column-reverse;
+}
     .mainImage{
          border: 1px solid red;
          width: 500px;

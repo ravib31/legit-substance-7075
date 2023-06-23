@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const { auth } = require("../Backend/middlewares/auth")
 const { connection } = require("./config/db");
+const cookieSession = require("cookie-session");
 
 const {setupGoogleStrategy}=require("./config/google.auth")
 
@@ -17,6 +18,13 @@ const passport=require("passport");
 
 const app = express()
 
+app.use(
+  cookieSession({
+    name: "session",
+    keys: ["secret-key"],
+    maxAge: 5 * 60 * 1000, // Cookie expiration time (1 minute)
+  })
+);
 app.use(express.json()) 
 app.use(express.urlencoded({ extended: true }));
 app.use(cors())
@@ -25,10 +33,10 @@ setupGoogleStrategy(passport)
 
 app.get('/auth/google',
   passport.authenticate('google', { scope: ['profile',"email","phone"] }));
-
+ 
 app.get('/auth/google/callback', 
   passport.authenticate('google', { failureRedirect: '/login' }),
-  function(req, res) {
+  function(req, res) {  
     // Successful authentication, redirect home.
     console.log(req.user);
     res.json(req.user);
@@ -36,7 +44,7 @@ app.get('/auth/google/callback',
   });
 
 app.use("/user", userRouter)
-// app.use(auth)
+
 app.use("/products", productRouter)
 app.use("/cart", CartproductRouter)
 app.use("/order" , orderRouter)

@@ -19,6 +19,7 @@ const upload=multer({storage:storage});
 
 userRouter.post("/register",upload.single("avatar"),registerFun ); 
 userRouter.post("/login", loginFun);
+
 userRouter.get("/verifiy",verifiyMail)
 
 

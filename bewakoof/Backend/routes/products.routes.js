@@ -2,12 +2,14 @@ const express = require("express");
 const { ProductModel } = require("../models/Products.model");
 const productRouter = express.Router();
 const jwt = require("jsonwebtoken");
+const {auth}=require("../middlewares/auth")
 // const { getSingleProduct } = require("../../frontend/src/Redux/Product/action");
 
 
 
 productRouter.get("/men", async (req, res) => {
   const { category } = req.query;
+  console.log(req.session);
   try {
     let menData;
 
@@ -51,9 +53,8 @@ productRouter.get("/women", async (req, res) => {
   
 });
 
-productRouter.get("/:id",async (req,res)=>{
+productRouter.get("/:id", auth,async (req,res)=>{
   const {id}=req.params;
-  console.log(id);
   try {
     const singleData= await ProductModel.findOne({_id:id});
     

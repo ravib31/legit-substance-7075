@@ -1,6 +1,7 @@
 import axios from "axios";
 // import { GET_ALL_PRODUCT, GET_MEN_PRODUCT_ERROR, GET_MEN_PRODUCT_REQUEST, GET_MEN_PRODUCT_SUCCESS, GET_WOMEN_PRODUCT_ERROR, GET_WOMEN_PRODUCT_REQUEST, GET_WOMEN_PRODUCT_SUCCESS } from "./actionType"
 import * as types from "./actionType";
+import { getTokenFromCookies } from "../../utils/token.utils";
 export const getMenProductRequest = () => {
   return { type: types.GET_MEN_PRODUCT_REQUEST };
 };
@@ -33,6 +34,7 @@ export const getMenProduct = (params) => (dispatch) => {
         category: params.category,
         sort: params.sort,
       },
+     
     })
     .then((res) => {
       // console.log(res.data);
@@ -40,6 +42,7 @@ export const getMenProduct = (params) => (dispatch) => {
     })
     .catch((err) => {
       dispatch(getMenProductError());
+      alert("error")
     });
 };
 
@@ -57,9 +60,13 @@ export const getAllProduct = () => (dispatch) => {
 export const getSingleProduct = (id) => (dispatch) => {
     console.log("actionid",id);
     dispatch({ type: types.GET_SINGLE_PRODUCT_REQUEST });
-    axios.get(`http://localhost:8080/products/${id}`)
+    axios.get(`http://localhost:8080/products/${id}`,{
+      headers: {
+        Authorization: getTokenFromCookies() || null,
+      },
+    })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         dispatch({
           type: types.GET_SINGLE_PRODUCT_SUCCESS,
           payload: res.data.singleData,
@@ -75,7 +82,7 @@ export const delProduct = (id) => (dispatch) => {
   axios
     .delete(`http://localhost:8080/products/${id}`, {
       headers: {
-        Authorization: localStorage.getItem("token") || null,
+        Authorization: getTokenFromCookies() || null,
       },
     })
 

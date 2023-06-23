@@ -1,11 +1,24 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+  font-family: montserrat,sans-serif;
+}
+
+
+
 nav{
   width: 100%;
   height: auto;
-  position: fixed;
+  margin-bottom: 10px;
+  position: sticky;
+ 
+
     top: 0;
     left: 0;
     z-index: 10000;
-    
+   border: 2px solid red;
     
 }
 #nav-top {
@@ -254,11 +267,13 @@ nav{
 #logo{
     background-color:#FBD836; 
     width: 120px;
+    cursor: pointer;
 }
 #logo img{
     background-color: #FBD836;
     mix-blend-mode: multiply;
    object-fit: cover;
+   cursor: pointer;
 }
   #nav-bottom-in-2{
     display: none;

@@ -123,9 +123,11 @@ const registerFun=async (req, res) => {
 
       if (result) {
         const token = jwt.sign({ USER_ID: user._id }, "bhashkar", {
-          expiresIn: "30d",
+          expiresIn: "5m",
         });
-        res.cookie("token", token, { maxAge: 30 * 24 * 60 * 60 * 1000 }); // Set the token as a cookie with a 30-day expiration
+        req.session.token = token;
+        console.log(req.session);
+        // Set the token as a cookie with a 30-day expiration
         return res.status(200).send({
           msg: "Login successful",
           token: token,
@@ -139,6 +141,8 @@ const registerFun=async (req, res) => {
     res.status(400).send({ msg: error.message });
   }
 };
+
+
 
 
 //   const AdminloginFun=async (req, res) => {

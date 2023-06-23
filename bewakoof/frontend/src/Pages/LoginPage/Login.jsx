@@ -4,7 +4,7 @@ import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import useCustomToast from "../../Layout/useCustomToast";
 import { login } from "../../Redux/Auth/action";
 import { useSelector, useDispatch } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 import {
   Avatar,
@@ -29,17 +29,19 @@ import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import SocialMedia from "../SingupPage/SocialMedia";
 import Toast from "../../Layout/useCustomToast";
+import { getTokenFromCookies } from "../../utils/token.utils";
 
 //component start form here
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const showToast = useCustomToast();
+  const token=getTokenFromCookies()
   const dispatch = useDispatch();
   const isFirstRender = useRef(true);
   const store = useSelector((store) => store.authReducer);
   const { isError, msg,isAuth,isLoading } = store;
-  const navigat=useNavigate();
+  const navigate=useNavigate();
     const location=useLocation();
     const from=location.state;
 
@@ -56,17 +58,19 @@ const Login = () => {
   };
 
   useEffect(() => {
+    console.log(token);
     if (!isFirstRender.current) {
       if (isError) {
-        showToast(store.msg, "error", 3000);
-      } else if(isAuth) {
-        showToast(store.msg, "success", 3000);
-        navigat(from ,{replace:true}) || navigat("/")
+        showToast(msg, "error", 3000);
+      } else if (isAuth) {
+        showToast(msg, "success", 3000);
+        const redirectPath = from ? from : "/";
+        navigate(redirectPath, { replace: true });
       }
     } else {
       isFirstRender.current = false;
     }
-  }, [isError, msg,isAuth]);
+  }, [isError, msg, isAuth]);
 
   const handleDataChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -74,6 +78,12 @@ const Login = () => {
 
   const imageDisplay = useBreakpointValue({ base: "none", md: "block" });
 
+  if (token) {
+    // Redirect to current URL if token is present
+    return <Navigate to={from} replace={true} />;
+  }
+
+ 
   return (
     <div>
       <SimpleGrid

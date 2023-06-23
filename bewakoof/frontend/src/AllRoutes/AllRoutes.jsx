@@ -55,13 +55,13 @@ export const AllRoutes = () => {
         <Route
           path="/cart"
           element={
-            // <PrivateRoute>
+             <PrivateRoute>
               <>
                 <Navbar />
                 <CartPage />
                 <Footer />
               </>
-            // </PrivateRoute>
+             </PrivateRoute>
           }
         />
         <Route
@@ -79,9 +79,9 @@ export const AllRoutes = () => {
           element={
             <>
               <Navbar />
-              {/* <PrivateRoute> */}
+              <PrivateRoute>
              <SingleProductPage />
-              {/* </PrivateRoute> */}
+              </PrivateRoute>
               <Footer />
             </>
           }
@@ -91,9 +91,9 @@ export const AllRoutes = () => {
           element={
             <>
               <Navbar />
-              {/* <PrivateRoute> */}
+              <PrivateRoute>
                 <SingleProductPage />
-              {/* </PrivateRoute> */}
+              </PrivateRoute>
               <Footer />
             </>
           }

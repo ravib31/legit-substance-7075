@@ -9,31 +9,30 @@ import Size from "./Size";
 import Description from "./Description";
 import { Input } from "@chakra-ui/input";
 import { useDispatch, useSelector } from "react-redux";
-import { postCartProduct } from "../../Redux/Cart/action";
+import { addToCartFun, postCartProduct } from "../../Redux/Cart/action";
 import { getSingleProduct } from "../../Redux/Product/action";
 import { Alert } from "@chakra-ui/alert";
 import { TiTick } from "react-icons/ti";
 import axios from "axios";
 import InitialLoader from "../../Layout/InitialLoader";
 import useCustomToast from "../../Layout/useCustomToast";
+import Loader from "../../Layout/Loader";
+import SingleProductLoader from "../../Layout/SingleProductLoader";
 
 const SingleProductPage = () => {
+  console.log(sessionStorage);
   const showToast = useCustomToast();
   const dispatch = useDispatch();
   const params = useParams();
   const { id } = params;
 
-  // const getData=async()=>{
-  //   let res=await axios.get(`http://localhost:8080/products/${id}`);
-  //   console.log(res)
-  // }
+  
 
   console.log(id);
-  const { product, isLoading } = useSelector(
-    (store) => store.SingleProductPageReducer
-  );
+  const { product, isLoading } = useSelector( (store) => store.SingleProductPageReducer);
+  console.log(product);
   const { title, rating, actualPrice, fit, discountPrice, image } = product;
-  // console.log("singleProductData:", singleProductData);
+
   const [mainImage, setMainImage] = useState(null);
 
   useEffect(() => {
@@ -60,6 +59,8 @@ const SingleProductPage = () => {
     { size: "3XL", chest: "53.0", frontLength: "31.0", SleevLength: "25.20" },
   ]);
 
+
+
   const handleClick = (el, i) => {
     setMainImage(el);
   };
@@ -70,13 +71,27 @@ const SingleProductPage = () => {
     setClickSize(true);
   };
 
-  const [alertStatus, setalertStatus] = useState(false);
-
+ 
+let payload={
+  type: product.type,
+  image: product.image[0],
+  title: product.title,
+  category: product.category,
+  actualPrice: product.actualPrice,
+  loyaltyPrice: product.loyaltyPrice,
+  discountedPrice: product.discountPrice,
+  fit:product.fit,
+  rating: product.rating,
+  userID: product.userID
+}
   const handleAddToCart = () => {
+    dispatch(addToCartFun(payload))
     showToast("Added to the cart", "success", 3000);
   };
 
-  console.log(isLoading);
+  if(isLoading){
+    return <SingleProductLoader/>
+  }
 
   return (
     <>
@@ -84,7 +99,7 @@ const SingleProductPage = () => {
         {/* sidebar different-diffrent images */}
         <div className={styles.productPage_left}>
           <div className={styles.allimages}>
-            {image?.map((el, i) => (
+            { image?.map((el, i) => (
               <img
                 key={i + 1}
                 src={el}
@@ -94,7 +109,7 @@ const SingleProductPage = () => {
             ))}
           </div>
           <div>
-            {mainImage && (
+            { mainImage && (
               <img className={styles.mainImage} src={mainImage} alt="Img" />
             )}
           </div>
@@ -170,12 +185,6 @@ const SingleProductPage = () => {
               WISHLIST{" "}
             </Button>
           </div>
-          {alertStatus && (
-            <Alert status="success">
-              <TiTick />
-              Added into the cart
-            </Alert>
-          )}
           <hr />
           <div>
             <Description title={"SAVE EXTRA WITH 1 OFFER"}>

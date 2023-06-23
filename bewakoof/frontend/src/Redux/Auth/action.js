@@ -1,6 +1,7 @@
 
 import axios from "axios";
 import * as types from './actionType';
+import { setTokenInCookies } from "../../utils/token.utils";
 
 
 export const loginRequest = () => {
@@ -51,6 +52,7 @@ export const login=(userData)=>(dispatch)=>{
   return axios.post(`http://localhost:8080/user/login`,userData)
   .then((res)=>{
     console.log(res);
+    setTokenInCookies(res&& res.data.token)
     dispatch(loginSuccess(res.data))
   }).catch((error)=>{
     console.log(error);

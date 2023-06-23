@@ -3,11 +3,32 @@ import "./Navbar.css";
 import { useNavigate, Link } from "react-router-dom";
 import { AiOutlineMobile, AiOutlineHeart } from "react-icons/ai";
 import { BsSearch, BsBag } from "react-icons/bs";
+import { SlUser } from "react-icons/sl";
 import { HiMenuAlt1 } from "react-icons/hi";
-import { useDisclosure } from "@chakra-ui/react";
+import { IconButton, useDisclosure } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
+import { getTokenFromCookies } from "../utils/token.utils";
+
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+  Button
+} from "@chakra-ui/react";
 const Navbar = () => {
   const navigate = useNavigate();
   const { isOpen, onToggle, onClose } = useDisclosure();
+
+  const { isError, msg, isAuth, isLoading } = useSelector(
+    (store) => store.authReducer
+  );
+
+  const token=getTokenFromCookies();
 
   const toHome = () => {
     navigate("/");
@@ -34,6 +55,10 @@ const Navbar = () => {
 
   const onHomePage = () => {
     navigate("/");
+  };
+
+  const onSigupPage = () => {
+    navigate("/user/register");
   };
 
   return (
@@ -88,18 +113,39 @@ const Navbar = () => {
               </div>
               <div id="func">
                 <ul>
-                  <li onClick={onLoginPage}>Login</li>
+                  {/* <li onClick={onLoginPage}>Login</li> */}
                   <li onClick={onWishlistPage}>
-                    <AiOutlineHeart />
+                    <AiOutlineHeart style={{ fontSize: "25px" }} />
                   </li>
                   <li onClick={onCartPage}>
                     <BsBag />
                   </li>
                   <li>
-                    <img
-                      src="https://images.bewakoof.com/web/india-flag-round-1639566913.png"
-                      alt="avatar"
-                    />
+                    <Menu>
+                      <MenuButton
+                        as={IconButton}
+                        aria-label="Options"
+                        icon={<SlUser />}
+                        variant="outline"
+                      ></MenuButton>
+                      <MenuList>
+                        { !token && <MenuItem onClick={onSigupPage}>Signup</MenuItem>}
+
+                        { !token && <MenuItem onClick={onLoginPage}>Login</MenuItem>}
+                       { token && <MenuItem>My Order </MenuItem>}
+                       { token && <MenuItem>My Wishlist </MenuItem>}
+                       { token && <MenuItem>My Cart </MenuItem>}
+
+                        <MenuDivider />
+                        <MenuGroup title="Not For User">
+                          <MenuItem>Become Seller</MenuItem>
+                          <MenuItem>Admin Login</MenuItem>
+                        </MenuGroup>
+                      { token && <Button variant={"solid"} >Logout</Button>}
+
+                      </MenuList>
+
+                    </Menu>
                   </li>
                 </ul>
               </div>

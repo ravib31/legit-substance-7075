@@ -8,7 +8,7 @@ import {SingleProductPageReducer } from "./Product/reducer"
 
 const rootReducer = combineReducers({
     menReducer,
-    // cartReducer,
+    cartReducer,
     womenReducer,
     SingleProductPageReducer,
     authReducer ,

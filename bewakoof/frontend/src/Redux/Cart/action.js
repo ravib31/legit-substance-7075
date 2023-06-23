@@ -1,14 +1,15 @@
 import axios from "axios";
 import * as types from "./actionType";
+import { getTokenFromCookies } from "../../utils/token.utils";
 
 export const getCartProduct = () => (dispatch) => {
   dispatch({ type: types.GET_CART_PRODUCT_REQUEST });
   axios
 
     .get(`http://localhost:8080/cart`,{
-      headers:{
-        "Authorization": localStorage.getItem("token") || null
-      }
+      // headers:{
+      //   "Authorization": localStorage.getItem("token") || null
+      // }
     })
 
 
@@ -22,30 +23,53 @@ export const getCartProduct = () => (dispatch) => {
     });
 };
 
-export const postCartProduct = (obj) => (dispatch) => {
+export const addToCartFun = (obj) => (dispatch) => {
   // console.log(obj);
   dispatch({ type: types.POST_CART_PRODUCT_REQUEST });
   axios
 
     .post(`http://localhost:8080/cart`, obj,{
       headers:{
-        "Authorization":localStorage.getItem("token") || null
+        "Authorization":getTokenFromCookies()  || null
       }
     })
 
     .then((res) => {
       console.log(res);
+      dispatch({type:types.POST_CART_PRODUCT_SUCCESS,payload:res.data.msg})
     })
     .catch((err) => {
-      dispatch({ type: types.POST_CART_PRODUCT_ERROR });
-      console.log("err", err);
+      dispatch({ type: types.POST_CART_PRODUCT_ERROR ,payload:err });
+      
     });
 };
 
+export const getFromCartFun = () => (dispatch) => {
+  // console.log(obj);
+  dispatch({ type: types.GET_CART_PRODUCT_REQUEST });
+  axios
+
+    .get(`http://localhost:8080/cart`,{
+      headers:{
+        "Authorization":getTokenFromCookies()  || null
+      }
+    })
+
+    .then((res) => {
+      console.log(res);
+      dispatch({type:types.GET_CART_PRODUCT_SUCCESS,payload:res.data.cartsData})
+    })
+    .catch((err) => {
+      dispatch({ type: types.GET_CART_PRODUCT_ERROR ,payload:err });
+      
+    });
+};
+
+
 export const getSingleProduct = (id) => (dispatch) => {
-  return axios.get(`http://localhost:5000/products/${id}`,{
+  return axios.get(`http://localhost:8080/products/${id}`,{
    headers:{
-      "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVU0VSX0lEIjoiNjQzMWFkOGE1ZGNmMjE2OTNmMzNiMTE2IiwiaWF0IjoxNjgwOTc3MzIzfQ.Ve07P_YT_6TbsKlVj195IwIJngHqR_GH94K2b6w9OMk"
+      "Authorization":getTokenFromCookies()  || null
   }
   });
 };

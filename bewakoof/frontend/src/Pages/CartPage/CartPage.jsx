@@ -10,11 +10,10 @@ import * as types from '../../Redux/Cart/actionType';
 
 const CartPage = () => {
   
- const cartData= useSelector((store)=>(store.cartReducer.cart))
- const [totalItem,setTotalItems]=useState(0)
- const [sellingPrice,setsellingPrice]=useState(0)
+ const {cartData,isLoading,isError,msg}= useSelector((store)=>(store.cartReducer))
+
  
- const [totalMrp,setToalMrp]=useState(0)
+ 
  //console.log('cartData',cartData);
   const dispatch=useDispatch();
   useEffect(()=>{
@@ -23,32 +22,13 @@ const CartPage = () => {
   },[])
 
   useEffect(()=>{
-    cartData.map((el)=>{
-      setToalMrp((prev)=>prev+el.actualPrice)
-      setTotalItems(cartData.length);
-      setsellingPrice(prev=>prev+el.discountedPrice)
-    })
-  },[cartData])
+   
+  },[])
 
-  console.log(totalItem,totalMrp,sellingPrice);
+  
   
 
-  const handleRemoveCartData=(id)=>{
  
-         axios.delete(` http://localhost:8080/cart/${id}`,{
-          headers:{
-            "Authorization":localStorage.getItem("token") || null
-          }
-         }).then((res)=>{
-          dispatch(getSingleProduct(id)).then((res)=>{
-            console.log(res);
-            setToalMrp((prev)=>prev-res.data.actualPrice)
-            setsellingPrice(prev=>prev-res.data.discountedPrice)
-          })
-        // 
-          dispatch(getCartProduct())
-         })
-  }
 
 
   
@@ -65,21 +45,20 @@ const CartPage = () => {
     )
   }
 
-  dispatch({type:types.TOTALMRP,payload:totalMrp})
-  dispatch({type:types.TOTALPRICE,payload:sellingPrice})
+  
 
   return (
     <div>
       <div className={styles.totalItem}>
         <b>My Bag</b>
-        {totalItem} items(s)
+        {0} items(s)
       </div>
       <div className={styles.cartpage_container}>
         <div className={styles.allcartproducts}>
           {cartData && cartData.map((el)=>{
             
             return (
-              <SingleCartItem key={el._id} {...el} handleRemoveCartData={handleRemoveCartData}  />
+              <SingleCartItem key={el._id} {...el}   />
             )
           })}
         </div>
@@ -93,7 +72,7 @@ const CartPage = () => {
             <p className={styles.summary}>PRICE SUMMARY</p>
             <div className={styles.totolMrp}>
               <p>Total MRP (Incl. of taxes)</p>
-              <p>₹{totalMrp}</p>
+              <p>₹{0}</p>
             </div>
             <div className={styles.shipingCharges}>
               <p>Shipping Charges </p>
@@ -101,13 +80,13 @@ const CartPage = () => {
             </div>
             <div className={styles.bagDiscount}>
               <p>Bag Discount</p>
-              <p>₹{totalMrp-sellingPrice}</p>
+              <p>₹{0}</p>
             </div>
             <hr />
             <div className={styles.total}>
               <div>
                 <p>Total</p>
-                <p>₹{sellingPrice}</p>
+                <p>₹{0}</p>
               </div>
               <div>
               <Link to="/checkout"><Button className={styles.button}>CONTINUE</Button></Link>

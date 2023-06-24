@@ -74,7 +74,7 @@ const SingleProductPage = () => {
  
 let payload={
   type: product.type,
-  image: product.image[0],
+  image: product?.image?.[0] ,
   title: product.title,
   category: product.category,
   actualPrice: product.actualPrice,
@@ -157,7 +157,7 @@ let payload={
                   key={i + 1}
                   handleSizeDetails={() => handleSizeDetails(el)}
                 >
-                  {el.size}
+                  {el?.size}
                 </Size>
               );
             })}

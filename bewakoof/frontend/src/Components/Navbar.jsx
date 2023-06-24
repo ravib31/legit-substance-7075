@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "./Navbar.css";
 import { useNavigate, Link } from "react-router-dom";
 import { AiOutlineMobile, AiOutlineHeart } from "react-icons/ai";
@@ -8,7 +9,7 @@ import { HiMenuAlt1 } from "react-icons/hi";
 import { IconButton, useDisclosure } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 import { getTokenFromCookies } from "../utils/token.utils";
-
+import { FaShoppingCart } from "react-icons/fa";
 import {
   Menu,
   MenuButton,
@@ -18,17 +19,18 @@ import {
   MenuGroup,
   MenuOptionGroup,
   MenuDivider,
-  Button
+  Button,
 } from "@chakra-ui/react";
 const Navbar = () => {
   const navigate = useNavigate();
   const { isOpen, onToggle, onClose } = useDisclosure();
+  const [count, setCount] = useState(0);
 
   const { isError, msg, isAuth, isLoading } = useSelector(
     (store) => store.authReducer
   );
 
-  const token=getTokenFromCookies();
+  const token = getTokenFromCookies();
 
   const toHome = () => {
     navigate("/");
@@ -117,8 +119,11 @@ const Navbar = () => {
                   <li onClick={onWishlistPage}>
                     <AiOutlineHeart style={{ fontSize: "25px" }} />
                   </li>
-                  <li onClick={onCartPage}>
-                    <BsBag />
+                  <li className="cart-icon" onClick={onCartPage}>
+                    
+                      <FaShoppingCart className="icon-grey" />
+                      {count >= 0 && <span className="badge">{count}</span>}
+                    
                   </li>
                   <li>
                     <Menu>
@@ -129,22 +134,24 @@ const Navbar = () => {
                         variant="outline"
                       ></MenuButton>
                       <MenuList>
-                        { !token && <MenuItem onClick={onSigupPage}>Signup</MenuItem>}
+                        {!token && (
+                          <MenuItem onClick={onSigupPage}>Signup</MenuItem>
+                        )}
 
-                        { !token && <MenuItem onClick={onLoginPage}>Login</MenuItem>}
-                       { token && <MenuItem>My Order </MenuItem>}
-                       { token && <MenuItem>My Wishlist </MenuItem>}
-                       { token && <MenuItem>My Cart </MenuItem>}
+                        {!token && (
+                          <MenuItem onClick={onLoginPage}>Login</MenuItem>
+                        )}
+                        {token && <MenuItem>My Order </MenuItem>}
+                        {token && <MenuItem>My Wishlist </MenuItem>}
+                        {token && <MenuItem>My Cart </MenuItem>}
 
                         <MenuDivider />
                         <MenuGroup title="Not For User">
                           <MenuItem>Become Seller</MenuItem>
                           <MenuItem>Admin Login</MenuItem>
                         </MenuGroup>
-                      { token && <Button variant={"solid"} >Logout</Button>}
-
+                        {token && <Button variant={"solid"}>Logout</Button>}
                       </MenuList>
-
                     </Menu>
                   </li>
                 </ul>

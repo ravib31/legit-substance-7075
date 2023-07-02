@@ -42,7 +42,7 @@ const SingleCartItem = ({_id,title,actualPrice,discountedPrice,image,handleRemov
         </div>
         <div className={styles.cartItem_image}>
           <img
-            src={image[0]}
+            src={image}
             alt="img"
           />
         </div>

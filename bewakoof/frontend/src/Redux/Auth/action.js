@@ -51,7 +51,7 @@ export const login=(userData)=>(dispatch)=>{
   dispatch(loginRequest());
   return axios.post(`http://localhost:8080/user/login`,userData)
   .then((res)=>{
-    console.log(res);
+    
     setTokenInCookies(res&& res.data.token)
     dispatch(loginSuccess(res.data))
   }).catch((error)=>{

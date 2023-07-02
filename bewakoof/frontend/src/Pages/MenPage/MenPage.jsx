@@ -50,7 +50,7 @@ const MenPage = () => {
               ))
             ) : (
              
-              <div  style={{width:"300%"}}>
+              <div  style={{width:"200%"}}>
                 {<InitialLoader/>}
               </div>
              

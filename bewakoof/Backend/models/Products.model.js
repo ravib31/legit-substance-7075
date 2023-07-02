@@ -10,6 +10,7 @@ const ProductSchema = mongoose.Schema({
   discountedPrice: Number,
   fit: String,
   rating: Number,
+  size:[String]
 },
 {
   versionKey: false,

@@ -11,6 +11,7 @@ import { Input } from "@chakra-ui/input";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCartFun, postCartProduct } from "../../Redux/Cart/action";
 import { getSingleProduct } from "../../Redux/Product/action";
+import { useNavigate } from "react-router-dom";
 import { Alert } from "@chakra-ui/alert";
 import { TiTick } from "react-icons/ti";
 import axios from "axios";
@@ -20,20 +21,34 @@ import Loader from "../../Layout/Loader";
 import SingleProductLoader from "../../Layout/SingleProductLoader";
 
 const SingleProductPage = () => {
-  console.log(sessionStorage);
+  const [chestsize, setchestSize] = useState();
+  const [fronlength, setFronLength] = useState();
+  const [sleevelength, setSleevelength] = useState();
+  const [sizeClick, setClickSize] = useState(false);
+
+  const allsizes = ["S", "M", "L", "XL", "2XL", "3XL"];
+  const navigate = useNavigate();
   const showToast = useCustomToast();
   const dispatch = useDispatch();
   const params = useParams();
   const { id } = params;
 
-  
-
   console.log(id);
-  const { product, isLoading } = useSelector( (store) => store.SingleProductPageReducer);
-  console.log(product);
+  const { product, isLoading } = useSelector(
+    (store) => store.SingleProductPageReducer
+  );
+  const { cartData } = useSelector((store) => store.cartReducer);
+  const cartStatus = localStorage.getItem("cartStatus");
+  const [buttonText, setButtonText] = useState(
+    cartStatus ? "Go to Cart" : "Add to Cart"
+  ); // State for button text
+
+  console.log("product", product);
   const { title, rating, actualPrice, fit, discountPrice, image } = product;
 
   const [mainImage, setMainImage] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
+  
 
   useEffect(() => {
     if (image && image.length > 0) {
@@ -45,61 +60,89 @@ const SingleProductPage = () => {
     dispatch(getSingleProduct(id));
   }, [dispatch, id]);
 
-  const [chestsize, setchestSize] = useState();
-  const [fronlength, setFronLength] = useState();
-  const [sleevelength, setSleevelength] = useState();
-  const [sizeClick, setClickSize] = useState(false);
+  useEffect(()=>{
+    checkIfProductInCart();
+  },[cartData,id])
 
-  const [allsizes, setAllsizes] = useState([
-    { size: "S", chest: "43.0", frontLength: "27.25", SleevLength: "24.0" },
-    { size: "M", chest: "45.0", frontLength: "28.00", SleevLength: "24.25" },
-    { size: "L", chest: "47.0", frontLength: "28.75", SleevLength: "24.5" },
-    { size: "XL", chest: "49.0", frontLength: "29.5", SleevLength: "24.75" },
-    { size: "2XL", chest: "51.0", frontLength: "30.25", SleevLength: "25.0" },
-    { size: "3XL", chest: "53.0", frontLength: "31.0", SleevLength: "25.20" },
-  ]);
+  const checkIfProductInCart = () => {
+    const isInCart = cartData.some(
+      (item) => String(item.checkId) === String(id)
+    );
+   if(isInCart){
+    setButtonText("Go to Cart")
+   }
+    return isInCart;
+  };
 
+  
 
+  useEffect(() => {}, [cartData]);
 
   const handleClick = (el, i) => {
     setMainImage(el);
   };
-  const handleSizeDetails = (el) => {
-    setchestSize(el.chest);
-    setFronLength(el.frontLength);
-    setSleevelength(el.SleevLength);
-    setClickSize(true);
+  const handleSizeDetails = (size) => {
+    setSelectedSize(size);
   };
 
- 
-let payload={
-  type: product.type,
-  image: product?.image?.[0] ,
-  title: product.title,
-  category: product.category,
-  actualPrice: product.actualPrice,
-  loyaltyPrice: product.loyaltyPrice,
-  discountedPrice: product.discountPrice,
-  fit:product.fit,
-  rating: product.rating,
-  userID: product.userID
-}
+  useEffect(() => {
+    console.log("selectedSize", selectedSize);
+  }, [selectedSize]);
+
+  let payload = {
+    checkId: product._id,
+    type: product.type,
+    image: product?.image?.[0],
+    title: product.title,
+    category: product.category,
+    actualPrice: product.actualPrice,
+    loyaltyPrice: product.loyaltyPrice,
+    discountedPrice: product.discountPrice,
+    fit: product.fit,
+    rating: product.rating,
+    userID: product.userID,
+    size: product?.size,
+    selectedSize: selectedSize,
+  };
+
   const handleAddToCart = () => {
-    dispatch(addToCartFun(payload))
-    showToast("Added to the cart", "success", 3000);
+   
+   
+    const isInCart = checkIfProductInCart();
+    console.log("isInCart",isInCart);
+    if (isInCart || buttonText === "Go to Cart") {
+      // Redirect user to cart page
+      navigate("/cart");
+      return;
+    } else if(!selectedSize){
+      showToast("Please Select Size", "error", 3000);
+      return;
+    }
+    else {
+      dispatch(addToCartFun(payload));
+      showToast("Added to the cart", "success", 3000);
+      setButtonText("Go to Cart"); // Update the button text
+      // localStorage.setItem("cartStatus", "added");
+
+      // Check if the product was removed from the cart
+      if (cartStatus === "removed") {
+        setButtonText("Add to Cart");
+        localStorage.removeItem("cartStatus");
+      }
+    }
   };
 
-  if(isLoading){
-    return <SingleProductLoader/>
+  if (isLoading) {
+    return <SingleProductLoader />;
   }
-
+  console.log(sizeClick);
   return (
     <>
       <div className={styles.product_page_container}>
         {/* sidebar different-diffrent images */}
         <div className={styles.productPage_left}>
           <div className={styles.allimages}>
-            { image?.map((el, i) => (
+            {image?.map((el, i) => (
               <img
                 key={i + 1}
                 src={el}
@@ -109,7 +152,7 @@ let payload={
             ))}
           </div>
           <div>
-            { mainImage && (
+            {mainImage && (
               <img className={styles.mainImage} src={mainImage} alt="Img" />
             )}
           </div>
@@ -151,18 +194,49 @@ let payload={
           <div className={`${sizeClick ? styles.allsizeNot : styles.allsizes}`}>
             {/* size code here */}
 
-            {allsizes.map((el, i) => {
+            {/* {allsizes.map((el, i) => {
               return (
                 <Size
                   key={i + 1}
-                  handleSizeDetails={() => handleSizeDetails(el)}
-                >
-                  {el?.size}
-                </Size>
+                  handleSizeDetails={handleSizeDetails}
+                  allsize={el}
+                  selectedSize={selectedSize}
+                />
               );
-            })}
+            })} */}
+
+            <Size
+              handleSizeDetails={handleSizeDetails}
+              allsize="S"
+              selectedSize={selectedSize}
+            />
+            <Size
+              handleSizeDetails={handleSizeDetails}
+              allsize="M"
+              selectedSize={selectedSize}
+            />
+            <Size
+              handleSizeDetails={handleSizeDetails}
+              allsize="L"
+              selectedSize={selectedSize}
+            />
+            <Size
+              handleSizeDetails={handleSizeDetails}
+              allsize="XL"
+              selectedSize={selectedSize}
+            />
+            <Size
+              handleSizeDetails={handleSizeDetails}
+              allsize="2XL"
+              selectedSize={selectedSize}
+            />
+            <Size
+              handleSizeDetails={handleSizeDetails}
+              allsize="3XL"
+              selectedSize={selectedSize}
+            />
           </div>
-          <div>
+          {/* <div>
             {sizeClick && (
               <p className={styles.sizeDetails}>
                 <span>Garment:</span>Chest (in inch):<span>{chestsize}</span> |
@@ -170,14 +244,14 @@ let payload={
                 (in Inch):<span>{sleevelength}</span>
               </p>
             )}
-          </div>
+          </div> */}
           <div className={styles.button}>
-            <Button onClick={handleAddToCart}>
+            { <Button onClick={handleAddToCart}>
               <span style={{ marginRight: "10px" }}>
                 <HiOutlineShoppingBag size={"20px"} />
               </span>
-              ADD TO BAG{" "}
-            </Button>
+              {buttonText}
+            </Button>}
             <Button>
               <span style={{ marginRight: "10px" }}>
                 <CiHeart size={"20px"} />
@@ -233,12 +307,3 @@ let payload={
 };
 
 export default SingleProductPage;
-
-//  {/* {image?.map((ele, i) => (
-//               <img
-//                 key={i}
-//                 className={styles.mainImage}
-//                 src={i < 1 ? ele : ""}
-//                 alt="Img"
-//               />
-//             ))} */}

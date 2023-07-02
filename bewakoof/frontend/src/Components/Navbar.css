@@ -7,6 +7,38 @@
 }
 
 
+.cart-icon {
+  width: 40px;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  display: inline-block; /* Add this line */
+}
+
+.icon-grey {
+ font-size: 25px;
+ color: green;
+}
+
+.badge {
+  position: absolute;
+  content: attr(data-count);
+  background: orange;
+  height: 2rem;
+  top: -0.99rem; /* Adjust the value to align vertically */
+  right: -0.5rem; /* Adjust the value to align horizontally */
+  width: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  font-size: 1rem;
+  border-radius: 50%;
+  color: white;
+  
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+
 
 nav{
   width: 100%;
@@ -152,6 +184,8 @@ nav{
   font-family: montserrat, sans-serif;
   cursor: pointer;
 }
+
+
 #nav-bottom-in-2 ul li:hover{
     
 }
@@ -210,6 +244,8 @@ nav{
 #sideMenu{
   display: none;
 }
+
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   #top-1 {
     width: 40%;

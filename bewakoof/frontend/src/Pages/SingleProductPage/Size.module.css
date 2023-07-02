@@ -1,0 +1,34 @@
+.size {
+  display: inline-block;
+  padding: 8px 12px;
+  margin: 4px;
+  background-color: #71c695;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* .size:hover {
+  background-color: #1ab3ce;
+  color: #f7f0f0;
+} */
+
+.disabledSize {
+  display: inline-block;
+  padding: 8px 12px;
+  margin: 4px;
+  background-color: burlywood;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.selected {
+  background-color: rgb(128, 0, 62);
+  cursor: not-allowed;
+}
+
+.notSelected {
+  background-color: rgb(250, 246, 246);
+}

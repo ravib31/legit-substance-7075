@@ -123,7 +123,7 @@ const registerFun=async (req, res) => {
 
       if (result) {
         const token = jwt.sign({ USER_ID: user._id }, "bhashkar", {
-          expiresIn: "5m",
+          expiresIn: "20m",
         });
         req.session.token = token;
         console.log(req.session);

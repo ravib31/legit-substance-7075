@@ -4,12 +4,13 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import SingleCartItem from "../../Components/CartPageComponents/SingleCartItem";
-import { getCartProduct, getSingleProduct, removeCartData } from "../../Redux/Cart/action";
+import { getFromCartFun, getSingleProduct, deleteCartProduct } from "../../Redux/Cart/action";
 import styles from "./CartPage.module.css";
 import * as types from '../../Redux/Cart/actionType';
+import useCustomToast from "../../Layout/useCustomToast";
 
 const CartPage = () => {
-  
+  const showToast = useCustomToast();
  const {cartData,isLoading,isError,msg}= useSelector((store)=>(store.cartReducer))
 
  
@@ -17,20 +18,24 @@ const CartPage = () => {
  //console.log('cartData',cartData);
   const dispatch=useDispatch();
   useEffect(()=>{
-    dispatch(getCartProduct());
+    dispatch(getFromCartFun());
     
   },[])
 
-  useEffect(()=>{
-   
-  },[])
-
-  
-  
 
  
 
+  
+  const handleRemoveCartData=(id)=>{
+    console.log("deleted");
+    dispatch(deleteCartProduct(id))
+    
+      showToast("Removed from Cart", "error", 3000);
+      
+     
+  }
 
+   
   
   if(cartData.length===0){
     return(
@@ -38,7 +43,7 @@ const CartPage = () => {
         <div>
           <img src="https://images.bewakoof.com/images/doodles/empty-cart-page-doodle.png" alt="" />
         </div>
-        <p>Nothing in the bag</p>
+        <p>Bag is Empty</p>
         
       <Link to={"/"}><Button border={'1px solid green'}>Continue Shoping</Button></Link>
       </div>
@@ -58,7 +63,7 @@ const CartPage = () => {
           {cartData && cartData.map((el)=>{
             
             return (
-              <SingleCartItem key={el._id} {...el}   />
+              <SingleCartItem key={el._id} {...el} handleRemoveCartData={handleRemoveCartData}  />
             )
           })}
         </div>

@@ -6,12 +6,11 @@ export const getCartProduct = () => (dispatch) => {
   dispatch({ type: types.GET_CART_PRODUCT_REQUEST });
   axios
 
-    .get(`http://localhost:8080/cart`,{
+    .get(`http://localhost:8080/cart`, {
       // headers:{
       //   "Authorization": localStorage.getItem("token") || null
       // }
     })
-
 
     .then((res) => {
       console.log(res.data);
@@ -28,19 +27,21 @@ export const addToCartFun = (obj) => (dispatch) => {
   dispatch({ type: types.POST_CART_PRODUCT_REQUEST });
   axios
 
-    .post(`http://localhost:8080/cart`, obj,{
-      headers:{
-        "Authorization":getTokenFromCookies()  || null
-      }
+    .post(`http://localhost:8080/cart`, obj, {
+      headers: {
+        Authorization: getTokenFromCookies() || null,
+      },
     })
 
     .then((res) => {
       console.log(res);
-      dispatch({type:types.POST_CART_PRODUCT_SUCCESS,payload:res.data.msg})
+      dispatch({
+        type: types.POST_CART_PRODUCT_SUCCESS,
+        payload: res.data.msg,
+      });
     })
     .catch((err) => {
-      dispatch({ type: types.POST_CART_PRODUCT_ERROR ,payload:err });
-      
+      dispatch({ type: types.POST_CART_PRODUCT_ERROR, payload: err });
     });
 };
 
@@ -49,27 +50,35 @@ export const getFromCartFun = () => (dispatch) => {
   dispatch({ type: types.GET_CART_PRODUCT_REQUEST });
   axios
 
-    .get(`http://localhost:8080/cart`,{
-      headers:{
-        "Authorization":getTokenFromCookies()  || null
-      }
+    .get(`http://localhost:8080/cart`, {
+      headers: {
+        Authorization: getTokenFromCookies() || null,
+      },
     })
 
     .then((res) => {
-      console.log(res);
-      dispatch({type:types.GET_CART_PRODUCT_SUCCESS,payload:res.data.cartsData})
+      
+      dispatch({
+        type: types.GET_CART_PRODUCT_SUCCESS,
+        payload: res.data.cartsData,
+      });
     })
     .catch((err) => {
-      dispatch({ type: types.GET_CART_PRODUCT_ERROR ,payload:err });
-      
+      dispatch({ type: types.GET_CART_PRODUCT_ERROR, payload: err });
     });
 };
 
-
-export const getSingleProduct = (id) => (dispatch) => {
-  return axios.get(`http://localhost:8080/products/${id}`,{
-   headers:{
-      "Authorization":getTokenFromCookies()  || null
-  }
-  });
+export const deleteCartProduct = (id) => (dispatch) => {
+  console.log(id);
+  return axios.delete(`http://localhost:8080/cart/delete/${id}`, {
+    headers: {
+      Authorization: getTokenFromCookies() || null,
+    },
+  })
+  .then((res)=>{
+    console.log(res.data);
+    dispatch({type:types.DELETE_CART_PRODUCT_SUCCESS,payload:res.data})
+  }).catch((err)=>{
+    dispatch({type:types.DELETE_CART_PRODUCT_ERROR,payload:err})
+  })
 };

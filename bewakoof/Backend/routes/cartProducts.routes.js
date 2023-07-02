@@ -35,18 +35,15 @@ CartproductRouter.post("/", auth, async (req, res) => {
   }
 });
 
-CartproductRouter.patch("/update/:prodID", async (req, res) => {
-  const { prodID } = req.params;
-  const payload = req.body;
-  const token = req.headers.authorization;
-  const decoded = jwt.verify(token, "evaluation");
+CartproductRouter.patch("/update/prodID",auth, async (req, res) => {
+  
   const req_id = decoded.userID;
-  const product = await ProductModel.find({ _id: prodID });
+  const product = await CartProductModel.find({ _id: prodID });
   const userID_in_product = product[0].userID;
 
   try {
     if (req_id === userID_in_product) {
-      const data = await ProductModel.findByIdAndUpdate(
+      const data = await CartProductModel.findByIdAndUpdate(
         { _id: prodID },
         payload
       );
@@ -63,33 +60,31 @@ CartproductRouter.patch("/update/:prodID", async (req, res) => {
   }
 });
 
-CartproductRouter.delete("delete/:prodID", async (req, res) => {
-  console.log("delete");
+CartproductRouter.delete("/delete/:prodID", auth, async (req, res) => {
   const { prodID } = req.params;
-  const token = req.headers.authorization;
-  const decoded = jwt.verify(token, "evaluation");
-  const req_id = decoded.userID;
-  const product = await ProductModel.find({ _id: prodID });
-  const userID_in_product = product[0].userID;
-
-  console.log(prodID);
-  console.log(product); 
+  const req_id = req.body.USER_ID; // ID of the logged-in user
 
   try {
-    if (req_id === userID_in_product) {
-      const productDeleted = await ProductModel.findByIdAndDelete({
-        _id: prodID,
-      });
-      res
-        .status(200)
-        .send({ msg: `Product with id:${prodID} has been Deleted` });
-    } else {
-      res
-        .status(403)
-        .send({ msg: "You are not authorized to Deleted the product" });
+    const product = await CartProductModel.findById(prodID);
+
+    if (!product) {
+      return res.status(404).send({ msg: "Product not found" });
     }
+
+    if (req_id !== product.userID) {
+      return res
+        .status(403)
+        .send({ msg: "You are not authorized to delete the product" });
+    }
+
+    const productDeleted = await CartProductModel.findByIdAndDelete(prodID);
+
+    res.status(200).send({
+      msg: `Product has been deleted`,
+      productDeleted,
+    });
   } catch (error) {
-    res.status(400).send({ msg: error.message });
+    res.status(500).send({ msg: "Server error" });
   }
 });
 

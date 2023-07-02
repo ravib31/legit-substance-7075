@@ -6,6 +6,31 @@ const {auth}=require("../middlewares/auth")
 // const { getSingleProduct } = require("../../frontend/src/Redux/Product/action");
 
 
+productRouter.post("/add",async(req,res)=>{
+  const payload=req.body;
+  try {
+    
+    const allData=await ProductModel.insertMany(payload);
+    res.send({msg:"added",allData})
+
+  } catch (error) {
+    res.send(err.message)
+  }
+})
+
+productRouter.delete('/delete', async (req, res) => {
+  try {
+    // Delete all products
+    await ProductModel.deleteMany();
+
+    // Return a success response
+    return res.status(200).json({ message: 'All products deleted successfully' });
+  } catch (error) {
+    // Handle any errors
+    console.error(error);
+    return res.status(500).json({ message: 'An error occurred while deleting products' });
+  }
+});
 
 productRouter.get("/men", async (req, res) => {
   const { category } = req.query;

@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const CartProductSchema = mongoose.Schema({
+  checkId:String,
   type: String,
   image: String,
   title: String,
@@ -11,6 +12,8 @@ const CartProductSchema = mongoose.Schema({
   fit: String,
   rating: Number,
   userID: String,
+  size:[String],
+  selectedSize:String
 },
 {
   versionKey: false,

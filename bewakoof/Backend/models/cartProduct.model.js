@@ -13,7 +13,11 @@ const CartProductSchema = mongoose.Schema({
   rating: Number,
   userID: String,
   size:[String],
-  selectedSize:String
+  selectedSize:String,
+  quantity:{
+    type:Number,
+    default:1
+  }
 },
 {
   versionKey: false,

@@ -43,9 +43,9 @@ const SingleProductPage = () => {
     cartStatus ? "Go to Cart" : "Add to Cart"
   ); // State for button text
 
-  console.log("product", product);
-  const { title, rating, actualPrice, fit, discountPrice, image } = product;
-
+  
+  const { title, rating, actualPrice, fit, discountedPrice, image } = product;
+console.log("product",product?.discountedPrice);
   const [mainImage, setMainImage] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
   
@@ -97,7 +97,7 @@ const SingleProductPage = () => {
     category: product.category,
     actualPrice: product.actualPrice,
     loyaltyPrice: product.loyaltyPrice,
-    discountedPrice: product.discountPrice,
+    discountedPrice: product.discountedPrice,
     fit: product.fit,
     rating: product.rating,
     userID: product.userID,
@@ -105,9 +105,9 @@ const SingleProductPage = () => {
     selectedSize: selectedSize,
   };
 
+  // console.log(payload);
+
   const handleAddToCart = () => {
-   
-   
     const isInCart = checkIfProductInCart();
     console.log("isInCart",isInCart);
     if (isInCart || buttonText === "Go to Cart") {
@@ -168,10 +168,10 @@ const SingleProductPage = () => {
             </span>
           </p>
           <div className={styles.priceDetails}>
-            <b> ₹{discountPrice}</b>
+            <b> ₹{discountedPrice}</b>
             <span> ₹{actualPrice}</span>
             <span>
-              {Math.floor((100 / actualPrice) * (actualPrice - discountPrice))}%
+              {Math.floor((100 / actualPrice) * (actualPrice - discountedPrice))}%
               OFF
             </span>
           </div>

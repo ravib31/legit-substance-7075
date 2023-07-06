@@ -69,6 +69,7 @@ export const getFromCartFun = () => (dispatch) => {
 };
 
 export const deleteCartProduct = (id) => (dispatch) => {
+  dispatch({type:types.DELETE_CART_PRODUCT_REQUEST})
   console.log(id);
   return axios.delete(`http://localhost:8080/cart/delete/${id}`, {
     headers: {
@@ -81,4 +82,62 @@ export const deleteCartProduct = (id) => (dispatch) => {
   }).catch((err)=>{
     dispatch({type:types.DELETE_CART_PRODUCT_ERROR,payload:err})
   })
+};
+
+export const updateCartItemQuantity = (id,payload) => (dispatch) => {
+  console.log(id,payload)
+  dispatch({type:types.UPDATE_QUANTITY_REQUEST})
+  return axios.put(`http://localhost:8080/cart/update/${id}`,payload, {
+    headers: {
+      Authorization: getTokenFromCookies() || null,
+    },
+  })
+  .then((res)=>{
+    console.log(res.data);
+    dispatch({type:types.UPDATE_QUANTITY_SUCCESS,payload:res.data})
+  }).catch((err)=>{
+    dispatch({type:types.UPDATE_QUANTITY_ERROR,payload:err})
+  })
+};
+
+
+export const getTotalMrpPrice = () => (dispatch) => {
+  dispatch({ type: types.GET_TOTALMRP_REQUEST });
+  axios
+
+    .get(`http://localhost:8080/cart/totalPrice`, {
+      headers:{
+        Authorization: getTokenFromCookies() || null,
+      }
+    })
+
+    .then((res) => {
+      console.log(res);
+      dispatch({ type: types.GET_TOTALMRP_SUCCESS, payload: res?.data?.totalPrice });
+    })
+    .catch((err) => {
+      dispatch({ type: types.GET_TOTALMRP_ERROR });
+      console.log("err", err);
+    });
+};
+
+
+export const getToatalDiscountPrice = () => (dispatch) => {
+  dispatch({ type: types.GET_DISCOUNT_REQUEST });
+  axios
+
+    .get(`http://localhost:8080/cart/totalDiscountPrice`, {
+      headers:{
+        Authorization: getTokenFromCookies() || null,
+      }
+    })
+
+    .then((res) => {
+      console.log(res.data.totalDiscountPrice);
+      dispatch({ type: types.GET_DISCOUNT_SUCCESS, payload: res?.data?.totalDiscountPrice });
+    })
+    .catch((err) => {
+      dispatch({ type: types.GET_DISCOUNT_ERROR });
+      console.log("err", err);
+    });
 };

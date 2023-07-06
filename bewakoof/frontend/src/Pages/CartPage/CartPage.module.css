@@ -1,3 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    color: #ffffff;
+    font-size: 24px;
+  }
+  /* In this CSS code, the loader class is styled to position the loader element fixed at the top-left corner of the viewport. It covers the entire screen by using 100% width and height. The display property is set to flex to center the loader content both horizontally and vertically. The background color is set to semi-transparent black using rgba(0, 0, 0, 0.5). The z-index is set to 9999 to ensure it appears above other elements on the page. The text color is set to white (#ffffff) and the font size is set to */
+  
+  
+  
+  
 .totalItem{
     margin-left: 13%;
     font-size: 20px;
@@ -6,9 +30,8 @@
 
 .cartpage_container{
     display: flex;
-    /* border: 1px solid red; */
     width: 75%;
-    gap: 20px;
+    gap: 5%;
     margin: auto;
     margin-bottom: 100px;
 }
@@ -113,22 +136,21 @@ margin-bottom: 100px;
 
 
 
-@media all and (min-width: 320px) and (max-width: 767px) {
+@media all and (min-width: 270px) and (max-width: 767px) {
     .cartpage_container{
         display: block;
-        border: 1px solid red;
-        width: 200%;
-        
-        
+         border: none;
+   
     }
     .cartPageRightSide{
-        border: 1px solid black;
+        border: none;
         width: 100%;
+        margin-top: 20px;
         
     }
     .allcartproducts{
         width: 100%;
-        border: 1px solid black;
+        border: none;
     
     }
 }

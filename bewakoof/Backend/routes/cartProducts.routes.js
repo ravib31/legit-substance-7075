@@ -17,7 +17,6 @@ CartproductRouter.get("/", auth, async (req, res) => {
   }
 });
 
-
 CartproductRouter.post("/", auth, async (req, res) => {
   const payload = req.body;
   const userId = req.body.USER_ID;
@@ -31,12 +30,11 @@ CartproductRouter.post("/", auth, async (req, res) => {
     res.status(200).send({ msg: "Added to Cart" });
   } catch (error) {
     console.log(error);
-    res.status(400).send({ msg: error.message }); 
+    res.status(400).send({ msg: error.message });
   }
 });
 
-CartproductRouter.patch("/update/prodID",auth, async (req, res) => {
-  
+CartproductRouter.patch("/update/prodID", auth, async (req, res) => {
   const req_id = decoded.userID;
   const product = await CartProductModel.find({ _id: prodID });
   const userID_in_product = product[0].userID;
@@ -85,6 +83,88 @@ CartproductRouter.delete("/delete/:prodID", auth, async (req, res) => {
     });
   } catch (error) {
     res.status(500).send({ msg: "Server error" });
+  }
+});
+
+CartproductRouter.put("/update/:prodID", auth, async (req, res) => {
+  const { prodID } = req.params;
+  const { quantity } = req.body;
+  const reqUserID = req.body.USER_ID; // ID of the logged-in user
+
+  try {
+    const updatedProduct = await CartProductModel.findOneAndUpdate(
+      { _id: prodID, userID: reqUserID }, // Find the product matching both ID and user ID
+      { $set: { quantity } }, // Update the quantity field with the new value
+      { new: true } // Return the updated product
+    );
+
+    if (!updatedProduct) {
+      return res.status(404).json({ msg: "Product not found" });
+    }
+
+    res.status(200).json({
+      msg: "Product quantity has been updated",
+      updatedProduct,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ msg: "Server error" });
+  }
+});
+
+CartproductRouter.get("/totalPrice", auth, async (req, res) => {
+  const reqUserID = req.body.USER_ID; // ID of the logged-in user
+
+  try {
+    const totalPrice = await CartProductModel.aggregate([
+      { $match: { userID: reqUserID } }, // Match documents with the user ID
+      {
+        $group: {
+          _id: null,
+          totalPrice: {
+            $sum: { $multiply: ["$actualPrice", "$quantity"] },
+          },
+        },
+      }, // Calculate the sum of the "price" field
+    ]);
+
+    if (totalPrice.length === 0) {
+      return res.status(404).json({ msg: "No products found in the cart" });
+    }
+
+    res.status(200).json({ totalPrice: totalPrice[0].totalPrice });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ msg: "Server error" });
+  }
+});
+
+CartproductRouter.get("/totalDiscountPrice", auth, async (req, res) => {
+  const reqUserID = req.body.USER_ID; // ID of the logged-in user
+
+  try {
+    const totalDiscountPrice = await CartProductModel.aggregate([
+      { $match: { userID: reqUserID } }, // Match documents with the user ID
+      {
+        $group: {
+          _id: null,
+          totalDiscountPrice: {
+            $sum: { $multiply: ["$discountedPrice", "$quantity"] },
+          },
+        },
+      }, // Calculate the sum of the "price" field
+    ]);
+
+    if (totalDiscountPrice.length === 0) {
+      return res.status(404).json({ msg: "No products found in the cart" });
+    }
+    console.log(totalDiscountPrice);
+    res
+      .status(200)
+      .json({ totalDiscountPrice: totalDiscountPrice[0].totalDiscountPrice });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ msg: "Server error" });
   }
 });
 

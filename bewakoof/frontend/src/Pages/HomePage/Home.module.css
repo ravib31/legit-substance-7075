@@ -1,9 +1,8 @@
 .container {
     cursor: pointer;
-    margin-top: 70px;
     width:auto;
-    height:auto;
-    
+    height:auto; 
+    margin-top: -10px;  
 } 
 .mainProducts{
     width: 100%;
@@ -18,7 +17,7 @@
     position: sticky;
 }
 #ca1{
-    font-size: 15px;
+    font-size: 24px;
 }
 
 .mid {
@@ -103,6 +102,9 @@
     margin: auto;
     margin-left:8px;
    width: 100%;
+}
+.designs{
+  margin: auto;
 }
 @media screen and (min-width: 768px) and (max-width: 1023px){
     .categories{

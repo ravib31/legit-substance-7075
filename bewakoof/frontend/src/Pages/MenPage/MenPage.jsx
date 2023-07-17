@@ -27,9 +27,7 @@ const MenPage = () => {
     dispatch(getMenProduct(obj.params));
   }, [dispatch, location.search, searchParams]);
 
-  // if (initialLoading) {
-  //   return <InitialLoader />;
-  // }
+
 
   return (
     <div className="men-section">

@@ -45,9 +45,7 @@ export const Home = () => {
         <div id="category1">
           <Link to="/women" id="ca1">WOMEN</Link>
         </div>
-        <div id="category1">
-          <Link to="/" id="ca1">ACCESSORIES</Link>
-        </div>
+       
     </div> 
       </div>
   <Slider/>

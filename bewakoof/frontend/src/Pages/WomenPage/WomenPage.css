@@ -37,20 +37,46 @@
     width: 26%;
     margin-right: 20px;
 }
-@media (max-width: 940px){
-    .women-product-div{
-        width: 95%;
+@media all and (min-width: 401px) and (max-width: 800px){
+    .women.product-div{
+        width: 100%;
         margin: auto;
+        flex-direction: column;
     }
-    .women-sidebar{
-       display: none;
-    }
-    .women-product-list{
+    .women.sidebar{
+        width: 95%;
+        height: auto;
+        margin: auto;
+        margin-bottom: 30px;
+       }
+       .women.product-list{
         width: 100%;
         margin: auto;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        grid-template-columns: 50% 50%;
+    }
+    .women-Clothing{
+        display: none;
+    }
+}
+
+@media all and (min-width: 100px) and (max-width: 400px){
+    .women.product-div{
+        width: 100%;
+        margin: auto;
+        flex-direction: column;
+    }
+   .women.sidebar{
+    width: 95%;
+    height: auto;
+    margin: auto;
+    margin-bottom: 30px;
+   }
+    .women.product-list{
+        width: 100%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 50% 50%;
     }
     .women-Clothing{
         display: none;

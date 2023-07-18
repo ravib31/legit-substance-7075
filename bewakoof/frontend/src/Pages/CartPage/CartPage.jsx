@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import SingleCartItem from "../../Components/CartPageComponents/SingleCartItem";
 import {
   getFromCartFun,
@@ -10,17 +10,23 @@ import {
   deleteCartProduct,
   getTotalMrpPrice,
   getToatalDiscountPrice,
+  getTotalCartProduct,
 } from "../../Redux/Cart/action";
 import styles from "./CartPage.module.css";
 import * as types from "../../Redux/Cart/actionType";
 import useCustomToast from "../../Layout/useCustomToast";
 import InitialLoader from "../../Layout/InitialLoader";
+import { getTokenFromCookies, isTokenExpired } from "../../utils/token.utils";
 
 const CartPage = () => {
+  const navigate=useNavigate()
   const showToast = useCustomToast();
-  const { cartData, isLoading, isError, msg,quantityLoading,deleteLoading, totalMrp,totalDiscount} = useSelector(
+  const { cartData, isLoading, isError, msg,quantityLoading,deleteLoading, totalMrp,totalDiscount,totalCartProduct} = useSelector(
     (store) => store.cartReducer
   );
+
+  const {user}=useSelector((store)=>store.authReducer)
+  console.log("user",user);
 
   //console.log('cartData',cartData);
   const dispatch = useDispatch();
@@ -28,6 +34,7 @@ const CartPage = () => {
     dispatch(getFromCartFun());
     dispatch(getTotalMrpPrice())
     dispatch(getToatalDiscountPrice())
+    dispatch(getTotalCartProduct())
   }, [quantityLoading,deleteLoading]);
 
   const handleRemoveCartData = (id) => {
@@ -37,9 +44,54 @@ const CartPage = () => {
     showToast("Removed from Cart", "error", 3000);
   };
 
+  useEffect(() => {
+    const token = getTokenFromCookies();
+    if (isTokenExpired (token)) {
+      // Token has expired, perform necessary actions (e.g., logout)
+      alert("Session Expired")
+      navigate("/user/login")
+      
+    }
+  }, [quantityLoading,deleteLoading,isLoading]);
+
   // if(isLoading){
   //   return <InitialLoader/>
   // }
+
+
+  const checkoutHandler = async (amount) => {
+
+    const { data: { key } } = await axios.get("http://www.localhost:8080/payment/getkey")
+
+    const { data: { order } } = await axios.post("http://localhost:8080/payment/checkout", {
+        amount
+    })
+
+    const options = {
+        key,
+        amount: order.amount,
+        currency: "INR",
+        name: "Apna Ecommerce",
+        description: "Exploring RazorPay",
+        image: "https://avatars.githubusercontent.com/u/105533945?v=4",
+        order_id: order.id,
+        callback_url: "http://localhost:8080/payment/paymentverification",
+        prefill: {
+            name: user?.name,
+            email: "sunil@example.com",
+            contact: "user?."
+        },
+        notes: {
+            "address": "Razorpay Corporate Office"
+        },
+        theme: {
+            "color": "#0d0707"
+        }
+    };
+    const razor = new window.Razorpay(options);
+    razor.open();
+}
+
 
   if (cartData.length === 0) {
     return (
@@ -47,7 +99,7 @@ const CartPage = () => {
         <div>
           <img
             src="https://images.bewakoof.com/images/doodles/empty-cart-page-doodle.png"
-            alt=""
+            alt="Sunil"
           />
         </div>
         <p>Bag is Empty</p>
@@ -63,7 +115,7 @@ const CartPage = () => {
     <div>
       <div className={styles.totalItem}>
         <b>My Bag</b>
-        {0} items(s)
+        {totalCartProduct} items(s)
       </div>
       <div className={styles.cartpage_container}>
       {(isLoading || deleteLoading) && <h1 className={styles.loader}>Loading...</h1>}
@@ -108,8 +160,8 @@ const CartPage = () => {
                 <p>₹{totalMrp-totalDiscount}</p>
               </div>
               <div>
-                <Link to="/checkout">
-                  <Button className={styles.button}>CONTINUE</Button>
+                <Link >
+                  <Button onClick={()=>checkoutHandler(totalMrp-totalDiscount)} className={styles.button} >CONTINUE</Button>
                 </Link>
               </div>
             </div>

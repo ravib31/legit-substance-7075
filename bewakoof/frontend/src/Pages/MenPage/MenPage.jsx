@@ -27,7 +27,7 @@ const MenPage = () => {
     dispatch(getMenProduct(obj.params));
   }, [dispatch, location.search, searchParams]);
 
-  // if (initialLoading) {
+  // if (2) {
   //   return <InitialLoader />;
   // }
 

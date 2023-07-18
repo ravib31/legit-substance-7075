@@ -141,3 +141,21 @@ export const getToatalDiscountPrice = () => (dispatch) => {
       console.log("err", err);
     });
 };
+
+export const getTotalCartProduct = () => (dispatch) => {
+  axios
+
+    .get(`http://localhost:8080/cart/totalCartProduct`, {
+      headers:{
+        Authorization: getTokenFromCookies() || null,
+      }
+    })
+
+    .then((res) => {
+      console.log(res.data.totalCartProduct);
+      dispatch({ type: types.GET_TOTALCART_PRODUCT, payload: res?.data?.totalCartProduct });
+    })
+    .catch((err) => {
+      console.log("err", err);
+    });
+};

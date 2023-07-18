@@ -9,7 +9,7 @@ import Size from "./Size";
 import Description from "./Description";
 import { Input } from "@chakra-ui/input";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCartFun, postCartProduct } from "../../Redux/Cart/action";
+import { addToCartFun, getFromCartFun, postCartProduct } from "../../Redux/Cart/action";
 import { getSingleProduct } from "../../Redux/Product/action";
 import { useNavigate } from "react-router-dom";
 import { Alert } from "@chakra-ui/alert";
@@ -58,7 +58,8 @@ console.log("product",product?.discountedPrice);
 
   React.useEffect(() => {
     dispatch(getSingleProduct(id));
-  }, [dispatch, id]);
+    dispatch(getFromCartFun());
+  }, [dispatch, id,]);
 
   useEffect(()=>{
     checkIfProductInCart();

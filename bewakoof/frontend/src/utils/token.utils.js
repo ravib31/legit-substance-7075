@@ -1,7 +1,7 @@
 // import jwt from 'jsonwebtoken';
 
 export const setTokenInCookies = (token) => {
-  const expirationDate = new Date(Date.now() + 10 * 60 * 1000); // 2-minute expiration
+  const expirationDate = new Date(Date.now() + 30 * 60 * 1000); // 2-minute expiration
   document.cookie = `token=${token}; expires=${expirationDate.toUTCString()}; path=/`;
 };
 
@@ -38,15 +38,7 @@ export const isTokenExpired = (token) => {
   return decodedToken.exp < currentTime;
 };
 
-// export const isTokenExpired = (token) => {
-//   try {
-//     const decodedToken = jwt.decode(token);
-//     if (!decodedToken || !decodedToken.exp) {
-//       return true;
-//     }
-//     const currentTime = Date.now() / 1000;
-//     return decodedToken.exp < currentTime;
-//   } catch (error) {
-//     return true;
-//   }
-// };
+export function removeTokenFromCookies() {
+  document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+

@@ -2,6 +2,7 @@ const {UserModel}=require("../models/user.model")
 const bcrypt = require("bcrypt");
 const jwt=require("jsonwebtoken");
 const nodemailer=require("nodemailer");
+const { auth } = require("../middlewares/auth");
 require('dotenv').config();
 
 
@@ -145,6 +146,7 @@ const registerFun=async (req, res) => {
 
 
 
+
 //   const AdminloginFun=async (req, res) => {
 //     const { name, password } = req.body;
 //     try {
@@ -208,4 +210,4 @@ const registerFun=async (req, res) => {
 //     }
 //   } 
 
-  module.exports={registerFun,loginFun,verifiyMail}
+  module.exports={registerFun,loginFun,verifiyMail,}

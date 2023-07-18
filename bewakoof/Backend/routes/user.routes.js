@@ -1,9 +1,10 @@
 const express = require("express");
 
 const userRouter = express.Router();
-const {registerFun,loginFun,verifiyMail}=require("../controller/user.controller")
+const {registerFun,loginFun,verifiyMail,}=require("../controller/user.controller")
 const multer=require("multer");
 const path=require("path");
+const { auth } = require("../middlewares/auth");
 
 const storage=multer.diskStorage({
   destination:(req,file,cb)=>{
@@ -15,11 +16,10 @@ const storage=multer.diskStorage({
   }
 })
 
-const upload=multer({storage:storage});
+const upload=multer({storage:storage}); 
 
 userRouter.post("/register",upload.single("avatar"),registerFun ); 
 userRouter.post("/login", loginFun);
-
 userRouter.get("/verifiy",verifiyMail)
 
 

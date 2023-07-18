@@ -168,4 +168,41 @@ CartproductRouter.get("/totalDiscountPrice", auth, async (req, res) => {
   }
 });
 
+CartproductRouter.get("/totalCartProduct", auth, async (req, res) => {
+  const reqUserID = req.body.USER_ID; // ID of the logged-in user
+
+  try {
+    const totalCartProduct = await CartProductModel.aggregate([
+      { $match: { userID: reqUserID } }, // Match documents with the user ID
+      {
+        $group: {
+          _id: null,
+          totalCartProduct: { $sum: { $multiply: ["$quantity", 1] } },
+        },
+      }, // Calculate the sum of quantity multiplied by 1
+    ]);
+
+    if (totalCartProduct.length === 0) {
+      return res.status(404).json({ msg: "No products found in the cart" });
+    }
+    console.log(totalCartProduct);
+    res
+      .status(200)
+      .json({ totalCartProduct: totalCartProduct[0].totalCartProduct });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ msg: "Server error" });
+  }
+});
+
+
+CartproductRouter.delete("/deleteAll",async(req,res)=>{
+  try {
+    await CartProductModel.deleteMany();
+    res.status(200).send({msg:"All products have beeb removed from cart"})
+  } catch (error) {
+    res.status(500).send({msg:error.message})
+  }
+})
+
 module.exports = { CartproductRouter };

@@ -88,3 +88,17 @@
     padding-right: 3px;
     margin-left: 5px;
 }
+@media all and (min-width: 401px) and (max-width: 800px){
+    .product-box1{
+        width: 90%;
+        height: 400px;
+        margin: auto;
+    }
+}
+
+@media all and (min-width: 100px) and (max-width: 400px){
+    .product-box1{
+        width: 95%;
+        height: 300px;
+    }
+}

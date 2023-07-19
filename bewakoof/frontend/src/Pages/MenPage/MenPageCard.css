@@ -6,34 +6,29 @@
     background: transparent;
 }
 .product-box{
-
     width: 300px;
     height:500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
-    
+    margin-bottom: 20px;    
 }
 .product-image{
     width: 100%;
     height: 80%;
-
 }
 .product-image img{
     width: 100%;
      height: 100%;
      display: block;
-     object-fit: cover;
-   
+     object-fit: cover;  
 }
 
 .product-image:hover{
     transform: scale(1.02);
     transform-origin: center;
     transition: transform 0.2s ease-in-out;
-
 }
 .product-info{
     width: 100%;
@@ -54,7 +49,6 @@
     font-weight: 600;
     line-height: 15px;
     font-family: montserrat-semibold, sans-serif !important;
-
 }
 .product-title{
     overflow: hidden;
@@ -73,8 +67,7 @@
 .discounted-price{
     font-size: 15px;
     font-weight: 600;
-    color: black;
-   
+    color: black;  
 }
 .regular-price{
     font-size: 12px;
@@ -92,4 +85,18 @@
     font-weight: 600;
     padding-right: 3px;
     margin-left: 5px;
+}
+@media all and (min-width: 401px) and (max-width: 800px){
+    .product-box{
+        width: 90%;
+        height: 400px;
+        margin: auto;
+    }
+}
+
+@media all and (min-width: 100px) and (max-width: 400px){
+    .product-box{
+        width: 95%;
+        height: 300px;
+    }
 }

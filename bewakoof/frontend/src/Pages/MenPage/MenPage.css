@@ -3,9 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-.men-section{
-    
-}
+
 .product-div{
     width:87%;
     /* width:1205px; */
@@ -42,25 +40,30 @@
     margin-right: 20px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px){
+@media all and (min-width: 401px) and (max-width: 800px){
     .product-div{
         width: 100%;
         margin: auto;
+        flex-direction: column;
     }
-    
+    .sidebar{
+        width: 95%;
+        height: auto;
+        margin: auto;
+        margin-bottom: 30px;
+       }
     .product-list{
-        width: 80%;
+        width: 100%;
         margin: auto;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        grid-template-columns: 50% 50%;
     }
     .men-Clothing{
         display: none;
     }
 }
 
-@media screen and (max-width: 768px){
+@media all and (min-width: 100px) and (max-width: 400px){
     .product-div{
         width: 100%;
         margin: auto;
@@ -76,8 +79,7 @@
         width: 100%;
         margin: auto;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        grid-template-columns: 50% 50%;
     }
     .men-Clothing{
         display: none;

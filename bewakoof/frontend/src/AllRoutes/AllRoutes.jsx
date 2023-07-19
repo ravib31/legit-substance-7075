@@ -17,7 +17,8 @@ import Signup from "../Pages/SingupPage/Signup";
 import Navbar from "../Components/Navbar";
 import SingleProductPage from "../Pages/SingleProductPage/SingleProductPage";
 import Payment from "../Pages/PaymentPage/Payment";
-import PaymentSuccess from "../Pages/PaymentSuccess";
+import PaymentSuccess from "../Pages/PaymentPage/PaymentSuccess";
+import OrderPage from "../Pages/OrderPage/OrderPage";
 
 export const AllRoutes = () => {
   return (
@@ -101,6 +102,19 @@ export const AllRoutes = () => {
           }
         />
         <Route
+          path="/orders"
+          element={
+            <>
+              <Navbar />
+              <PrivateRoute>
+                <OrderPage />
+              </PrivateRoute>
+              <Footer />
+            </>
+          }
+        />
+
+        <Route
           path="/user/login"
           element={
             <>
@@ -121,9 +135,7 @@ export const AllRoutes = () => {
           }
         />
 
-        <Route 
-        path="/paymentsuccess" 
-        element={<PaymentSuccess />} />
+        <Route path="/paymentsuccess" element={<PaymentSuccess />} />
       </Routes>
 
       {/* admin routes ------------------------>*/}

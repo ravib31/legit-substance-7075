@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 // import  {Slider}  from ".Slider";
 import styles from './Home.module.css';
 import { Slider } from './Slider';
+import { getTokenFromCookies } from '../../utils/token.utils';
+import { useDispatch } from 'react-redux';
+import { getTotalCartProduct } from '../../Redux/Cart/action';
 
 
 const images = [
@@ -34,6 +37,13 @@ const images = [
 ];
 
 export const Home = () => {
+  const dispatch=useDispatch();
+  const token=getTokenFromCookies();
+
+  if(token){
+    dispatch(getTotalCartProduct())
+  }
+
   return (
   <div className={styles.container}>
       <div>

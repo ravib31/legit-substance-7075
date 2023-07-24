@@ -23,6 +23,6 @@ const CartProductSchema = mongoose.Schema({
   versionKey: false,
 });
 
-const CartProductModel = mongoose.model("Cartproduct", CartProductSchema);
+const CartProductModel = mongoose.model("Cart", CartProductSchema);
 
 module.exports = { CartProductModel };

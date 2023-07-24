@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./CheckoutPage.module.css";
+import styles from "./Payment.module.css";
 import { BsCreditCard2Back } from "react-icons/bs";
 import { RiWallet3Line } from "react-icons/ri";
 
@@ -20,7 +20,9 @@ import { useSelector } from "react-redux";
 
 // import {  } from '@chakra-ui/icons'
 
-const CheckoutPage = () => {
+const AllPaymentWays=["cart","upi","cash-on-delivery"]
+
+const Payment = () => {
   const data = useSelector((store) => store.cartReducer);
   const [paymentStatus, setPaymentStatus] = useState(1);
 
@@ -131,6 +133,8 @@ const CheckoutPage = () => {
             </Button>
           </div>
         </div>
+
+        
         <div className={styles.right_container}>
           <p className={styles.summary}>PRICE SUMMARY</p>
           <div className={styles.priceDetails}>
@@ -171,4 +175,4 @@ const CheckoutPage = () => {
   );
 };
 
-export default CheckoutPage;
+export default Payment;

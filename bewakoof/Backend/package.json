@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,7 @@
     "nodemailer": "^6.9.2",
     "nodemon": "^2.0.22",
     "passport": "^0.6.0",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "razorpay": "^2.9.0"
   }
 }

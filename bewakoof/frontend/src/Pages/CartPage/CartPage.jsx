@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import SingleCartItem from "../../Components/CartPageComponents/SingleCartItem";
 import {
   getFromCartFun,
@@ -10,17 +10,24 @@ import {
   deleteCartProduct,
   getTotalMrpPrice,
   getToatalDiscountPrice,
+  getTotalCartProduct,
 } from "../../Redux/Cart/action";
 import styles from "./CartPage.module.css";
 import * as types from "../../Redux/Cart/actionType";
 import useCustomToast from "../../Layout/useCustomToast";
 import InitialLoader from "../../Layout/InitialLoader";
+import { getTokenFromCookies, isTokenExpired } from "../../utils/token.utils";
+import { clearCartProduct, paymentProcessAction } from "../../Redux/Payment/action.payment";
 
 const CartPage = () => {
+  const navigate=useNavigate()
   const showToast = useCustomToast();
-  const { cartData, isLoading, isError, msg,quantityLoading,deleteLoading, totalMrp,totalDiscount} = useSelector(
+  const { cartData, isLoading, isError, msg,quantityLoading,deleteLoading, totalMrp,totalDiscount,totalCartProduct} = useSelector(
     (store) => store.cartReducer
   );
+
+  const {user}=useSelector((store)=>store.authReducer)
+  // console.log("user",user);
 
   //console.log('cartData',cartData);
   const dispatch = useDispatch();
@@ -28,6 +35,7 @@ const CartPage = () => {
     dispatch(getFromCartFun());
     dispatch(getTotalMrpPrice())
     dispatch(getToatalDiscountPrice())
+    dispatch(getTotalCartProduct())
   }, [quantityLoading,deleteLoading]);
 
   const handleRemoveCartData = (id) => {
@@ -37,9 +45,37 @@ const CartPage = () => {
     showToast("Removed from Cart", "error", 3000);
   };
 
+  useEffect(() => {
+    const token = getTokenFromCookies();
+    if (isTokenExpired (token)) {
+      // Token has expired, perform necessary actions (e.g., logout)
+      alert("Session Expired")
+      navigate("/user/login")
+      
+    }
+  }, [quantityLoading,deleteLoading,isLoading]);
+
   // if(isLoading){
   //   return <InitialLoader/>
   // }
+
+
+  const PaymentHandler = async (amount) => {
+    console.log("Payment handler stated");
+    dispatch(clearCartProduct())
+    try {
+      const paymentSuccess = await dispatch(paymentProcessAction(amount,user));
+      
+      console.log({paymentSuccess});
+      // If you need to do something after the payment process is successful, handle it here
+      // For example, you can navigate to a success page or show a success message.
+    } catch (error) {
+      console.error("Payment Error: ", error);
+      // Handle payment error here, show an error message or perform other actions.
+    }
+    
+}
+
 
   if (cartData.length === 0) {
     return (
@@ -47,7 +83,7 @@ const CartPage = () => {
         <div>
           <img
             src="https://images.bewakoof.com/images/doodles/empty-cart-page-doodle.png"
-            alt=""
+            alt="Sunil"
           />
         </div>
         <p>Bag is Empty</p>
@@ -63,7 +99,7 @@ const CartPage = () => {
     <div>
       <div className={styles.totalItem}>
         <b>My Bag</b>
-        {0} items(s)
+        {totalCartProduct} items(s)
       </div>
       <div className={styles.cartpage_container}>
       {(isLoading || deleteLoading) && <h1 className={styles.loader}>Loading...</h1>}
@@ -108,8 +144,8 @@ const CartPage = () => {
                 <p>₹{totalMrp-totalDiscount}</p>
               </div>
               <div>
-                <Link to="/checkout">
-                  <Button className={styles.button}>CONTINUE</Button>
+                <Link >
+                  <Button onClick={()=>PaymentHandler(totalMrp-totalDiscount)} className={styles.button} >CONTINUE</Button>
                 </Link>
               </div>
             </div>

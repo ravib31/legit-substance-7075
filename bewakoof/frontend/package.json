@@ -11,7 +11,7 @@
     "axios": "^1.3.3",
     "chart.js": "^4.2.1",
     "chartjs": "^0.3.24",
-    "framer-motion": "^9.0.4",
+    "framer-motion": "^9.1.7",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",

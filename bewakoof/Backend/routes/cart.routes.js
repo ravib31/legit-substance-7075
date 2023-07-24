@@ -1,11 +1,11 @@
 const express = require("express");
 const { ProductModel } = require("../models/Products.model");
-const CartproductRouter = express.Router();
+const CartRouter = express.Router();
 const jwt = require("jsonwebtoken");
 const { auth } = require("../middlewares/auth");
-const { CartProductModel } = require("../models/cartProduct.model");
+const { CartProductModel } = require("../models/cart.model");
 
-CartproductRouter.get("/", auth, async (req, res) => {
+CartRouter.get("/", auth, async (req, res) => {
   const userId = req.body.USER_ID;
 
   try {
@@ -17,7 +17,7 @@ CartproductRouter.get("/", auth, async (req, res) => {
   }
 });
 
-CartproductRouter.post("/", auth, async (req, res) => {
+CartRouter.post("/", auth, async (req, res) => {
   const payload = req.body;
   const userId = req.body.USER_ID;
 
@@ -34,7 +34,7 @@ CartproductRouter.post("/", auth, async (req, res) => {
   }
 });
 
-CartproductRouter.patch("/update/prodID", auth, async (req, res) => {
+CartRouter.patch("/update/prodID", auth, async (req, res) => {
   const req_id = decoded.userID;
   const product = await CartProductModel.find({ _id: prodID });
   const userID_in_product = product[0].userID;
@@ -58,7 +58,7 @@ CartproductRouter.patch("/update/prodID", auth, async (req, res) => {
   }
 });
 
-CartproductRouter.delete("/delete/:prodID", auth, async (req, res) => {
+CartRouter.delete("/delete/:prodID", auth, async (req, res) => {
   const { prodID } = req.params;
   const req_id = req.body.USER_ID; // ID of the logged-in user
 
@@ -86,7 +86,7 @@ CartproductRouter.delete("/delete/:prodID", auth, async (req, res) => {
   }
 });
 
-CartproductRouter.put("/update/:prodID", auth, async (req, res) => {
+CartRouter.put("/update/:prodID", auth, async (req, res) => {
   const { prodID } = req.params;
   const { quantity } = req.body;
   const reqUserID = req.body.USER_ID; // ID of the logged-in user
@@ -112,7 +112,7 @@ CartproductRouter.put("/update/:prodID", auth, async (req, res) => {
   }
 });
 
-CartproductRouter.get("/totalPrice", auth, async (req, res) => {
+CartRouter.get("/totalPrice", auth, async (req, res) => {
   const reqUserID = req.body.USER_ID; // ID of the logged-in user
 
   try {
@@ -139,7 +139,7 @@ CartproductRouter.get("/totalPrice", auth, async (req, res) => {
   }
 });
 
-CartproductRouter.get("/totalDiscountPrice", auth, async (req, res) => {
+CartRouter.get("/totalDiscountPrice", auth, async (req, res) => {
   const reqUserID = req.body.USER_ID; // ID of the logged-in user
 
   try {
@@ -168,4 +168,41 @@ CartproductRouter.get("/totalDiscountPrice", auth, async (req, res) => {
   }
 });
 
-module.exports = { CartproductRouter };
+CartRouter.get("/totalCartProduct", auth, async (req, res) => {
+  const reqUserID = req.body.USER_ID; // ID of the logged-in user
+
+  try {
+    const totalCartProduct = await CartProductModel.aggregate([
+      { $match: { userID: reqUserID } }, // Match documents with the user ID
+      {
+        $group: {
+          _id: null,
+          totalCartProduct: { $sum: { $multiply: ["$quantity", 1] } },
+        },
+      }, // Calculate the sum of quantity multiplied by 1
+    ]);
+
+    if (totalCartProduct.length === 0) {
+      return res.status(404).json({ msg: "No products found in the cart" });
+    }
+    console.log(totalCartProduct);
+    res
+      .status(200)
+      .json({ totalCartProduct: totalCartProduct[0].totalCartProduct });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ msg: "Server error" });
+  }
+});
+
+
+CartRouter.delete("/clearCart",auth,async(req,res)=>{
+  try {
+    await CartProductModel.deleteMany();
+    res.status(200).send({msg:"All products have beeb removed from cart"})
+  } catch (error) {
+    res.status(500).send({msg:error.message}) 
+  }
+})
+
+module.exports = { CartRouter };

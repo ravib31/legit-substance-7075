@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import MenPage from "../Pages/MenPage/MenPage";
 import WomenPage from "../Pages/WomenPage/WomenPage";
 import CartPage from "../Pages/CartPage/CartPage";
-import CheckoutPage from "../Pages/CheckoutPage/CheckoutPage";
+
 import AdminDshboardPage from "../Pages/AdminPage/AdminDshboardPage";
 import AdminNavbar from "../Components/AdminComponents/AdminNavbar/AdminNavbar";
 import AdminAddProduct from "../Components/AdminComponents/AdminProduct/AdminAddProduct";
@@ -16,6 +16,9 @@ import Footer from "../Components/Footer";
 import Signup from "../Pages/SingupPage/Signup";
 import Navbar from "../Components/Navbar";
 import SingleProductPage from "../Pages/SingleProductPage/SingleProductPage";
+import Payment from "../Pages/PaymentPage/Payment";
+import PaymentSuccess from "../Pages/PaymentPage/PaymentSuccess";
+import OrderPage from "../Pages/OrderPage/OrderPage";
 
 export const AllRoutes = () => {
   return (
@@ -55,21 +58,21 @@ export const AllRoutes = () => {
         <Route
           path="/cart"
           element={
-             <PrivateRoute>
+            <PrivateRoute>
               <>
                 <Navbar />
                 <CartPage />
                 <Footer />
               </>
-             </PrivateRoute>
+            </PrivateRoute>
           }
         />
         <Route
-          path="/checkout"
+          path="/payment"
           element={
             <>
               <Navbar />
-              <CheckoutPage />
+              <Payment />
               <Footer />
             </>
           }
@@ -80,7 +83,7 @@ export const AllRoutes = () => {
             <>
               <Navbar />
               <PrivateRoute>
-             <SingleProductPage />
+                <SingleProductPage />
               </PrivateRoute>
               <Footer />
             </>
@@ -98,6 +101,19 @@ export const AllRoutes = () => {
             </>
           }
         />
+        <Route
+          path="/orders"
+          element={
+            <>
+              <Navbar />
+              <PrivateRoute>
+                <OrderPage />
+              </PrivateRoute>
+              <Footer />
+            </>
+          }
+        />
+
         <Route
           path="/user/login"
           element={
@@ -118,6 +134,8 @@ export const AllRoutes = () => {
             </>
           }
         />
+
+        <Route path="/paymentsuccess" element={<PaymentSuccess />} />
       </Routes>
 
       {/* admin routes ------------------------>*/}

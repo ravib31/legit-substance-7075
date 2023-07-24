@@ -70,7 +70,7 @@ const Login = () => {
     } else {
       isFirstRender.current = false;
     }
-  }, [isError, msg, isAuth]);
+  }, [isAuth,msg]);
 
   const handleDataChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -141,6 +141,7 @@ const Login = () => {
             <Stack spacing={10} pt={2}>
               <Button
                 type="submit"
+                isLoading={isLoading}
                 loadingText="Submitting"
                 size="lg"
                 bg={"blue.400"}

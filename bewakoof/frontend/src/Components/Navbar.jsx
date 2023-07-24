@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import "./Navbar.css";
 import { useNavigate, Link } from "react-router-dom";
@@ -7,8 +7,12 @@ import { BsSearch, BsBag } from "react-icons/bs";
 import { SlUser } from "react-icons/sl";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { IconButton, useDisclosure } from "@chakra-ui/react";
-import { useSelector } from "react-redux";
-import { getTokenFromCookies } from "../utils/token.utils";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  getTokenFromCookies,
+  removeTokenFromCookies,
+  isTokenExpired,
+} from "../utils/token.utils";
 import { FaShoppingCart } from "react-icons/fa";
 import {
   Menu,
@@ -21,7 +25,10 @@ import {
   MenuDivider,
   Button,
 } from "@chakra-ui/react";
+
+import { getTotalCartProduct } from "../Redux/Cart/action"
 const Navbar = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isOpen, onToggle, onClose } = useDisclosure();
   const [count, setCount] = useState(0);
@@ -30,6 +37,10 @@ const Navbar = () => {
     (store) => store.authReducer
   );
 
+  const { totalCartProduct } = useSelector((store) => store.cartReducer);
+ console.log(totalCartProduct)
+  
+const [total,setTotal]=useState(totalCartProduct  || 0)
   const token = getTokenFromCookies();
 
   const toHome = () => {
@@ -62,6 +73,18 @@ const Navbar = () => {
   const onSigupPage = () => {
     navigate("/user/register");
   };
+
+  const handleLogout = () => {
+    removeTokenFromCookies();
+    navigate("/user/login");
+  };
+
+  useEffect(() => {
+    // const token = getTokenFromCookies();
+    if (isTokenExpired(token)) {
+      handleLogout();
+    }
+  }, []);
 
   return (
     <>
@@ -120,10 +143,10 @@ const Navbar = () => {
                     <AiOutlineHeart style={{ fontSize: "25px" }} />
                   </li>
                   <li className="cart-icon" onClick={onCartPage}>
-                    
-                      <FaShoppingCart className="icon-grey" />
-                      {count >= 0 && <span className="badge">{count}</span>}
-                    
+                    <FaShoppingCart className="icon-grey" />
+                    {token && (
+                      <span className="badge">{totalCartProduct}</span>
+                    )}
                   </li>
                   <li>
                     <Menu>
@@ -147,10 +170,14 @@ const Navbar = () => {
 
                         <MenuDivider />
                         <MenuGroup title="Not For User">
-                          <MenuItem>Become Seller</MenuItem>
+                          {/* <MenuItem>Become Seller</MenuItem> */}
                           <MenuItem>Admin Login</MenuItem>
                         </MenuGroup>
-                        {token && <Button variant={"solid"}>Logout</Button>}
+                        {token && (
+                          <Button variant={"solid"} onClick={handleLogout}>
+                            Logout
+                          </Button>
+                        )}
                       </MenuList>
                     </Menu>
                   </li>

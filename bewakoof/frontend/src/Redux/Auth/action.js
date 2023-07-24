@@ -2,7 +2,7 @@
 import axios from "axios";
 import * as types from './actionType';
 import { setTokenInCookies } from "../../utils/token.utils";
-
+import baseurl from "../../urlconfig";
 
 export const loginRequest = () => {
     return {type:types.LOGIN_REQUEST}
@@ -49,7 +49,7 @@ export const registerFailure = () => {
 
 export const login=(userData)=>(dispatch)=>{
   dispatch(loginRequest());
-  return axios.post(`http://localhost:8080/user/login`,userData)
+  return axios.post(`${baseurl}/user/login`,userData)
   .then((res)=>{
     
     setTokenInCookies(res&& res.data.token)
@@ -65,7 +65,7 @@ export const login=(userData)=>(dispatch)=>{
 export const register = (userData) => async(dispatch)=> {
   dispatch(registerRequest())
   try {
-    let res=await axios.post("http://localhost:8080/user/register",userData);
+    let res=await axios.post(`${baseurl}/user/register`,userData);
     console.log(res);
     dispatch(registerSuccess(res.data.msg))
   } catch (error) {
@@ -79,7 +79,7 @@ export const register = (userData) => async(dispatch)=> {
 export const loginWithGoogle = () => async(dispatch)=> {
   dispatch({type:types.GOOGLE_LOGIN_REQUEST})
   try {
-    let res=await axios.get("http://localhost:8080/auth/google");
+    let res=await axios.get(`${baseurl}/auth/google`);
     console.log(res);
     dispatch({type:types.GOOGLE_LOGIN_SUCCESS,payload:res})
   } catch (error) {

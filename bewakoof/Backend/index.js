@@ -10,25 +10,28 @@ const {setupGoogleStrategy}=require("./config/google.auth")
 
 const { productRouter } = require("./routes/products.routes");
 const { userRouter } = require("./routes/user.routes");
-const { CartproductRouter } = require("./routes/cartProducts.routes");
-const { orderRouter } = require("./routes/orderList.routes");
-
-
+const { CartRouter } = require("./routes/cart.routes");
+const {paymentRouter} =require("./routes/payment.routes")
 const passport=require("passport");
-
+const { OrderRouter } = require("./routes/order.routes");
 const app = express()
-
+ 
+//middlewares
+app.use(express.json()) 
+app.use(express.urlencoded({ extended: true }));
+app.use(cors())
 app.use(
   cookieSession({
     name: "session",
     keys: ["secret-key"],
-    maxAge: 5 * 60 * 1000, // Cookie expiration time (1 minute)
+    maxAge: 30 * 60 * 1000, // Cookie expiration time (30 minute)
   })
 );
-app.use(express.json()) 
-app.use(express.urlencoded({ extended: true }));
-app.use(cors())
 
+
+
+
+//google authentication with passport js
 setupGoogleStrategy(passport)
 
 app.get('/auth/google',
@@ -44,14 +47,14 @@ app.get('/auth/google/callback',
   });
 
 app.use("/user", userRouter)
-
 app.use("/products", productRouter)
-app.use("/cart", CartproductRouter)
-app.use("/order" , orderRouter)
+app.use("/cart", CartRouter)
+app.use("/payment",paymentRouter) 
+app.use("/orders",OrderRouter)
 
 
 
-
+//server runnig on port 8080
 app.listen(process.env.PORT, async () => {
     try {
         await connection

@@ -1,12 +1,12 @@
 import axios from "axios";
 import * as types from "./actionType";
 import { getTokenFromCookies } from "../../utils/token.utils";
-
+import baseurl from "../../urlconfig";
 export const getCartProduct = () => (dispatch) => {
   dispatch({ type: types.GET_CART_PRODUCT_REQUEST });
   axios
 
-    .get(`http://localhost:8080/cart`, {
+    .get(`${baseurl}/cart`, {
       // headers:{
       //   "Authorization": localStorage.getItem("token") || null
       // }
@@ -27,7 +27,7 @@ export const addToCartFun = (obj) => (dispatch) => {
   dispatch({ type: types.POST_CART_PRODUCT_REQUEST });
   axios
 
-    .post(`http://localhost:8080/cart`, obj, {
+    .post(`${baseurl}/cart`, obj, {
       headers: {
         Authorization: getTokenFromCookies() || null,
       },
@@ -50,7 +50,7 @@ export const getFromCartFun = () => (dispatch) => {
   dispatch({ type: types.GET_CART_PRODUCT_REQUEST });
   axios
 
-    .get(`http://localhost:8080/cart`, {
+    .get(`${baseurl}/cart`, {
       headers: {
         Authorization: getTokenFromCookies() || null,
       },
@@ -71,7 +71,7 @@ export const getFromCartFun = () => (dispatch) => {
 export const deleteCartProduct = (id) => (dispatch) => {
   dispatch({type:types.DELETE_CART_PRODUCT_REQUEST})
   console.log(id);
-  return axios.delete(`http://localhost:8080/cart/delete/${id}`, {
+  return axios.delete(`${baseurl}/cart/delete/${id}`, {
     headers: {
       Authorization: getTokenFromCookies() || null,
     },
@@ -87,7 +87,7 @@ export const deleteCartProduct = (id) => (dispatch) => {
 export const updateCartItemQuantity = (id,payload) => (dispatch) => {
   console.log(id,payload)
   dispatch({type:types.UPDATE_QUANTITY_REQUEST})
-  return axios.put(`http://localhost:8080/cart/update/${id}`,payload, {
+  return axios.put(`${baseurl}/cart/update/${id}`,payload, {
     headers: {
       Authorization: getTokenFromCookies() || null,
     },
@@ -105,7 +105,7 @@ export const getTotalMrpPrice = () => (dispatch) => {
   dispatch({ type: types.GET_TOTALMRP_REQUEST });
   axios
 
-    .get(`http://localhost:8080/cart/totalPrice`, {
+    .get(`${baseurl}/cart/totalPrice`, {
       headers:{
         Authorization: getTokenFromCookies() || null,
       }
@@ -126,7 +126,7 @@ export const getToatalDiscountPrice = () => (dispatch) => {
   dispatch({ type: types.GET_DISCOUNT_REQUEST });
   axios
 
-    .get(`http://localhost:8080/cart/totalDiscountPrice`, {
+    .get(`${baseurl}/cart/totalDiscountPrice`, {
       headers:{
         Authorization: getTokenFromCookies() || null,
       }
@@ -141,3 +141,22 @@ export const getToatalDiscountPrice = () => (dispatch) => {
       console.log("err", err);
     });
 };
+
+export const getTotalCartProduct = () => (dispatch) => {
+  axios
+
+    .get(`${baseurl}/cart/totalCartProduct`, {
+      headers:{
+        Authorization: getTokenFromCookies() || null,
+      }
+    })
+
+    .then((res) => {
+      console.log(res.data.totalCartProduct);
+      dispatch({ type: types.GET_TOTALCART_PRODUCT, payload: res?.data?.totalCartProduct });
+    })
+    .catch((err) => {
+      console.log("err", err);
+    });
+};
+

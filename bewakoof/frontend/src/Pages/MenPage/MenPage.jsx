@@ -28,7 +28,6 @@ const MenPage = () => {
   }, [dispatch, location.search, searchParams]);
 
 
-
   return (
     <div className="men-section">
       <div className="men-Clothing">

@@ -9,7 +9,7 @@ const initialState = {
   cartData: [],
   totalMrp:0,
   totalDiscount:0,
-  toalProduct:0
+  totalCartProduct:0
 };
 
 export const reducer = (state = initialState, { type, payload }) => {
@@ -56,6 +56,9 @@ export const reducer = (state = initialState, { type, payload }) => {
       return { ...state, isLoading: false, totalDiscount:payload };
     case types.GET_DISCOUNT_ERROR:
       return { ...state, isLoading: false, isError: true };
+
+      case types.GET_TOTALCART_PRODUCT:
+        return {...state,totalCartProduct:payload}
     default:
       return state;
   }

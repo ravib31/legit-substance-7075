@@ -17,6 +17,7 @@ import * as types from "../../Redux/Cart/actionType";
 import useCustomToast from "../../Layout/useCustomToast";
 import InitialLoader from "../../Layout/InitialLoader";
 import { getTokenFromCookies, isTokenExpired } from "../../utils/token.utils";
+import { clearCartProduct, paymentProcessAction } from "../../Redux/Payment/action.payment";
 
 const CartPage = () => {
   const navigate=useNavigate()
@@ -26,7 +27,7 @@ const CartPage = () => {
   );
 
   const {user}=useSelector((store)=>store.authReducer)
-  console.log("user",user);
+  // console.log("user",user);
 
   //console.log('cartData',cartData);
   const dispatch = useDispatch();
@@ -59,37 +60,20 @@ const CartPage = () => {
   // }
 
 
-  const checkoutHandler = async (amount) => {
-
-    const { data: { key } } = await axios.get("http://www.localhost:8080/payment/getkey")
-
-    const { data: { order } } = await axios.post("http://localhost:8080/payment/checkout", {
-        amount
-    })
-
-    const options = {
-        key,
-        amount: order.amount,
-        currency: "INR",
-        name: "Apna Ecommerce",
-        description: "Exploring RazorPay",
-        image: "https://avatars.githubusercontent.com/u/105533945?v=4",
-        order_id: order.id,
-        callback_url: "http://localhost:8080/payment/paymentverification",
-        prefill: {
-            name: user?.name,
-            email: "sunil@example.com",
-            contact: "user?."
-        },
-        notes: {
-            "address": "Razorpay Corporate Office"
-        },
-        theme: {
-            "color": "#0d0707"
-        }
-    };
-    const razor = new window.Razorpay(options);
-    razor.open();
+  const PaymentHandler = async (amount) => {
+    console.log("Payment handler stated");
+    dispatch(clearCartProduct())
+    try {
+      const paymentSuccess = await dispatch(paymentProcessAction(amount,user));
+      
+      console.log({paymentSuccess});
+      // If you need to do something after the payment process is successful, handle it here
+      // For example, you can navigate to a success page or show a success message.
+    } catch (error) {
+      console.error("Payment Error: ", error);
+      // Handle payment error here, show an error message or perform other actions.
+    }
+    
 }
 
 
@@ -161,7 +145,7 @@ const CartPage = () => {
               </div>
               <div>
                 <Link >
-                  <Button onClick={()=>checkoutHandler(totalMrp-totalDiscount)} className={styles.button} >CONTINUE</Button>
+                  <Button onClick={()=>PaymentHandler(totalMrp-totalDiscount)} className={styles.button} >CONTINUE</Button>
                 </Link>
               </div>
             </div>

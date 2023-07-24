@@ -5,6 +5,7 @@ import { reducer as cartReducer } from "./Cart/reducer"
 import { Woreducer as womenReducer } from "./Product/reducer";
 import { reducer as authReducer } from "./Auth/reducer";
 import {SingleProductPageReducer } from "./Product/reducer"
+import { reducer as PaymentReducer } from "./Payment/reducer.payment";
 
 const rootReducer = combineReducers({
     menReducer,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
     womenReducer,
     SingleProductPageReducer,
     authReducer ,
+    PaymentReducer
 
 })
 

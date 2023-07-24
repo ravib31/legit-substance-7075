@@ -2,6 +2,8 @@ import axios from "axios";
 // import { GET_ALL_PRODUCT, GET_MEN_PRODUCT_ERROR, GET_MEN_PRODUCT_REQUEST, GET_MEN_PRODUCT_SUCCESS, GET_WOMEN_PRODUCT_ERROR, GET_WOMEN_PRODUCT_REQUEST, GET_WOMEN_PRODUCT_SUCCESS } from "./actionType"
 import * as types from "./actionType";
 import { getTokenFromCookies } from "../../utils/token.utils";
+import baseurl from '../../urlconfig'
+
 export const getMenProductRequest = () => {
   return { type: types.GET_MEN_PRODUCT_REQUEST };
 };
@@ -29,7 +31,7 @@ export const getWomenProductError = () => {
 export const getMenProduct = (params) => (dispatch) => {
   dispatch(getMenProductRequest());
  return axios
-    .get("http://localhost:8080/products/men", {
+    .get(`${baseurl}/products/men`, {
       params: {
         category: params.category,
         sort: params.sort,
@@ -48,7 +50,7 @@ export const getMenProduct = (params) => (dispatch) => {
 
 export const getAllProduct = () => (dispatch) => {
   axios
-    .get(`http://localhost:8080/products`)
+    .get(`${baseurl}/products`)
     .then((res) => {
       dispatch({ type: types.GET_ALL_PRODUCT, payload: res.data });
     })
@@ -60,7 +62,7 @@ export const getAllProduct = () => (dispatch) => {
 export const getSingleProduct = (id) => (dispatch) => {
     console.log("actionid",id);
     dispatch({ type: types.GET_SINGLE_PRODUCT_REQUEST });
-    axios.get(`http://localhost:8080/products/${id}`,{
+    axios.get(`${baseurl}/products/${id}`,{
       headers: {
         Authorization: getTokenFromCookies() || null,
       },
@@ -80,7 +82,7 @@ export const getSingleProduct = (id) => (dispatch) => {
 
 export const delProduct = (id) => (dispatch) => {
   axios
-    .delete(`http://localhost:8080/products/${id}`, {
+    .delete(`${baseurl}/products/${id}`, {
       headers: {
         Authorization: getTokenFromCookies() || null,
       },
@@ -100,7 +102,7 @@ export const delProduct = (id) => (dispatch) => {
 export const getWomenProduct = () => (dispatch) => {
   dispatch(getWomenProductRequest());
   axios
-    .get(`http://localhost:8080/products/women`, {
+    .get(`${baseurl}/products/women`, {
       // headers:{
       //     "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVU0VSX0lEIjoiNjQzMWFkOGE1ZGNmMjE2OTNmMzNiMTE2IiwiaWF0IjoxNjgxMTMwMzU4fQ.3Ic5eTVd_ottS-itvAddx_Qe25-Phn4p3PKKtvaV4qc"
       // }

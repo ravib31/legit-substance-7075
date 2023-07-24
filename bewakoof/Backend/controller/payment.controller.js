@@ -53,10 +53,11 @@ const instance = new Razorpay({
 
     await Payment.create({
       razorpay_order_id,
-      razorpay_payment_id,
+      razorpay_payment_id, 
       razorpay_signature,
     });
 
+    // res.status(200).send({"isAuthentic":isAuthentic})
     res.redirect(
       `http://localhost:3000/paymentsuccess?reference=${razorpay_payment_id}`  
     );

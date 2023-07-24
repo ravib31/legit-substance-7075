@@ -196,12 +196,12 @@ CartRouter.get("/totalCartProduct", auth, async (req, res) => {
 });
 
 
-CartRouter.delete("/deleteAll",async(req,res)=>{
+CartRouter.delete("/clearCart",auth,async(req,res)=>{
   try {
     await CartProductModel.deleteMany();
     res.status(200).send({msg:"All products have beeb removed from cart"})
   } catch (error) {
-    res.status(500).send({msg:error.message})
+    res.status(500).send({msg:error.message}) 
   }
 })
 

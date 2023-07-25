@@ -17,12 +17,14 @@ import {
   InputGroup,
   InputLeftAddon,
   InputRightElement,
-  Link,
+  
   SimpleGrid,
   Stack,
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
+
+import { Link } from "react-router-dom";
 
 import { MdEmail } from "react-icons/md";
 
@@ -158,7 +160,7 @@ const Login = () => {
             <Text align={"center"}>
               New user?{" "}
               <Link
-                href="http://localhost:3000/user/register"
+              to={"/user/register"}
                 color={"blue.400"}
               >
                 Signup

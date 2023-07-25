@@ -16,7 +16,6 @@ import {
   InputGroup,
   InputLeftAddon,
   InputRightElement,
-  Link,
   SimpleGrid,
   Stack,
   Text,
@@ -29,7 +28,7 @@ import { BsTelephoneFill } from "react-icons/bs";
 import { RiLockPasswordFill } from "react-icons/ri";
 import SocialMedia from "./SocialMedia";
 import Toast from "../../Layout/useCustomToast";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -217,7 +216,7 @@ const Signup = () => {
           </form>
           <Stack pt={6}>
             <Text align={"center"}>
-              Already a user? <Link href='http://localhost:3000/user/login' color={"blue.400"}>Login</Link>
+              Already a user? <Link to={"/user/login"} color={"blue.400"}>Login</Link>
             </Text>
           </Stack>
           <SocialMedia />

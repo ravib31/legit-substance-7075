@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors")
 const dotenv = require("dotenv");
 dotenv.config();
-const { auth } = require("../Backend/middlewares/auth")
+const { auth } = require("./middlewares/auth")
 const { connection } = require("./config/db");
 const cookieSession = require("cookie-session");
 

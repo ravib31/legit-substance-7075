@@ -63,6 +63,7 @@ export const login=(userData)=>(dispatch)=>{
 
 
 export const register = (userData) => async(dispatch)=> {
+  console.log("userData,", userData);
   dispatch(registerRequest())
   try {
     let res=await axios.post(`${baseurl}/user/register`,userData);
@@ -70,7 +71,7 @@ export const register = (userData) => async(dispatch)=> {
     dispatch(registerSuccess(res.data.msg))
   } catch (error) {
     console.log(error);
-    dispatch(registerFailure(error.response.data.msg))
+    dispatch(registerFailure(error.response.data.msg)) 
     
   }
 

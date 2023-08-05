@@ -28,88 +28,71 @@ import { BsTelephoneFill } from "react-icons/bs";
 import { RiLockPasswordFill } from "react-icons/ri";
 import SocialMedia from "./SocialMedia";
 import Toast from "../../Layout/useCustomToast";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const showToast = useCustomToast();
   const dispatch = useDispatch();
   const store = useSelector((store) => store.authReducer);
-  const { isError, msg,isAuth,isLoading } = store;
-  const naviage=useNavigate();
-  console.log(store);
+  const { isError, msg, isAuth, isLoading } = store;
+  const naviage = useNavigate();
   const [user, setUser] = useState({
     name: "",
     email: "",
     password: "",
     phone: "",
   });
-  const [avatar, setAvatar] = useState();
-  const [avatarPreview, setAvatarPreview] = useState("preview.png");
-  const imageDisplay = useBreakpointValue({ base: "none", md: "block" });
-  const { name, email, password, phone } = user;
+
+  const handleDataChange = (e) => {
+    const { name, value } = e.target;
+    console.log(name,value);
+    setUser((prevUser) => ({ ...prevUser, [name]: value }));
+    console.log({user});
+  };
+  
 
   const handleSignupForm = (e) => {
     e.preventDefault();
 
-    if (password.length < 8) {
-      showToast(
-        "Password length must be at least 8 characters",
-        "warning",
-        3000
-      );
+    if (user.password.length < 8) {
+      showToast("Password length must be at least 8 characters", "warning", 3000);
       return;
     }
-    if (phone.length !== 10) {
+    if (user.phone.length !== 10) {
       showToast("Phone number must be 10 digits", "warning", 3000);
       return;
     }
 
-    if (!avatar) {
-      showToast("Please select an avatar", "error", 3000);
-      return;
+    // const formData = new FormData();
+    // formData.append("name", user.name);
+    // formData.append("email", user.email);
+    // formData.append("password", user.password);
+    // formData.append("phone", user.phone);
+
+    const formData={
+      name:user.name,
+      email:user.email,
+      password:user.password,
+      phone:user.phone
     }
 
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("email", email);
-    formData.append("password", password);
-    formData.append("phone", phone);
-    formData.append("avatar", avatar);
-
+    console.log(formData); 
     dispatch(register(formData));
   };
 
   const isFirstRender = useRef(true);
-  useEffect(()=>{
-    if(!isFirstRender.current){
-      if(msg==="User data submitted successfully ,Please verify your mail"){
-        showToast("Verify your mail","info",9000)
-      }
-    }else{
-      isFirstRender.current = false; 
-    }
-  },[msg])
-
-  const handleDataChange = (e) => {
-    if (e.target.name === "avatar") {
-      const file = e.target.files[0];
-      const reader = new FileReader();
-
-      reader.onload = () => {
-        if (reader.readyState === 2) {
-          setAvatarPreview(reader.result);
-          setAvatar(file);
-        }
-      };
-
-      if (file) {
-        reader.readAsDataURL(file);
+  useEffect(() => {
+    if (!isFirstRender.current) {
+      if (msg === "User data submitted successfully ,Please verify your mail") {
+        showToast("Verify your mail", "info", 9000);
       }
     } else {
-      setUser({ ...user, [e.target.name]: e.target.value });
+      isFirstRender.current = false;
     }
-  };
+  }, [msg]);
+
+  const imageDisplay = useBreakpointValue({ base: "none", md: "block" });
 
   return (
     <div>
@@ -140,10 +123,10 @@ const Signup = () => {
                 required
                 type="text"
                 name="name"
-                placeholder=" Name"
+                placeholder="Name"
                 variant={"flushed"}
                 onChange={handleDataChange}
-                value={name}
+                value={user.name}
               />
             </InputGroup>
             <InputGroup mb={"2"}>
@@ -151,10 +134,10 @@ const Signup = () => {
               <Input
                 type="number"
                 name="phone"
-                placeholder=" Phone"
+                placeholder="Phone"
                 variant={"flushed"}
                 onChange={handleDataChange}
-                value={phone}
+                value={user.phone}
               />
             </InputGroup>
             <InputGroup mb={"2"}>
@@ -162,10 +145,10 @@ const Signup = () => {
               <Input
                 type="email"
                 name="email"
-                placeholder=" Email"
+                placeholder="Email"
                 variant={"flushed"}
                 onChange={handleDataChange}
-                value={email}
+                value={user.email}
               />
             </InputGroup>
             <InputGroup mb={"2"}>
@@ -173,10 +156,10 @@ const Signup = () => {
               <Input
                 type={showPassword ? "text" : "password"}
                 name="password"
-                placeholder=" Password"
+                placeholder="Password"
                 variant={"flushed"}
                 onChange={handleDataChange}
-                value={password}
+                value={user.password}
               />
               <InputRightElement h={"full"}>
                 <Button
@@ -187,17 +170,6 @@ const Signup = () => {
                 </Button>
               </InputRightElement>
             </InputGroup>
-            <Stack direction="row" alignItems="center">
-              <Avatar src={avatarPreview} alt="Avatar" />
-              <FormControl>
-                <Input
-                  name="avatar"
-                  type="file"
-                  accept="image/*"
-                  onChange={handleDataChange}
-                />
-              </FormControl>
-            </Stack>
             <Stack spacing={10} pt={2}>
               <Button
                 type="submit"

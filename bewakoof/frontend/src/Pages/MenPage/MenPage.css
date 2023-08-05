@@ -33,7 +33,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 .sidebar{
     width: 29%;

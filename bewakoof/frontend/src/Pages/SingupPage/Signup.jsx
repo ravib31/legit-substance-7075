@@ -64,12 +64,6 @@ const Signup = () => {
       return;
     }
 
-    // const formData = new FormData();
-    // formData.append("name", user.name);
-    // formData.append("email", user.email);
-    // formData.append("password", user.password);
-    // formData.append("phone", user.phone);
-
     const formData={
       name:user.name,
       email:user.email,
@@ -79,18 +73,33 @@ const Signup = () => {
 
     console.log(formData); 
     dispatch(register(formData));
+
+      // Check if the registration was successful
+      if (!isError && isAuth) {
+        showToast("Signup successful! Verify your mail", "info", 9000);
+        // Clear input fields and reset user state
+        setUser({
+          name: "",
+          email: "",
+          password: "",
+          phone: "",
+        });
+      }
   };
 
-  const isFirstRender = useRef(true);
-  useEffect(() => {
-    if (!isFirstRender.current) {
-      if (msg === "User data submitted successfully ,Please verify your mail") {
-        showToast("Verify your mail", "info", 9000);
-      }
-    } else {
-      isFirstRender.current = false;
-    }
-  }, [msg]);
+  // const isFirstRender = useRef(true);
+  // console.log(msg);
+  // useEffect(() => {
+  //   // if (!isFirstRender.current) {
+  //     if (msg) {
+  //       showToast("Verify your mail", "info", 9000);
+  //     }
+  //   // } 
+  //   // else {
+
+  //   //   isFirstRender.current = false;
+  //   // }
+  // }, []);
 
   const imageDisplay = useBreakpointValue({ base: "none", md: "block" });
 

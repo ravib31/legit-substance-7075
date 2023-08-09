@@ -75,8 +75,8 @@ const Signup = () => {
     dispatch(register(formData));
 
       // Check if the registration was successful
-      if (!isError && isAuth) {
-        showToast("Signup successful! Verify your mail", "info", 9000);
+      if (!isError && isAuth && msg==="User data submitted successfully, please verify your mail" || msg==="Please check your mail and verify") {
+        showToast("Mail has been send please verify", "info", 9000);
         // Clear input fields and reset user state
         setUser({
           name: "",
@@ -84,6 +84,8 @@ const Signup = () => {
           password: "",
           phone: "",
         });
+      }else if(!isError && isAuth && msg==="User already exists, please login"){
+        showToast("User already exists, please login", "info", 9000);
       }
   };
 

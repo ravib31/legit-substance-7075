@@ -74,9 +74,13 @@ const Signup = () => {
     console.log(formData); 
     dispatch(register(formData));
 
-      // Check if the registration was successful
-      if (!isError && isAuth) {
-        showToast("Signup successful! Verify your mail", "info", 9000);
+     
+  };
+
+  useEffect(() => {
+    if (!isError && isAuth && msg) {
+      if (msg === "User data submitted successfully, please verify your mail" || msg === "Please check your mail and verify") {
+        showToast("Mail has been sent. Please verify your email.", "info", 9000);
         // Clear input fields and reset user state
         setUser({
           name: "",
@@ -84,22 +88,13 @@ const Signup = () => {
           password: "",
           phone: "",
         });
+      } else if (msg === "User already exists, please login") {
+        showToast("User already exists, please login", "info", 9000);
       }
-  };
-
-  // const isFirstRender = useRef(true);
-  // console.log(msg);
-  // useEffect(() => {
-  //   // if (!isFirstRender.current) {
-  //     if (msg) {
-  //       showToast("Verify your mail", "info", 9000);
-  //     }
-  //   // } 
-  //   // else {
-
-  //   //   isFirstRender.current = false;
-  //   // }
-  // }, []);
+    } else if (isError) {
+      showToast(msg, "error", 3000);
+    }
+  }, [isAuth, isError, msg]);
 
   const imageDisplay = useBreakpointValue({ base: "none", md: "block" });
 

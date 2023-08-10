@@ -12,22 +12,30 @@ const WomenPage = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
   const location = useLocation();
-  const { womenproduct, isLoading } = useSelector((store) => {
-    return store.womenReducer;
-  });
+  const { womenproduct, isLoading } = useSelector((store) =>  store.womenReducer);
+
+  let sortVal ={sort: searchParams.get("sort")}
 
   let obj = {
     params: {
       category: searchParams.getAll("category"),
-      fit: searchParams.getAll("fit"),
-      _sort: searchParams.get("order") && "discountedPrice",
-      _order: searchParams.get("order"),
+      // fit: searchParams.getAll("fit"),
+      // _sort: searchParams.get("order") && "discountedPrice",
+      // _order: searchParams.get("order"),
     },
   };
 
   useEffect(() => {
     dispatch(getWomenProduct(obj.params));
   }, [dispatch, location.search, searchParams]);
+
+
+  if (sortVal.sort === 'asc') {
+    womenproduct.sort((a, b) => a.discountedPrice - b.discountedPrice);
+  } else if (sortVal.sort === 'desc') {
+    womenproduct.sort((a, b) => b.discountedPrice - a.discountedPrice);
+  }
+
 
   return (
     <div className="women-section">

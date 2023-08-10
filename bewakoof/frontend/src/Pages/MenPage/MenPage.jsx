@@ -15,17 +15,24 @@ const MenPage = () => {
  
   const location = useLocation();
   const { menproduct, isLoading } = useSelector((store) => store.menReducer);
+  let sortVal ={sort: searchParams.get("sort")}
+  console.log(sortVal)
   let obj = {
     params: {
       category: searchParams.getAll("category"),
       // fit: searchParams.getAll("fit"),
-      sort: searchParams.get("sort"),
     },
   };
 
   useEffect(() => {
     dispatch(getMenProduct(obj.params));
   }, [dispatch, location.search, searchParams]);
+
+  if (sortVal.sort === 'asc') {
+    menproduct.sort((a, b) => a.discountedPrice - b.discountedPrice);
+  } else if (sortVal.sort === 'desc') {
+    menproduct.sort((a, b) => b.discountedPrice - a.discountedPrice);
+  }
 
 
   return (

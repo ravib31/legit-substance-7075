@@ -17,6 +17,8 @@ const WomenSidebar = () => {
   const [order, setOrder] = useState(initialOrder || "");
   const [fit, setFit] = useState(initialFit || []);
   console.log(initialState);
+  const initialSort=searchParams.getAll("sort")
+  const [sort, setSort] = useState(initialSort || "");
 
   const handleChange = (e) => {
     let newCategory = [...category];
@@ -32,7 +34,7 @@ const WomenSidebar = () => {
 
 
  const handleFit = (e) => {
-  let newFit = [...fit];
+  let newFit = [...sort];
   let fitvalue = e.target.value;
 
   if(newFit.includes(fitvalue)){
@@ -44,18 +46,27 @@ const WomenSidebar = () => {
  }
 
 
+  
+
+ const handleSort = (e) => {
+    let newSort = [...sort];
+    let value = e.target.value;
+
+    if (newSort.includes(value)) {
+      newSort.splice(newSort.indexOf(value), 1);
+    } else {
+      newSort.push(value);
+    }
+    setSort(newSort);
+  };
+
   useEffect(() => {
     let params = {
       category,
-      fit
     };
-    order && (params.order = order);
+    sort && (params.sort = sort);
     setSearchParams(params);
-  }, [category,fit, order]);
-
-  const handleSort = (e) => {
-    setOrder(e.target.value);
-  };
+  }, [category, setSearchParams, sort]);
 
   return (
     <Box>

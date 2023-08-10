@@ -20,11 +20,13 @@ https://delicate-mooncake-6ba932.netlify.app/
 
 #Home Page-
 
-![HomePage](https://github.com/atheist31/legit-substance-7075/assets/101830301/9ee237ff-d31d-46c5-aae2-140661029985)
+![HommePage](https://github.com/atheist31/legit-substance-7075/assets/101830301/6817e503-b4ba-4772-a7e7-7c6974e734e4)
+
 
 # Login Page-
 
-![LoginPage](https://www.linkpicture.com/q/Web-capture_27-2-2023_123525_delicate-mooncake-6ba932.netlify.app.jpeg)
+![Login](https://github.com/atheist31/legit-substance-7075/assets/101830301/f04a2c80-228c-4551-9221-021cd9bb747f)
+
 
 # SignUp Page-
 
@@ -32,15 +34,18 @@ https://delicate-mooncake-6ba932.netlify.app/
 
 # Men Product Page-
 
-![Men Page](https://www.linkpicture.com/q/Web-capture_27-2-2023_123237_delicate-mooncake-6ba932.netlify.app.jpeg)
+![Men-Product](https://github.com/atheist31/legit-substance-7075/assets/101830301/1ab732a2-46d6-4c11-bfcf-fd096c810b4f)
+
 
 # Product Detail Page-
 
-![ProductDetail](https://www.linkpicture.com/q/Web-capture_27-2-2023_123622_delicate-mooncake-6ba932.netlify.app.jpeg)
+![ProductDetail](https://github.com/atheist31/legit-substance-7075/assets/101830301/cb0f7d6d-4926-4dee-ae2e-3363a6366edd)
+
 
 # Cart Page- 
 
-![CartPage](https://www.linkpicture.com/q/Web-capture_27-2-2023_123759_delicate-mooncake-6ba932.netlify.app.jpeg)
+![CartPage](https://github.com/atheist31/legit-substance-7075/assets/101830301/e7c37d6c-95f5-4f59-a573-91447c776574)
+
 
 # Checkout Page-
 

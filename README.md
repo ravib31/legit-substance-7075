@@ -53,14 +53,16 @@ https://delicate-mooncake-6ba932.netlify.app/
 
 # Women Product-
 
-![WomenProduct](https://www.linkpicture.com/q/Web-capture_27-2-2023_12351_delicate-mooncake-6ba932.netlify.app.jpeg)
+![Women Page](https://github.com/atheist31/legit-substance-7075/assets/101830301/58a9fd12-5898-48f2-8506-41ee364c759a)
+
 
 
 
 
 # Mobile View-
 
-![image](https://github.com/atheist31/legit-substance-7075/assets/101830301/4648ce87-aad5-4a37-b68e-e8c2fc304a50)
+![MobileView](https://github.com/atheist31/legit-substance-7075/assets/101830301/1bd12976-883e-475a-b931-3e39d8cdf17a)
+
 
 
 # Admin Page-

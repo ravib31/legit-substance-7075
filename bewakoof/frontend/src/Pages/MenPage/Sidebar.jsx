@@ -19,6 +19,9 @@ const Sidebar = () => {
   const [fit, setFit] = useState(initialFit || []);
   console.log(initialState);
 
+  const initialSort=searchParams.getAll("sort")
+  const [sort, setSort] = useState(initialSort || "");
+  
   const handleChange = (e) => {
     let newCategory = [...category];
     let value = e.target.value;
@@ -29,6 +32,18 @@ const Sidebar = () => {
       newCategory.push(value);
     }
     setCategory(newCategory);
+  };
+
+  const handleSort = (e) => {
+    let newSort = [...sort];
+    let value = e.target.value;
+
+    if (newSort.includes(value)) {
+      newSort.splice(newSort.indexOf(value), 1);
+    } else {
+      newSort.push(value);
+    }
+    setSort(newSort);
   };
 
 
@@ -47,15 +62,12 @@ const Sidebar = () => {
 
   useEffect(() => {
     let params = {
-      category
+      category,
     };
-    // order && (params.order = order);
+    sort && (params.sort = sort);
     setSearchParams(params);
-  }, [category]);
+  }, [category, setSearchParams, sort]);
 
-  const handleSort = (e) => {
-    setOrder(e.target.value);
-  };
 
   return (
     <Box  width="300px"
@@ -158,7 +170,8 @@ const Sidebar = () => {
               <input
                 type="checkbox"
                 value={"asc"}
-                defaultChecked={order === "asc"}
+                onChange={handleSort}
+                checked={sort.includes("asc")}
               />
               <label>Price: Low To High</label>
               <br />
@@ -167,7 +180,8 @@ const Sidebar = () => {
               <input
                 type="checkbox"
                 value={"desc"}
-                defaultChecked={order === "desc"}
+                onChange={handleSort}
+                checked={sort.includes("desc")}
               />
               <label>Price High to Low</label>
               <br />

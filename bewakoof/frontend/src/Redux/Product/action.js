@@ -99,13 +99,14 @@ export const delProduct = (id) => (dispatch) => {
 
 // WOMEN PRODUCT
 
-export const getWomenProduct = () => (dispatch) => {
+export const getWomenProduct = (params) => (dispatch) => {
   dispatch(getWomenProductRequest());
   axios
     .get(`${baseurl}/products/women`, {
-      // headers:{
-      //     "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVU0VSX0lEIjoiNjQzMWFkOGE1ZGNmMjE2OTNmMzNiMTE2IiwiaWF0IjoxNjgxMTMwMzU4fQ.3Ic5eTVd_ottS-itvAddx_Qe25-Phn4p3PKKtvaV4qc"
-      // }
+      params: {
+        category: params.category,
+        sort: params.sort,
+      },
     })
     .then((res) => {
       // console.log(res);

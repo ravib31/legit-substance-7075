@@ -36,7 +36,7 @@ const images = [
   
 ];
 
-export const Home = () => {
+ const Home = () => {
   const dispatch=useDispatch();
   const token=getTokenFromCookies();
 
@@ -115,4 +115,6 @@ export const Home = () => {
   );
 };
 
+
+export default Home;
 

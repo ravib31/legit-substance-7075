@@ -9,7 +9,11 @@ import Size from "./Size";
 import Description from "./Description";
 import { Input } from "@chakra-ui/input";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCartFun, getFromCartFun, postCartProduct } from "../../Redux/Cart/action";
+import {
+  addToCartFun,
+  getFromCartFun,
+  postCartProduct,
+} from "../../Redux/Cart/action";
 import { getSingleProduct } from "../../Redux/Product/action";
 import { useNavigate } from "react-router-dom";
 import { Alert } from "@chakra-ui/alert";
@@ -19,6 +23,7 @@ import InitialLoader from "../../Layout/InitialLoader";
 import useCustomToast from "../../Layout/useCustomToast";
 import Loader from "../../Layout/Loader";
 import SingleProductLoader from "../../Layout/SingleProductLoader";
+import { getTotalCartProduct } from "../../Redux/Cart/action";
 
 const SingleProductPage = () => {
   const [chestsize, setchestSize] = useState();
@@ -33,22 +38,18 @@ const SingleProductPage = () => {
   const params = useParams();
   const { id } = params;
 
-  console.log(id);
   const { product, isLoading } = useSelector(
     (store) => store.SingleProductPageReducer
   );
-  const { cartData } = useSelector((store) => store.cartReducer);
+  const { cartData, msg } = useSelector((store) => store.cartReducer);
   const cartStatus = localStorage.getItem("cartStatus");
   const [buttonText, setButtonText] = useState(
     cartStatus ? "Go to Cart" : "Add to Cart"
   ); // State for button text
 
-  
   const { title, rating, actualPrice, fit, discountedPrice, image } = product;
-console.log("product",product?.discountedPrice);
   const [mainImage, setMainImage] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
-  
 
   useEffect(() => {
     if (image && image.length > 0) {
@@ -59,23 +60,21 @@ console.log("product",product?.discountedPrice);
   React.useEffect(() => {
     dispatch(getSingleProduct(id));
     dispatch(getFromCartFun());
-  }, [dispatch, id,]);
+  }, [dispatch, id]);
 
-  useEffect(()=>{
+  useEffect(() => {
     checkIfProductInCart();
-  },[cartData,id])
+  }, [cartData, id]);
 
   const checkIfProductInCart = () => {
     const isInCart = cartData.some(
       (item) => String(item.checkId) === String(id)
     );
-   if(isInCart){
-    setButtonText("Go to Cart")
-   }
+    if (isInCart) {
+      setButtonText("Go to Cart");
+    }
     return isInCart;
   };
-
-  
 
   useEffect(() => {}, [cartData]);
 
@@ -85,10 +84,6 @@ console.log("product",product?.discountedPrice);
   const handleSizeDetails = (size) => {
     setSelectedSize(size);
   };
-
-  useEffect(() => {
-    console.log("selectedSize", selectedSize);
-  }, [selectedSize]);
 
   let payload = {
     checkId: product._id,
@@ -106,26 +101,26 @@ console.log("product",product?.discountedPrice);
     selectedSize: selectedSize,
   };
 
-  // console.log(payload);
-
   const handleAddToCart = () => {
     const isInCart = checkIfProductInCart();
-    console.log("isInCart",isInCart);
     if (isInCart || buttonText === "Go to Cart") {
-      // Redirect user to cart page
       navigate("/cart");
       return;
-    } else if(!selectedSize){
+    } else if (!selectedSize) {
       showToast("Please Select Size", "error", 3000);
       return;
-    }
-    else {
-      dispatch(addToCartFun(payload));
-      showToast("Added to the cart", "success", 3000);
-      setButtonText("Go to Cart"); // Update the button text
-      // localStorage.setItem("cartStatus", "added");
+    } else {
+      dispatch(addToCartFun(payload))
+        .then(() => {
+          setButtonText("Go to Cart");
+          dispatch(getTotalCartProduct())
+          .then(()=>{
+          showToast("Added to cart", "success", 3000);
+          })
+        })
+        .catch((err) => console.log(err));
+     
 
-      // Check if the product was removed from the cart
       if (cartStatus === "removed") {
         setButtonText("Add to Cart");
         localStorage.removeItem("cartStatus");
@@ -136,7 +131,6 @@ console.log("product",product?.discountedPrice);
   if (isLoading) {
     return <SingleProductLoader />;
   }
-  console.log(sizeClick);
   return (
     <>
       <div className={styles.product_page_container}>
@@ -172,8 +166,10 @@ console.log("product",product?.discountedPrice);
             <b> ₹{discountedPrice}</b>
             <span> ₹{actualPrice}</span>
             <span>
-              {Math.floor((100 / actualPrice) * (actualPrice - discountedPrice))}%
-              OFF
+              {Math.floor(
+                (100 / actualPrice) * (actualPrice - discountedPrice)
+              )}
+              % OFF
             </span>
           </div>
           <p>inclusive of all taxes</p>
@@ -247,12 +243,14 @@ console.log("product",product?.discountedPrice);
             )}
           </div> */}
           <div className={styles.button}>
-            { <Button onClick={handleAddToCart}>
-              <span style={{ marginRight: "10px" }}>
-                <HiOutlineShoppingBag size={"20px"} />
-              </span>
-              {buttonText}
-            </Button>}
+            {
+              <Button onClick={handleAddToCart}>
+                <span style={{ marginRight: "10px" }}>
+                  <HiOutlineShoppingBag size={"20px"} />
+                </span>
+                {buttonText}
+              </Button>
+            }
             <Button>
               <span style={{ marginRight: "10px" }}>
                 <CiHeart size={"20px"} />

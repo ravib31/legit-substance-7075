@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./MenPageCard.css";
 
 const MenPageCard = ({ menproduct }) => {
-   console.log(menproduct);
   return (
     <>
      <Link to={`/men/${menproduct._id}`} >

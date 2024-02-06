@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect ,useRef,useCallback} from "react";
 import { useState } from "react";
 import "./Navbar.css";
 import { useNavigate, Link } from "react-router-dom";
@@ -8,10 +8,10 @@ import { SlUser } from "react-icons/sl";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { IconButton, useDisclosure } from "@chakra-ui/react";
 import { useSelector, useDispatch } from "react-redux";
+import {LOGO_URL} from "../utils/constant.js";
 import {
   getTokenFromCookies,
   removeTokenFromCookies,
-  isTokenExpired,
 } from "../utils/token.utils";
 import { FaShoppingCart } from "react-icons/fa";
 import {
@@ -26,26 +26,46 @@ import {
   Button,
 } from "@chakra-ui/react";
 
-import { getTotalCartProduct } from "../Redux/Cart/action"
 const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isOpen, onToggle, onClose } = useDisclosure();
-  const [count, setCount] = useState(0);
-
-  const { isError, msg, isAuth, isLoading } = useSelector(
-    (store) => store.authReducer
-  );
+  const [showSidebar,setShowSidebar] = useState(false);
+  const sidebarRef = useRef(null);
+  
 
   const { totalCartProduct } = useSelector((store) => store.cartReducer);
  console.log(totalCartProduct)
   
-const [total,setTotal]=useState(totalCartProduct  || 0)
   const token = getTokenFromCookies();
 
-  const toHome = () => {
-    navigate("/");
-  };
+  const handleToggle = () =>{
+    setShowSidebar(!showSidebar);
+  }
+
+  // const handleOutsideClick = useCallback((event) => {
+  //   if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+  //     setShowSidebar(false);
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   if (showSidebar) {
+  //     document.addEventListener('click', handleOutsideClick);
+  //   }
+
+  //   return () => {
+  //     document.removeEventListener('click', handleOutsideClick);
+  //   };
+  // }, [showSidebar, handleOutsideClick]);
+
+ 
+
+  // useEffect(()=>{
+  //   if(showSidebar){
+  //     document.addEventListner('click',handleOutsideClick)
+  //   }
+  // },[showSidebar,handleOutsideClick])
+  
 
   const onMenPage = () => {
     navigate("/men");
@@ -79,12 +99,7 @@ const [total,setTotal]=useState(totalCartProduct  || 0)
     navigate("/user/login");
   };
 
-  useEffect(() => {
-    // const token = getTokenFromCookies();
-    if (isTokenExpired(token)) {
-      handleLogout();
-    }
-  }, []);
+  
 
   return (
     <>
@@ -115,7 +130,7 @@ const [total,setTotal]=useState(totalCartProduct  || 0)
             <div id="nav-bottom-in-1">
               <div id="logo" onClick={onHomePage}>
                 <img
-                  src="https://www.linkpicture.com/q/hrth.png"
+                  src={LOGO_URL}
                   alt="befour.com"
                 />
               </div>
@@ -144,9 +159,9 @@ const [total,setTotal]=useState(totalCartProduct  || 0)
                   </li>
                   <li className="cart-icon" onClick={onCartPage}>
                     <FaShoppingCart className="icon-grey" />
-                    {token && (
+                    {token? (
                       <span className="badge">{totalCartProduct}</span>
-                    )}
+                    ):<span className="badge">{0}</span>}
                   </li>
                   <li>
                     <Menu>
@@ -184,30 +199,34 @@ const [total,setTotal]=useState(totalCartProduct  || 0)
                 </ul>
               </div>
             </div>
-            <div id="menu-btn">
-              <HiMenuAlt1 onClick={onToggle} />
+            <div id="menu-btn" >
+              <HiMenuAlt1 onClick={handleToggle} />
             </div>
-            {isOpen && (
+            {showSidebar && (
               <div id="sideMenu">
                 <ul id="sideList">
-                  <li>
-                    <Link to="/men">MEN</Link>
+                <li onClick={onMenPage}>
+                    MEN
+                  </li>
+                  <li onClick={onWomenPage}>
+                    WOMEN
                   </li>
                   <li>
-                    <Link to="/women">WOMEN</Link>
+                    WISHLIST
+                  </li>
+                  <li onClick = {onCartPage}>
+                    CART
                   </li>
                   <li>
-                    <Link to="/wishlist">WISHLIST</Link>
+                    <Link to="/#">PROFILE</Link>
                   </li>
+                  {token? <li onClick ={handleLogout}>
+                    LOGOUT
+                  </li>:
                   <li>
-                    <Link to="/cart">CART</Link>
-                  </li>
-                  <li>
-                    <Link to="/profile">PROFILE</Link>
-                  </li>
-                  <li>
-                    <Link to="/user/login">LOGIN</Link>
-                  </li>
+                  LOGIN
+                </li>
+                  }
                 </ul>
               </div>
             )}

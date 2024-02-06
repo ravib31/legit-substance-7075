@@ -7,7 +7,6 @@ const initialState = {
 };
 
 export const reducer = (state = initialState, { type, payload }) => {
-    console.log({payload});
   switch (type) {
     case types.PAYMENT_REQUEST:
       return { ...state, isPaymentLoading: true };

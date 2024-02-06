@@ -3,7 +3,7 @@ const initialState = {
   isLoading: false,
   isError: false,
   quantity: 1,
-  msg: "",
+  msg: null,
   quantityLoading: false,
   deleteLoading:false,
   cartData: [],
@@ -13,7 +13,7 @@ const initialState = {
 };
 
 export const reducer = (state = initialState, { type, payload }) => {
-  console.log(payload);
+  console.log("payload",payload);
   switch (type) {
     case types.GET_CART_PRODUCT_REQUEST:
       return { ...state, isLoading: true };
@@ -25,7 +25,7 @@ export const reducer = (state = initialState, { type, payload }) => {
     case types.POST_CART_PRODUCT_REQUEST:
       return { ...state, isLoading: true };
     case types.POST_CART_PRODUCT_SUCCESS:
-      return { ...state, isLoading: false, msg: payload };
+      return { ...state, isLoading: false, msg:payload };
     case types.POST_CART_PRODUCT_ERROR:
       return { ...state, isLoading: false, isError: payload };
 

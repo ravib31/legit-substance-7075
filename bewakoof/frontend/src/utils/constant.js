@@ -1,0 +1,1 @@
+export const LOGO_URL = "https://images.bewakoof.com/web/ic-desktop-bwkf-trademark-logo.svg";

@@ -20,7 +20,6 @@ import { getTokenFromCookies, isTokenExpired } from "../../utils/token.utils";
 import { clearCartProduct, paymentProcessAction } from "../../Redux/Payment/action.payment";
 
 const CartPage = () => {
-  const navigate=useNavigate()
   const showToast = useCustomToast();
   const { cartData, isLoading, isError, msg,quantityLoading,deleteLoading, totalMrp,totalDiscount,totalCartProduct} = useSelector(
     (store) => store.cartReducer
@@ -45,19 +44,8 @@ const CartPage = () => {
     showToast("Removed from Cart", "error", 3000);
   };
 
-  useEffect(() => {
-    const token = getTokenFromCookies();
-    if (isTokenExpired (token)) {
-      // Token has expired, perform necessary actions (e.g., logout)
-      alert("Session Expired")
-      navigate("/user/login")
-      
-    }
-  }, [quantityLoading,deleteLoading,isLoading]);
+  
 
-  // if(isLoading){
-  //   return <InitialLoader/>
-  // }
 
 
   const PaymentHandler = async (amount) => {

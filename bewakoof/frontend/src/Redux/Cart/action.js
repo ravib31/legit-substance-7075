@@ -13,7 +13,6 @@ export const getCartProduct = () => (dispatch) => {
     })
 
     .then((res) => {
-      console.log(res.data);
       dispatch({ type: types.GET_CART_PRODUCT_SUCCESS, payload: res.data });
     })
     .catch((err) => {
@@ -23,9 +22,9 @@ export const getCartProduct = () => (dispatch) => {
 };
 
 export const addToCartFun = (obj) => (dispatch) => {
-  // console.log(obj);
+  console.log(obj, "obj");
   dispatch({ type: types.POST_CART_PRODUCT_REQUEST });
-  axios
+  return axios
 
     .post(`${baseurl}/cart`, obj, {
       headers: {
@@ -34,10 +33,10 @@ export const addToCartFun = (obj) => (dispatch) => {
     })
 
     .then((res) => {
-      console.log(res);
+      // console.log(res);
       dispatch({
         type: types.POST_CART_PRODUCT_SUCCESS,
-        payload: res.data.msg,
+        payload: res.data?.msg,
       });
     })
     .catch((err) => {
@@ -57,7 +56,6 @@ export const getFromCartFun = () => (dispatch) => {
     })
 
     .then((res) => {
-      
       dispatch({
         type: types.GET_CART_PRODUCT_SUCCESS,
         payload: res.data.cartsData,
@@ -69,51 +67,57 @@ export const getFromCartFun = () => (dispatch) => {
 };
 
 export const deleteCartProduct = (id) => (dispatch) => {
-  dispatch({type:types.DELETE_CART_PRODUCT_REQUEST})
+  dispatch({ type: types.DELETE_CART_PRODUCT_REQUEST });
   console.log(id);
-  return axios.delete(`${baseurl}/cart/delete/${id}`, {
-    headers: {
-      Authorization: getTokenFromCookies() || null,
-    },
-  })
-  .then((res)=>{
-    console.log(res.data);
-    dispatch({type:types.DELETE_CART_PRODUCT_SUCCESS,payload:res.data})
-  }).catch((err)=>{
-    dispatch({type:types.DELETE_CART_PRODUCT_ERROR,payload:err})
-  })
+  return axios
+    .delete(`${baseurl}/cart/delete/${id}`, {
+      headers: {
+        Authorization: getTokenFromCookies() || null,
+      },
+    })
+    .then((res) => {
+      console.log(res.data);
+      dispatch({ type: types.DELETE_CART_PRODUCT_SUCCESS, payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({ type: types.DELETE_CART_PRODUCT_ERROR, payload: err });
+    });
 };
 
-export const updateCartItemQuantity = (id,payload) => (dispatch) => {
-  console.log(id,payload)
-  dispatch({type:types.UPDATE_QUANTITY_REQUEST})
-  return axios.put(`${baseurl}/cart/update/${id}`,payload, {
-    headers: {
-      Authorization: getTokenFromCookies() || null,
-    },
-  })
-  .then((res)=>{
-    console.log(res.data);
-    dispatch({type:types.UPDATE_QUANTITY_SUCCESS,payload:res.data})
-  }).catch((err)=>{
-    dispatch({type:types.UPDATE_QUANTITY_ERROR,payload:err})
-  })
+export const updateCartItemQuantity = (id, payload) => (dispatch) => {
+  console.log(id, payload);
+  dispatch({ type: types.UPDATE_QUANTITY_REQUEST });
+  return axios
+    .put(`${baseurl}/cart/update/${id}`, payload, {
+      headers: {
+        Authorization: getTokenFromCookies() || null,
+      },
+    })
+    .then((res) => {
+      console.log(res.data);
+      dispatch({ type: types.UPDATE_QUANTITY_SUCCESS, payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({ type: types.UPDATE_QUANTITY_ERROR, payload: err });
+    });
 };
-
 
 export const getTotalMrpPrice = () => (dispatch) => {
   dispatch({ type: types.GET_TOTALMRP_REQUEST });
   axios
 
     .get(`${baseurl}/cart/totalPrice`, {
-      headers:{
+      headers: {
         Authorization: getTokenFromCookies() || null,
-      }
+      },
     })
 
     .then((res) => {
       console.log(res);
-      dispatch({ type: types.GET_TOTALMRP_SUCCESS, payload: res?.data?.totalPrice });
+      dispatch({
+        type: types.GET_TOTALMRP_SUCCESS,
+        payload: res?.data?.totalPrice,
+      });
     })
     .catch((err) => {
       dispatch({ type: types.GET_TOTALMRP_ERROR });
@@ -121,20 +125,22 @@ export const getTotalMrpPrice = () => (dispatch) => {
     });
 };
 
-
 export const getToatalDiscountPrice = () => (dispatch) => {
   dispatch({ type: types.GET_DISCOUNT_REQUEST });
   axios
 
     .get(`${baseurl}/cart/totalDiscountPrice`, {
-      headers:{
+      headers: {
         Authorization: getTokenFromCookies() || null,
-      }
+      },
     })
 
     .then((res) => {
       console.log(res.data.totalDiscountPrice);
-      dispatch({ type: types.GET_DISCOUNT_SUCCESS, payload: res?.data?.totalDiscountPrice });
+      dispatch({
+        type: types.GET_DISCOUNT_SUCCESS,
+        payload: res?.data?.totalDiscountPrice,
+      });
     })
     .catch((err) => {
       dispatch({ type: types.GET_DISCOUNT_ERROR });
@@ -143,20 +149,21 @@ export const getToatalDiscountPrice = () => (dispatch) => {
 };
 
 export const getTotalCartProduct = () => (dispatch) => {
-  axios
+  return axios
 
     .get(`${baseurl}/cart/totalCartProduct`, {
-      headers:{
+      headers: {
         Authorization: getTokenFromCookies() || null,
-      }
+      },
     })
 
     .then((res) => {
-      console.log(res.data.totalCartProduct);
-      dispatch({ type: types.GET_TOTALCART_PRODUCT, payload: res?.data?.totalCartProduct });
+      dispatch({
+        type: types.GET_TOTALCART_PRODUCT,
+        payload: res?.data?.totalCartProduct,
+      });
     })
     .catch((err) => {
       console.log("err", err);
     });
 };
-

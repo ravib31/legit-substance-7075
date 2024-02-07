@@ -42,29 +42,7 @@ const Navbar = () => {
     setShowSidebar(!showSidebar);
   }
 
-  // const handleOutsideClick = useCallback((event) => {
-  //   if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-  //     setShowSidebar(false);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   if (showSidebar) {
-  //     document.addEventListener('click', handleOutsideClick);
-  //   }
-
-  //   return () => {
-  //     document.removeEventListener('click', handleOutsideClick);
-  //   };
-  // }, [showSidebar, handleOutsideClick]);
-
  
-
-  // useEffect(()=>{
-  //   if(showSidebar){
-  //     document.addEventListner('click',handleOutsideClick)
-  //   }
-  // },[showSidebar,handleOutsideClick])
   
 
   const onMenPage = () => {

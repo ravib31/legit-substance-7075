@@ -5,14 +5,14 @@ import {FaInstagram,FaSnapchatGhost} from "react-icons/fa";
 import {ImPinterest} from "react-icons/im";
 import {GiReturnArrow} from "react-icons/gi";
 import {HiOutlineCurrencyRupee} from "react-icons/hi";
-import {LOGO_URL} from "../utils/constant.js"
+import LOGO from "../assets/befoure-logo.svg"
 const Footer = () => {
   return (
     <div className='Footer'>
         <div className='footer-box'>
          <div className='blank'></div>
          <div className='footer-logo'>
-            <img src={LOGO_URL} alt="befour logo" />
+            <img src={LOGO} alt="befour logo" />
          </div>
          <div className='list-box'>
             <div className='customer-box'>

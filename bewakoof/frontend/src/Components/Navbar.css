@@ -133,26 +133,14 @@ nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
 #nav-bottom-in-1 {
   width: 15%;
-}
-#nav-bottom-in-2 {
-  width: 35%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: left;
-}
-#nav-bottom-in-3 {
-  width: 45%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  
 }
 #logo {
-  width: 150px;
+  width: 130px;
   margin: auto;
   cursor: pointer;
 }
@@ -160,38 +148,31 @@ nav{
   margin: auto;
   height: 100%;
 }
-#nav-bottom-in-2 ul {
-  width: 50%;
+#nav-bottom-in-2 {
+  width: 25%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: left;
-  gap: 35px;
-  margin-left: -30px;
-}
-#nav-bottom-in-2 ul li {
-  text-align: left;
   list-style: none;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-decoration: none;
-  white-space: nowrap;
-  font-family: montserrat, sans-serif;
-  cursor: pointer;
+  gap: 30px;
+  
 }
-
-
-#nav-bottom-in-2 ul li:hover{
-    
-}
-#func {
-  width: 40%;
-}
-#func ul {
+#nav-bottom-in-3 {
+  width: 50%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
+}
+
+#func ul {
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 }
 #func ul li {
   list-style: none;
@@ -266,18 +247,12 @@ nav{
   #nav-bottom-in-2{
     width: 20%;
   }
-  #nav-bottom-in-2 ul{
+  #nav-bottom-in-2{
     gap: 15px;
   }
-  #nav-bottom-in-3{
-    width: 60%;
-  }
-  #search{
-    width: 45%;
-  }
-  #func{
-    width: 50%;
-  }
+ 
+ 
+ 
   #sideMenu{
     display: none;
   }
@@ -298,7 +273,7 @@ nav{
 }
 #logo{
     background-color:#FBD836; 
-    width: 200px;
+    width: 130px;
     cursor: pointer;
 }
 #logo img{

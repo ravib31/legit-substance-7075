@@ -1,4 +1,4 @@
-import React, { useEffect ,useRef,useCallback} from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { useState } from "react";
 import "./Navbar.css";
 import { useNavigate, Link } from "react-router-dom";
@@ -6,9 +6,15 @@ import { AiOutlineMobile, AiOutlineHeart } from "react-icons/ai";
 import { BsSearch, BsBag } from "react-icons/bs";
 import { SlUser } from "react-icons/sl";
 import { HiMenuAlt1 } from "react-icons/hi";
-import { IconButton, useDisclosure } from "@chakra-ui/react";
+import {
+  IconButton,
+  InputGroup,
+  InputLeftAddon,
+  Input,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { useSelector, useDispatch } from "react-redux";
-import {LOGO_URL} from "../utils/constant.js";
+import LOGO from "../assets/befoure-logo.svg"
 import {
   getTokenFromCookies,
   removeTokenFromCookies,
@@ -29,21 +35,17 @@ import {
 const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [showSidebar,setShowSidebar] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
   const sidebarRef = useRef(null);
-  
 
   const { totalCartProduct } = useSelector((store) => store.cartReducer);
- console.log(totalCartProduct)
-  
+  console.log(totalCartProduct);
+
   const token = getTokenFromCookies();
 
-  const handleToggle = () =>{
+  const handleToggle = () => {
     setShowSidebar(!showSidebar);
-  }
-
- 
-  
+  };
 
   const onMenPage = () => {
     navigate("/men");
@@ -77,8 +79,6 @@ const Navbar = () => {
     navigate("/user/login");
   };
 
-  
-
   return (
     <>
       <nav>
@@ -107,27 +107,21 @@ const Navbar = () => {
           <div id="nav-bottom-in">
             <div id="nav-bottom-in-1">
               <div id="logo" onClick={onHomePage}>
-                <img
-                  src={LOGO_URL}
-                  alt="befour.com"
-                />
+                <img src={LOGO} alt="befour.com" />
               </div>
             </div>
             <div id="nav-bottom-in-2">
-              <ul>
+              {/* <ul> */}
                 <li onClick={onMenPage}>MEN</li>
                 <li onClick={onWomenPage}>WOMEN</li>
-              </ul>
+              {/* </ul> */}
             </div>
             <div id="nav-bottom-in-3">
               <div id="search">
-                <p>
-                  <BsSearch />
-                </p>
-                <input
-                  type="text"
-                  placeholder="     Search by Product,category or collection"
-                />
+                <InputGroup>
+                  <InputLeftAddon><BsSearch /></InputLeftAddon>
+                  <Input type="search" placeholder="Seach Products here..." />
+                </InputGroup>
               </div>
               <div id="func">
                 <ul>
@@ -137,9 +131,11 @@ const Navbar = () => {
                   </li>
                   <li className="cart-icon" onClick={onCartPage}>
                     <FaShoppingCart className="icon-grey" />
-                    {token? (
+                    {token ? (
                       <span className="badge">{totalCartProduct}</span>
-                    ):<span className="badge">{0}</span>}
+                    ) : (
+                      <span className="badge">{0}</span>
+                    )}
                   </li>
                   <li>
                     <Menu>
@@ -157,15 +153,15 @@ const Navbar = () => {
                         {!token && (
                           <MenuItem onClick={onLoginPage}>Login</MenuItem>
                         )}
-                        {token && <MenuItem>My Order </MenuItem>}
-                        {token && <MenuItem>My Wishlist </MenuItem>}
+                        {/* {token && <MenuItem>My Order </MenuItem>} */}
+                        {/* {token && <MenuItem>My Wishlist </MenuItem>} */}
                         {token && <MenuItem>My Cart </MenuItem>}
 
                         <MenuDivider />
-                        <MenuGroup title="Not For User">
-                          {/* <MenuItem>Become Seller</MenuItem> */}
-                          <MenuItem>Admin Login</MenuItem>
-                        </MenuGroup>
+                        {/* <MenuGroup title="Not For User"> */}
+                        {/* <MenuItem>Become Seller</MenuItem> */}
+                        {/* <MenuItem>Admin Login</MenuItem> */}
+                        {/* </MenuGroup> */}
                         {token && (
                           <Button variant={"solid"} onClick={handleLogout}>
                             Logout
@@ -177,34 +173,24 @@ const Navbar = () => {
                 </ul>
               </div>
             </div>
-            <div id="menu-btn" >
+            <div id="menu-btn">
               <HiMenuAlt1 onClick={handleToggle} />
             </div>
             {showSidebar && (
               <div id="sideMenu">
                 <ul id="sideList">
-                <li onClick={onMenPage}>
-                    MEN
-                  </li>
-                  <li onClick={onWomenPage}>
-                    WOMEN
-                  </li>
-                  <li>
-                    WISHLIST
-                  </li>
-                  <li onClick = {onCartPage}>
-                    CART
-                  </li>
+                  <li onClick={onMenPage}>MEN</li>
+                  <li onClick={onWomenPage}>WOMEN</li>
+                  <li>WISHLIST</li>
+                  <li onClick={onCartPage}>CART</li>
                   <li>
                     <Link to="/#">PROFILE</Link>
                   </li>
-                  {token? <li onClick ={handleLogout}>
-                    LOGOUT
-                  </li>:
-                  <li>
-                  LOGIN
-                </li>
-                  }
+                  {token ? (
+                    <li onClick={handleLogout}>LOGOUT</li>
+                  ) : (
+                    <li>LOGIN</li>
+                  )}
                 </ul>
               </div>
             )}

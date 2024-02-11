@@ -20,7 +20,7 @@ import { Alert } from "@chakra-ui/alert";
 import { TiTick } from "react-icons/ti";
 import axios from "axios";
 import InitialLoader from "../../Layout/InitialLoader";
-import useCustomToast from "../../Layout/useCustomToast";
+import useCustomToast from "../../hooks/useCustomToast";
 import Loader from "../../Layout/Loader";
 import SingleProductLoader from "../../Layout/SingleProductLoader";
 import { getTotalCartProduct } from "../../Redux/Cart/action";

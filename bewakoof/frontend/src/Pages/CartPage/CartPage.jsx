@@ -14,7 +14,7 @@ import {
 } from "../../Redux/Cart/action";
 import styles from "./CartPage.module.css";
 import * as types from "../../Redux/Cart/actionType";
-import useCustomToast from "../../Layout/useCustomToast";
+import useCustomToast from "../../hooks/useCustomToast";
 import InitialLoader from "../../Layout/InitialLoader";
 import { getTokenFromCookies, isTokenExpired } from "../../utils/token.utils";
 import { clearCartProduct, paymentProcessAction } from "../../Redux/Payment/action.payment";

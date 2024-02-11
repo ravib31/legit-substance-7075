@@ -16,6 +16,7 @@ import Footer from "../Components/Footer";
 import Signup from "../Pages/SingupPage/Signup";
 import Navbar from "../Components/Navbar";
 import SingleProductPage from "../Pages/SingleProductPage/SingleProductPage";
+import Wishlist from "../Pages/WishlistPage/Wishlist";
 import Payment from "../Pages/PaymentPage/Payment";
 import PaymentSuccess from "../Pages/PaymentPage/PaymentSuccess";
 import OrderPage from "../Pages/OrderPage/OrderPage";
@@ -65,6 +66,18 @@ export const AllRoutes = () => {
                 <Footer />
               </>
             </PrivateRoute>
+          }
+        />
+        <Route
+          path="/wishlist"
+          element={
+            // <PrivateRoute>
+              <>
+                <Navbar />
+                <Wishlist />
+                <Footer />
+              </>
+            // </PrivateRoute>
           }
         />
         <Route

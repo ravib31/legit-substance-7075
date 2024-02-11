@@ -14,12 +14,13 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { useSelector, useDispatch } from "react-redux";
-import LOGO from "../assets/befoure-logo.svg"
+import LOGO from "../assets/befoure-logo.svg";
 import {
   getTokenFromCookies,
   removeTokenFromCookies,
 } from "../utils/token.utils";
 import { FaShoppingCart } from "react-icons/fa";
+import useGetCurrentPath from "../hooks/useGetCurrentPath";
 import {
   Menu,
   MenuButton,
@@ -39,9 +40,21 @@ const Navbar = () => {
   const sidebarRef = useRef(null);
 
   const { totalCartProduct } = useSelector((store) => store.cartReducer);
-  console.log(totalCartProduct);
+  const currentPath = useGetCurrentPath();
+  console.log(currentPath, "current");
 
   const token = getTokenFromCookies();
+
+  useEffect(() => {
+    if (
+      (token && currentPath === "/user/login") ||
+      (token && currentPath === "/user/register")
+    ) {
+      navigate(-1);
+    } else {
+      console.log("not navigating back");
+    }
+  }, []);
 
   const handleToggle = () => {
     setShowSidebar(!showSidebar);
@@ -112,14 +125,16 @@ const Navbar = () => {
             </div>
             <div id="nav-bottom-in-2">
               {/* <ul> */}
-                <li onClick={onMenPage}>MEN</li>
-                <li onClick={onWomenPage}>WOMEN</li>
+              <li onClick={onMenPage}>MEN</li>
+              <li onClick={onWomenPage}>WOMEN</li>
               {/* </ul> */}
             </div>
             <div id="nav-bottom-in-3">
               <div id="search">
                 <InputGroup>
-                  <InputLeftAddon><BsSearch /></InputLeftAddon>
+                  <InputLeftAddon>
+                    <BsSearch />
+                  </InputLeftAddon>
                   <Input type="search" placeholder="Seach Products here..." />
                 </InputGroup>
               </div>

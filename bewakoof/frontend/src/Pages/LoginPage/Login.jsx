@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Login.module.css";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
-import useCustomToast from "../../Layout/useCustomToast";
+import useCustomToast from "../../hooks/useCustomToast";
 import { login } from "../../Redux/Auth/action";
 import { useSelector, useDispatch } from "react-redux";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
@@ -30,7 +30,7 @@ import { MdEmail } from "react-icons/md";
 
 import { RiLockPasswordFill } from "react-icons/ri";
 import SocialMedia from "../SingupPage/SocialMedia";
-import Toast from "../../Layout/useCustomToast";
+import Toast from "../../hooks/useCustomToast";
 import { getTokenFromCookies } from "../../utils/token.utils";
 
 //component start form here

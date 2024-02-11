@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Signup.module.css";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
-import useCustomToast from "../../Layout/useCustomToast";
+import useCustomToast from "../../hooks/useCustomToast";
 import { register } from "../../Redux/Auth/action";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -27,7 +27,7 @@ import { MdEmail } from "react-icons/md";
 import { BsTelephoneFill } from "react-icons/bs";
 import { RiLockPasswordFill } from "react-icons/ri";
 import SocialMedia from "./SocialMedia";
-import Toast from "../../Layout/useCustomToast";
+import Toast from "../../hooks/useCustomToast";
 import { useNavigate, Link } from "react-router-dom";
 
 const Signup = () => {

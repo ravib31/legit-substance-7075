@@ -1,7 +1,7 @@
 // import jwt from 'jsonwebtoken';
 
 export const setTokenInCookies = (token) => {
-  const expirationDate = new Date(Date.now() + 30 * 60 * 60 * 1000); // 2-minute expiration
+  const expirationDate = new Date(Date.now() + 24 * 60 * 60 * 1000); 
   document.cookie = `token=${token}; expires=${expirationDate.toUTCString()}; path=/`;
 };
 

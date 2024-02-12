@@ -7,16 +7,14 @@ import MenPageCard from "./MenPageCard";
 import Sidebar from "./Sidebar";
 import Loader from "../../Layout/Loader";
 import InitialLoader from "../../Layout/InitialLoader";
-import { border } from "@chakra-ui/react";
 
 const MenPage = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
- 
+
   const location = useLocation();
   const { menproduct, isLoading } = useSelector((store) => store.menReducer);
-  let sortVal ={sort: searchParams.get("sort")}
-  console.log(sortVal)
+  let sortVal = { sort: searchParams.get("sort") };
   let obj = {
     params: {
       category: searchParams.getAll("category"),
@@ -28,39 +26,36 @@ const MenPage = () => {
     dispatch(getMenProduct(obj.params));
   }, [dispatch, location.search, searchParams]);
 
-  if (sortVal.sort === 'asc') {
+  if (sortVal.sort === "asc") {
     menproduct.sort((a, b) => a.discountedPrice - b.discountedPrice);
-  } else if (sortVal.sort === 'desc') {
+  } else if (sortVal.sort === "desc") {
     menproduct.sort((a, b) => b.discountedPrice - a.discountedPrice);
   }
-
 
   return (
     <div className="men-section">
       <div className="men-Clothing">
         <h1>Men Clothing</h1>
       </div>
-      <div>
-        <div className="product-div">
-          <div className="sidebar">
-            <Sidebar />
-          </div>
-          <div className="product-list" >
-            {menproduct.length > 0 ? (
-              menproduct.map((el) => (
+      <div className="product-div">
+        <div className="sidebar">
+          <Sidebar />
+        </div>
+        {menproduct.length > 0 ? (
+          <div className="product-list">
+            {menproduct?.map((el) => {
+              return (
                 <React.Fragment key={el.id}>
                   {isLoading ? <Loader /> : <MenPageCard menproduct={el} />}
                 </React.Fragment>
-              ))
-            ) : (
-             
-              <div  style={{width:"300%"}}>
-                {<InitialLoader/>}
-              </div>
-             
-            )} 
+              );
+            })}
           </div>
-        </div>
+        ) : (
+          <div style={{ width: "100%" }}>
+            <InitialLoader />
+          </div>
+        )}
       </div>
     </div>
   );

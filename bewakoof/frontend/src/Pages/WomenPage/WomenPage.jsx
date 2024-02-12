@@ -12,9 +12,11 @@ const WomenPage = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
   const location = useLocation();
-  const { womenproduct, isLoading } = useSelector((store) =>  store.womenReducer);
+  const { womenproduct, isLoading } = useSelector(
+    (store) => store.womenReducer
+  );
 
-  let sortVal ={sort: searchParams.get("sort")}
+  let sortVal = { sort: searchParams.get("sort") };
 
   let obj = {
     params: {
@@ -29,13 +31,11 @@ const WomenPage = () => {
     dispatch(getWomenProduct(obj.params));
   }, [dispatch, location.search, searchParams]);
 
-
-  if (sortVal.sort === 'asc') {
+  if (sortVal.sort === "asc") {
     womenproduct.sort((a, b) => a.discountedPrice - b.discountedPrice);
-  } else if (sortVal.sort === 'desc') {
+  } else if (sortVal.sort === "desc") {
     womenproduct.sort((a, b) => b.discountedPrice - a.discountedPrice);
   }
-
 
   return (
     <div className="women-section">
@@ -47,19 +47,19 @@ const WomenPage = () => {
           <div className="women sidebar">
             <WomenSidebar />
           </div>
-          <div className="women product-list">
-            {womenproduct.length > 0 ? (
-              womenproduct.map((el) => {
+          {womenproduct.length > 0 ? (
+            <div className="women product-list">
+              {womenproduct?.map((el) => {
                 return isLoading ? (
                   <Loader />
                 ) : (
                   <WomenPageCard key={el.id} womenproduct={el} />
                 );
-              })
-            ) : (
-              <div style={{ width: "300%" }}>{<InitialLoader />}</div>
-            )}
-          </div>
+              })}
+            </div>
+          ) : (
+            <div style={{ width: "100%" }}>{<InitialLoader />}</div>
+          )}
         </div>
       </div>
     </div>

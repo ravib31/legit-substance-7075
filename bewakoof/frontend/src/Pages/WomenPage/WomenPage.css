@@ -1,84 +1,86 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.women-product-div{
-    width:1145px;
-    height: auto;
-    display:flex;  
-    justify-content: space-between;
-    margin: auto;
-   position: relative;
-}
-.women-Clothing{
+.women-Clothing {
     width: 80%;
     margin: auto;
-    margin-left: 120px; 
+    margin-left: 120px;
     text-align: left;
     margin-top: 50px;
     margin-bottom: 60px;
-}
-.women-Clothing h1{
+  }
+  .women-Clothing h1 {
     font-size: 30px;
     font-weight: 600;
     color: black;
-    text-decoration: underline #FBD836 5px;
-}
-.women-product-list{
-    width: 75%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: -10px;
-   
-}
-.women-sidebar{
-    width: 26%;
-    margin-right: 20px;
-}
-@media all and (min-width: 401px) and (max-width: 800px){
-    .women.product-div{
-        width: 100%;
-        margin: auto;
-        flex-direction: column;
-    }
-    .women.sidebar{
-        width: 95%;
-        height: auto;
-        margin: auto;
-        margin-bottom: 30px;
-       }
-       .women.product-list{
-        width: 100%;
-        margin: auto;
-        display: grid;
-        grid-template-columns: 50% 50%;
-    }
-    .women-Clothing{
-        display: none;
-    }
+    text-decoration: underline #fbd836 5px;
+  }
+
+.women-product-div {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
 }
 
-@media all and (min-width: 100px) and (max-width: 400px){
-    .women.product-div{
-        width: 100%;
-        margin: auto;
-        flex-direction: column;
-    }
-   .women.sidebar{
+.women-product-list {
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: -10px;
+}
+.women-sidebar {
+  width: 26%;
+}
+@media all and (min-width: 571px) and (max-width: 1080px) {
+  .women.product-div {
+    width: 100%;
+    margin: auto;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .women.sidebar {
     width: 95%;
     height: auto;
     margin: auto;
     margin-bottom: 30px;
-   }
-    .women.product-list{
-        width: 100%;
-        margin: auto;
-        display: grid;
-        grid-template-columns: 50% 50%;
-    }
-    .women-Clothing{
-        display: none;
-    }
+  }
+  .women.product-list {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, calc((100% - 30px) / 2));
+    justify-content: center;
+    row-gap: 30px;
+  }
+  .women-Clothing {
+    display: none;
+  }
+}
+
+@media all and (min-width: 310px) and (max-width: 570px) {
+  .women.product-div {
+    width: 100%;
+    margin: auto;
+    flex-direction: column;
+  }
+  .women.sidebar {
+    width: 95%;
+    height: auto;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+  .women.product-list {
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(1,1fr)
+  }
+  .women-Clothing {
+    display: none;
+  }
 }

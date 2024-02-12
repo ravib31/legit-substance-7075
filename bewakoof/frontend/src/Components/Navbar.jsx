@@ -17,6 +17,7 @@ import { useSelector, useDispatch } from "react-redux";
 import LOGO from "../assets/befoure-logo.svg";
 import {
   getTokenFromCookies,
+  isTokenExpired,
   removeTokenFromCookies,
 } from "../utils/token.utils";
 import { FaShoppingCart } from "react-icons/fa";
@@ -40,21 +41,24 @@ const Navbar = () => {
   const sidebarRef = useRef(null);
 
   const { totalCartProduct } = useSelector((store) => store.cartReducer);
+  const { user } = useSelector((store) => store.authReducer);
+  console.log(user,"user")
   const currentPath = useGetCurrentPath();
-  console.log(currentPath, "current");
 
   const token = getTokenFromCookies();
+  const isTokenExpire = isTokenExpired(token);
 
   useEffect(() => {
+    if (isTokenExpire) {
+      removeTokenFromCookies();
+    }
     if (
       (token && currentPath === "/user/login") ||
       (token && currentPath === "/user/register")
     ) {
       navigate(-1);
-    } else {
-      console.log("not navigating back");
     }
-  }, []);
+  }, [navigate, isTokenExpire, token, currentPath]);
 
   const handleToggle = () => {
     setShowSidebar(!showSidebar);
@@ -170,7 +174,7 @@ const Navbar = () => {
                         )}
                         {/* {token && <MenuItem>My Order </MenuItem>} */}
                         {/* {token && <MenuItem>My Wishlist </MenuItem>} */}
-                        {token && <MenuItem>My Cart </MenuItem>}
+                        {token && <MenuItem>{user?.email} </MenuItem>}
 
                         <MenuDivider />
                         {/* <MenuGroup title="Not For User"> */}

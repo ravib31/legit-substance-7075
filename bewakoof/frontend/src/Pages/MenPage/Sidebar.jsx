@@ -70,7 +70,7 @@ const Sidebar = () => {
 
 
   return (
-    <Box  width="300px"
+    <Box width="100%"
     >
      <Text textAlign="left" marginBottom="10px" marginLeft="10px"
       fontFamily="montserrat-semibold, sans-serif"
